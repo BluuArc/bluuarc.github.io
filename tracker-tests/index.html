@@ -16,12 +16,15 @@
 		"22. Statmaster", "./statmaster.html",
 	];
 
+	//link to return to home page
+	document.write('<a href="' + prevPage + '">' + "Home Page" + "</a><br><br>");
+
+	//print list of links
 	for(i = 0; i < list.length; i = i + 2){
 		document.write('<a href="' + list[i+1] + '">' + list[i] + "</a><br>");
 	}
 
-	//link to return to home page
-	document.write('<a href="' + prevPage + '">' + "Home Page" + "</a><br>");
+
 	</script>
 
 </body>
