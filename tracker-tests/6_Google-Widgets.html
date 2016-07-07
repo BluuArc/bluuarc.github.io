@@ -6,6 +6,7 @@
 <body>
 	<a href="http://bluuarc.github.io/tracker-tests">Go back</a>
 	<p>Google Widgets (Map Sample) tracker</p>
+	<p>Note: Currently has issues with authorization, but it's implemented correctly</p>
 
 	<!-- Start of Google Maps Code for Default Guide -->
 	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCQ5NnIbFGa4N8GxXkfjM8lMaU8W0u_qMY'></script><div style='overflow:hidden;height:400px;width:520px;'><div id='gmap_canvas' style='height:400px;width:520px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='https://mapswebsite.org/'>embedding google maps</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=8d65f4ea0a38d7846a5a4a65bc34f8f1b37cd95a'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(41.77571595772949,-87.41946818847659),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(41.77571595772949,-87.41946818847659)});infowindow = new google.maps.InfoWindow({content:'<strong></strong><br><br>60612 Chicago<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
