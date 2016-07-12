@@ -1,0 +1,1 @@
+document.write('<a href="http://stats.blogcounter.com/"><img src="http://stats.blogcounter.com/button.php?u=&ref='+escape(document.referrer)+'&page='+escape(location.href.replace(/#.+$/,''))+'&rez='+screen.width+'x'+screen.height+'" alt="Web Traffic Statistics" border="0" width="1" height="1" /></a>');
