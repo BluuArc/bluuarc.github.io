@@ -51,26 +51,27 @@
 
 		<div class="container">
 			<div class="content">
-				<h1>Content</h1>
+				<h1 style="text-align: left;">Content</h1>
 
-				<!--TODO: move to JS file-->
 				<script>
 				var i = 0;
 				//var prevPage = "http://bluuarc.github.io";
 				//string array to easily add more
-				//left side is link name, right side is link URL
+				//left is link name, middle is link URL, right is description
 				var list = [
-					"Tracker Tests", "./tracker-tests/",
+					"Tracker Tests", "./tracker-tests/","A page of various trackers used in a study related to Ghostery."
 				];
 
-				for(i = 0; i < list.length; i = i + 2){
-					document.write('<a href="' + list[i+1] + '">' + list[i] + "</a><br>");
+				for(i = 0; i < list.length; i = i + 3){
+					document.write('<h4><a href="' + list[i+1] + '">' + list[i] + "</a></h4>");
+					document.write("<p>" + list[i+2]+"</p>");
 				}
 
 				//link to return to home page
 				//document.write('<a href="' + prevPage + '">' + "Home Page" + "</a><br>");
 				</script>
 
+				<br>
 				<p>Still a WIP.</p>
 			</div>
 		</div><!-- /.container -->
