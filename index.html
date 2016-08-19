@@ -10,7 +10,7 @@
 		<meta name="author" content="">
 		<link rel="icon" href="">
 
-		<title>BluuArc's Code Compendium</title>
+		<title>BACC - Home</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="http://bluuarc.github.io">Home</a></li>
 						<li><a href="about.html">About</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
@@ -52,7 +52,7 @@
 		<div class="container">
 			<div class="content">
 				<div class="boxed-content-main">
-					<h1 style="text-align: left;">Content</h1>
+					<h1 style="text-align: left;">My Projects</h1>
 
 					<script>
 					var i = 0;
@@ -60,12 +60,15 @@
 					//string array to easily add more
 					//left is link name, middle is link URL, right is description
 					var list = [
-						"Tracker Tests", "./tracker-tests/","A page of various trackers used in a study related to Ghostery."
+						"Tracker Tests", "./tracker-tests/","A page of various trackers used in a study related to Ghostery.",
+						"Brave Frontier Frame Animator", "https://github.com/BluuArc/BFFrameAnimator", "Program to create GIFs of unit sprites for the mobile game Brave Frontier.",
+						"File Indexer", "https://github.com/BluuArc/FileIndexer", "A small program to read a directory and output a list of them to a CSV file.",
+						"Database Reader", "https://github.com/BluuArc/DBReader", "Program to read the data of a Brave Frontier database in the form of a JSON file."
 					];
 
 					for(i = 0; i < list.length; i = i + 3){
 						document.write('<div class="boxed-content-sub"><h4><a href="' + list[i+1] + '">' + list[i] + "</a></h4>");
-						document.write("<p>" + list[i+2]+"</p></div>");
+						document.write("<p>" + list[i+2]+"</p></div><br>");
 					}
 
 					//link to return to home page
