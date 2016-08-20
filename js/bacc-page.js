@@ -46,7 +46,8 @@ function printFooter(){
   document.write('<!--Begin Footer Code-->');
 
   //print Bootstrap
-  document.write('<!-- Bootstrap core JavaScript \
+  /*original with comments
+    <!-- Bootstrap core JavaScript \
     ================================================== --> \
     <!-- Placed at the end of the document so the pages load faster --> \
     <!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) --> \
@@ -54,26 +55,22 @@ function printFooter(){
     <!-- Include all compiled plugins (below), or include individual files as needed --> \
     <script src="js/bootstrap.min.js"></script> \
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> \
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+  */
+  document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> \
+    <script src="js/bootstrap.min.js"></script> \
     <script src="js/ie10-viewport-bug-workaround.js"></script>');
 
   //print StatCounter
-  document.write('<!-- Start of StatCounter Code for Default Guide --> \
-    <script type="text/javascript"> \
-    var sc_project=11034084; \
-    var sc_invisible=1; \
-    var sc_security="3e7dba9f"; \
-    var scJsHost = (("https:" == document.location.protocol) ? \
-    "https://secure." : "http://www."); \
-    document.write("<sc"+"ript type=\'text/javascript\' src=\'" + \
-    scJsHost+ \
-    "statcounter.com/counter/counter.js\'></"+"script>"); \
-    </script> \
-    <noscript><div class="statcounter"><a title="shopify site \
-    analytics" href="http://statcounter.com/shopify/" \
-    target="_blank"><img class="statcounter" \
-    src="//c.statcounter.com/11034084/0/3e7dba9f/1/" \
-    alt="shopify site analytics"></a></div></noscript> \
-    <!-- End of StatCounter Code for Default Guide -->');
+  var sc_project=11034084;
+  var sc_invisible=1;
+  var sc_security="3e7dba9f";
+  var scJsHost = (("https:" == document.location.protocol) ?
+  "https://secure." : "http://www.");
+  document.write("<sc"+"ript type='text/javascript' src='" +scJsHost+"statcounter.com/counter/counter.js'></"+"script>");
+
+  document.write('<noscript><div class="statcounter"><a title="hit counter" href="http://statcounter.com/free-hit-counter/" target="_blank"><img class="statcounter" src="//c.statcounter.com/11034084/0/3e7dba9f/1/" alt="hit counter"></a></div></noscript>');
 
   document.write('<!--End Footer Code-->');
 }
