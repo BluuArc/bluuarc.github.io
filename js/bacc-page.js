@@ -77,3 +77,12 @@ function printFooter(){
 
   document.write('<!--End Footer Code-->');
 }
+
+function printFormattedLinks(list){
+  var i = 0;
+
+  for(i = 0; i < list.length; i = i + 3){
+    document.write('<div class="boxed-content-sub"><h4><a href="' + list[i+1] + '">' + list[i] + "</a></h4>");
+    document.write("<p>" + list[i+2]+"</p></div><br>");
+  }
+}

@@ -40,8 +40,6 @@
 					<h1 style="text-align: left;">My Projects</h1>
 
 					<script>
-					var i = 0;
-					//var prevPage = "http://bluuarc.github.io";
 					//string array to easily add more
 					//left is link name, middle is link URL, right is description
 					var list = [
@@ -51,13 +49,7 @@
 						"Database Reader", "https://github.com/BluuArc/DBReader", "Program to read the data of a Brave Frontier database in the form of a JSON file."
 					];
 
-					for(i = 0; i < list.length; i = i + 3){
-						document.write('<div class="boxed-content-sub"><h4><a href="' + list[i+1] + '">' + list[i] + "</a></h4>");
-						document.write("<p>" + list[i+2]+"</p></div><br>");
-					}
-
-					//link to return to home page
-					//document.write('<a href="' + prevPage + '">' + "Home Page" + "</a><br>");
+					printFormattedLinks(list);
 					</script>
 
 					<br>
