@@ -1,0 +1,112 @@
+
+/* IDLE ANIMATION*/
+.idle {
+    width: 200px; /*strip width / num of frames in strip*/
+    height: 134px;
+    background-image: url("http://i.imgur.com/mEbCdWF.png");/*background-image: url("./20537/unit_idle_20537_opac.png");*/
+    -webkit-animation: idle 1.2s steps(6) infinite;
+       -moz-animation: idle 1.2s steps(6) infinite;
+        -ms-animation: idle 1.2s steps(6) infinite;
+         -o-animation: idle 1.2s steps(6) infinite;
+            animation: idle 1.2s steps(6) infinite;
+}
+
+@-webkit-keyframes idle {
+   from { background-position:    0px; }
+     to { background-position: -1200px; }  /*width of strip * -1*/
+}
+
+@-moz-keyframes idle {
+   from { background-position:    0px; }
+     to { background-position: -1200px; }
+}
+
+@-ms-keyframes idle {
+   from { background-position:    0px; }
+     to { background-position: -1200px; }
+}
+
+@-o-keyframes idle {
+   from { background-position:    0px; }
+     to { background-position: -1200px; }
+}
+
+@keyframes idle {
+   from { background-position:    0px; }
+     to { background-position: -1200px; }
+}
+
+
+/* move ANIMATION*/
+.move {
+    width: 200px; /*strip width / num of frames in strip*/
+    height: 132px;
+    background-image: url("http://i.imgur.com/VsJdOoP.png");/*background-image: url("./20537/unit_move_20537_opac.png");*/
+    -webkit-animation: move 1.6s steps(1) infinite;
+       -moz-animation: move 1.6s steps(1) infinite;
+        -ms-animation: move 1.6s steps(1) infinite;
+         -o-animation: move 1.6s steps(1) infinite;
+            animation: move 1.6s steps(1) infinite;
+}
+
+@-webkit-keyframes move {
+   from { background-position:    0px; }
+     to { background-position: -200px; }  /*width of strip * -1*/
+}
+
+@-moz-keyframes move {
+   from { background-position:    0px; }
+     to { background-position: -200px; }
+}
+
+@-ms-keyframes move {
+   from { background-position:    0px; }
+     to { background-position: -200px; }
+}
+
+@-o-keyframes move {
+   from { background-position:    0px; }
+     to { background-position: -200px; }
+}
+
+@keyframes move {
+   from { background-position:    0px; }
+     to { background-position: -200px; }
+}
+
+/* ATK ANIMATION */
+.atk {
+    width: 680px; /*strip width / num of frames in strip*/
+    height: 285px;
+    background-image: url("http://i.imgur.com/QUvq4Ny.png");/*background-image: url("./20537/unit_atk_20537_opac.png");*/
+    -webkit-animation: atk 2.2s steps(19) infinite;
+       -moz-animation: atk 2.2s steps(19) infinite;
+        -ms-animation: atk 2.2s steps(19) infinite;
+         -o-animation: atk 2.2s steps(19) infinite;
+            animation: atk 2.2s steps(19) infinite;
+}
+
+@-webkit-keyframes atk {
+   from { background-position:    0px; }
+     to { background-position: -12920px; }  /*width of strip * -1*/
+}
+
+@-moz-keyframes atk {
+   from { background-position:    0px; }
+     to { background-position: -12920px; }
+}
+
+@-ms-keyframes atk {
+   from { background-position:    0px; }
+     to { background-position: -12920px; }
+}
+
+@-o-keyframes atk {
+   from { background-position:    0px; }
+     to { background-position: -12920px; }
+}
+
+@keyframes atk {
+   from { background-position:    0px; }
+     to { background-position: -12920px; }
+}
