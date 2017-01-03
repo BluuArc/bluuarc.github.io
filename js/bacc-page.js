@@ -15,16 +15,16 @@ function printHeader(activeTab){
             <span class="icon-bar"></span> \
             <span class="icon-bar"></span> \
           </button> \
-          <a class="navbar-brand" href="#" title="BluuArc\'s Code Compendium">BACC</a> \
+          <a class="navbar-brand" href="http://bluuarc.github.io" title="BluuArc\'s Code Compendium">BACC</a> \
         </div> \
         <div id="navbar" class="collapse navbar-collapse"> \
           <ul class="nav navbar-nav"> ');
 
   //print links
   var list = [
-      "Home", "http://bluuarc.github.io",
-      "About", "about.html",
-      "Contact", "contact.html"
+      "Projects", "http://bluuarc.github.io",
+      "About", "http://bluuarc.github.io/about.html",
+      "Contact", "http://bluuarc.github.io/contact.html"
   ]
 
   var i = 0;
