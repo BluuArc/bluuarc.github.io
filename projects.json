@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Tracker Tests",
+        "shortDesc": "A page of various trackers used in a study related to Ghostery",
+        "content": [
+            "This is a simple HTML page containing links to other HTML pages that each use one service or site blocked by Ghostery.<br>",
+            "<b>Technologies:</b> JavaScript, HTML"
+        ],
+        "footer": "<a href=\"http://bluuarc.github.io/tracker-tests/\" target=\"_blank\">Link to Project</a>"
+    },
+    {
+        "name": "Brave Frontier Frame Animator",
+        "shortDesc": "Java Program to create GIFs of unit sprites from the mobile game Brave Frontier",
+        "content": [
+            "Using the bookClasses as a base and a GIF processing library, I developed a program to read some CSV and PNG files and output GIFs and strips of frames that can be put into GIF form.<br>",
+            "<b>Technologies:</b> Java, Eclipse IDE (current development)"
+        ],
+        "footer": "<a href=\"https://github.com/BluuArc/BFFrameAnimator\" target=\"_blank\">Link to GitHub Repository</a>"
+    },
+    {
+        "name": "File Indexer",
+        "shortDesc": "A small program to read a directory and output a list of them to a CSV file.",
+        "content": [
+            "Program to read a chosen directory and output the names of the files within it (along with their respective times of creation, last access, and last modified) to a CSV file in the directory.<br>",
+            "<b>Technologies:</b> Java, Eclipse IDE (current development)"
+        ],
+        "footer": "<a href=\"https://github.com/BluuArc/FileIndexer\" target=\"_blank\">Link to GitHub Repository</a>"
+    },
+    {
+        "name": "Brave Frontier Database Reader (Web Version)",
+        "shortDesc": "Web page to read data from a specific set of JSON files (i.e. a datamine of JSON files).",
+        "content": [
+            "Developed a website that uses a set of JSON files as a database and parses and displays the information in a more readable format. The site also gives the user the text needed to save the data into HTML or Markdown format. ",
+            "This web page, as of March 2017, could be considered the precursor to BFDBReader-node.<br>",
+            "<b>Technologies:</b> HTML, Bootstrap, JavaScript, CSS, JSON"
+        ],
+        "footer": "<a href=\"https://bluuarc.github.io/BFDBReader-js/\" target=\"_blank\">Link to web page</a> | <a href=\"https://github.com/BluuArc/BFDBReader-js\" target=\"_blank\">Link to GitHub Repository</a>"
+    },
+    {
+        "name": "MMSS Server",
+        "shortDesc": "Server-side component for the Multi Module Security System. Full project can be found <a href=\"https://github.com/Walden1995/MMSS\" target=\"_blank\">here</a>",
+        "content": [
+            "One of three components, this project is the server code behind the Multi Module Security System. Using a mix of web sockets and REST API through Node.js, user, message, and module management and verification would be handled here.<br>",
+            "<b>Technologies:</b> JavaScript, Node.js (with Express module), Java (for Java-based clients)"
+        ],
+        "footer": "<a href=\"https://github.com/BluuArc/MMSS-Server\" target=\"_blank\">Link to GitHub Repository</a>"
+    },
+    {
+        "name": "MMSS Web Client",
+        "shortDesc": "User-side component for the Multi Module Security System. Full project can be found <a href=\"https://github.com/Walden1995/MMSS\" target=\"_blank\">here</a>",
+        "content": [
+            "One of three components, this project is the front-end that the user would interact with. Using a mix of web sockets and REST API through HTML and Node.js, user and module management can be handled by the user here.<br>",
+            "<b>Technologies:</b> JavaScript, Node.js (with Express module), HTML, CSS"
+        ],
+        "footer": "<a href=\"https://github.com/BluuArc/MMSS-Web_Client\" target=\"_blank\">Link to GitHub Repository</a>"
+    },
+    {
+        "name": "Intro to Promises (Node.js Demo)",
+        "shortDesc": "The repo here contains some example code used in a code demo on the use of promises in JavaScript",
+        "content": [
+            "Originally done for a final presentation, the code here demonstrates a simple use case of Promises, which is to load multiple files and wait until the loading process is finished before continuing. <br>",
+            "<b>Technologies:</b> JavaScript, Node.js (for demo)"
+        ],
+        "footer": "<a href=\"https://github.com/BluuArc/Intro-To-Promises-Node.js-Demo\" target=\"_blank\">Link to GitHub Repository</a>"
+    }
+]
