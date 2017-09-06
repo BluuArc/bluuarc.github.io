@@ -119,8 +119,8 @@ function setupPage(currentPage,options){
                     navButton.append('span').classed('icon-bar',true);
                 }
                 header.append('a').classed('navbar-brand',true)
-                    .attr('href','https://bluuarc.github.io').text("BACC")
-                    .attr('title',"Bluuarc's Code Compendium");
+                    .attr('href','https://bluuarc.github.io').text("JCCC")
+                    .attr('title',"Joshua Castor's Code Compendium");
 
                 //add links
                 let navLinksContainer = container.append('div').attr('id','mainNavbar')
