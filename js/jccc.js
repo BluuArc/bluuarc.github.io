@@ -9,15 +9,17 @@ var scJsHost = scJsHost || (("https:" == document.location.protocol) ? "https://
 var jccc = jccc || new JCCC_App();
 
 function JCCC_App(){
-    let self ={
+    let self = {
         components: {},
         debugMode: document.location.href.indexOf("github.io") === -1,
-        attachTrackersPromise: undefined
-    }
+        data: {}
+    };
+
+    let public_vars = {};
 
     function debugLog(...args){
         if(self.debugMode){
-            console.trace(...args);
+            console.log(...args);
         }
     }
 
@@ -43,6 +45,7 @@ function JCCC_App(){
         });
     }
 
+    // given an array of script urls, append them in order
     function appendScriptsIteratively(urls){
         function recursive_append(fulfillFn,rejectFn){
             if(urls.length === 0){
@@ -63,15 +66,6 @@ function JCCC_App(){
     //load common scripts and trackers
     function setupPage(currentPageName){
         let setupOptions = self.options || {};
-        let common_page_scripts = [
-            "https://code.jquery.com/jquery-3.2.1.slim.min.js",
-            // "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.6/d3.min.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"
-        ];
-
         const scripts = {
             jQuery: ["https://code.jquery.com/jquery-3.2.1.slim.min.js"],
             bootstrap: ["https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js", "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js" ],
@@ -87,7 +81,7 @@ function JCCC_App(){
         //load jQuery first
         let curPromise = appendScript(scripts.jQuery[0])
             .then(() => {
-                //load everything else
+                //load other scripts
                 let loadPromises = [];
                 for(let s in scripts){
                     if(s !== 'jQuery'){
@@ -97,26 +91,42 @@ function JCCC_App(){
 
                 return Promise.all(loadPromises)
                     .then(() => { 
-                        console.trace("Finished loading scripts");
+                        debugLog("Finished loading lib scripts");
                     }); //wait for all scripts to load
             }).then(() => {
                 if(setupOptions.initHeader){
-                    return initHeader();
+                    initHeader();
                 }
-            }).then(() => {
                 if(setupOptions.attachTrackers)  {
                     attachTrackers();
-                    return self.attachTrackersPromise;
                 }
+                initBody();
             }).then(() => {
+                if (typeof setupOptions.initCustomVueComponents === "function") { // allow for loading of custom components
+                    setupOptions.initCustomVueComponents();
+                }
                 //create default page app
                 debugLog("initializing app")
-                self.components.default_components = new Vue({
+                self.components.default_app = new Vue({
                     el: self.options.header || "#pageApp",
+                    data: self.data //updating self.data should update this as well
                 });  
+            }).then(() => {
+                debugLog("Finished page initialization");
             });
 
         return curPromise;
+    }
+
+    function initBody(){
+        debugLog("initializing body");
+
+        // auto create a div with an offset from the nav header
+        let body_content = Vue.component("jccc-body-content", {
+            template:   `<div class="body-content">
+                            <slot>No content found.</slot>
+                        </div>`
+        });
     }
 
     function initHeader(){
@@ -148,8 +158,13 @@ function JCCC_App(){
 
                 return data;
             },
-            template:   `<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNavbarContainer">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            computed: {
+                lastUpdated: function () {
+                    return new Date(self.data.lastUpdated || "1970-01-01").toDateString();
+                }
+            },
+            template:   `<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary" id="mainNavbarContainer">
+                            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <a class="navbar-brand" href="http://bluuarc.github.io" :title="brand_title">{{ brand }}</a>
@@ -161,8 +176,10 @@ function JCCC_App(){
                                         :info="link"
                                     ></jccc-nav-link>
                                 </ul>
+                                <span class="navbar-text text-muted">Updated {{ lastUpdated }}</span>
                             </div>
-                        </nav>`
+                        </nav>`,
+            
         });
 
         let header_link = Vue.component("jccc-nav-link", {
@@ -171,15 +188,13 @@ function JCCC_App(){
                             <a class="nav-link" :href="info.href">{{ info.text }}</a>
                         </li>`
         });
-
-        
     }
 
     function attachTrackers(){
-        debugLog("initializing footer");
+        debugLog("initializing tracker");
         let attachedScript = false;
         function addStatCounterScript(){
-            if(!attachedScript){
+            if(!attachedScript){ //run only once
                 attachedScript = true;
                 return appendScript(`${scJsHost}statcounter.com/counter/counter.js`);
             }else{
@@ -187,7 +202,7 @@ function JCCC_App(){
             }
         }
 
-        let footer = Vue.component('jccc-footer',{
+        let footer = Vue.component('jccc-tracker',{
             template: `<noscript><div class="statcounter"><a title="shopify site analytics" target="_blank" href="http://statcounter.com/shopify/"><img class="statcounter" alt="shopify site analytics" src="//c.statcounter.com/11034084/0/3e7dba9f/1/"></a></div></noscript>`,
             mounted: function(){
                 addStatCounterScript();
@@ -196,9 +211,14 @@ function JCCC_App(){
         });
     }
 
-    
+    function addApplication(app,name){
+        self.components[name] = app;
+    }
 
-    return {
-        init,
-    };
+    public_vars.init = init;
+    public_vars.addApplication = addApplication;
+    // if(self.debugMode){
+    //     public_vars.components = self.components;
+    // }
+    return public_vars;
 }
