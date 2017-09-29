@@ -1,5 +1,5 @@
 div.body-content {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -32,4 +32,18 @@ div.body-content {
         display: none;
         pointer-events: none;
     }
+}
+
+.navicon { 
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#mainNavbarContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#mainNavbar { 
+    width: 100%;
 }

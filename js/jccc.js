@@ -163,7 +163,7 @@ function JCCC_App(){
                     return new Date(self.data.lastUpdated || "1970-01-01").toDateString();
                 }
             },
-            template:   `<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary" id="mainNavbarContainer">
+            template:   `<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary fixed-top" id="mainNavbarContainer">
                             <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -176,7 +176,15 @@ function JCCC_App(){
                                         :info="link"
                                     ></jccc-nav-link>
                                 </ul>
-                                <span class="navbar-text text-muted">Updated {{ lastUpdated }}</span>
+                                <hr class=".sm-only">
+                                <!--<span class="navbar-text text-muted">Updated {{ lastUpdated }}</span>-->
+                                <div id="contact-links" class="text-center">
+                                    <a href="https://github.com/BluuArc/" target="_blank" title="GitHub Profile" class="navicon"><img style="max-height: 32px" src="http://bluuarc.github.io/img/GitHub-Mark-Light-32px.png"></a>
+                                    <a href="https://www.linkedin.com/in/joshuacastor" target="_blank" title="LinkedIn Profile" class="navicon"><img style="max-height: 32px" src="http://bluuarc.github.io/img/In-White-34px-R.png"></a>
+                                    <a href="https://www.evl.uic.edu/entry.php?id=2302" target="_blank" title="Electronics Visualization Laboratory Profile" class="navbar-text navicon">EVL</a>
+
+
+                                </div>
                             </div>
                         </nav>`,
             
