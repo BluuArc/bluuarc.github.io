@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Based off of W3 Schools Tutorial -->
+<html lang="en">
+<head>
+  <title>JCCC - Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/bacc.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bacc.css">
+</head>
+<body>
+
+<div class="container body-content">
+    <div class="row jumbotron">
+        <h1>Projects</h1>
+        <p>Listed below are the projects I've contributed towards.</p>
+    </div>
+    <div class="row panel-group projects">
+        <!-- Project entries go here -->
+    </div>
+    <div class="row" id="loading-text">
+        <h3>Loading Projects...</h3>
+        <h4>(JavaScript is required to load the page. Please enable it if it's disabled)</h4>
+        <h4>(If this takes too long, try reloading the page or checking back later)</h4>
+    </div>
+</div>
+
+
+<script>
+
+    (function() { 
+        onLoad('Projects', function(){
+            d3.select('div.row#loading-text').remove()
+            d3.json('/projects.json', function (err, data) {
+                console.log("data", data, err);
+                let parent = d3.select('div.projects');
+                for (let p of data) {
+                    try {
+                        addProjectEntry(parent, p);
+                    } catch (err) {
+                        //just keep going if there's an error
+                        console.log(err);
+                    }
+                }
+            });
+        }); 
+    })();
+</script>
+
+
+</body>
+</html>

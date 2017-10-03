@@ -1,54 +1,86 @@
 <!DOCTYPE html>
 <!-- Based off of W3 Schools Tutorial -->
 <html lang="en">
+
 <head>
-  <title>JCCC - Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="js/bacc.js"></script>
+    <title>JCCC - Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bacc.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <!-- Source: https://bootswatch.com/4-alpha/darkly/bootstrap.min.css -->
+    <link rel="stylesheet" href="css/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="css/darkly/custom-darkly.css">
+    <link rel="stylesheet" href="css/jccc.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
+    <div id="pageApp">
+        <jccc-nav-header></jccc-nav-header>
 
-<div class="container body-content">
-    <div class="row jumbotron">
-        <h1>Projects</h1>
-        <p>Listed below are the projects I've contributed towards.</p>
+        <jccc-body-content>
+            <container>
+                <card id="aboutMeCard"> 
+                    <h4 class="card-header bg-primary">About Me</h4>
+                    <div class="card-block">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 col-lg-5 col-sm-12 text-center">
+                                <img class="img-round-corners" style="max-height: 200px; padding-bottom: 10px;" src="https://www.evl.uic.edu/resizedImages/1280x720-jcastor.jpg">
+                            </div>
+                            <div class="col text-center">
+                                <p class="card-text">My name is Joshua Castor. I am a senior level undergraduate at UIC as of Fall 2017. I enjoy programming stuff, mainly in JavaScript, but I am open to learning other languages and technologies. My main interests include web development, visual analytics, and cybersecurity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </card>
+
+                <card id="educationCard">
+                    <h4 class="card-header bg-primary">Education</h4>
+                    <!-- <filler-image style="width: 100%; height: 200px;" class="card-img-top sm-only"></filler-image> -->
+                    <div class="card-block">
+                        <div class="row align-items-center">
+                            <div class="sm-only col-sm-12 text-center">
+                                <a href="http://www.uic.edu/"><img style="width: 50%; height: 50%;" src="https://marketing.uic.edu/files/2016/04/uiclogo.png" alt="UIC Logo"></a>
+                            </div>
+                            <div class="col text-center">
+                                <b class="card-text">University of Illinois at Chicago</b>
+                                <p class="card-text">BS in Computer Science<br>Fall 2015 - Fall 2018</p>
+                            </div>
+                            <div class="col-md-4 col-lg-4 md-plus text-center">
+                                <!-- <filler-image style="width: 100%; height: 200px;" class="img-round-corners md-plus"></filler-image> -->
+                                <a href="http://www.uic.edu/"><img style="width: 50%; height: 50%;" src="https://marketing.uic.edu/files/2016/04/uiclogo.png" alt="UIC Logo"></a>
+                            </div>
+                        </div>
+                    </div>
+                </card>
+
+                <card id="courseworkCard">
+                    <h4 class="card-header bg-primary">Coursework</h4>
+                    <div class="card-block">
+                        <bs-table :rows="courses" :names="columnNames" class="table table-striped table-hover table-bordered text-center" thead-class="bg-secondary" id="courseworkTable"></bs-table>
+                    </div>
+                </card>
+
+                <card id="workExperienceCard">
+                    <h4 class="card-header bg-primary">Professional Experience</h4>
+                    <job-list :jobs="jobs"></job-list>
+                </card>
+
+                <card id="projectStatsCard" style="display: none;">
+                    <h4 class="card-header bg-primary">Project Statistics</h4>
+                    <div class="card-block">
+                        <p class="card-text">Project stats would go here</p>
+                    </div>
+                </card>
+            </container>
+        </jccc-body-content>
+
+        <jccc-tracker></jccc-tracker>
     </div>
-    <div class="row panel-group projects">
-        <!-- Project entries go here -->
-    </div>
-    <div class="row" id="loading-text">
-        <h3>Loading Projects...</h3>
-        <h4>(JavaScript is required to load the page. Please enable it if it's disabled)</h4>
-        <h4>(If this takes too long, try reloading the page or checking back later)</h4>
-    </div>
-</div>
-
-
-<script>
-
-    (function() { 
-        onLoad('Projects', function(){
-            d3.select('div.row#loading-text').remove()
-            d3.json('/projects.json', function (err, data) {
-                console.log("data", data, err);
-                let parent = d3.select('div.projects');
-                for (let p of data) {
-                    try {
-                        addProjectEntry(parent, p);
-                    } catch (err) {
-                        //just keep going if there's an error
-                        console.log(err);
-                    }
-                }
-            });
-        }); 
-    })();
-</script>
-
-
+    
+    <script src="js/jccc.js"></script>
+    <script src="js/home.js"></script>
 </body>
-</html>

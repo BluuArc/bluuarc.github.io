@@ -6,3 +6,15 @@
     margin-bottom: 25px;
 }
 
+#courseworkCard>div.card-block {
+    padding: 0;
+}
+
+.bg-secondary {
+    background-color: #444 !important;
+    border-color: #444;
+}
+
+#workExperienceCard>ul>li {
+    padding-bottom: 0;
+}

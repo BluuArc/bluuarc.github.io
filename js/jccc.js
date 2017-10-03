@@ -138,7 +138,7 @@ function JCCC_App(){
                     brand_title: "Joshua Castor's Code Compendium",
                     links: {
                         Home: "http://bluuarc.github.io",
-                        Projects: "http://bluuarc.github.io",
+                        Projects: "http://bluuarc.github.io/projects.html",
                         "About Me": "http://bluuarc.github.io/about.html",
                         Contact: "http://bluuarc.github.io/contact.html"
                     },
