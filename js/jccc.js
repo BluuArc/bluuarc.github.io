@@ -137,10 +137,10 @@ function JCCC_App(){
                     brand: "JCCC",
                     brand_title: "Joshua Castor's Code Compendium",
                     links: {
-                        Home: "http://bluuarc.github.io",
-                        Projects: "http://bluuarc.github.io/projects.html",
-                        "About Me": "http://bluuarc.github.io/about.html",
-                        Contact: "http://bluuarc.github.io/contact.html"
+                        Home: "https://bluuarc.github.io",
+                        Projects: "https://bluuarc.github.io/projects.html",
+                        "About Me": "https://bluuarc.github.io/about.html",
+                        Contact: "https://bluuarc.github.io/contact.html"
                     },
                     navlinks: []
                 };
@@ -167,7 +167,7 @@ function JCCC_App(){
                             <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <a class="navbar-brand" href="http://bluuarc.github.io" :title="brand_title">{{ brand }}</a>
+                            <a class="navbar-brand" href="https://bluuarc.github.io" :title="brand_title">{{ brand }}</a>
 
                             <div class="collapse navbar-collapse" id="mainNavbar">
                                 <ul class="navbar-nav mr-auto">
@@ -179,8 +179,8 @@ function JCCC_App(){
                                 <hr class=".sm-only">
                                 <!--<span class="navbar-text text-muted">Updated {{ lastUpdated }}</span>-->
                                 <div id="contact-links" class="text-center">
-                                    <a href="https://github.com/BluuArc/" target="_blank" title="GitHub Profile" class="navicon"><img style="max-height: 32px" src="http://bluuarc.github.io/img/GitHub-Mark-Light-32px.png"></a>
-                                    <a href="https://www.linkedin.com/in/joshuacastor" target="_blank" title="LinkedIn Profile" class="navicon"><img style="max-height: 32px" src="http://bluuarc.github.io/img/In-White-34px-R.png"></a>
+                                    <a href="https://github.com/BluuArc/" target="_blank" title="GitHub Profile" class="navicon"><img style="max-height: 32px" src="https://bluuarc.github.io/img/GitHub-Mark-Light-32px.png"></a>
+                                    <a href="https://www.linkedin.com/in/joshuacastor" target="_blank" title="LinkedIn Profile" class="navicon"><img style="max-height: 32px" src="https://bluuarc.github.io/img/In-White-34px-R.png"></a>
                                     <a href="https://www.evl.uic.edu/entry.php?id=2302" target="_blank" title="Electronics Visualization Laboratory Profile" class="navbar-text navicon">EVL</a>
 
 
