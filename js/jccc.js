@@ -164,7 +164,7 @@ function JCCC_App(){
                 }
             },
             template:   `<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary fixed-top" id="mainNavbarContainer">
-                            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler navbar-toggler-right collapsed border-secondary" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <a class="navbar-brand" href="https://bluuarc.github.io" :title="brand_title">{{ brand }}</a>
