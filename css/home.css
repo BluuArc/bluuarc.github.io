@@ -10,6 +10,12 @@
     padding: 0;
 }
 
+@media (max-width: 767px) {
+    #courseworkCard>div.card-block {
+        overflow-x: scroll;
+    }
+}
+
 .bg-secondary {
     background-color: #444 !important;
     border-color: #444;
