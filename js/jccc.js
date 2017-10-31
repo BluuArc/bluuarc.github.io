@@ -67,7 +67,7 @@ function JCCC_App(){
     function setupPage(currentPageName){
         let setupOptions = self.options || {};
         const scripts = {
-            jQuery: ["https://code.jquery.com/jquery-3.2.1.slim.min.js"],
+            jQuery: ["https://code.jquery.com/jquery-3.2.1.min.js"],
             bootstrap: ["https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js", "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js" ],
             other: [
                 "https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.6/d3.min.js",

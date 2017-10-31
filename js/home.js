@@ -166,7 +166,40 @@ var jccc = jccc || new JCCC_App();
         postLoadFn
     );
 })(function(){
-    
+    function getData(url){
+        return new Promise(function(fulfill,reject){
+            $.get(url,function(response){
+                fulfill(response);
+            });
+        });
+    }
+
+    // let repoData = [];
+    // getData("https://api.github.com/users/BluuArc/repos")
+    //     .then((data) => {
+    //         console.log(data);
+    //         repoData = data;
+
+    //         let langPromises = [];
+    //         for(let d of data){
+    //             langPromises.push(getData(`${d.url}/languages`));
+    //         }
+
+    //         return Promise.all(langPromises);
+    //     }).then((languageStats) => {
+    //         console.log(languageStats);
+    //     });
+
+
+    // $.get("https://api.github.com/users/BluuArc/repos",function(response){
+    //     let project_list = $("#projectStatsCard #project-list");
+
+    //     let sorted_list = response.sort((a, b) => { return new Date(b.pushed_at) - new Date(a.pushed_at); });
+    //     console.log(sorted_list);
+    //     $.each(sorted_list,function(i,d){
+    //         project_list.append(`<li><a href="${d.html_url}">${d.name}</a></li>`)
+    //     })
+    // })
 
     console.log("Ready");
 });
