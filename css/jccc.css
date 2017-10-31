@@ -48,3 +48,7 @@ div.body-content {
 #mainNavbar { 
     width: 100%;
 }
+
+.hidden {
+    display: none;
+}

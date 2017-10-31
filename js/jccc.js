@@ -19,14 +19,15 @@ function JCCC_App(){
 
     function debugLog(...args){
         if(self.debugMode){
-            console.log(...args);
+            console.log('[DEBUG]',...args);
         }
     }
 
-    function init(currentPageName, options, afterLoadFn){
+    function init(currentPageName, options = {}, afterLoadFn){
         self.currentPageName = currentPageName;
         self.afterLoadFn = afterLoadFn;
-        self.options = options || {};
+        self.options = options;
+        self.pageDivs = options.pageDivs || [];
         return setupPage(currentPageName).then(() => {
             if(typeof(afterLoadFn) === 'function')
                 return afterLoadFn();
@@ -129,6 +130,24 @@ function JCCC_App(){
         });
     }
 
+    function changeHighlightedHeaderTab(newActiveName){
+        $('#mainNavbarContainer #mainNavbar ul li')
+            .each((i,d) => {
+                let name = $(d).text();
+                name === newActiveName ? $(d).addClass('active') : $(d).removeClass('active');
+            });
+    }
+
+    function changeDisplayedPage(newActivePageName){
+        changeHighlightedHeaderTab(newActivePageName);
+        window.history.pushState('pagechange', `JCCC - ${newActivePageName}`, `/?link=${newActivePageName}`);
+        for(let d of self.pageDivs){
+            let elem = $(d.selector);
+            // console.log(elem,d);
+            (d.name === newActivePageName) ? elem.removeClass("hidden") : elem.addClass("hidden");
+        }
+    }
+
     function initHeader(){
         debugLog("initializing header");
         let header_bar = Vue.component("jccc-nav-header",{
@@ -137,9 +156,9 @@ function JCCC_App(){
                     brand: "JCCC",
                     brand_title: "Joshua Castor's Code Compendium",
                     links: {
-                        Home: "https://bluuarc.github.io",
+                        Home: "/",
                         Projects: "https://bluuarc.github.io/projects.html",
-                        "About Me": "https://bluuarc.github.io/about.html",
+                        // "About Me": "https://bluuarc.github.io/about.html",
                         Contact: "https://bluuarc.github.io/contact.html"
                     },
                     navlinks: []
@@ -152,7 +171,15 @@ function JCCC_App(){
                             'active': a === self.currentPageName
                         },
                         href: data.links[a],
-                        text: a
+                        text: a,
+                        click: (function(e) {
+                            let noRedirect = (a === "Projects" || a === "Contact"); //temporarily enable redirect until those sections are done
+                            let curPath = window.location.pathname;
+                            if (!noRedirect && curPath === "/"){ //should only work on home page
+                                e.preventDefault();
+                                changeDisplayedPage($(this).text());
+                            }
+                        })
                     });
                 }
 
@@ -194,7 +221,12 @@ function JCCC_App(){
             props: ['info'],
             template:   `<li :class="info.class">
                             <a class="nav-link" :href="info.href">{{ info.text }}</a>
-                        </li>`
+                        </li>`,
+            mounted: function(){
+                $(this.$el).on('click', this.info.click);
+            }
+
+
         });
     }
 
@@ -225,6 +257,7 @@ function JCCC_App(){
 
     public_vars.init = init;
     public_vars.addApplication = addApplication;
+    public_vars.changeDisplayedPage = changeDisplayedPage;
     // if(self.debugMode){
     //     public_vars.components = self.components;
     // }

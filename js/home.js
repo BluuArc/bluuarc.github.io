@@ -118,7 +118,7 @@ var jccc = jccc || new JCCC_App();
                         name: "Research Experience Undergraduate",
                         location: "Chicago, IL",
                         company: "University of Illinois at Chicago",
-                        time: "Summer 2017",
+                        time: "May 2017 - Dec 2017",
                         desc: `Designed a web-based tool to submit as an entry to VAST Challenge 2017. 
                             Collaborated with a group of 4 to develop and deploy a web-based service for Englewood. 
                             Learned how to develop and deploy Unity applications for CAVE2.<br>
@@ -161,11 +161,38 @@ var jccc = jccc || new JCCC_App();
         {
             initHeader: true,
             attachTrackers: true,
-            initCustomVueComponents
+            initCustomVueComponents,
+            pageDivs: [
+                {
+                    name: "Home",
+                    selector: ".page#HomePage"
+                },
+                {
+                    name: "Projects",
+                    selector: ".page#ProjectsPage"
+                },
+                {
+                    name: "Contact",
+                    selector: ".page#ContactPage"
+                }
+            ]
         },
         postLoadFn
     );
-})(function(){
+})(function(){ //run this after loading page
+    if(window.location.search.indexOf("?") > -1){ //auto set page based on url
+        let parameters = window.location.search.slice(1).split("&");
+        let data = {};
+        for(let p of parameters){
+            let [key,value,extra] = p.split('=').map(decodeURIComponent);
+            data[key] = value;
+        }
+        // console.log(data);
+        if(data.link){
+            jccc.changeDisplayedPage(data.link);
+        }
+    }
+
     function getData(url){
         return new Promise(function(fulfill,reject){
             $.get(url,function(response){
