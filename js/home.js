@@ -149,8 +149,9 @@ var jccc = jccc || new JCCC_App();
                 {
                     name: "Contact",
                     selector: ".page#ContactPage"
-                }
-            ]
+                },   
+            ],
+            errorDiv: ".page#ErrorPage"
         },
         postLoadFn
     );

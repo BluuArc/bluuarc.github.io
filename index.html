@@ -22,7 +22,7 @@
         <jccc-nav-header></jccc-nav-header>
 
         <jccc-body-content>
-            <container class="page" id="HomePage">
+            <container class="page hidden" id="HomePage">
                 <card id="aboutMeCard"> 
                     <h4 class="card-header bg-primary">About Me</h4>
                     <div class="card-block">
@@ -78,7 +78,7 @@
                 </card>
             </container>
 
-            <container class="page" id="ProjectsPage">
+            <container class="page hidden" id="ProjectsPage">
                 <card id="fillerCard"> 
                     <h4 class="card-header bg-primary">Filler</h4>
                     <div class="card-block">
@@ -91,13 +91,26 @@
                 </card>
             </container>
 
-            <container class="page" id="ContactPage">
+            <container class="page hidden" id="ContactPage">
                 <card id="fillerCard"> 
                     <h4 class="card-header bg-primary">Filler</h4>
                     <div class="card-block">
                         <div class="row align-items-center">
                             <div class="col text-center">
                                 <p class="card-text">This is a filler element for the Contact page.</p>
+                            </div>
+                        </div>
+                    </div>
+                </card>
+            </container>
+
+            <container class="page hidden" id="ErrorPage">
+                <card id="fillerCard">
+                    <h4 class="card-header bg-danger">Error: Section Not Found</h4>
+                    <div class="card-block">
+                        <div class="row align-items-center">
+                            <div class="col text-center">
+                                <p class="card-text">The page you requested cannot be found.</p>
                             </div>
                         </div>
                     </div>

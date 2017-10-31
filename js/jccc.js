@@ -28,6 +28,7 @@ function JCCC_App(){
         self.afterLoadFn = afterLoadFn;
         self.options = options;
         self.pageDivs = options.pageDivs || [];
+        self.errorDiv = options.errorDiv;
         return setupPage(currentPageName).then(() => {
             if(typeof(afterLoadFn) === 'function')
                 return afterLoadFn();
@@ -132,21 +133,29 @@ function JCCC_App(){
     }
 
     function changeHighlightedHeaderTab(newActiveName){
+        
         $('#mainNavbarContainer #mainNavbar ul li')
             .each((i,d) => {
                 let name = $(d).text();
                 name === newActiveName ? $(d).addClass('active') : $(d).removeClass('active');
             });
+
+        
     }
 
     function changeDisplayedPage(newActivePageName){
         debugLog("Changing displayed page to",newActivePageName);
         changeHighlightedHeaderTab(newActivePageName);
         window.history.pushState('pagechange', `JCCC - ${newActivePageName}`, `/?link=${newActivePageName}`); // from https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page
+        let isValid = false;
         for(let d of self.pageDivs){
             let elem = $(d.selector);
-            // console.log(elem,d);
+            isValid = isValid || (d.name === newActivePageName);
             (d.name === newActivePageName) ? elem.removeClass("hidden") : elem.addClass("hidden");
+        }
+
+        if (self.errorDiv) {
+            isValid ? $(self.errorDiv).addClass('hidden') : $(self.errorDiv).removeClass('hidden');
         }
     }
 
