@@ -80,6 +80,7 @@ var jccc = jccc || new JCCC_App();
                 columnNames: ["Course Name", "Languages/Technologies/Techniques", "Semester"]
             }
         }); 
+        jccc.addApplication(courseworkApp,"coursework");
 
         let jobEntryApp = new Vue({
             el: "#workExperienceCard",
@@ -124,7 +125,10 @@ var jccc = jccc || new JCCC_App();
                     },
                 ]
             }
-        })
+        });
+        jccc.addApplication(jobEntryApp, "jobEntries");
+
+
     }
 
 
@@ -161,7 +165,11 @@ var jccc = jccc || new JCCC_App();
         // console.log(data);
         if(data.link){
             jccc.changeDisplayedPage(data.link);
+        }else{
+            jccc.changeDisplayedPage('Home'); //default to home
         }
+    } else {
+        jccc.changeDisplayedPage('Home'); //default to home
     }
 
     function getData(url){

@@ -140,6 +140,7 @@ function JCCC_App(){
     }
 
     function changeDisplayedPage(newActivePageName){
+        debugLog("Changing displayed page to",newActivePageName);
         changeHighlightedHeaderTab(newActivePageName);
         window.history.pushState('pagechange', `JCCC - ${newActivePageName}`, `/?link=${newActivePageName}`); // from https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page
         for(let d of self.pageDivs){
