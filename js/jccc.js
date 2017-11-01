@@ -161,6 +161,8 @@ function JCCC_App(){
             isValid ? $(self.errorDiv).fadeOut(animLen) : elemsToShow.push($(self.errorDiv));
         }
 
+        $("div#mainNavbar.navbar-collapse").collapse("hide");
+
         //wait for other animations to finish
         setTimeout(() => {
             elemsToShow.map((d) => d.fadeIn(animLen));
