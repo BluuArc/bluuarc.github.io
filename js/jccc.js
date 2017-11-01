@@ -147,16 +147,25 @@ function JCCC_App(){
         debugLog("Changing displayed page to",newActivePageName);
         changeHighlightedHeaderTab(newActivePageName);
         window.history.pushState('pagechange', `JCCC - ${newActivePageName}`, `/?link=${newActivePageName}`); // from https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page
+        $('title').text(`JCCC - ${newActivePageName}`);
         let isValid = false;
+        let elemsToShow = [];
+        let animLen = 250;
         for(let d of self.pageDivs){
             let elem = $(d.selector);
             isValid = isValid || (d.name === newActivePageName);
-            (d.name === newActivePageName) ? elem.removeClass("hidden") : elem.addClass("hidden");
+            (d.name === newActivePageName) ? elemsToShow.push(elem) : elem.fadeOut(animLen);
         }
 
         if (self.errorDiv) {
-            isValid ? $(self.errorDiv).addClass('hidden') : $(self.errorDiv).removeClass('hidden');
+            isValid ? $(self.errorDiv).fadeOut(animLen) : elemsToShow.push($(self.errorDiv));
         }
+
+        //wait for other animations to finish
+        setTimeout(() => {
+            elemsToShow.map((d) => d.fadeIn(animLen));
+        },animLen);
+
     }
 
     function initHeader(){
