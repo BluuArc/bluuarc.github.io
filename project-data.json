@@ -1,0 +1,521 @@
+{
+  "BluuArc/bluuarc.github.io": {
+    "repoName": "bluuarc.github.io",
+    "description": "Personal Website",
+    "homepageURL": "https://bluuarc.github.io/",
+    "createdAt": "2016-06-01T14:26:42Z",
+    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 109717
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 30274
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 6891
+      },
+      {
+        "name": "PHP",
+        "color": "#4F5D95",
+        "size": 303
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/BFFrameAnimator-js": {
+    "repoName": "BFFrameAnimator-js",
+    "description": null,
+    "homepageURL": "https://macabre-broomstick-39921.herokuapp.com/",
+    "createdAt": "2017-10-29T05:29:41Z",
+    "repoURL": "https://github.com/BluuArc/BFFrameAnimator-js",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 25253
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 23087
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/BFDBReader-js": {
+    "repoName": "BFDBReader-js",
+    "description": "Web page to read data from a specific set of JSON files",
+    "homepageURL": "https://bluuarc.github.io/BFDBReader-js/",
+    "createdAt": "2017-01-03T19:19:14Z",
+    "repoURL": "https://github.com/BluuArc/BFDBReader-js",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 69183
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 46540
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 1103
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/three.js-point-cloud-project": {
+    "repoName": "three.js-point-cloud-project",
+    "description": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
+    "homepageURL": "https://bluuarc.github.io/three.js-point-cloud-project/",
+    "createdAt": "2017-06-08T19:23:15Z",
+    "repoURL": "https://github.com/BluuArc/three.js-point-cloud-project",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 22037
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 8220
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 2996
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/bubbles-tactile-demo": {
+    "repoName": "bubbles-tactile-demo",
+    "description": "Small demo for large touch screen displays. Initially built for TacTile",
+    "homepageURL": "https://bluuarc.github.io/bubbles-tactile-demo/",
+    "createdAt": "2017-07-19T21:06:57Z",
+    "repoURL": "https://github.com/BluuArc/bubbles-tactile-demo",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 21012
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 1675
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 1380
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/vast-challenge-2017": {
+    "repoName": "vast-challenge-2017",
+    "description": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
+    "homepageURL": "https://bluuarc.github.io/vast-challenge-2017/challenge-2/",
+    "createdAt": "2017-05-25T13:43:24Z",
+    "repoURL": "https://github.com/BluuArc/vast-challenge-2017",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 145594
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 23051
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 6802
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/IT202": {
+    "repoName": "IT202",
+    "description": "Repository for all of my IT202 Fall 2017 Projects",
+    "homepageURL": "https://bluuarc.github.io/IT202/",
+    "createdAt": "2017-09-08T17:36:54Z",
+    "repoURL": "https://github.com/BluuArc/IT202",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 183158
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 89156
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 52203
+      },
+      {
+        "name": "PHP",
+        "color": "#4F5D95",
+        "size": 1241
+      }
+    ],
+    "techUsed": []
+  },
+  "acm-uic/ACM-BACKEND": {
+    "repoName": "ACM-BACKEND",
+    "description": null,
+    "homepageURL": null,
+    "createdAt": "2017-10-31T16:12:01Z",
+    "repoURL": "https://github.com/acm-uic/ACM-BACKEND",
+    "owner": "acm-uic",
+    "topics": [],
+    "languages": [],
+    "techUsed": []
+  },
+  "MeLlamoPablo/clapp": {
+    "repoName": "clapp",
+    "description": "A tool for building command line apps that aren't necessarily built for the command line.",
+    "homepageURL": null,
+    "createdAt": "2016-10-04T11:45:36Z",
+    "repoURL": "https://github.com/MeLlamoPablo/clapp",
+    "owner": "MeLlamoPablo",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 87218
+      }
+    ],
+    "techUsed": []
+  },
+  "Walden1995/CS362-Hovercraft": {
+    "repoName": "CS362-Hovercraft",
+    "description": "Arduino controlled Hovercrafts",
+    "homepageURL": null,
+    "createdAt": "2017-10-10T16:40:24Z",
+    "repoURL": "https://github.com/Walden1995/CS362-Hovercraft",
+    "owner": "Walden1995",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 4679
+      },
+      {
+        "name": "Arduino",
+        "color": "#bd79d1",
+        "size": 4157
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 1784
+      }
+    ],
+    "techUsed": []
+  },
+  "uic-evl/EnglewoodSocialServices": {
+    "repoName": "EnglewoodSocialServices",
+    "description": "Visualizing Social Services in Englewood",
+    "homepageURL": "https://uic-evl.github.io/EnglewoodSocialServices/",
+    "createdAt": "2017-05-08T02:02:36Z",
+    "repoURL": "https://github.com/uic-evl/EnglewoodSocialServices",
+    "owner": "uic-evl",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 693382
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 40983
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 36528
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/Intro-To-Promises-Node.js-Demo": {
+    "repoName": "Intro-To-Promises-Node.js-Demo",
+    "description": null,
+    "homepageURL": null,
+    "createdAt": "2017-04-25T02:53:37Z",
+    "repoURL": "https://github.com/BluuArc/Intro-To-Promises-Node.js-Demo",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 2747
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/MMSS-Web_Client": {
+    "repoName": "MMSS-Web_Client",
+    "description": null,
+    "homepageURL": null,
+    "createdAt": "2017-04-18T19:03:00Z",
+    "repoURL": "https://github.com/BluuArc/MMSS-Web_Client",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 36091
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 30475
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 2419
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/MMSS-Server": {
+    "repoName": "MMSS-Server",
+    "description": "Server component for MMSS",
+    "homepageURL": null,
+    "createdAt": "2017-03-07T14:52:39Z",
+    "repoURL": "https://github.com/BluuArc/MMSS-Server",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "Java",
+        "color": "#b07219",
+        "size": 274405
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 42068
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 4868
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/project-sparkle": {
+    "repoName": "project-sparkle",
+    "description": "NodeJS Port of the Automatic Sparking Simulator",
+    "homepageURL": null,
+    "createdAt": "2017-04-10T02:47:03Z",
+    "repoURL": "https://github.com/BluuArc/project-sparkle",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 16085
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 2781
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/BluuBot-discord": {
+    "repoName": "BluuBot-discord",
+    "description": null,
+    "homepageURL": null,
+    "createdAt": "2017-03-26T15:51:50Z",
+    "repoURL": "https://github.com/BluuArc/BluuBot-discord",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 490102
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/BFDBReader-node": {
+    "repoName": "BFDBReader-node",
+    "description": null,
+    "homepageURL": null,
+    "createdAt": "2017-03-17T14:06:52Z",
+    "repoURL": "https://github.com/BluuArc/BFDBReader-node",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 432217
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 5987
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/BFFrameAnimator": {
+    "repoName": "BFFrameAnimator",
+    "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier",
+    "homepageURL": null,
+    "createdAt": "2016-05-07T16:01:27Z",
+    "repoURL": "https://github.com/BluuArc/BFFrameAnimator",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "Java",
+        "color": "#b07219",
+        "size": 182079
+      }
+    ],
+    "techUsed": []
+  },
+  "Walden1995/MMSS": {
+    "repoName": "MMSS",
+    "description": "Multi-Module Security System",
+    "homepageURL": "",
+    "createdAt": "2017-02-14T20:39:13Z",
+    "repoURL": "https://github.com/Walden1995/MMSS",
+    "owner": "Walden1995",
+    "topics": [],
+    "languages": [
+      {
+        "name": "Java",
+        "color": "#b07219",
+        "size": 272792
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 8669
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 716
+      },
+      {
+        "name": "Makefile",
+        "color": "#427819",
+        "size": 124
+      }
+    ],
+    "techUsed": []
+  },
+  "AndrewTBurks/EnglewoodSocialServices": {
+    "repoName": "EnglewoodSocialServices",
+    "description": "Visualizing Social Services in Englewood",
+    "createdAt": "2017-08-04T20:09:52Z",
+    "repoURL": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
+    "owner": "AndrewTBurks",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 693382
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 40983
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 36528
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/FileIndexer": {
+    "repoName": "FileIndexer",
+    "description": "Read a directory and output a list of them to a CSV file",
+    "createdAt": "2016-07-04T00:30:38Z",
+    "repoURL": "https://github.com/BluuArc/FileIndexer",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "Java",
+        "color": "#b07219",
+        "size": 16975
+      }
+    ],
+    "techUsed": []
+  }
+}

@@ -4,13 +4,59 @@
       "name": "Joshua Castor",
       "login": "BluuArc",
       "contributedRepositories": {
-        "totalCount": 19,
+        "totalCount": 20,
         "nodes": [
           {
+            "name": "bluuarc.github.io",
+            "homepageUrl": "https://bluuarc.github.io/",
+            "description": "Personal Website",
+            "shortDescriptionHTML": "Personal Website",
+            "pushedAt": "2017-11-01T21:46:14Z",
+            "createdAt": "2016-06-01T14:26:42Z",
+            "url": "https://github.com/BluuArc/bluuarc.github.io",
+            "nameWithOwner": "BluuArc/bluuarc.github.io",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 109717
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 30274
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 6891
+                },
+                {
+                  "node": {
+                    "name": "PHP",
+                    "color": "#4F5D95"
+                  },
+                  "size": 303
+                }
+              ]
+            }
+          },
+          {
             "name": "BFFrameAnimator-js",
+            "homepageUrl": "https://macabre-broomstick-39921.herokuapp.com/",
             "description": null,
             "shortDescriptionHTML": "",
-            "pushedAt": "2017-10-29T05:30:09Z",
+            "pushedAt": "2017-11-04T06:02:55Z",
             "createdAt": "2017-10-29T05:29:41Z",
             "url": "https://github.com/BluuArc/BFFrameAnimator-js",
             "nameWithOwner": "BluuArc/BFFrameAnimator-js",
@@ -21,448 +67,24 @@
               "edges": [
                 {
                   "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 21427
-                },
-                {
-                  "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 15255
-                }
-              ]
-            }
-          },
-          {
-            "name": "clapp",
-            "description": "A tool for building command line apps that aren't necessarily built for the command line.",
-            "shortDescriptionHTML": "A tool for building command line apps that aren't necessarily built for the command line.",
-            "pushedAt": "2017-10-22T16:18:30Z",
-            "createdAt": "2016-10-04T11:45:36Z",
-            "url": "https://github.com/MeLlamoPablo/clapp",
-            "nameWithOwner": "MeLlamoPablo/clapp",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 87218
-                }
-              ]
-            }
-          },
-          {
-            "name": "CS362-Hovercraft",
-            "description": "Arduino controlled Hovercrafts",
-            "shortDescriptionHTML": "Arduino controlled Hovercrafts",
-            "pushedAt": "2017-10-12T17:10:23Z",
-            "createdAt": "2017-10-10T16:40:24Z",
-            "url": "https://github.com/Walden1995/CS362-Hovercraft",
-            "nameWithOwner": "Walden1995/CS362-Hovercraft",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 4679
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 1784
-                }
-              ]
-            }
-          },
-          {
-            "name": "vast-challenge-2017",
-            "description": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
-            "shortDescriptionHTML": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
-            "pushedAt": "2017-09-12T19:44:49Z",
-            "createdAt": "2017-05-25T13:43:24Z",
-            "url": "https://github.com/BluuArc/vast-challenge-2017",
-            "nameWithOwner": "BluuArc/vast-challenge-2017",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 145594
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 23051
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 6802
-                }
-              ]
-            }
-          },
-          {
-            "name": "IT202",
-            "description": "IT202 - Project 1",
-            "shortDescriptionHTML": "IT202 - Project 1",
-            "pushedAt": "2017-10-31T12:08:28Z",
-            "createdAt": "2017-09-08T17:36:54Z",
-            "url": "https://github.com/BluuArc/IT202",
-            "nameWithOwner": "BluuArc/IT202",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 180210
+                  "size": 25253
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 69708
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 47243
-                },
-                {
-                  "node": {
-                    "name": "PHP",
-                    "color": "#4F5D95"
-                  },
-                  "size": 1241
-                }
-              ]
-            }
-          },
-          {
-            "name": "lab-test",
-            "description": "Assignment for IT202",
-            "shortDescriptionHTML": "Assignment for IT202",
-            "pushedAt": "2017-09-06T21:41:38Z",
-            "createdAt": "2017-09-06T21:29:40Z",
-            "url": "https://github.com/BluuArc/lab-test",
-            "nameWithOwner": "BluuArc/lab-test",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 136
-                }
-              ]
-            }
-          },
-          {
-            "name": "EnglewoodSocialServices",
-            "description": "Visualizing Social Services in Englewood",
-            "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-10-05T19:36:40Z",
-            "createdAt": "2017-05-08T02:02:36Z",
-            "url": "https://github.com/uic-evl/EnglewoodSocialServices",
-            "nameWithOwner": "uic-evl/EnglewoodSocialServices",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 684034
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 39284
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 28653
-                }
-              ]
-            }
-          },
-          {
-            "name": "bubbles-tactile-demo",
-            "description": "Small demo for large touch screen displays. Initially built for TacTile",
-            "shortDescriptionHTML": "Small demo for large touch screen displays. Initially built for TacTile",
-            "pushedAt": "2017-07-26T16:36:34Z",
-            "createdAt": "2017-07-19T21:06:57Z",
-            "url": "https://github.com/BluuArc/bubbles-tactile-demo",
-            "nameWithOwner": "BluuArc/bubbles-tactile-demo",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 21012
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 1675
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 1380
-                }
-              ]
-            }
-          },
-          {
-            "name": "three.js-point-cloud-project",
-            "description": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
-            "shortDescriptionHTML": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
-            "pushedAt": "2017-06-09T03:43:19Z",
-            "createdAt": "2017-06-08T19:23:15Z",
-            "url": "https://github.com/BluuArc/three.js-point-cloud-project",
-            "nameWithOwner": "BluuArc/three.js-point-cloud-project",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 22037
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 8220
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 2996
-                }
-              ]
-            }
-          },
-          {
-            "name": "Intro-To-Promises-Node.js-Demo",
-            "description": null,
-            "shortDescriptionHTML": "",
-            "pushedAt": "2017-04-26T03:29:16Z",
-            "createdAt": "2017-04-25T02:53:37Z",
-            "url": "https://github.com/BluuArc/Intro-To-Promises-Node.js-Demo",
-            "nameWithOwner": "BluuArc/Intro-To-Promises-Node.js-Demo",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 2747
-                }
-              ]
-            }
-          },
-          {
-            "name": "MMSS-Web_Client",
-            "description": null,
-            "shortDescriptionHTML": "",
-            "pushedAt": "2017-04-25T16:59:47Z",
-            "createdAt": "2017-04-18T19:03:00Z",
-            "url": "https://github.com/BluuArc/MMSS-Web_Client",
-            "nameWithOwner": "BluuArc/MMSS-Web_Client",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 36091
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 30475
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 2419
-                }
-              ]
-            }
-          },
-          {
-            "name": "MMSS-Server",
-            "description": "Server component for MMSS",
-            "shortDescriptionHTML": "Server component for MMSS",
-            "pushedAt": "2017-04-24T12:51:02Z",
-            "createdAt": "2017-03-07T14:52:39Z",
-            "url": "https://github.com/BluuArc/MMSS-Server",
-            "nameWithOwner": "BluuArc/MMSS-Server",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "Java",
-                    "color": "#b07219"
-                  },
-                  "size": 274405
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 42068
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 4868
-                }
-              ]
-            }
-          },
-          {
-            "name": "project-sparkle",
-            "description": "NodeJS Port of the Automatic Sparking Simulator",
-            "shortDescriptionHTML": "NodeJS Port of the Automatic Sparking Simulator",
-            "pushedAt": "2017-04-14T15:51:08Z",
-            "createdAt": "2017-04-10T02:47:03Z",
-            "url": "https://github.com/BluuArc/project-sparkle",
-            "nameWithOwner": "BluuArc/project-sparkle",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 16085
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 2781
-                }
-              ]
-            }
-          },
-          {
-            "name": "BluuBot-discord",
-            "description": null,
-            "shortDescriptionHTML": "",
-            "pushedAt": "2017-08-06T16:14:18Z",
-            "createdAt": "2017-03-26T15:51:50Z",
-            "url": "https://github.com/BluuArc/BluuBot-discord",
-            "nameWithOwner": "BluuArc/BluuBot-discord",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 490102
+                  "size": 23087
                 }
               ]
             }
           },
           {
             "name": "BFDBReader-js",
+            "homepageUrl": "https://bluuarc.github.io/BFDBReader-js/",
             "description": "Web page to read data from a specific set of JSON files",
             "shortDescriptionHTML": "Web page to read data from a specific set of JSON files",
             "pushedAt": "2017-03-23T22:27:06Z",
@@ -506,7 +128,469 @@
             }
           },
           {
+            "name": "three.js-point-cloud-project",
+            "homepageUrl": "https://bluuarc.github.io/three.js-point-cloud-project/",
+            "description": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
+            "shortDescriptionHTML": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
+            "pushedAt": "2017-06-09T03:43:19Z",
+            "createdAt": "2017-06-08T19:23:15Z",
+            "url": "https://github.com/BluuArc/three.js-point-cloud-project",
+            "nameWithOwner": "BluuArc/three.js-point-cloud-project",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 22037
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 8220
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 2996
+                }
+              ]
+            }
+          },
+          {
+            "name": "bubbles-tactile-demo",
+            "homepageUrl": "https://bluuarc.github.io/bubbles-tactile-demo/",
+            "description": "Small demo for large touch screen displays. Initially built for TacTile",
+            "shortDescriptionHTML": "Small demo for large touch screen displays. Initially built for TacTile",
+            "pushedAt": "2017-07-26T16:36:34Z",
+            "createdAt": "2017-07-19T21:06:57Z",
+            "url": "https://github.com/BluuArc/bubbles-tactile-demo",
+            "nameWithOwner": "BluuArc/bubbles-tactile-demo",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 21012
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 1675
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 1380
+                }
+              ]
+            }
+          },
+          {
+            "name": "vast-challenge-2017",
+            "homepageUrl": "https://bluuarc.github.io/vast-challenge-2017/challenge-2/",
+            "description": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
+            "shortDescriptionHTML": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
+            "pushedAt": "2017-09-12T19:44:49Z",
+            "createdAt": "2017-05-25T13:43:24Z",
+            "url": "https://github.com/BluuArc/vast-challenge-2017",
+            "nameWithOwner": "BluuArc/vast-challenge-2017",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 145594
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 23051
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 6802
+                }
+              ]
+            }
+          },
+          {
+            "name": "IT202",
+            "homepageUrl": "https://bluuarc.github.io/IT202/",
+            "description": "Repository for all of my IT202 Fall 2017 Projects",
+            "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
+            "pushedAt": "2017-11-06T21:58:54Z",
+            "createdAt": "2017-09-08T17:36:54Z",
+            "url": "https://github.com/BluuArc/IT202",
+            "nameWithOwner": "BluuArc/IT202",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 183158
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 89156
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 52203
+                },
+                {
+                  "node": {
+                    "name": "PHP",
+                    "color": "#4F5D95"
+                  },
+                  "size": 1241
+                }
+              ]
+            }
+          },
+          {
+            "name": "ACM-BACKEND",
+            "homepageUrl": null,
+            "description": null,
+            "shortDescriptionHTML": "",
+            "pushedAt": "2017-10-31T16:17:07Z",
+            "createdAt": "2017-10-31T16:12:01Z",
+            "url": "https://github.com/acm-uic/ACM-BACKEND",
+            "nameWithOwner": "acm-uic/ACM-BACKEND",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": []
+            }
+          },
+          {
+            "name": "clapp",
+            "homepageUrl": null,
+            "description": "A tool for building command line apps that aren't necessarily built for the command line.",
+            "shortDescriptionHTML": "A tool for building command line apps that aren't necessarily built for the command line.",
+            "pushedAt": "2017-10-22T16:18:30Z",
+            "createdAt": "2016-10-04T11:45:36Z",
+            "url": "https://github.com/MeLlamoPablo/clapp",
+            "nameWithOwner": "MeLlamoPablo/clapp",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 87218
+                }
+              ]
+            }
+          },
+          {
+            "name": "CS362-Hovercraft",
+            "homepageUrl": null,
+            "description": "Arduino controlled Hovercrafts",
+            "shortDescriptionHTML": "Arduino controlled Hovercrafts",
+            "pushedAt": "2017-11-07T17:21:57Z",
+            "createdAt": "2017-10-10T16:40:24Z",
+            "url": "https://github.com/Walden1995/CS362-Hovercraft",
+            "nameWithOwner": "Walden1995/CS362-Hovercraft",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 4679
+                },
+                {
+                  "node": {
+                    "name": "Arduino",
+                    "color": "#bd79d1"
+                  },
+                  "size": 4157
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 1784
+                }
+              ]
+            }
+          },
+          {
+            "name": "lab-test",
+            "homepageUrl": null,
+            "description": "Assignment for IT202",
+            "shortDescriptionHTML": "Assignment for IT202",
+            "pushedAt": "2017-09-06T21:41:38Z",
+            "createdAt": "2017-09-06T21:29:40Z",
+            "url": "https://github.com/BluuArc/lab-test",
+            "nameWithOwner": "BluuArc/lab-test",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 136
+                }
+              ]
+            }
+          },
+          {
+            "name": "EnglewoodSocialServices",
+            "homepageUrl": "https://uic-evl.github.io/EnglewoodSocialServices/",
+            "description": "Visualizing Social Services in Englewood",
+            "shortDescriptionHTML": "Visualizing Social Services in Englewood",
+            "pushedAt": "2017-11-10T16:21:57Z",
+            "createdAt": "2017-05-08T02:02:36Z",
+            "url": "https://github.com/uic-evl/EnglewoodSocialServices",
+            "nameWithOwner": "uic-evl/EnglewoodSocialServices",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 693382
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 40983
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 36528
+                }
+              ]
+            }
+          },
+          {
+            "name": "Intro-To-Promises-Node.js-Demo",
+            "homepageUrl": null,
+            "description": null,
+            "shortDescriptionHTML": "",
+            "pushedAt": "2017-04-26T03:29:16Z",
+            "createdAt": "2017-04-25T02:53:37Z",
+            "url": "https://github.com/BluuArc/Intro-To-Promises-Node.js-Demo",
+            "nameWithOwner": "BluuArc/Intro-To-Promises-Node.js-Demo",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 2747
+                }
+              ]
+            }
+          },
+          {
+            "name": "MMSS-Web_Client",
+            "homepageUrl": null,
+            "description": null,
+            "shortDescriptionHTML": "",
+            "pushedAt": "2017-04-25T16:59:47Z",
+            "createdAt": "2017-04-18T19:03:00Z",
+            "url": "https://github.com/BluuArc/MMSS-Web_Client",
+            "nameWithOwner": "BluuArc/MMSS-Web_Client",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 36091
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 30475
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 2419
+                }
+              ]
+            }
+          },
+          {
+            "name": "MMSS-Server",
+            "homepageUrl": null,
+            "description": "Server component for MMSS",
+            "shortDescriptionHTML": "Server component for MMSS",
+            "pushedAt": "2017-04-24T12:51:02Z",
+            "createdAt": "2017-03-07T14:52:39Z",
+            "url": "https://github.com/BluuArc/MMSS-Server",
+            "nameWithOwner": "BluuArc/MMSS-Server",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Java",
+                    "color": "#b07219"
+                  },
+                  "size": 274405
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 42068
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 4868
+                }
+              ]
+            }
+          },
+          {
+            "name": "project-sparkle",
+            "homepageUrl": null,
+            "description": "NodeJS Port of the Automatic Sparking Simulator",
+            "shortDescriptionHTML": "NodeJS Port of the Automatic Sparking Simulator",
+            "pushedAt": "2017-04-14T15:51:08Z",
+            "createdAt": "2017-04-10T02:47:03Z",
+            "url": "https://github.com/BluuArc/project-sparkle",
+            "nameWithOwner": "BluuArc/project-sparkle",
+            "repositoryTopics": {
+              "nodes": [
+                {
+                  "topic": {
+                    "name": "bravefrontier"
+                  },
+                  "url": "https://github.com/topics/bravefrontier"
+                }
+              ]
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 16085
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 2781
+                }
+              ]
+            }
+          },
+          {
+            "name": "BluuBot-discord",
+            "homepageUrl": null,
+            "description": null,
+            "shortDescriptionHTML": "",
+            "pushedAt": "2017-08-06T16:14:18Z",
+            "createdAt": "2017-03-26T15:51:50Z",
+            "url": "https://github.com/BluuArc/BluuBot-discord",
+            "nameWithOwner": "BluuArc/BluuBot-discord",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 490102
+                }
+              ]
+            }
+          },
+          {
             "name": "BFDBReader-node",
+            "homepageUrl": null,
             "description": null,
             "shortDescriptionHTML": "",
             "pushedAt": "2017-09-21T13:25:52Z",
@@ -544,6 +628,7 @@
           },
           {
             "name": "BFFrameAnimator",
+            "homepageUrl": null,
             "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier",
             "shortDescriptionHTML": "Program to create GIFs of unit sprites for the mobile game Brave Frontier",
             "pushedAt": "2017-05-08T15:49:45Z",
@@ -574,6 +659,7 @@
           },
           {
             "name": "MMSS",
+            "homepageUrl": "",
             "description": "Multi-Module Security System",
             "shortDescriptionHTML": "Multi-Module Security System",
             "pushedAt": "2017-10-03T15:23:59Z",
@@ -615,12 +701,17 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      "repositories": {
+        "totalCount": 24,
+        "nodes": [
           {
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-10-31T13:24:22Z",
+            "pushedAt": "2017-11-01T21:46:14Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -634,21 +725,21 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 103999
+                  "size": 109717
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 28494
+                  "size": 30274
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 6632
+                  "size": 6891
                 },
                 {
                   "node": {
@@ -659,17 +750,12 @@
                 }
               ]
             }
-          }
-        ]
-      },
-      "repositories": {
-        "totalCount": 23,
-        "nodes": [
+          },
           {
             "name": "BFFrameAnimator-js",
             "description": null,
             "shortDescriptionHTML": "",
-            "pushedAt": "2017-10-29T05:30:09Z",
+            "pushedAt": "2017-11-04T06:02:55Z",
             "createdAt": "2017-10-29T05:29:41Z",
             "url": "https://github.com/BluuArc/BFFrameAnimator-js",
             "nameWithOwner": "BluuArc/BFFrameAnimator-js",
@@ -680,29 +766,110 @@
               "edges": [
                 {
                   "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 25253
+                },
+                {
+                  "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 21427
+                  "size": 23087
+                }
+              ]
+            }
+          },
+          {
+            "name": "BFDBReader-js",
+            "description": "Web page to read data from a specific set of JSON files",
+            "shortDescriptionHTML": "Web page to read data from a specific set of JSON files",
+            "pushedAt": "2017-03-23T22:27:06Z",
+            "createdAt": "2017-01-03T19:19:14Z",
+            "url": "https://github.com/BluuArc/BFDBReader-js",
+            "nameWithOwner": "BluuArc/BFDBReader-js",
+            "repositoryTopics": {
+              "nodes": [
+                {
+                  "topic": {
+                    "name": "bravefrontier"
+                  },
+                  "url": "https://github.com/topics/bravefrontier"
+                }
+              ]
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 69183
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 15255
+                  "size": 46540
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 1103
                 }
               ]
             }
           },
           {
-            "name": "CS362-Hovercraft",
-            "description": "Arduino controlled Hovercrafts",
-            "shortDescriptionHTML": "Arduino controlled Hovercrafts",
-            "pushedAt": "2017-10-12T17:10:23Z",
-            "createdAt": "2017-10-10T16:40:24Z",
-            "url": "https://github.com/Walden1995/CS362-Hovercraft",
-            "nameWithOwner": "Walden1995/CS362-Hovercraft",
+            "name": "three.js-point-cloud-project",
+            "description": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
+            "shortDescriptionHTML": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
+            "pushedAt": "2017-06-09T03:43:19Z",
+            "createdAt": "2017-06-08T19:23:15Z",
+            "url": "https://github.com/BluuArc/three.js-point-cloud-project",
+            "nameWithOwner": "BluuArc/three.js-point-cloud-project",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 22037
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 8220
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 2996
+                }
+              ]
+            }
+          },
+          {
+            "name": "bubbles-tactile-demo",
+            "description": "Small demo for large touch screen displays. Initially built for TacTile",
+            "shortDescriptionHTML": "Small demo for large touch screen displays. Initially built for TacTile",
+            "pushedAt": "2017-07-26T16:36:34Z",
+            "createdAt": "2017-07-19T21:06:57Z",
+            "url": "https://github.com/BluuArc/bubbles-tactile-demo",
+            "nameWithOwner": "BluuArc/bubbles-tactile-demo",
             "repositoryTopics": {
               "nodes": []
             },
@@ -713,14 +880,21 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 4679
+                  "size": 21012
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 1784
+                  "size": 1675
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 1380
                 }
               ]
             }
@@ -764,9 +938,9 @@
           },
           {
             "name": "IT202",
-            "description": "IT202 - Project 1",
-            "shortDescriptionHTML": "IT202 - Project 1",
-            "pushedAt": "2017-10-31T12:08:28Z",
+            "description": "Repository for all of my IT202 Fall 2017 Projects",
+            "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
+            "pushedAt": "2017-11-06T21:58:54Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -780,21 +954,21 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 180210
+                  "size": 183158
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 69708
+                  "size": 89156
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 47243
+                  "size": 52203
                 },
                 {
                   "node": {
@@ -802,6 +976,58 @@
                     "color": "#4F5D95"
                   },
                   "size": 1241
+                }
+              ]
+            }
+          },
+          {
+            "name": "ACM-BACKEND",
+            "description": null,
+            "shortDescriptionHTML": "",
+            "pushedAt": "2017-10-31T16:17:07Z",
+            "createdAt": "2017-10-31T16:12:01Z",
+            "url": "https://github.com/acm-uic/ACM-BACKEND",
+            "nameWithOwner": "acm-uic/ACM-BACKEND",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": []
+            }
+          },
+          {
+            "name": "CS362-Hovercraft",
+            "description": "Arduino controlled Hovercrafts",
+            "shortDescriptionHTML": "Arduino controlled Hovercrafts",
+            "pushedAt": "2017-11-07T17:21:57Z",
+            "createdAt": "2017-10-10T16:40:24Z",
+            "url": "https://github.com/Walden1995/CS362-Hovercraft",
+            "nameWithOwner": "Walden1995/CS362-Hovercraft",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 4679
+                },
+                {
+                  "node": {
+                    "name": "Arduino",
+                    "color": "#bd79d1"
+                  },
+                  "size": 4157
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 1784
                 }
               ]
             }
@@ -833,7 +1059,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-10-05T19:36:40Z",
+            "pushedAt": "2017-11-10T16:21:57Z",
             "createdAt": "2017-05-08T02:02:36Z",
             "url": "https://github.com/uic-evl/EnglewoodSocialServices",
             "nameWithOwner": "uic-evl/EnglewoodSocialServices",
@@ -847,21 +1073,21 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 684034
+                  "size": 693382
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 39284
+                  "size": 40983
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 28653
+                  "size": 36528
                 }
               ]
             }
@@ -870,7 +1096,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-10-27T14:52:02Z",
+            "pushedAt": "2017-11-10T16:12:24Z",
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
@@ -884,95 +1110,21 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 691507
+                  "size": 693382
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 40787
+                  "size": 40983
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 27413
-                }
-              ]
-            }
-          },
-          {
-            "name": "bubbles-tactile-demo",
-            "description": "Small demo for large touch screen displays. Initially built for TacTile",
-            "shortDescriptionHTML": "Small demo for large touch screen displays. Initially built for TacTile",
-            "pushedAt": "2017-07-26T16:36:34Z",
-            "createdAt": "2017-07-19T21:06:57Z",
-            "url": "https://github.com/BluuArc/bubbles-tactile-demo",
-            "nameWithOwner": "BluuArc/bubbles-tactile-demo",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 21012
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 1675
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 1380
-                }
-              ]
-            }
-          },
-          {
-            "name": "three.js-point-cloud-project",
-            "description": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
-            "shortDescriptionHTML": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
-            "pushedAt": "2017-06-09T03:43:19Z",
-            "createdAt": "2017-06-08T19:23:15Z",
-            "url": "https://github.com/BluuArc/three.js-point-cloud-project",
-            "nameWithOwner": "BluuArc/three.js-point-cloud-project",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 22037
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 8220
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 2996
+                  "size": 36528
                 }
               ]
             }
@@ -1130,50 +1282,6 @@
                     "color": "#f1e05a"
                   },
                   "size": 490102
-                }
-              ]
-            }
-          },
-          {
-            "name": "BFDBReader-js",
-            "description": "Web page to read data from a specific set of JSON files",
-            "shortDescriptionHTML": "Web page to read data from a specific set of JSON files",
-            "pushedAt": "2017-03-23T22:27:06Z",
-            "createdAt": "2017-01-03T19:19:14Z",
-            "url": "https://github.com/BluuArc/BFDBReader-js",
-            "nameWithOwner": "BluuArc/BFDBReader-js",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 69183
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 46540
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 1103
                 }
               ]
             }
@@ -1308,50 +1416,6 @@
                     "color": "#b07219"
                   },
                   "size": 265838
-                }
-              ]
-            }
-          },
-          {
-            "name": "bluuarc.github.io",
-            "description": "Personal Website",
-            "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-10-31T13:24:22Z",
-            "createdAt": "2016-06-01T14:26:42Z",
-            "url": "https://github.com/BluuArc/bluuarc.github.io",
-            "nameWithOwner": "BluuArc/bluuarc.github.io",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 103999
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 28494
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 6632
-                },
-                {
-                  "node": {
-                    "name": "PHP",
-                    "color": "#4F5D95"
-                  },
-                  "size": 303
                 }
               ]
             }
