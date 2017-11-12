@@ -20,21 +20,29 @@
         padding-top: 5px;
     }
 
-    .projectEntry .languageEntry {
+    .projectEntry .languageEntry,
+    #overviewCard .languageEntry {
         border-bottom: dimgray 1px solid;
     }
 
-    .projectEntry .languageEntry:last-child {
+    .projectEntry .languageEntry:last-child,
+    #overviewCard .languageEntry:last-child {
         border-bottom: transparent 1px solid;
+    }
+
+    #overviewCard .card-text {
+        text-align: center !important;
     }
 }
 
-.projectEntry #languages {
+.projectEntry #languages,
+#overviewCard #languages {
     margin-left: 0;
     margin-top: 5px;
 }
 
-.projectEntry .languageCircle {
+.projectEntry .languageCircle,
+#overviewCard .languageCircle {
     border-radius: 50%;
     width: 15px;
     height: 15px;
@@ -47,6 +55,7 @@
     /* margin-left: -7.5px; */
 }
 
-.projectEntry #languages .col-1 {
+.projectEntry #languages .col-1,
+#overviewCard #languages .col-1{
     position: relative;
 }

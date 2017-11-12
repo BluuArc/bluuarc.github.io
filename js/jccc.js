@@ -136,14 +136,11 @@ function JCCC_App(){
     }
 
     function changeHighlightedHeaderTab(newActiveName){
-        
         $('#mainNavbarContainer #mainNavbar ul li')
             .each((i,d) => {
                 let name = $(d).text();
                 name === newActiveName ? $(d).addClass('active') : $(d).removeClass('active');
             });
-
-        
     }
 
     function changeDisplayedPage(newActivePageName, doNotPush){
@@ -168,8 +165,9 @@ function JCCC_App(){
 
         $("div#mainNavbar.navbar-collapse").collapse("hide");
 
-        //wait for other animations to finish
+        //wait for other animations to finish before showing new elements
         setTimeout(() => {
+            scroll(0, 0); //go to top of page
             elemsToShow.map((d) => d.fadeIn(animLen));
         },animLen);
 
@@ -184,7 +182,8 @@ function JCCC_App(){
                     brand_title: "Joshua Castor's Code Compendium",
                     links: {
                         Home: "/",
-                        Projects: "https://bluuarc.github.io/projects.html",
+                        Projects: "/?link=Projects",
+                        // Projects: "https://bluuarc.github.io/projects.html",
                         // "About Me": "https://bluuarc.github.io/about.html",
                         Contact: "https://bluuarc.github.io/contact.html"
                     },
@@ -200,9 +199,9 @@ function JCCC_App(){
                         href: data.links[a],
                         text: a,
                         click: (function(e) {
-                            let noRedirect = (a === "Projects" || a === "Contact"); //temporarily enable redirect until those sections are done
+                            let noRedirect = a === "Contact"; //temporarily enable redirect until those sections are done
                             let curPath = window.location.pathname;
-                            if (!noRedirect && curPath === "/"){ //should only work on home page
+                            if (!noRedirect){ //should only work on home page
                                 e.preventDefault();
                                 changeDisplayedPage($(this).text());
                             }

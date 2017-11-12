@@ -26,6 +26,25 @@
     }
 }
 
+@media (max-width: 991px) {
+    .navbar-nav .nav-item.active {
+        color: white;
+        padding-left: 2rem;
+        margin-left: -1rem !important;
+        margin-right: -2rem;
+        background: rgb(51, 77, 105);
+    }
+
+    .navbar-nav {
+        margin-top: 5px;
+    }
+
+    .navbar-nav .nav-item+.nav-item,
+    .navbar-nav .nav-item {
+        margin-left: 1rem;
+    }
+}
+
 .navbar-nav .nav-item+.nav-item>.nav-link, .navbar-inverse .navbar-nav .nav-link {
     color: #BBB;
 }

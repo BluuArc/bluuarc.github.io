@@ -179,6 +179,52 @@ var jccc = jccc || new JCCC_App();
             return msg;
         };
 
+        let languageSection = Vue.component("language-section", {
+            props: ["project"],
+            computed: {
+                languageData: function () {
+                    // convert size data to percentages
+                    let maxSize = this.project.languages.reduce((acc, current) => acc + current.size, 0);
+                    let languageData = this.project.languages.map((d) => {
+                        d.barSize = ((d.size / maxSize) * 100).toFixed(2);
+                        return d;
+                    });
+                    return languageData;
+                }
+            },
+            template: `
+                <span v-if="languageData.length > 0">
+                    <div class="progress">
+                        <template v-for="lang in languageData">
+                            <div class="progress-bar" role="progressbar" :style="{ backgroundColor: lang.color, width: lang.barSize + '%' }" :aria-valuenow="lang.barSize" aria-valuemin="0" aria-valuemax="100"></div>                            
+                        </template>
+                    </div>
+                    <div class="row" id="languages">
+                        <template v-for="lang in languageData">
+                            <div class="col-12 col-md-4 col-lg-3 languageEntry">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <div class="languageCircle" :style="{ backgroundColor: lang.color }"></div>
+                                    </div>
+                                    <div class="col text-center">
+                                        {{ lang.name }} ({{ lang.barSize }}%)
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </span>
+                <span v-else>
+                    <div class="languageEntry">
+                        <div class="row">
+                            <div class="col text-center">
+                                No languages found for this project.
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            `
+        })
 
         let project_entry = Vue.component("project-entry", {
             props: ["project"],
@@ -204,25 +250,16 @@ var jccc = jccc || new JCCC_App();
                 authorLink: function () {
                     return this.project.authorURL || `https://github.com/${this.project.owner}/`;
                 },
-                languageData: function () {
-                    // convert size data to percentages
-                    let maxSize = this.project.languages.reduce((acc,current) => acc + current.size, 0);
-                    let languageData = this.project.languages.map((d) => {
-                        d.size = ((d.size/maxSize)*100).toFixed(2);
-                        return d;
-                    });
-                    return languageData;
-                }
             },
             template: `
                 <card class="projectEntry border-primary">
                     <div class="card-header">
                         <div class="container">
                             <div class="row">
-                                <a :href="project.repoURL" id="repoURL" class="col-9">
+                                <a :href="project.repoURL" id="repoURL" class="col-md-9 col-12">
                                     <h4 id="name">{{ name }}</h4>
                                 </a>
-                                <a v-if="project.homepageURL" :href="project.homepageURL" id="homepageURL" class="col-3 text-right">
+                                <a v-if="project.homepageURL" :href="project.homepageURL" id="homepageURL" class="col-md-3 col-12 text-right">
                                     <h6><span>Project Page</span> <i class="fa fa-external-link" aria-hidden="true"></i></h6>
                                 </a>
                             </div>
@@ -257,63 +294,103 @@ var jccc = jccc || new JCCC_App();
                         </div>
                     </div>
                     <div class="card-footer">
-                        <template v-if="languageData.length > 0">
-                            <div class="progress">
-                                <template v-for="lang in languageData">
-                                    <div class="progress-bar" role="progressbar" :style="{ backgroundColor: lang.color, width: lang.size + '%' }" :aria-valuenow="lang.size" aria-valuemin="0" aria-valuemax="100"></div>                            
-                                </template>
-                            </div>
-                            <div class="row" id="languages">
-                                <template v-if="languageData.length != 0">
-                                    <template v-for="lang in languageData">
-                                        <div class="col-12 col-md-4 col-lg-3 languageEntry">
-                                            <div class="row">
-                                                <div class="col-1">
-                                                    <div class="languageCircle" :style="{ backgroundColor: lang.color }"></div>
-                                                </div>
-                                                <div class="col text-center">
-                                                    {{ lang.name }} ({{ lang.size }}%)
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </template>
-                                </template>
-                            </div>
-                        </template>
-                        <template v-else>
-                            <div class="languageEntry">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        No languages found for this project.
-                                    </div>
-                                </div>
-                            </div>
-                        </template>
+                        <language-section :project="project"></language-section>
                     </div>
                 </card>
             `
         })
         let projectData = {
-            projects: {}
+            projects: {},
+            overall: {},
+            user: {}
         };
 
         let projectEntryApp;
+        let getData = function(url){
+            return new Promise((fulfill,reject) => {
+                try {
+                    $.get(url, (data) => {
+                        fulfill(data);
+                    });
+                } catch (err) {
+                    reject(err);
+                }
+            });
+        }
         //load project data
-        return new Promise((fulfill, reject) => {
-            try {
-                $.get("project-data.json", (data) => {
-                    fulfill(data);
-                });
-            } catch (err) {
-                reject(err);
-            }
-        }).then((data) => {
+        return getData("project-data.json").then((data) => {
             //order by most recent first
             let sortedKeys = Object.keys(data)
                 .sort((a,b) => new Date(data[b].lastPushedAt) - new Date(data[a].lastPushedAt));
+            // TODO: implement techData aggregation
+            let languageData = {}, techData = {}, ownershipData = {};
             for(let k of sortedKeys){
                 projectData.projects[k] = data[k];
+                for(let lang of data[k].languages){
+                    if(!languageData[lang.name]){
+                        languageData[lang.name] = {
+                            name: lang.name,
+                            color: lang.color,
+                            size: 0
+                        };
+                    }
+                    languageData[lang.name].size += lang.size;
+                }
+
+                if(!ownershipData[data[k].owner]){
+                    ownershipData[data[k].owner] = 0;
+                }
+                ownershipData[data[k].owner]++;
             }
+
+            projectData.overall = {
+                languages: [],
+                ownership: [],
+                count: {
+                    total: sortedKeys.length,
+                    mine: 0
+                }
+            };
+
+            //convert aggregated objects to arrays
+            let langKeys = Object.keys(languageData)
+                .sort((a,b) => languageData[b].size - languageData[a].size); //sort in descending order by size
+            for(let lang of langKeys){
+                projectData.overall.languages.push(languageData[lang]);
+            }
+
+            let ownerKeys = Object.keys(ownershipData)
+                .sort((a,b) => ownershipData[b] - ownershipData[a]);
+            for(let owner of ownerKeys){
+                projectData.overall.ownership.push({
+                    name: owner,
+                    count: ownershipData[owner]
+                });
+                if(owner === "BluuArc"){
+                    projectData.overall.count.mine = ownershipData[owner];
+                }
+            }
+
+            return;
+        }).then(() => { //attempt to get GH user data
+            return getData("https://api.github.com/users/BluuArc")
+                .then((data) => {
+                    projectData.user = data;
+                }).catch((err) => {
+                    console.error(err);
+                    console.log("Deleting user field");
+                    delete projectData.user;
+                    return;
+                })
+        }).then(() => { //create overview data
+            let [creationDate, updateDate] = [new Date(projectData.user.created_at), new Date(projectData.user.updated_at)];
+            let currentDate = new Date();
+
+            projectData.overview = {
+                creationText: creationDate.toDateString() + ` (${getDateDifference(creationDate, currentDate)} ago)`,
+                updateText: updateDate.toDateString() + ` (${getDateDifference(updateDate, currentDate)} ago)`,
+            };
+
             return;
         }).then(() => {
             // console.log(projectData)
@@ -322,6 +399,12 @@ var jccc = jccc || new JCCC_App();
                 data: projectData
             });
             jccc.addApplication(projectEntryApp, "projectEntries");
+
+            let projectStatsApp = new Vue({
+                el: "#projectStatsCard",
+                data: projectData
+            });
+            jccc.addApplication(projectStatsApp, "projectStats");
             return;
         });
     }
@@ -368,12 +451,29 @@ var jccc = jccc || new JCCC_App();
             }
         } else {
             jccc.changeDisplayedPage('Home', doNotPushState); //default to home
-        }    
+        }
     };
 
     pageLoader();
 
     $(window).on("popstate",pageLoader);
+
+    $('a[href^="/?"][href*="link="]').on('click', function (e){
+        e.preventDefault();
+        let link = $(this).attr("href");
+        let parameters = link.slice(2).split("&");
+        let data = {};
+        for (let p of parameters) {
+            let [key, value, extra] = p.split('=').map(decodeURIComponent);
+            data[key] = value;
+        }
+        // console.log(data);
+        if (data.link) {
+            jccc.changeDisplayedPage(data.link);
+        } else {
+            jccc.changeDisplayedPage('Home'); //default to home
+        }
+    })
 
     console.log("Ready");
 });

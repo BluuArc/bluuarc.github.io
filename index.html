@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/projects.css">
 </head>
 
-<body>
+<body id="top">
     <div id="pageApp">
         <jccc-nav-header></jccc-nav-header>
 
@@ -71,24 +71,50 @@
                     <job-list :jobs="jobs"></job-list>
                 </card>
 
-                <card id="projectStatsCard" style="display: none;">
-                    <h4 class="card-header bg-primary">Project Statistics</h4>
+                <card id="projectStatsCard">
+                    <div class="card-header bg-primary">
+                        <div class="row">
+                            <h4 class="col-9">Project Statistics</h4>
+                            <a href="/?link=Projects" class="col-3 text-right">
+                                <h6><span>See Projects</span> <i class="fa fa-external-link" aria-hidden="true"></i></h6>
+                            </a>
+                        </div>
+
+                    </div>
                     <div class="card-block">
-                        <p class="card-text">Project stats would go here. Stats include number of repos</p>
-                        <ul id="project-list"></ul>
+                        <p class="card-text text-center">Below you can see the language distribution across the <b>{{ overall.count.total }} public projects</b> I've contributed to. I own {{ overall.count.mine }} of those projects.</p>
+                    </div>
+                    <div class="card-footer">
+                        <language-section :project="overall"></language-section>
                     </div>
                 </card>
             </container>
 
             <container class="page hidden" id="ProjectsPage">
-                <card id="fillerCard"> 
-                    <h4 class="card-header bg-primary">Filler</h4>
+                <card id="overviewCard"> 
+                    <h4 class="card-header bg-primary">Profile Overview</h4>
                     <div class="card-block">
-                        <div class="row align-items-center">
-                            <div class="col text-center">
-                                <p class="card-text">This is a filler element for the projects page.</p>
+                        <span v-if="user">
+                            <div class="row align-items-center">
+                                <div class="col-md-5 col-lg-5 col-sm-12 text-center">
+                                    <img class="img-round-corners" style="max-height: 200px; padding-bottom: 10px;" :src="user.avatar_url">
+                                </div>
+                                <div class="col">
+                                    <h5 class="card-text"><a :href="user.html_url">{{ user.name }} ({{ user.login }})</a></h5>
+                                    <p class="card-text">GitHub user since <b>{{ overview.creationText }}</b></p>
+                                    <p class="card-text">Contributed to at least <b>{{ overall.count.total }} projects</b>, owning {{ overall.count.mine }} of them</p>
+                                    <p class="card-text"><b>{{ user.followers }} follower(s)</b> and <b>following {{ user.following }} user(s)</b></p>
+                                    <p class="card-text">User info last updated {{ overview.updateText }}</p>
+                                </div>
                             </div>
-                        </div>
+                        </span>
+                        <!-- Fallback in case we can't get GH data  -->
+                        <span v-else> 
+                            <p class="card-text text-center">Below you can see the language distribution across the <b>{{ overall.count.total }} public projects</b> I've contributed to. I own {{ overall.count.mine }} of these projects.</p>
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <language-section :project="overall"></language-section>
                     </div>
                 </card>
 
