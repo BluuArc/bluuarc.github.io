@@ -96,8 +96,9 @@ query {
 }
 `;
 
-function createProjectEntry(projectData, customData) {
+function createProjectEntry(projectData, customData = {}) {
   let project = {};
+  project.name = customData.name || projectData.name;
   project.repoName = projectData.name;
   project.description = projectData.description;
   project.homepageURL = projectData.homepageUrl;
@@ -142,6 +143,8 @@ sendQuery(repoQuery).then((result) => {
 }).then((ghData) => {
   console.log("Creating project-data.json");
   let customData = JSON.parse(fs.readFileSync("custom-project-data.json",'utf8'));
+  let extraProjectData = customData.additionalProjectInfo || {};
+  let additionalProjects = customData.additionalProjects || {};
 
   let finalProjectData = {};
 
@@ -149,7 +152,7 @@ sendQuery(repoQuery).then((result) => {
   for(let p of ghProjects){
     if(!finalProjectData[p.nameWithOwner] && customData.ignoredProjects.indexOf(p.nameWithOwner) === -1){
       console.log("Adding", p.nameWithOwner, "in contributedRepositories list");
-      finalProjectData[p.nameWithOwner] = createProjectEntry(p);
+      finalProjectData[p.nameWithOwner] = createProjectEntry(p,extraProjectData[p.nameWithOwner]);
     }else{
       console.log("Skipping",p.nameWithOwner,"in contributedRepositories list");
     }
@@ -159,9 +162,18 @@ sendQuery(repoQuery).then((result) => {
   for (let p of ghProjects) {
     if (!finalProjectData[p.nameWithOwner] && customData.ignoredProjects.indexOf(p.nameWithOwner) === -1) {
       console.log("Adding", p.nameWithOwner, "in repositories list");
-      finalProjectData[p.nameWithOwner] = createProjectEntry(p);
+      finalProjectData[p.nameWithOwner] = createProjectEntry(p, extraProjectData[p.nameWithOwner]);
     } else {
       console.log("Skipping", p.nameWithOwner, "in repositories list");
+    }
+  }
+
+  for(let p in additionalProjects){
+    if(!finalProjectData[p]){
+      console.log("Adding", p.nameWithOwner, "in additional project list");
+      finalProjectData[p] = p;
+    }else{
+      console.log("Skipping", p.nameWithOwner, "in additional project list");
     }
   }
 
