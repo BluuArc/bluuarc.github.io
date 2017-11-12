@@ -4,7 +4,7 @@
     "repoName": "bluuarc.github.io",
     "description": "Personal Website",
     "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2017-11-12T06:57:29Z",
+    "lastPushedAt": "2017-11-12T17:50:30Z",
     "createdAt": "2016-06-01T14:26:42Z",
     "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
     "owner": "BluuArc",
@@ -13,17 +13,17 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 121565
+        "size": 125511
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 34119
+        "size": 36177
       },
       {
         "name": "CSS",
         "color": "#563d7c",
-        "size": 7928
+        "size": 9215
       },
       {
         "name": "PHP",
@@ -375,35 +375,6 @@
         "name": "HTML",
         "color": "#e34c26",
         "size": 4868
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/project-sparkle": {
-    "name": "project-sparkle",
-    "repoName": "project-sparkle",
-    "description": "NodeJS Port of the Automatic Sparking Simulator",
-    "homepageURL": null,
-    "lastPushedAt": "2017-04-14T15:51:08Z",
-    "createdAt": "2017-04-10T02:47:03Z",
-    "repoURL": "https://github.com/BluuArc/project-sparkle",
-    "owner": "BluuArc",
-    "topics": [
-      {
-        "name": "bravefrontier",
-        "url": "https://github.com/topics/bravefrontier"
-      }
-    ],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 16085
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 2781
       }
     ],
     "techUsed": []

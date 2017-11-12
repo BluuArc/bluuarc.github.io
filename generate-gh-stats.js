@@ -144,6 +144,7 @@ sendQuery(repoQuery).then((result) => {
 }).then((ghData) => {
   console.log("Creating project-data.json");
   let customData = JSON.parse(fs.readFileSync("custom-project-data.json",'utf8'));
+  // data may include: images -> to go above/inside/below card?, technologies
   let extraProjectData = customData.additionalProjectInfo || {};
   let additionalProjects = customData.additionalProjects || {};
 
