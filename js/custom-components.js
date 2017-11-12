@@ -10,6 +10,12 @@ let initCommonCustomVueComponents = function(customLoadFn){
                         </div>`
     });
 
+    let container_fluid = Vue.component("container-fluid", {
+        template: `<div class="container-fluid">
+                            <slot>No container content found.</slot>
+                        </div>`
+    });
+
     let card = Vue.component("card", {
         template: `<div class="card">
                             <slot>No card content found.</slot>

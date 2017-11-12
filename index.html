@@ -10,11 +10,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
-    <!-- Source: https://bootswatch.com/4-alpha/darkly/bootstrap.min.css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Source: https://bootswatch.com/darkly/bootstrap.min.css -->
     <link rel="stylesheet" href="css/darkly/bootstrap.min.css">
     <link rel="stylesheet" href="css/darkly/custom-darkly.css">
     <link rel="stylesheet" href="css/jccc.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/projects.css">
 </head>
 
 <body>
@@ -85,6 +87,67 @@
                         <div class="row align-items-center">
                             <div class="col text-center">
                                 <p class="card-text">This is a filler element for the projects page.</p>
+                            </div>
+                        </div>
+                    </div>
+                </card>
+
+                <card class="projectEntry border-primary">
+                    <div class="card-header">
+                        <div class="container">
+                            <div class="row">
+                                <a href="#" id="repoURL" class="col-9">
+                                    <h4 id="name">Project Name (RepoName too if name != reponame) </h4>
+                                </a>
+                                <a href="#" id="homepageURL" class="col-3 text-right">
+                                    <h6><span>Project Page</span> <i class="fa fa-external-link" aria-hidden="true"></i></h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12 card-text">
+                                    <p id="description">
+                                        Project Description
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-xd-12 card-text" id="project-statistics">
+                                    <p id="owner-entry"><b>Owner: </b><span id="owner">Owner name</span></p>
+                                    <p id="creation-entry"><b>Created: </b><span id="createdAt">Creation Time</span></p>
+                                    <p id="pushed-entry"><b>Last Commit: </b><span id="pushedAt">Last Commit Time</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="card-block">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                            <!-- <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div> -->
+                        </div>
+                        <div class="row" id="languages">
+                            <div class="col-12 col-md-4 col-lg-3 languageEntry">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <div class="languageCircle"></div>
+                                    </div>
+                                    <div class="col text-center">
+                                        JavaScript (100.00%)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block" id="topic-block">
+                        <div class="container">
+                            <div class="row">
+                                <h6>Relevant Topics</h6>
+                            </div>
+                            <div class="row">
+                                <a href="#" class="col-6 col-md-3">Example Topic</a>
                             </div>
                         </div>
                     </div>
