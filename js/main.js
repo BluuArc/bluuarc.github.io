@@ -170,7 +170,7 @@ var jccc = jccc || new JCCC_App();
             if(attributes.days < 1){
                 msg += (attributes.hours !== 0) ? (attributes.hours.toString() + ((attributes.hours !== 1) ? " hours " : " hour ")) : "";
                 if(attributes.hours < 1){
-                    msg += (attributes.minutes !== 0) ? (attributes.minutes.toString() + ((attributes.minutes !== 1) ? " minutes " : " minute ")) : "";
+                    msg += (attributes.minutes !== 0) ? (attributes.minutes.toString() + ((attributes.minutes !== 1) ? " minutes " : " minute ")) : (attributes.seconds + " seconds");
                 }
             }
             // msg += (attributes.seconds !== 0) ? (attributes.seconds.toString() + ((attributes.seconds !== 1) ? " seconds, " : " second, ")) : "";
