@@ -15,6 +15,13 @@ var argv = require('yargs')
 
 app.use(express.static(__dirname));
 
-var server = app.listen(argv.port, argv.ip, function () {
-    console.log("Listening on " + this.address().address + ":" + this.address().port);
-});
+var server
+if(argv.ip !== '127.0.0.1'){
+     server = app.listen(argv.port, argv.ip, function () {
+        console.log("Listening on " + this.address().address + ":" + this.address().port);
+    });
+}else{
+    server = app.listen(argv.port,function () {
+        console.log("Listening on " + this.address().address + ":" + this.address().port);
+    });
+}
