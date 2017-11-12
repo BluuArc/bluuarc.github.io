@@ -11,7 +11,7 @@
             "homepageUrl": "https://bluuarc.github.io/",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-12T17:50:30Z",
+            "pushedAt": "2017-11-12T20:28:41Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -25,14 +25,14 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 125511
+                  "size": 125336
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 36177
+                  "size": 36486
                 },
                 {
                   "node": {
@@ -711,7 +711,7 @@
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-12T17:50:30Z",
+            "pushedAt": "2017-11-12T20:28:41Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -725,14 +725,14 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 125511
+                  "size": 125336
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 36177
+                  "size": 36486
                 },
                 {
                   "node": {
