@@ -30,12 +30,34 @@
                     <div class="card-block">
                         <div class="row align-items-center">
                             <div class="col-md-5 col-lg-5 col-sm-12 text-center">
-                                <img class="img-round-corners" style="max-height: 200px; padding-bottom: 10px;" src="https://www.evl.uic.edu/resizedImages/1280x720-jcastor.jpg">
+                                <img class="img-round-corners" style="max-height: 200px; padding-bottom: 10px;" src="img/avatar.jpg">
                             </div>
                             <div class="col text-center">
                                 <p class="card-text">My name is Joshua Castor. I am a senior level undergraduate at UIC as of Fall 2017. I enjoy programming stuff, mainly in JavaScript, but I am open to learning other languages and technologies. My main interests include web development, visual analytics, and cybersecurity.</p>
                             </div>
                         </div>
+                    </div>
+                </card>
+
+                <card id="projectStatsCard">
+                    <div class="card-header bg-primary">
+                        <div class="row">
+                            <h4 class="col-9">Project Statistics</h4>
+                            <a href="/?link=Projects" class="col-3 text-right">
+                                <h6>
+                                    <span>See Projects</span>
+                                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                                </h6>
+                            </a>
+                        </div>
+                
+                    </div>
+                    <div class="card-block">
+                        <p class="card-text text-center">Below you can see the language distribution across the
+                            <b>{{ overall.count.total }} public projects</b> I've contributed to. I own {{ overall.count.mine }} of those projects.</p>
+                    </div>
+                    <div class="card-footer">
+                        <language-section :project="overall"></language-section>
                     </div>
                 </card>
 
@@ -71,23 +93,7 @@
                     <job-list :jobs="jobs"></job-list>
                 </card>
 
-                <card id="projectStatsCard">
-                    <div class="card-header bg-primary">
-                        <div class="row">
-                            <h4 class="col-9">Project Statistics</h4>
-                            <a href="/?link=Projects" class="col-3 text-right">
-                                <h6><span>See Projects</span> <i class="fa fa-external-link" aria-hidden="true"></i></h6>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="card-block">
-                        <p class="card-text text-center">Below you can see the language distribution across the <b>{{ overall.count.total }} public projects</b> I've contributed to. I own {{ overall.count.mine }} of those projects.</p>
-                    </div>
-                    <div class="card-footer">
-                        <language-section :project="overall"></language-section>
-                    </div>
-                </card>
+                
             </container>
 
             <container class="page hidden" id="ProjectsPage">
@@ -187,12 +193,12 @@
 
             <container class="page hidden" id="ContactPage">
                 <card id="fillerCard"> 
-                    <h4 class="card-header bg-primary">Filler</h4>
+                    <h4 class="card-header bg-primary">Contact Information</h4>
                     <div class="card-block">
                         <div class="row align-items-center">
-                            <div class="col text-center">
-                                <p class="card-text">This is a filler element for the Contact page.</p>
-                            </div>
+                            <a class="col text-center card-text" href="https://github.com/BluuArc">GitHub Profile</a><br>
+                            <a class="col text-center card-text" href="mailto:jcasto3@uic.edu">Email</a><br>
+                            <a class="col text-center card-text" href="https://www.linkedin.com/in/joshuacastor">LinkedIn Profile</a><br>
                         </div>
                     </div>
                 </card>

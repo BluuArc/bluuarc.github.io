@@ -185,7 +185,8 @@ function JCCC_App(){
                         Projects: "/?link=Projects",
                         // Projects: "https://bluuarc.github.io/projects.html",
                         // "About Me": "https://bluuarc.github.io/about.html",
-                        Contact: "https://bluuarc.github.io/contact.html"
+                        // Contact: "https://bluuarc.github.io/contact.html"
+                        Contact: "/?link=Contact"
                     },
                     navlinks: []
                 };
@@ -199,12 +200,8 @@ function JCCC_App(){
                         href: data.links[a],
                         text: a,
                         click: (function(e) {
-                            let noRedirect = a === "Contact"; //temporarily enable redirect until those sections are done
-                            let curPath = window.location.pathname;
-                            if (!noRedirect){ //should only work on home page
-                                e.preventDefault();
-                                changeDisplayedPage($(this).text());
-                            }
+                            e.preventDefault();
+                            changeDisplayedPage($(this).text());
                         })
                     });
                 }
