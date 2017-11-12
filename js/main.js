@@ -316,7 +316,7 @@ var jccc = jccc || new JCCC_App();
             }
             return;
         }).then(() => {
-            console.log(projectData)
+            // console.log(projectData)
             projectEntryApp = new Vue({
                 el: "#ProjectsPage",
                 data: projectData
@@ -351,22 +351,29 @@ var jccc = jccc || new JCCC_App();
         postLoadFn
     );
 })(function(){ //run this after loading page
-    if(window.location.search.indexOf("?") > -1){ //auto set page based on url
-        let parameters = window.location.search.slice(1).split("&");
-        let data = {};
-        for(let p of parameters){
-            let [key,value,extra] = p.split('=').map(decodeURIComponent);
-            data[key] = value;
-        }
-        // console.log(data);
-        if(data.link){
-            jccc.changeDisplayedPage(data.link);
-        }else{
-            jccc.changeDisplayedPage('Home'); //default to home
-        }
-    } else {
-        jccc.changeDisplayedPage('Home'); //default to home
-    }
+    let pageLoader = function (evt) {
+        let doNotPushState = location.origin.indexOf(location.host) > -1 || evt;
+        if(window.location.search.indexOf("?") > -1){ //auto set page based on url
+            let parameters = window.location.search.slice(1).split("&");
+            let data = {};
+            for(let p of parameters){
+                let [key,value,extra] = p.split('=').map(decodeURIComponent);
+                data[key] = value;
+            }
+            // console.log(data);
+            if(data.link){
+                jccc.changeDisplayedPage(data.link, doNotPushState);
+            }else{
+                jccc.changeDisplayedPage('Home', doNotPushState); //default to home
+            }
+        } else {
+            jccc.changeDisplayedPage('Home', doNotPushState); //default to home
+        }    
+    };
+
+    pageLoader();
+
+    $(window).on("popstate",pageLoader);
 
     console.log("Ready");
 });

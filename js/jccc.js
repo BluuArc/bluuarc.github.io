@@ -146,10 +146,12 @@ function JCCC_App(){
         
     }
 
-    function changeDisplayedPage(newActivePageName){
+    function changeDisplayedPage(newActivePageName, doNotPush){
         debugLog("Changing displayed page to",newActivePageName);
         changeHighlightedHeaderTab(newActivePageName);
-        window.history.pushState('pagechange', `JCCC - ${newActivePageName}`, `/?link=${newActivePageName}`); // from https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page
+        if(!doNotPush){
+            window.history.pushState('pagechange', `JCCC - ${newActivePageName}`, `/?link=${newActivePageName}`); // from https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page
+        }
         $('title').text(`JCCC - ${newActivePageName}`);
         let isValid = false;
         let elemsToShow = [];
