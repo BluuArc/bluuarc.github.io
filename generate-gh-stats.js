@@ -131,6 +131,7 @@ function createProjectEntry(projectData, customData = {}) {
   }
 
   // TODO: implement tech used from custom-project-data.json
+  // TODO: add support for a custom authorURL field (for non-github projects)
   project.techUsed = [];
 
   return project;

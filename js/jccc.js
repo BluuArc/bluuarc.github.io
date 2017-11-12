@@ -106,8 +106,11 @@ function JCCC_App(){
                 initBody();
             }).then(() => {
                 if (typeof setupOptions.initCustomVueComponents === "function") { // allow for loading of custom components
-                    setupOptions.initCustomVueComponents();
+                    return Promise.resolve(setupOptions.initCustomVueComponents());
+                }else{
+                    return Promise.resolve();
                 }
+            }).then(() =>{
                 //create default page app
                 debugLog("initializing app")
                 self.components.default_app = new Vue({

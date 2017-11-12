@@ -92,7 +92,8 @@
                     </div>
                 </card>
 
-                <card class="projectEntry border-primary">
+                <!-- template -->
+                <card class="projectEntry border-primary hidden">
                     <div class="card-header">
                         <div class="container">
                             <div class="row">
@@ -152,6 +153,10 @@
                         </div>
                     </div>
                 </card>
+
+                <template v-for="p in projects">
+                    <project-entry :project="p"></project-entry>
+                </template>
             </container>
 
             <container class="page hidden" id="ContactPage">
@@ -185,5 +190,5 @@
     </div>
     
     <script src="js/jccc.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/main.js"></script>
 </body>

@@ -40,6 +40,8 @@ let initCommonCustomVueComponents = function(customLoadFn){
     });
 
     if(typeof customLoadFn === "function"){
-        customLoadFn();
+        return Promise.resolve(customLoadFn());
+    }else{
+        return Promise.resolve();
     }
 };

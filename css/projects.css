@@ -6,15 +6,26 @@
     border-bottom: transparent 1px solid;
 }
 
+/* desktop */
 @media (min-width: 768px) {
     .projectEntry #project-statistics {
-        border-left: gray 1px solid
+        border-left: dimgray 1px solid;
     }
 }
 
+/* mobile */
 @media (max-width: 767px) {
     .projectEntry #project-statistics {
-        border-top: gray 1px solid
+        border-top: dimgray 1px solid;
+        padding-top: 5px;
+    }
+
+    .projectEntry .languageEntry {
+        border-bottom: dimgray 1px solid;
+    }
+
+    .projectEntry .languageEntry:last-child {
+        border-bottom: transparent 1px solid;
     }
 }
 
