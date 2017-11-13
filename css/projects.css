@@ -59,3 +59,8 @@
 #overviewCard #languages .col-1{
     position: relative;
 }
+
+.projectEntry #repoURLContainer {
+    margin-top: auto;
+    margin-bottom: auto;
+}

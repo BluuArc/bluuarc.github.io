@@ -256,12 +256,16 @@ var jccc = jccc || new JCCC_App();
                     <div class="card-header">
                         <div class="container">
                             <div class="row">
-                                <a :href="project.repoURL" id="repoURL" class="col-md-9 col-12">
-                                    <h4 id="name">{{ name }}</h4>
-                                </a>
-                                <a v-if="project.homepageURL" :href="project.homepageURL" id="homepageURL" class="col-md-3 col-12 text-right">
-                                    <h6><span>Project Page</span> <i class="fa fa-external-link" aria-hidden="true"></i></h6>
-                                </a>
+                                <div class="col-md-9 col-12" id="repoURLContainer">
+                                    <a :href="project.repoURL" id="repoURL">
+                                        <h4 id="name">{{ name }}</h4>
+                                    </a>
+                                </div>
+                                <div v-if="project.homepageURL" class="col-md-3 col-12 text-right">
+                                    <a :href="project.homepageURL" id="homepageURL" class="btn btn-outline-success text-center">
+                                        <h6><span>Project Page</span> <i class="fa fa-external-link" aria-hidden="true"></i></h6>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
