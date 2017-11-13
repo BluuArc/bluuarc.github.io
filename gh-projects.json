@@ -11,7 +11,7 @@
             "homepageUrl": "https://bluuarc.github.io/",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-12T20:29:59Z",
+            "pushedAt": "2017-11-13T18:19:39Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -25,21 +25,21 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 125336
+                  "size": 125580
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 36486
+                  "size": 36670
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 9215
+                  "size": 9299
                 },
                 {
                   "node": {
@@ -246,7 +246,7 @@
             "homepageUrl": "https://bluuarc.github.io/IT202/",
             "description": "Repository for all of my IT202 Fall 2017 Projects",
             "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-11-13T02:33:36Z",
+            "pushedAt": "2017-11-13T17:10:58Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -260,14 +260,14 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 190438
+                  "size": 193178
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 89156
+                  "size": 99630
                 },
                 {
                   "node": {
@@ -393,7 +393,7 @@
             "homepageUrl": "https://uic-evl.github.io/EnglewoodSocialServices/",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-11-10T16:21:57Z",
+            "pushedAt": "2017-11-13T04:56:57Z",
             "createdAt": "2017-05-08T02:02:36Z",
             "url": "https://github.com/uic-evl/EnglewoodSocialServices",
             "nameWithOwner": "uic-evl/EnglewoodSocialServices",
@@ -421,7 +421,7 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 36528
+                  "size": 36566
                 }
               ]
             }
@@ -711,7 +711,7 @@
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-12T20:29:59Z",
+            "pushedAt": "2017-11-13T18:19:39Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -725,21 +725,21 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 125336
+                  "size": 125580
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 36486
+                  "size": 36670
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 9215
+                  "size": 9299
                 },
                 {
                   "node": {
@@ -940,7 +940,7 @@
             "name": "IT202",
             "description": "Repository for all of my IT202 Fall 2017 Projects",
             "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-11-13T02:33:36Z",
+            "pushedAt": "2017-11-13T17:10:58Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -954,14 +954,14 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 190438
+                  "size": 193178
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 89156
+                  "size": 99630
                 },
                 {
                   "node": {
@@ -1059,7 +1059,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-11-10T16:21:57Z",
+            "pushedAt": "2017-11-13T04:56:57Z",
             "createdAt": "2017-05-08T02:02:36Z",
             "url": "https://github.com/uic-evl/EnglewoodSocialServices",
             "nameWithOwner": "uic-evl/EnglewoodSocialServices",
@@ -1087,7 +1087,7 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 36528
+                  "size": 36566
                 }
               ]
             }
@@ -1096,7 +1096,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-11-10T16:12:24Z",
+            "pushedAt": "2017-11-13T04:51:08Z",
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
@@ -1124,7 +1124,7 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 36528
+                  "size": 36566
                 }
               ]
             }
