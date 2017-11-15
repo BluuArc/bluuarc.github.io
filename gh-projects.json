@@ -7,11 +7,56 @@
         "totalCount": 20,
         "nodes": [
           {
+            "name": "MMSS",
+            "homepageUrl": "https://Walden1995.github.io/MMSS/",
+            "description": "Multi-Module Security System",
+            "shortDescriptionHTML": "Multi-Module Security System",
+            "pushedAt": "2017-10-03T15:23:59Z",
+            "createdAt": "2017-02-14T20:39:13Z",
+            "url": "https://github.com/Walden1995/MMSS",
+            "nameWithOwner": "Walden1995/MMSS",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Java",
+                    "color": "#b07219"
+                  },
+                  "size": 272792
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 8669
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 716
+                },
+                {
+                  "node": {
+                    "name": "Makefile",
+                    "color": "#427819"
+                  },
+                  "size": 124
+                }
+              ]
+            }
+          },
+          {
             "name": "bluuarc.github.io",
             "homepageUrl": "https://bluuarc.github.io/",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-13T21:28:16Z",
+            "pushedAt": "2017-11-13T21:28:39Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -246,7 +291,7 @@
             "homepageUrl": "https://bluuarc.github.io/IT202/",
             "description": "Repository for all of my IT202 Fall 2017 Projects",
             "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-11-13T21:14:00Z",
+            "pushedAt": "2017-11-13T22:52:22Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -260,14 +305,14 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 193268
+                  "size": 199049
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 99630
+                  "size": 99725
                 },
                 {
                   "node": {
@@ -656,10 +701,14 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      "repositories": {
+        "totalCount": 24,
+        "nodes": [
           {
             "name": "MMSS",
-            "homepageUrl": "",
             "description": "Multi-Module Security System",
             "shortDescriptionHTML": "Multi-Module Security System",
             "pushedAt": "2017-10-03T15:23:59Z",
@@ -701,17 +750,12 @@
                 }
               ]
             }
-          }
-        ]
-      },
-      "repositories": {
-        "totalCount": 24,
-        "nodes": [
+          },
           {
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-13T21:28:16Z",
+            "pushedAt": "2017-11-13T21:28:39Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -940,7 +984,7 @@
             "name": "IT202",
             "description": "Repository for all of my IT202 Fall 2017 Projects",
             "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-11-13T21:14:00Z",
+            "pushedAt": "2017-11-13T22:52:22Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -954,14 +998,14 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 193268
+                  "size": 199049
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 99630
+                  "size": 99725
                 },
                 {
                   "node": {
@@ -1096,7 +1140,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-11-13T04:51:08Z",
+            "pushedAt": "2017-11-14T23:01:12Z",
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
@@ -1110,7 +1154,7 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 693382
+                  "size": 695262
                 },
                 {
                   "node": {
@@ -1124,7 +1168,7 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 36566
+                  "size": 38214
                 }
               ]
             }
@@ -1349,50 +1393,6 @@
                     "color": "#b07219"
                   },
                   "size": 182079
-                }
-              ]
-            }
-          },
-          {
-            "name": "MMSS",
-            "description": "Multi-Module Security System",
-            "shortDescriptionHTML": "Multi-Module Security System",
-            "pushedAt": "2017-10-03T15:23:59Z",
-            "createdAt": "2017-02-14T20:39:13Z",
-            "url": "https://github.com/Walden1995/MMSS",
-            "nameWithOwner": "Walden1995/MMSS",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "Java",
-                    "color": "#b07219"
-                  },
-                  "size": 272792
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 8669
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 716
-                },
-                {
-                  "node": {
-                    "name": "Makefile",
-                    "color": "#427819"
-                  },
-                  "size": 124
                 }
               ]
             }
