@@ -38,7 +38,7 @@
     "repoName": "bluuarc.github.io",
     "description": "Personal Website",
     "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2017-11-13T21:28:39Z",
+    "lastPushedAt": "2017-11-15T03:57:16Z",
     "createdAt": "2016-06-01T14:26:42Z",
     "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
     "owner": "BluuArc",
@@ -217,7 +217,7 @@
     "repoName": "IT202",
     "description": "Repository for all of my IT202 Fall 2017 Projects",
     "homepageURL": "https://bluuarc.github.io/IT202/",
-    "lastPushedAt": "2017-11-13T22:52:22Z",
+    "lastPushedAt": "2017-11-16T17:24:32Z",
     "createdAt": "2017-09-08T17:36:54Z",
     "repoURL": "https://github.com/BluuArc/IT202",
     "owner": "BluuArc",
@@ -226,12 +226,12 @@
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 199049
+        "size": 199982
       },
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 99725
+        "size": 100428
       },
       {
         "name": "CSS",
@@ -283,7 +283,7 @@
     "repoName": "CS362-Hovercraft",
     "description": "Arduino controlled Hovercrafts",
     "homepageURL": null,
-    "lastPushedAt": "2017-11-13T02:16:16Z",
+    "lastPushedAt": "2017-11-16T16:34:51Z",
     "createdAt": "2017-10-10T16:40:24Z",
     "repoURL": "https://github.com/Walden1995/CS362-Hovercraft",
     "owner": "Walden1995",
@@ -297,7 +297,7 @@
       {
         "name": "Arduino",
         "color": "#bd79d1",
-        "size": 4157
+        "size": 4239
       },
       {
         "name": "CSS",
@@ -489,7 +489,7 @@
     "name": "EnglewoodSocialServices",
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
-    "lastPushedAt": "2017-11-14T23:01:12Z",
+    "lastPushedAt": "2017-11-16T21:22:08Z",
     "createdAt": "2017-08-04T20:09:52Z",
     "repoURL": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
     "owner": "AndrewTBurks",
@@ -498,17 +498,17 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 695262
+        "size": 696650
       },
       {
         "name": "CSS",
         "color": "#563d7c",
-        "size": 40983
+        "size": 41746
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 38214
+        "size": 39957
       }
     ],
     "techUsed": []
