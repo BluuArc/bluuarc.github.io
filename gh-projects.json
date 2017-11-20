@@ -56,7 +56,7 @@
             "homepageUrl": "https://bluuarc.github.io/",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-15T03:57:16Z",
+            "pushedAt": "2017-11-17T12:59:34Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -291,7 +291,7 @@
             "homepageUrl": "https://bluuarc.github.io/IT202/",
             "description": "Repository for all of my IT202 Fall 2017 Projects",
             "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-11-16T17:24:32Z",
+            "pushedAt": "2017-11-19T19:44:27Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -305,21 +305,21 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 199982
+                  "size": 203670
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 100428
+                  "size": 108756
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 52203
+                  "size": 52842
                 },
                 {
                   "node": {
@@ -755,7 +755,7 @@
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-15T03:57:16Z",
+            "pushedAt": "2017-11-17T12:59:34Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -984,7 +984,7 @@
             "name": "IT202",
             "description": "Repository for all of my IT202 Fall 2017 Projects",
             "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-11-16T17:24:32Z",
+            "pushedAt": "2017-11-19T19:44:27Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -998,21 +998,21 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 199982
+                  "size": 203670
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 100428
+                  "size": 108756
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 52203
+                  "size": 52842
                 },
                 {
                   "node": {
@@ -1140,7 +1140,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-11-16T21:22:08Z",
+            "pushedAt": "2017-11-17T19:33:43Z",
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
@@ -1154,7 +1154,7 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 696650
+                  "size": 697654
                 },
                 {
                   "node": {

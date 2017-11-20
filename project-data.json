@@ -38,7 +38,7 @@
     "repoName": "bluuarc.github.io",
     "description": "Personal Website",
     "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2017-11-15T03:57:16Z",
+    "lastPushedAt": "2017-11-17T12:59:34Z",
     "createdAt": "2016-06-01T14:26:42Z",
     "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
     "owner": "BluuArc",
@@ -217,7 +217,7 @@
     "repoName": "IT202",
     "description": "Repository for all of my IT202 Fall 2017 Projects",
     "homepageURL": "https://bluuarc.github.io/IT202/",
-    "lastPushedAt": "2017-11-16T17:24:32Z",
+    "lastPushedAt": "2017-11-19T19:44:27Z",
     "createdAt": "2017-09-08T17:36:54Z",
     "repoURL": "https://github.com/BluuArc/IT202",
     "owner": "BluuArc",
@@ -226,17 +226,17 @@
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 199982
+        "size": 203670
       },
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 100428
+        "size": 108756
       },
       {
         "name": "CSS",
         "color": "#563d7c",
-        "size": 52203
+        "size": 52842
       },
       {
         "name": "PHP",
@@ -489,7 +489,7 @@
     "name": "EnglewoodSocialServices",
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
-    "lastPushedAt": "2017-11-16T21:22:08Z",
+    "lastPushedAt": "2017-11-17T19:33:43Z",
     "createdAt": "2017-08-04T20:09:52Z",
     "repoURL": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
     "owner": "AndrewTBurks",
@@ -498,7 +498,7 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 696650
+        "size": 697654
       },
       {
         "name": "CSS",
