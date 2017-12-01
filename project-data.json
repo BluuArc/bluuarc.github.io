@@ -1,4 +1,33 @@
 {
+  "Walden1995/CS362-Hovercraft": {
+    "name": "CS362-Hovercraft",
+    "repoName": "CS362-Hovercraft",
+    "description": "Arduino controlled Hovercrafts",
+    "homepageURL": null,
+    "lastPushedAt": "2017-11-30T17:20:44Z",
+    "createdAt": "2017-10-10T16:40:24Z",
+    "repoURL": "https://github.com/Walden1995/CS362-Hovercraft",
+    "owner": "Walden1995",
+    "topics": [],
+    "languages": [
+      {
+        "name": "Arduino",
+        "color": "#bd79d1",
+        "size": 13591
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 4679
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 1784
+      }
+    ],
+    "techUsed": []
+  },
   "Walden1995/MMSS": {
     "name": "MMSS",
     "repoName": "MMSS",
@@ -38,7 +67,7 @@
     "repoName": "bluuarc.github.io",
     "description": "Personal Website",
     "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2017-11-17T12:59:34Z",
+    "lastPushedAt": "2017-11-20T04:31:45Z",
     "createdAt": "2016-06-01T14:26:42Z",
     "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
     "owner": "BluuArc",
@@ -72,7 +101,7 @@
     "repoName": "BFFrameAnimator-js",
     "description": null,
     "homepageURL": "https://macabre-broomstick-39921.herokuapp.com/",
-    "lastPushedAt": "2017-11-04T06:02:55Z",
+    "lastPushedAt": "2017-11-22T15:16:50Z",
     "createdAt": "2017-10-29T05:29:41Z",
     "repoURL": "https://github.com/BluuArc/BFFrameAnimator-js",
     "owner": "BluuArc",
@@ -86,7 +115,7 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 23087
+        "size": 23605
       }
     ],
     "techUsed": []
@@ -217,7 +246,7 @@
     "repoName": "IT202",
     "description": "Repository for all of my IT202 Fall 2017 Projects",
     "homepageURL": "https://bluuarc.github.io/IT202/",
-    "lastPushedAt": "2017-11-19T19:44:27Z",
+    "lastPushedAt": "2017-11-26T23:41:14Z",
     "createdAt": "2017-09-08T17:36:54Z",
     "repoURL": "https://github.com/BluuArc/IT202",
     "owner": "BluuArc",
@@ -226,12 +255,12 @@
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 203670
+        "size": 219729
       },
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 108756
+        "size": 146115
       },
       {
         "name": "CSS",
@@ -274,35 +303,6 @@
         "name": "JavaScript",
         "color": "#f1e05a",
         "size": 87218
-      }
-    ],
-    "techUsed": []
-  },
-  "Walden1995/CS362-Hovercraft": {
-    "name": "CS362-Hovercraft",
-    "repoName": "CS362-Hovercraft",
-    "description": "Arduino controlled Hovercrafts",
-    "homepageURL": null,
-    "lastPushedAt": "2017-11-16T16:34:51Z",
-    "createdAt": "2017-10-10T16:40:24Z",
-    "repoURL": "https://github.com/Walden1995/CS362-Hovercraft",
-    "owner": "Walden1995",
-    "topics": [],
-    "languages": [
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 4679
-      },
-      {
-        "name": "Arduino",
-        "color": "#bd79d1",
-        "size": 4239
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 1784
       }
     ],
     "techUsed": []
@@ -437,7 +437,7 @@
     "repoName": "BFDBReader-node",
     "description": null,
     "homepageURL": null,
-    "lastPushedAt": "2017-09-21T13:25:52Z",
+    "lastPushedAt": "2017-11-24T21:54:59Z",
     "createdAt": "2017-03-17T14:06:52Z",
     "repoURL": "https://github.com/BluuArc/BFDBReader-node",
     "owner": "BluuArc",
@@ -485,11 +485,34 @@
     ],
     "techUsed": []
   },
+  "BluuArc/text-to-speech": {
+    "name": "text-to-speech",
+    "repoName": "text-to-speech",
+    "description": "A basic Text-to-Speech app",
+    "lastPushedAt": "2017-11-18T21:27:29Z",
+    "createdAt": "2017-11-20T22:36:12Z",
+    "repoURL": "https://github.com/BluuArc/text-to-speech",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 3553
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 1217
+      }
+    ],
+    "techUsed": []
+  },
   "AndrewTBurks/EnglewoodSocialServices": {
     "name": "EnglewoodSocialServices",
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
-    "lastPushedAt": "2017-11-17T19:33:43Z",
+    "lastPushedAt": "2017-11-28T22:13:47Z",
     "createdAt": "2017-08-04T20:09:52Z",
     "repoURL": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
     "owner": "AndrewTBurks",
@@ -498,7 +521,7 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 697654
+        "size": 698940
       },
       {
         "name": "CSS",
