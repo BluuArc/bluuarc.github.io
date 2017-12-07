@@ -11,7 +11,7 @@
             "homepageUrl": null,
             "description": "Arduino controlled Hovercrafts",
             "shortDescriptionHTML": "Arduino controlled Hovercrafts",
-            "pushedAt": "2017-11-30T17:20:44Z",
+            "pushedAt": "2017-12-07T14:05:01Z",
             "createdAt": "2017-10-10T16:40:24Z",
             "url": "https://github.com/Walden1995/CS362-Hovercraft",
             "nameWithOwner": "Walden1995/CS362-Hovercraft",
@@ -94,7 +94,7 @@
             "homepageUrl": "https://bluuarc.github.io/",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-20T04:31:45Z",
+            "pushedAt": "2017-12-04T22:32:13Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -115,7 +115,7 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 37672
+                  "size": 38051
                 },
                 {
                   "node": {
@@ -329,7 +329,7 @@
             "homepageUrl": "https://bluuarc.github.io/IT202/",
             "description": "Repository for all of my IT202 Fall 2017 Projects",
             "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-11-26T23:41:14Z",
+            "pushedAt": "2017-12-06T22:49:56Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -343,21 +343,28 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 219729
+                  "size": 236897
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 146115
+                  "size": 161770
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 52842
+                  "size": 62205
+                },
+                {
+                  "node": {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  },
+                  "size": 22906
                 },
                 {
                   "node": {
@@ -741,7 +748,7 @@
             "name": "CS362-Hovercraft",
             "description": "Arduino controlled Hovercrafts",
             "shortDescriptionHTML": "Arduino controlled Hovercrafts",
-            "pushedAt": "2017-11-30T17:20:44Z",
+            "pushedAt": "2017-12-07T14:05:01Z",
             "createdAt": "2017-10-10T16:40:24Z",
             "url": "https://github.com/Walden1995/CS362-Hovercraft",
             "nameWithOwner": "Walden1995/CS362-Hovercraft",
@@ -822,7 +829,7 @@
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2017-11-20T04:31:45Z",
+            "pushedAt": "2017-12-04T22:32:13Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -843,7 +850,7 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 37672
+                  "size": 38051
                 },
                 {
                   "node": {
@@ -1051,7 +1058,7 @@
             "name": "IT202",
             "description": "Repository for all of my IT202 Fall 2017 Projects",
             "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-11-26T23:41:14Z",
+            "pushedAt": "2017-12-06T22:49:56Z",
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
@@ -1065,21 +1072,28 @@
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 219729
+                  "size": 236897
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 146115
+                  "size": 161770
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 52842
+                  "size": 62205
+                },
+                {
+                  "node": {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  },
+                  "size": 22906
                 },
                 {
                   "node": {
@@ -1170,7 +1184,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-11-28T22:13:47Z",
+            "pushedAt": "2017-12-07T21:29:39Z",
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
@@ -1184,21 +1198,21 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 698940
+                  "size": 698167
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 41746
+                  "size": 42063
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 39957
+                  "size": 40127
                 }
               ]
             }
