@@ -4,7 +4,7 @@
     "repoName": "CS362-Hovercraft",
     "description": "Arduino controlled Hovercrafts",
     "homepageURL": null,
-    "lastPushedAt": "2017-12-07T14:05:01Z",
+    "lastPushedAt": "2017-12-12T20:56:07Z",
     "createdAt": "2017-10-10T16:40:24Z",
     "repoURL": "https://github.com/Walden1995/CS362-Hovercraft",
     "owner": "Walden1995",
@@ -18,12 +18,12 @@
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 4679
+        "size": 4847
       },
       {
         "name": "CSS",
         "color": "#563d7c",
-        "size": 1784
+        "size": 1761
       }
     ],
     "techUsed": []
@@ -67,7 +67,7 @@
     "repoName": "bluuarc.github.io",
     "description": "Personal Website",
     "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2017-12-04T22:32:13Z",
+    "lastPushedAt": "2017-12-07T21:30:17Z",
     "createdAt": "2016-06-01T14:26:42Z",
     "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
     "owner": "BluuArc",
@@ -317,7 +317,7 @@
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
     "homepageURL": "https://uic-evl.github.io/EnglewoodSocialServices/",
-    "lastPushedAt": "2017-11-13T04:56:57Z",
+    "lastPushedAt": "2017-12-07T22:02:11Z",
     "createdAt": "2017-05-08T02:02:36Z",
     "repoURL": "https://github.com/uic-evl/EnglewoodSocialServices",
     "owner": "uic-evl",
@@ -326,17 +326,17 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 693382
+        "size": 698167
       },
       {
         "name": "CSS",
         "color": "#563d7c",
-        "size": 40983
+        "size": 42063
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 36566
+        "size": 40127
       }
     ],
     "techUsed": []
