@@ -36,13 +36,6 @@
         mounted: function (params) {
             window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#page-tab-bar'));
         }
-        // <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Item One</a>
-                        // <a role="tab" aria-controls="panel-2" class="mdc-tab" href="#panel-2">Item Two</a>
-                        // <a role="tab" aria-controls="panel-3" class="mdc-tab" href="#panel-3">Item Three</a>
-    });
-
-    let testComponent = Vue.component("test", {
-        template: "<h1>Test Component</h1>"
     });
 
     console.log("initialized components")

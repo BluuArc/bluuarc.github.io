@@ -49,37 +49,9 @@
     </div>
     
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
-
-    <!-- <script>
-        // based off of https://material.io/components/web/catalog/tabs/
-        var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#page-tab-bar'));
-        var panels = document.querySelector('.panels');
-
-        dynamicTabBar.tabs.forEach(function (tab) {
-            tab.preventDefaultOnClick = true;
-        });
-
-        function updatePanel(index) {
-            var activePanel = panels.querySelector('.panel.active');
-            if (activePanel) {
-                activePanel.classList.remove('active');
-            }
-            var newActivePanel = panels.querySelector('.panel:nth-child(' + (index + 1) + ')');
-            if (newActivePanel) {
-                newActivePanel.classList.add('active');
-            }
-        }
-
-        dynamicTabBar.listen('MDCTabBar:change', function ({ detail: tabs }) {
-            var nthChildIndex = tabs.activeTabIndex;
-
-            updatePanel(nthChildIndex);
-        });
-    </script> -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
     <script src="js/material-init.js"></script>
     <script src="js/app.js"></script>
     
