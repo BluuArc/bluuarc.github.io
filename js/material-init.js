@@ -25,9 +25,12 @@
         `,
         methods: {
             setPageTo: function(newPage) {
-                for(let page in this.pages){
-                    this.pages[page].isActive = newPage === page;
-                }
+                // for(let page in this.pages){
+                //     this.pages[page].isActive = newPage === page;
+                // }
+                
+                // emit changes to parent
+                this.$emit("pagechange",newPage);
             }
         }
         // <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Item One</a>

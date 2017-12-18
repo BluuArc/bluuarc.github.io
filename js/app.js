@@ -74,18 +74,15 @@ function JCCCApp(options = {}) {
     }
 
     function init() {
-        let scripts = ["js/apps/main.js"];
+        let scripts = ["js/apps/pageController.js"];
         return appendScriptsIteratively(scripts) //append app scripts
             .then(() => { //initialize apps
-                self.apps.main = new MainApp({
+                self.apps.main = new PageController({
                     log: (...args) => self.log("[MAIN]", ...args),
                     models: self.models.main,
                     appParams: {
                         el: "div#app",
-                        data: self.models.main,
-                        created: function () {
-                            self.log("initialized main app");
-                        }
+                        data: self.models.main
                     }
                 });
             }).then(() => {

@@ -26,11 +26,17 @@
 
 <body>
     <div id="app">
-        <jccc-nav-header :pages="pages" :activePage="activePage"></jccc-nav-header>
+        <jccc-nav-header :pages="pages" :activePage="activePage" v-on:pagechange="setPageTo"></jccc-nav-header>
         <section class="pages">
-            <p class="page active" id="home" role="tabpanel" aria-hidden="false">Item One</p>
-            <p class="page" id="projects" role="tabpanel" aria-hidden="true">Item Two</p>
-            <p class="page" id="contact" role="tabpanel" aria-hidden="true">Item Three</p>
+            <div class="page active" id="home" role="tabpanel">
+                Item One
+            </div>
+            <div class="page" id="projects" role="tabpanel">
+                Item Two
+            </div>
+            <div class="page" id="contact" role="tabpanel">
+                Item Three
+            </div>
         </section>
     </div>
     
