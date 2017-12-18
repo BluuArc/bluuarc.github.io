@@ -28,10 +28,13 @@
                 // for(let page in this.pages){
                 //     this.pages[page].isActive = newPage === page;
                 // }
-                
+
                 // emit changes to parent
                 this.$emit("pagechange",newPage);
             }
+        },
+        mounted: function (params) {
+            window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#page-tab-bar'));
         }
         // <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Item One</a>
                         // <a role="tab" aria-controls="panel-2" class="mdc-tab" href="#panel-2">Item Two</a>

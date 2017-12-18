@@ -9,6 +9,14 @@
     <title>JCCC</title>
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <style>
+        body {
+            margin: 0;
+        }
+
+        #nav-header {
+            height: 75px;
+        }
+
         nav#page-tab-bar{
             margin: 0;
         }
@@ -26,7 +34,7 @@
 
 <body>
     <div id="app">
-        <jccc-nav-header :pages="pages" :activePage="activePage" v-on:pagechange="setPageTo"></jccc-nav-header>
+        <jccc-nav-header :pages="pages" v-on:pagechange="setPageTo" id="nav-header"></jccc-nav-header>
         <section class="pages">
             <div class="page active" id="home" role="tabpanel">
                 Item One
