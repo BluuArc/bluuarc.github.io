@@ -1,0 +1,43 @@
+"use strict";
+
+(function(){
+    let navbar = Vue.component("jccc-nav-header", {
+        props: ['pages'],
+        template: `
+        <div class="mdc-toolbar">
+            <div class="mdc-toolbar__row">
+                <div class="mdc-toolbar__section mdc-toolbar__section--shrink-to-fit mdc-toolbar__section--align-start">
+                    <h2 class="mdc-toolbar__title">JCCC</h2>
+                </div>
+                <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
+                    <nav id="page-tab-bar" class="mdc-tab-bar" role="tablist">
+                        <a role="tab" v-for="(page,key) in pages" 
+                            :class="{ 'mdc-tab':true, 'mdc-tab--active': page.isActive }"
+                            @click="setPageTo(key)"    
+                        >
+                            {{ key }}
+                        </a>
+                        <span class="mdc-tab-bar__indicator"></span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        `,
+        methods: {
+            setPageTo: function(newPage) {
+                for(let page in this.pages){
+                    this.pages[page].isActive = newPage === page;
+                }
+            }
+        }
+        // <a role="tab" aria-controls="panel-1" class="mdc-tab mdc-tab--active" href="#panel-1">Item One</a>
+                        // <a role="tab" aria-controls="panel-2" class="mdc-tab" href="#panel-2">Item Two</a>
+                        // <a role="tab" aria-controls="panel-3" class="mdc-tab" href="#panel-3">Item Three</a>
+    });
+
+    let testComponent = Vue.component("test", {
+        template: "<h1>Test Component</h1>"
+    });
+
+    console.log("initialized components")
+})();
