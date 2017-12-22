@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link rel="stylesheet" href="css/breakpoints.css">
     <style>
+        html,body,#app {
+            height: 100%;
+        }
+
         body {
             margin: 0;
         }
@@ -22,6 +26,10 @@
         @media (min-width: 768px){
             #nav-header {
                 height: 75px;
+            }
+
+            section.pages {
+                max-height: calc(100% - 75px); /* subtract height of toolbar */
             }
         }
 
@@ -43,6 +51,16 @@
             margin: 0;
         }
 
+        @media (max-width: 767px){
+            section.pages {
+                max-height: calc(100% - 56px - 45px); /* subtract height of toolbar */
+            }    
+        }
+
+        section.pages {
+            overflow: auto;
+        }
+
         section.pages .page {
             display: none;
         }
@@ -60,6 +78,8 @@
         <section class="pages">
             <div class="page active" id="home" role="tabpanel">
                 Item One
+                <div style="background-color: red; height: 5000px; width: 50px;"></div>
+                end
             </div>
             <div class="page" id="projects" role="tabpanel">
                 Item Two
