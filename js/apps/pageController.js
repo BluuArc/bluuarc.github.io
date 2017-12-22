@@ -45,7 +45,7 @@ function PageController(options = {}) {
                         fulfill(); //don't do anything --> may change to showing error page?
                     }
                 });
-            }).then(() => self.log("Finished setting page to",pageName));
+            }).then(() => self.log("Set page to",pageName));
     }
 
     return {

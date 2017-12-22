@@ -78,7 +78,7 @@ function JCCCApp(options = {}) {
         return appendScriptsIteratively(scripts) //append app scripts
             .then(() => { //initialize apps
                 self.apps.main = new PageController({
-                    log: (...args) => self.log("[MAIN]", ...args),
+                    log: (...args) => self.log("[PageController]", ...args),
                     models: self.models.main,
                     appParams: {
                         el: "div#app",
@@ -89,7 +89,7 @@ function JCCCApp(options = {}) {
                 if (self.debugMode) {
                     debug.setPageTo = self.apps.main.setPageTo;
                 }
-            }).then(() => self.log("Finished page initialization"));
+            }).then(() => self.log("Finished full initialization"));
     }
 
     function initComponents() {

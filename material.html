@@ -8,16 +8,38 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>JCCC</title>
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="css/breakpoints.css">
     <style>
         body {
             margin: 0;
         }
 
-        #nav-header {
-            height: 75px;
+        h2 a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        nav#page-tab-bar{
+        @media (min-width: 768px){
+            #nav-header {
+                height: 75px;
+            }
+        }
+
+        #nav-header nav#page-tab-bar{
+            margin: 0;
+        }
+
+        #nav-header nav#page-tab-bar-mobile {
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        #nav-header #mobile-header {
+            min-height: 45px;
+            height: 45px;
+        }
+
+        #nav-header #mobile-header .mdc-toolbar__title {
             margin: 0;
         }
 
