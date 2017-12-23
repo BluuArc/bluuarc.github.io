@@ -81,35 +81,49 @@
         }
 
         .page .mdc-card--theme-dark {
-            background: var(--mdc-theme-background-light);
+            background: var(--mdc-theme-background);
         }
 
-        
+        .page .mdc-card {
+            margin-bottom: 25px;
+        }
 
-        /* page specific css*/
         .page#home {
             margin: 15px;
+            margin-top: 25px;
         }
 
-        #aboutMeCard #avatarImage {
+        .mdc-card#aboutMe #avatarImage {
             background-image: url("img/avatar.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             height: 12.313rem;
         }
 
-        #aboutMeCard img {
-            margin-top: 0;
+        .mdc-card#aboutMe img {
+            margin-top: 16px;
             margin-bottom: 16px;
         }
 
-        #aboutMeCard .mdc-card__supporting-text {
+        .mdc-card#aboutMe .mdc-card__supporting-text {
             margin-top: auto;
             margin-bottom: auto;
+            margin-right: -16px;
+            text-align: center;
         }
 
-        #aboutMeCard .mdc-card__primary {
-            padding-bottom: 0;
+        .mdc-card__primary {
+            padding: 5px;
+            padding-left: 15px;
+            background: var(--mdc-theme-primary);
+        }
+
+        .mdc-card#projectStats .mdc-card__supporting-text {
+            padding: 15px;
+        }
+
+        .mdc-card>.mdc-card__supporting-text:nth-child(3) {
+            background-color: var(--mdc-theme-background-light);
         }
     
     </style>
@@ -120,7 +134,7 @@
         <jccc-nav-header :pages="pages" v-on:pagechange="setPageTo" id="nav-header"></jccc-nav-header>
         <section class="pages">
             <div class="page active" id="home" role="tabpanel">
-                <div class="mdc-card mdc-card--theme-dark" id="aboutMeCard">
+                <div class="mdc-card mdc-card--theme-dark" id="aboutMe">
                     <section class="mdc-card__media xs-only" id="avatarImage"></section>
                     <section class="mdc-card__primary">
                         <h1 class="mdc-card__title mdc-card__title--large">About Me</h1>
@@ -133,6 +147,18 @@
                         </section>
                         <img class="mdc-card__media-item mdc-card__media-item--2x sm-plus" src="img/avatar.jpg">
                     </div>
+                </div>
+
+                <div class="mdc-card mdc-card--theme-dark" id="projectStats">
+                    <section class="mdc-card__primary">
+                        <h1 class="mdc-card__title mdc-card__title--large">Project Statistics</h1>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        project description goes here
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        stats go here
+                    </section>
                 </div>
             </div>
             <div class="page" id="projects" role="tabpanel">
