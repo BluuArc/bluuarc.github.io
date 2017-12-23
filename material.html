@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>JCCC</title>
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="css/color-theme.css">
     <link rel="stylesheet" href="css/breakpoints.css">
     <style>
         html,body,#app {
@@ -23,17 +24,25 @@
             text-decoration: none;
         }
 
+        h2 a:hover {
+            color: var(--mdc-theme-secondary)
+        }
+
+        #nav-header {
+            color: var(--mdc-theme-text-primary-on-primary);
+        }
+
         @media (min-width: 768px){
             #nav-header {
                 height: 75px;
             }
 
             section.pages {
-                max-height: calc(100% - 75px); /* subtract height of toolbar */
+                height: calc(100% - 75px); /* subtract height of toolbar */
             }
         }
 
-        #nav-header nav#page-tab-bar{
+        #nav-header nav#page-tab-bar {
             margin: 0;
         }
 
@@ -53,13 +62,14 @@
 
         @media (max-width: 767px){
             section.pages {
-                max-height: calc(100% - 56px - 45px); /* subtract height of toolbar */
+                height: calc(100% - 56px - 45px); /* subtract height of toolbar */
             }    
         }
 
         section.pages {
             overflow: auto;
-            background-color: var(--mdc-theme-background);
+            background-color: var(--mdc-theme-background-dark);
+            color: var(--mdc-theme-text-primary-on-primary);
         }
 
         section.pages .page {
@@ -70,9 +80,36 @@
             display: inherit;
         }
 
+        .page .mdc-card--theme-dark {
+            background: var(--mdc-theme-background-light);
+        }
+
+        
+
         /* page specific css*/
         .page#home {
             margin: 15px;
+        }
+
+        #aboutMeCard #avatarImage {
+            background-image: url("img/avatar.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 12.313rem;
+        }
+
+        #aboutMeCard img {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        #aboutMeCard .mdc-card__supporting-text {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        #aboutMeCard .mdc-card__primary {
+            padding-bottom: 0;
         }
     
     </style>
@@ -83,9 +120,20 @@
         <jccc-nav-header :pages="pages" v-on:pagechange="setPageTo" id="nav-header"></jccc-nav-header>
         <section class="pages">
             <div class="page active" id="home" role="tabpanel">
-                Item One
-                <div style="background-color: red; height: 5000px; width: 50px;"></div>
-                end
+                <div class="mdc-card mdc-card--theme-dark" id="aboutMeCard">
+                    <section class="mdc-card__media xs-only" id="avatarImage"></section>
+                    <section class="mdc-card__primary">
+                        <h1 class="mdc-card__title mdc-card__title--large">About Me</h1>
+                    </section>
+                    <div class="mdc-card__horizontal-block">
+                        <section class="mdc-card__supporting-text">
+                            My name is Joshua Castor. I am a senior level undergraduate at UIC as of Fall 2017. I enjoy programming stuff, mainly in
+                            JavaScript, but I am open to learning other languages and technologies. My main interests include web development, visual
+                            analytics, and cybersecurity.
+                        </section>
+                        <img class="mdc-card__media-item mdc-card__media-item--2x sm-plus" src="img/avatar.jpg">
+                    </div>
+                </div>
             </div>
             <div class="page" id="projects" role="tabpanel">
                 Item Two
