@@ -59,7 +59,7 @@
         @media (max-width: 767px){
             section.pages {
                 height: calc(100% - 56px - 45px); /* subtract height of toolbar */
-            }    
+            }
         }
 
         @media (min-width: 768px){
@@ -67,6 +67,21 @@
                 height: calc(100% - 75px); /* subtract height of toolbar */
             }
         }
+
+        section.pages .page {
+            display: none;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* changed fixed width based on width of screen; based off of Boostrap breakpoints */
+        @media (max-width: 575px) { section.pages .page { margin: 25px; } }
+        @media (min-width: 576px) { section.pages .page { max-width: 540px; } }
+        @media (min-width: 768px) { section.pages .page { max-width: 720px; } }
+        @media (min-width: 992px) { section.pages .page { max-width: 960px; } }
+        @media (min-width: 1200px) { section.pages .page { max-width: 1140px; } }
 
         .text-center {
             text-align: center;
@@ -76,10 +91,6 @@
             overflow: auto;
             background-color: var(--mdc-theme-background-dark);
             color: var(--mdc-theme-text-primary-on-primary);
-        }
-
-        section.pages .page {
-            display: none;
         }
 
         section.pages .page.active {
@@ -95,7 +106,7 @@
         }
 
         .page#home {
-            margin: 15px;
+            margin-bottom: 15px;
             margin-top: 25px;
         }
 
