@@ -81,22 +81,21 @@ function JCCCApp(options = {}) {
             .then(() => {
                 return loadProjectData();
             }).then(() => { //initialize apps
+                self.apps.pageController = new PageController({
+                    log: (...args) => self.log("[PageController]", ...args),
+                    models: self.models.main,
+                    appParams: {
+                        el: "section#nav-app",
+                        data: self.models.main
+                    }
+                });
+
                 self.apps.homePage = new HomeApp({
                     log: (...args) => self.log("[HomePage]", ...args),
                     models: self.models.home,
                     appParams: {
                         el: "#home.page",
                         data: self.models.home
-                    }
-                });
-
-                // initialize last to avoid variable scoping issues
-                self.apps.pageController = new PageController({
-                    log: (...args) => self.log("[PageController]", ...args),
-                    models: self.models.main,
-                    appParams: {
-                        el: "div#app",
-                        data: self.models.main
                     }
                 });
             }).then(() => {
@@ -146,11 +145,8 @@ function JCCCApp(options = {}) {
                     return (100 - number*100).toFixed(2);
                 },
                 showProjectsWithLanguage: function(language){
-                    console.log(language);
+                    self.log("TODO: Implement language filtering for", language.name);
                 }
-            },
-            mounted: function (params) {
-              console.log("mounted language section");
             },
             template: `
                 <span v-if="languageData.length > 0">
@@ -163,7 +159,7 @@ function JCCCApp(options = {}) {
                     </div>
                     <div class="mdc-layout-grid" id="languages">
                         <div class="mdc-layout-grid__inner">
-                            <button v-for="lang in languageData" 
+                            <button v-for="lang in languageData.reverse()" 
                                 @click="showProjectsWithLanguage(lang)" 
                                 class="mdc-button mdc-layout-grid__cell mdc-layout-grid__cell--span-3 languageEntry"
                             >

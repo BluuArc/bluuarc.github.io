@@ -157,11 +157,11 @@
             border-radius: 0.25rem;
         }
 
-        #languages .languageEntry {
+        .mdc-layout-grid#languages .languageEntry {
             position: relative;
         }
 
-        #languages .languageCircle {
+        .mdc-layout-grid#languages .languageCircle {
             border-radius: 50%;
             width: 15px;
             height: 15px;
@@ -173,7 +173,7 @@
             margin-top: -7.5px;
         }
 
-        #languages button.languageEntry {
+        .mdc-layout-grid#languages button.languageEntry {
             text-transform: none;
             color: var(--mdc-theme-text-primary-on-dark);
         }
@@ -182,80 +182,80 @@
 </head>
 
 <body>
-    <div id="app">
+    <section id="nav-app">
         <jccc-nav-header :pages="pages" v-on:pagechange="setPageTo" id="nav-header"></jccc-nav-header>
-        <section class="pages">
-            <div class="page active" id="home" role="tabpanel">
-                <card id="aboutMe">
-                    <section class="mdc-card__media xs-only" id="avatarImage"></section>
-                    <section class="mdc-card__primary">
-                        <h1 class="mdc-card__title mdc-card__title--large">About Me</h1>
+    </section>
+    <section class="pages">
+        <div class="page active" id="home" role="tabpanel">
+            <card id="aboutMe">
+                <section class="mdc-card__media xs-only" id="avatarImage"></section>
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">About Me</h1>
+                </section>
+                <div class="mdc-card__horizontal-block">
+                    <img class="mdc-card__media-item mdc-card__media-item--2x sm-plus" src="img/avatar.jpg">
+                    <section class="mdc-card__supporting-text text-center">
+                        My name is Joshua Castor. I am a senior level undergraduate at UIC as of Fall 2017. I enjoy programming stuff, mainly in
+                        JavaScript, but I am open to learning other languages and technologies. My main interests include web development, visual
+                        analytics, and cybersecurity.
                     </section>
-                    <div class="mdc-card__horizontal-block">
-                        <img class="mdc-card__media-item mdc-card__media-item--2x sm-plus" src="img/avatar.jpg">
-                        <section class="mdc-card__supporting-text text-center">
-                            My name is Joshua Castor. I am a senior level undergraduate at UIC as of Fall 2017. I enjoy programming stuff, mainly in
-                            JavaScript, but I am open to learning other languages and technologies. My main interests include web development, visual
-                            analytics, and cybersecurity.
-                        </section>
-                    </div>
-                </card>
+                </div>
+            </card>
 
-                <card id="projectStats">
-                    <section class="mdc-card__primary">
-                        <h1 class="mdc-card__title mdc-card__title--large">Project Statistics</h1>
-                    </section>
-                    <section class="mdc-card__supporting-text text-center" v-if="projectData">
-                        Below you can see the language distribution across the <b>{{ projectData.count.total }} public projects</b> I've contributed to. I own {{ projectData.count.mine }} of those projects.
-                    </section>
-                    <section class="mdc-card__supporting-text">
-                        <language-section :project="projectData"></language-section>
-                    </section>
-                    <section class="mdc-card__actions">
-                        <button class="mdc-button mdc-button--compact mdc-card__action">See Projects</button>
-                    </section>
-                </card>
+            <card id="projectStats">
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">Project Statistics</h1>
+                </section>
+                <section class="mdc-card__supporting-text text-center" v-if="projectData">
+                    Below you can see the language distribution across the <b>{{ projectData.count.total }} public projects</b> I've contributed to. I own {{ projectData.count.mine }} of those projects.
+                </section>
+                <section class="mdc-card__supporting-text">
+                    <language-section :project="projectData"></language-section>
+                </section>
+                <section class="mdc-card__actions">
+                    <button class="mdc-button mdc-button--compact mdc-card__action">See Projects</button>
+                </section>
+            </card>
 
-                <card id="workExperience">
-                    <section class="mdc-card__primary">
-                        <h1 class="mdc-card__title mdc-card__title--large">Work Experience</h1>
-                    </section>
-                    <section class="mdc-card__supporting-text">
-                        Work Experience goes here
-                    </section>
-                </card>
+            <card id="workExperience">
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">Work Experience</h1>
+                </section>
+                <section class="mdc-card__supporting-text">
+                    Work Experience goes here
+                </section>
+            </card>
 
-                <card id="education">
-                    <section class="mdc-card__primary">
-                        <h1 class="mdc-card__title mdc-card__title--large">Education</h1>
+            <card id="education">
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">Education</h1>
+                </section>
+                <div class="mdc-card__horizontal-block">
+                    <img class="mdc-card__media-item mdc-card__media-item--1dot5x" src="img/CAMP.CIRC.SM.WHT.PNG">
+                    <section class="mdc-card__supporting-text text-center">
+                        <b>University of Illinois at Chicago</b>
+                        <p>BS in Computer Science<br>Fall 2015 - Fall 2018</p>
                     </section>
-                    <div class="mdc-card__horizontal-block">
-                        <img class="mdc-card__media-item mdc-card__media-item--1dot5x" src="img/CAMP.CIRC.SM.WHT.PNG">
-                        <section class="mdc-card__supporting-text text-center">
-                            <b>University of Illinois at Chicago</b>
-                            <p>BS in Computer Science<br>Fall 2015 - Fall 2018</p>
-                        </section>
-                    </div>
-                </card>
+                </div>
+            </card>
 
-                <card id="coursework">
-                    <section class="mdc-card__primary">
-                        <h1 class="mdc-card__title mdc-card__title--large">Cousework</h1>
-                    </section>
-                    <section class="mdc-card__supporting-text">
-                        Coursework goes here
-                    </section>
-                </card>
+            <card id="coursework">
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">Cousework</h1>
+                </section>
+                <section class="mdc-card__supporting-text">
+                    Coursework goes here
+                </section>
+            </card>
 
-            </div>
-            <div class="page" id="projects" role="tabpanel">
-                Item Two
-            </div>
-            <div class="page" id="contact" role="tabpanel">
-                Item Three
-            </div>
-        </section>
-    </div>
+        </div>
+        <div class="page" id="projects" role="tabpanel">
+            Item Two
+        </div>
+        <div class="page" id="contact" role="tabpanel">
+            Item Three
+        </div>
+    </section>
     
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
