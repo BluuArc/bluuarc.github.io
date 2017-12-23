@@ -36,10 +36,6 @@
             #nav-header {
                 height: 75px;
             }
-
-            section.pages {
-                height: calc(100% - 75px); /* subtract height of toolbar */
-            }
         }
 
         #nav-header nav#page-tab-bar {
@@ -64,6 +60,12 @@
             section.pages {
                 height: calc(100% - 56px - 45px); /* subtract height of toolbar */
             }    
+        }
+
+        @media (min-width: 768px){
+            section.pages {
+                height: calc(100% - 75px); /* subtract height of toolbar */
+            }
         }
 
         section.pages {
@@ -100,7 +102,7 @@
             height: 12.313rem;
         }
 
-        .mdc-card#aboutMe img {
+        .mdc-card#aboutMe img, .mdc-card#education img {
             margin-top: 16px;
             margin-bottom: 16px;
         }
@@ -110,6 +112,24 @@
             margin-bottom: auto;
             margin-right: -16px;
             text-align: center;
+            padding: 0;
+        }
+
+        @media (max-width: 767px){
+            .mdc-card#education img {
+                height: 4rem;
+                width: 4rem;
+            }
+        }
+
+        .mdc-card#education .mdc-card__supporting-text {
+            margin: auto;
+            text-align: center;
+            padding: 0;
+        }
+
+        .mdc-card#projectStats .mdc-card__actions {
+            background-color: var(--mdc-theme-background-light);
         }
 
         .mdc-card__primary {
@@ -118,12 +138,16 @@
             background: var(--mdc-theme-primary);
         }
 
-        .mdc-card#projectStats .mdc-card__supporting-text {
+        .mdc-card .mdc-card__supporting-text {
             padding: 15px;
         }
 
         .mdc-card>.mdc-card__supporting-text:nth-child(3) {
             background-color: var(--mdc-theme-background-light);
+        }
+
+        button.mdc-button:not(:disabled) {
+            color: var(--mdc-theme-secondary);
         }
     
     </style>
@@ -134,22 +158,22 @@
         <jccc-nav-header :pages="pages" v-on:pagechange="setPageTo" id="nav-header"></jccc-nav-header>
         <section class="pages">
             <div class="page active" id="home" role="tabpanel">
-                <div class="mdc-card mdc-card--theme-dark" id="aboutMe">
+                <card id="aboutMe">
                     <section class="mdc-card__media xs-only" id="avatarImage"></section>
                     <section class="mdc-card__primary">
                         <h1 class="mdc-card__title mdc-card__title--large">About Me</h1>
                     </section>
                     <div class="mdc-card__horizontal-block">
+                        <img class="mdc-card__media-item mdc-card__media-item--2x sm-plus" src="img/avatar.jpg">
                         <section class="mdc-card__supporting-text">
                             My name is Joshua Castor. I am a senior level undergraduate at UIC as of Fall 2017. I enjoy programming stuff, mainly in
                             JavaScript, but I am open to learning other languages and technologies. My main interests include web development, visual
                             analytics, and cybersecurity.
                         </section>
-                        <img class="mdc-card__media-item mdc-card__media-item--2x sm-plus" src="img/avatar.jpg">
                     </div>
-                </div>
+                </card>
 
-                <div class="mdc-card mdc-card--theme-dark" id="projectStats">
+                <card id="projectStats">
                     <section class="mdc-card__primary">
                         <h1 class="mdc-card__title mdc-card__title--large">Project Statistics</h1>
                     </section>
@@ -159,7 +183,23 @@
                     <section class="mdc-card__supporting-text">
                         stats go here
                     </section>
-                </div>
+                    <section class="mdc-card__actions">
+                        <button class="mdc-button mdc-button--compact mdc-card__action">See Projects</button>
+                    </section>
+                </card>
+
+                <card id="education">
+                    <section class="mdc-card__primary">
+                        <h1 class="mdc-card__title mdc-card__title--large">Education</h1>
+                    </section>
+                    <div class="mdc-card__horizontal-block">
+                        <img class="mdc-card__media-item mdc-card__media-item--1dot5x" src="img/CAMP.CIRC.SM.WHT.PNG">
+                        <section class="mdc-card__supporting-text">
+                            <b>University of Illinois at Chicago</b>
+                            <p>BS in Computer Science<br>Fall 2015 - Fall 2018</p>
+                        </section>
+                    </div>
+                </card>
             </div>
             <div class="page" id="projects" role="tabpanel">
                 Item Two

@@ -76,6 +76,7 @@ function JCCCApp(options = {}) {
     function init() {
         const appDirectory = "js/apps";
         let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`];
+        initComponents();
         return appendScriptsIteratively(scripts) //append app scripts
             .then(() => { //initialize apps
                 self.apps.main = new PageController({
@@ -102,8 +103,22 @@ function JCCCApp(options = {}) {
             }).then(() => self.log("Finished full initialization"));
     }
 
+    // for global components
     function initComponents() {
-        
+        let card = Vue.component('card', {
+            template: `
+                <div class="mdc-card mdc-card--theme-dark">
+                    <slot>
+                        <section class="mdc-card__primary">
+                            <h1 class="mdc-card__title mdc-card__title--large">Card Component</h1>
+                        </section>
+                        <section class="mdc-card__supporting-text">
+                            This card component has no content
+                        </section>
+                    </slot>
+                </div>
+            `
+        });
     }
 
     return {
