@@ -18,6 +18,7 @@ function HomeApp(options = {}) {
             data: options.appParams.data,
             created: function () {
                 self.log("initialized home page");
+                self.log(self.models);
             },
             methods: {},
             components: self.components

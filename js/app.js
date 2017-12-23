@@ -78,6 +78,9 @@ function JCCCApp(options = {}) {
         let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`];
         initComponents();
         return appendScriptsIteratively(scripts) //append app scripts
+            .then(() => {
+                return loadProjectData();
+            })
             .then(() => { //initialize apps
                 self.apps.main = new PageController({
                     log: (...args) => self.log("[PageController]", ...args),
@@ -118,6 +121,87 @@ function JCCCApp(options = {}) {
                     </slot>
                 </div>
             `
+        });
+    }
+
+    function getData(url) {
+        return new Promise((fulfill, reject) => {
+            try {
+                $.get(url, data => fulfill(data));
+            } catch (err) {
+                reject(err);
+            }
+        });
+    }
+
+    function loadProjectData() {
+        let projectData = { //used by projects page and home page for project statistics
+            projects: {}, //keyed by "owner/project-name"
+            overall: {
+                languages: [],
+                ownership: [],
+                count: {
+                    total: 0,
+                    mine: 0
+                }
+            },
+            user: {}
+        };
+        return getData("project-data.json").then(data => {
+            // aggregation objects
+            // TODO: implement techData aggregation
+            let languageData = {}, techData = {}, ownershipData = {};
+            
+            // process data
+            Object.keys(data)
+                .sort((a, b) => new Date(data[b].lastPushedAt) - new Date(data[a].lastPushedAt)) //order by most recent first
+                .map(k => { // add data in order of sorted keys
+
+                    // save project data
+                    projectData.projects[k] = data[k];
+
+                    // keep track of languages over all projects
+                    for (let lang of data[k].languages) {
+                        if (!languageData[lang.name]) {
+                            languageData[lang.name] = {
+                                name: lang.name,
+                                color: lang.color,
+                                size: 0
+                            };
+                        }
+                        languageData[lang.name].size += lang.size;
+                    }
+
+                    //count number of projects owned by that person
+                    if (!ownershipData[data[k].owner]) {
+                        ownershipData[data[k].owner] = 0;
+                    }
+                    ownershipData[data[k].owner]++;
+                    
+                    projectData.overall.count.total++;
+                });
+
+            //convert aggregated objects to arrays
+            Object.keys(languageData)
+                .sort((a, b) => languageData[b].size - languageData[a].size) //sort in descending order by size
+                .map(lang => projectData.overall.languages.push(languageData[lang]));
+
+            Object.keys(ownershipData)
+                .sort((a, b) => ownershipData[b] - ownershipData[a]) // sort alphabetically
+                .map(owner => {
+                    projectData.overall.ownership.push({
+                        name: owner,
+                        count: ownershipData[owner]
+                    });
+                    if (owner === "BluuArc") {
+                        projectData.overall.count.mine = ownershipData[owner];
+                    }
+                });
+
+            // save data into models
+            self.models.home.projectData = projectData.overall;
+            self.models.projects.projectData = projectData;
+            return;
         });
     }
 
