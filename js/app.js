@@ -30,8 +30,8 @@ function JCCCApp(options = {}) {
         },
         views: {},
         apps: {
-            main: null,
-            home: null,
+            pageController: null,
+            homePage: null,
             projects: null,
             contact: null   
         },
@@ -80,17 +80,7 @@ function JCCCApp(options = {}) {
         return appendScriptsIteratively(scripts) //append app scripts
             .then(() => {
                 return loadProjectData();
-            })
-            .then(() => { //initialize apps
-                self.apps.main = new PageController({
-                    log: (...args) => self.log("[PageController]", ...args),
-                    models: self.models.main,
-                    appParams: {
-                        el: "div#app",
-                        data: self.models.main
-                    }
-                });
-
+            }).then(() => { //initialize apps
                 self.apps.homePage = new HomeApp({
                     log: (...args) => self.log("[HomePage]", ...args),
                     models: self.models.home,
@@ -99,9 +89,19 @@ function JCCCApp(options = {}) {
                         data: self.models.home
                     }
                 });
+
+                // initialize last to avoid variable scoping issues
+                self.apps.pageController = new PageController({
+                    log: (...args) => self.log("[PageController]", ...args),
+                    models: self.models.main,
+                    appParams: {
+                        el: "div#app",
+                        data: self.models.main
+                    }
+                });
             }).then(() => {
                 if (self.debugMode) {
-                    debug.setPageTo = self.apps.main.setPageTo;
+                    debug.setPageTo = self.apps.pageController.setPageTo;
                 }
             }).then(() => self.log("Finished full initialization"));
     }
@@ -120,6 +120,68 @@ function JCCCApp(options = {}) {
                         </section>
                     </slot>
                 </div>
+            `
+        });
+
+        let languageSection = Vue.component("language-section", {
+            props: ["project"],
+            computed: {
+                languageData: function(){
+                    // convert size data to percentages
+                    let maxSize = this.project.languages.reduce((acc, current) => acc + current.size, 0);
+                    let cumulativeSize = 0.0;
+                    let languageData = this.project.languages.map((d) => {
+                        d.barSize = cumulativeSize + (d.size / maxSize);
+                        cumulativeSize = d.barSize;
+                        return d;
+                    });
+                    return languageData.reverse();
+                }
+            },
+            methods: {
+                scaleX: function (size) {
+                    return `scaleX(${size})`;
+                },
+                toFixed: function(number){
+                    return (100 - number*100).toFixed(2);
+                },
+                showProjectsWithLanguage: function(language){
+                    console.log(language);
+                }
+            },
+            mounted: function (params) {
+              console.log("mounted language section");
+            },
+            template: `
+                <span v-if="languageData.length > 0">
+                    <div role="progressbar" class="mdc-linear-progress languageEntry">
+                        <template v-for="lang in languageData">
+                            <div class="mdc-linear-progress__bar" :style="{ transform: scaleX(lang.barSize) }" :language="lang.name">
+                                <span class="mdc-linear-progress__bar-inner" :style="{ backgroundColor: lang.color }"></span>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="mdc-layout-grid" id="languages">
+                        <div class="mdc-layout-grid__inner">
+                            <button v-for="lang in languageData" 
+                                @click="showProjectsWithLanguage(lang)" 
+                                class="mdc-button mdc-layout-grid__cell mdc-layout-grid__cell--span-3 languageEntry"
+                            >
+                                <div class="languageCircle" :style="{ backgroundColor: lang.color }"></div>
+                                <div class="text-center">
+                                    {{ lang.name }} ({{ toFixed(lang.barSize) }}%)
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </span>
+                <span v-else>
+                    <div class="languageEntry">
+                        <div class="text-center">
+                            No languages found for this project.
+                        </div>
+                    </div>
+                </span>
             `
         });
     }
