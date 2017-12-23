@@ -74,7 +74,8 @@ function JCCCApp(options = {}) {
     }
 
     function init() {
-        let scripts = ["js/apps/pageController.js"];
+        const appDirectory = "js/apps";
+        let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`];
         return appendScriptsIteratively(scripts) //append app scripts
             .then(() => { //initialize apps
                 self.apps.main = new PageController({
@@ -83,6 +84,15 @@ function JCCCApp(options = {}) {
                     appParams: {
                         el: "div#app",
                         data: self.models.main
+                    }
+                });
+
+                self.apps.homePage = new HomeApp({
+                    log: (...args) => self.log("[HomePage]", ...args),
+                    models: self.models.home,
+                    appParams: {
+                        el: "#home.page",
+                        data: self.models.home
                     }
                 });
             }).then(() => {
