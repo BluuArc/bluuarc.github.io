@@ -159,15 +159,14 @@ function JCCCApp(options = {}) {
                     </div>
                     <div class="mdc-layout-grid" id="languages">
                         <div class="mdc-layout-grid__inner">
-                            <button v-for="lang in languageData.reverse()" 
-                                @click="showProjectsWithLanguage(lang)" 
-                                class="mdc-button mdc-layout-grid__cell mdc-layout-grid__cell--span-3 languageEntry"
-                            >
-                                <div class="languageCircle" :style="{ backgroundColor: lang.color }"></div>
-                                <div class="text-center">
-                                    {{ lang.name }} ({{ toFixed(lang.barSize) }}%)
-                                </div>
-                            </button>
+                            <div v-for="lang in languageData.reverse()" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
+                                <button @click="showProjectsWithLanguage(lang)" class="mdc-button languageEntry">
+                                    <span class="mdc-button__icon languageCircle" :style="{ backgroundColor: lang.color }"></span>
+                                    <span>
+                                        {{ lang.name }} ({{ toFixed(lang.barSize) }}%)
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </span>

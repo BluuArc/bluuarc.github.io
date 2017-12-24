@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>JCCC</title>
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/color-theme.css">
     <link rel="stylesheet" href="css/breakpoints.css">
     <style>
@@ -87,6 +88,10 @@
             text-align: center;
         }
 
+        .text-right {
+            text-align: right;
+        }
+
         section.pages {
             overflow: auto;
             background-color: var(--mdc-theme-background-dark);
@@ -145,6 +150,10 @@
             background-color: var(--mdc-theme-background-light);
         }
 
+        .mdc-card#projectStats .mdc-button--raised {
+            /* background-color */
+        }
+
         .mdc-card__primary {
             padding: 5px;
             padding-left: 15px;
@@ -159,34 +168,40 @@
             background-color: var(--mdc-theme-background-light);
         }
 
-        button.mdc-button:not(:disabled) {
-            color: var(--mdc-theme-secondary);
-        }
-
         .mdc-linear-progress.languageEntry {
             height: 0.75rem;
             border-radius: 0.25rem;
         }
 
+        .mdc-layout-grid#languages {
+            padding: 5px;
+        }
+
         .mdc-layout-grid#languages .languageEntry {
             position: relative;
+            text-align: left;
+            overflow: visible;
+            white-space: nowrap;
         }
 
         .mdc-layout-grid#languages .languageCircle {
             border-radius: 50%;
-            width: 15px;
-            height: 15px;
             border: white 1px solid;
-
-            /* make parent have relative positioning for vertical centering */
-            position: absolute;
-            top: 50%;
-            margin-top: -7.5px;
+            margin-top: 7.5px;
         }
 
         .mdc-layout-grid#languages button.languageEntry {
             text-transform: none;
             color: var(--mdc-theme-text-primary-on-dark);
+            padding: 0;
+        }
+
+        .mdc-button--stroked.secondary-stroked-button {
+            border-color: var(--mdc-theme-secondary);
+        }
+
+        .mdc-card#projectStats #projectsBtn {
+            color: var(--mdc-theme-secondary-light);
         }
     
     </style>
@@ -224,7 +239,7 @@
                     <language-section :project="projectData"></language-section>
                 </section>
                 <section class="mdc-card__actions">
-                    <button class="mdc-button mdc-button--compact mdc-card__action">See Projects</button>
+                    <a class="mdc-button mdc-button--stroked secondary-stroked-button mdc-button--compact mdc-card__action" id="projectsBtn">See Projects</a>
                 </section>
             </card>
 
