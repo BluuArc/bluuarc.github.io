@@ -159,7 +159,7 @@
         .mdc-card .mdc-card__supporting-text {
             padding: 15px;
         }
-        
+
         .mdc-linear-progress.languageEntry {
             height: 0.75rem;
             border-radius: 0.25rem;
@@ -236,8 +236,8 @@
         }
 
         @media (max-width: 767px) {
-            .jobEntry h2 {
-                display: inline;
+            .header-container h2, .header-container h3 {
+                display: block;
             }
         }
 
@@ -247,8 +247,8 @@
                 position: absolute;
             }
 
-            .jobEntry h2 {
-                display: block;
+            .header-container h2, .header-container h3 {
+                display: inline;
             }
         }
     
@@ -302,7 +302,7 @@
                                 <span class="mdc-list-item__text">
                                     <div class="header-container">
                                         <h2 class="mdc-typography--headline"><span id="name">{{ job.name }}</span></h2>
-                                        <h3 class="mdc-typography--subheading1"><span id="time" class="mdc-list-item__end-detail">{{ job.time }}</span></h3>
+                                        <h3 class="mdc-typography--title"><span id="time" class="mdc-list-item__end-detail">{{ job.time }}</span></h3>
                                     </div>
                                     
                                     <h3 class="mdc-typography--title">
