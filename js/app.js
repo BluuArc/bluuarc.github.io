@@ -7,7 +7,7 @@ var debug = {};
 function JCCCApp(options = {}) {
     let self = {
         models: { //data goes here
-            main: {
+            pageController: {
                 activePage: "Home",
                 pages: {
                     'Home': {
@@ -78,15 +78,13 @@ function JCCCApp(options = {}) {
         let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`];
         initComponents();
         return appendScriptsIteratively(scripts) //append app scripts
-            .then(() => {
-                return loadProjectData();
-            }).then(() => { //initialize apps
+            .then(initializeData).then(() => { //initialize apps
                 self.apps.pageController = new PageController({
                     log: (...args) => self.log("[PageController]", ...args),
-                    models: self.models.main,
+                    models: self.models.pageController,
                     appParams: {
                         el: "section#nav-app",
-                        data: self.models.main
+                        data: self.models.pageController
                     }
                 });
 
@@ -189,6 +187,49 @@ function JCCCApp(options = {}) {
                 reject(err);
             }
         });
+    }
+
+    function initializeData() {
+        self.models.home.workData = [ //in reverse chronological order
+            {
+                name: "Research Experience Undergraduate",
+                location: "Chicago, IL",
+                company: "University of Illinois at Chicago",
+                time: "May 2017 - Dec 2017",
+                desc: `Designed a web-based tool to submit as an entry to VAST Challenge 2017. 
+                            Collaborated with a group of 4 to develop and deploy a web-based service for Englewood. 
+                            Learned how to develop and deploy Unity applications for CAVE2.<br>
+                            <b>Relevant Projects</b>
+                            <ul>
+                                <li>VAST Challenge 2017: <a target="_blank" href="https://github.com/BluuArc/vast-challenge-2017">Repo</a> | <a target="_blank" href="https://bluuarc.github.io/vast-challenge-2017/challenge-2/">Demo</a></li>
+                                <li>Bubbles TacTile Demo: <a target="_blank" href="https://github.com/BluuArc/bubbles-tactile-demo">Repo</a> | <a target="_blank" href="https://bluuarc.github.io/bubbles-tactile-demo/">Demo</a></li>
+                                <li>Three.js Point Cloud Project: <a target="_blank" href="https://github.com/BluuArc/three.js-point-cloud-project">Repo</a> | <a target="_blank" href="https://bluuarc.github.io/three.js-point-cloud-project/">Demo</a></li>
+                            </ul>`
+            },
+            {
+                name: "Research Intern",
+                location: "Chicago, IL",
+                company: "University of Illinois at Chicago",
+                time: "Summer 2016",
+                desc: `Tested multiple websites to see which accessible web-commands are necessary for normal usage by disabling certain web standards and elements. 
+                            Saved and analyzed data with Google Sheets.`
+            },
+            {
+                name: "Sophomore Level Student Peer Tutor",
+                location: "Chicago, IL",
+                company: "University of Illinois at Chicago",
+                time: "Jan 2017 - May 2017",
+                desc: `Tutored an average of 5 students per week in classes of Programming Practicum, Data Structures, and Machine Organization; included material in C and Java.`
+            },
+            {
+                name: "Freshman Level Student Peer Tutor",
+                location: "Chicago, IL",
+                company: "University of Illinois at Chicago",
+                time: "Aug 2016 - Dec 2016",
+                desc: `Tutored students in classes of Intro to Programming and Program Design; included material in C and Python.`
+            },
+        ]
+        return loadProjectData();
     }
 
     function loadProjectData() {

@@ -150,10 +150,6 @@
             background-color: var(--mdc-theme-background-light);
         }
 
-        .mdc-card#projectStats .mdc-button--raised {
-            /* background-color */
-        }
-
         .mdc-card__primary {
             padding: 5px;
             padding-left: 15px;
@@ -203,6 +199,63 @@
         .mdc-card#projectStats #projectsBtn {
             color: var(--mdc-theme-secondary-light);
         }
+
+        .mdc-card#workExperience .mdc-list {
+            margin: 0;
+        }
+
+        .mdc-card#workExperience .mdc-list .mdc-list-divider:last-of-type {
+            display: none;
+        }
+
+        .mdc-card#workExperience .mdc-list-item {
+            height: auto;
+            white-space: unset;
+            padding-top: 0.5em;
+        }
+
+        .jobEntry h2, .jobEntry h3 {
+            margin: 0;
+        }
+
+        .jobEntry .mdc-list-item__end-detail {
+            width: auto;
+        }
+
+        .jobEntry .header-container {
+            width: 100%; 
+            position: relative;
+        }
+
+        .jobEntry .mdc-list-item__text {
+            width: 100%;
+        }
+
+        .jobEntry a {
+            color: var(--mdc-theme-secondary-light);
+        }
+
+        .jobEntry a:visited {
+            color: var(--mdc-theme-secondary-dark);
+        }
+
+        @media (max-width: 767px) {
+            .jobEntry h2 {
+                display: inline;
+            }
+        }
+
+        @media (min-width: 768px){
+            .header-container #time{
+                right: 0;
+                position: absolute;
+            }
+
+            .jobEntry h2 {
+                display: block;
+            }
+        }
+
     
     </style>
 </head>
@@ -248,7 +301,29 @@
                     <h1 class="mdc-card__title mdc-card__title--large">Work Experience</h1>
                 </section>
                 <section class="mdc-card__supporting-text">
-                    Work Experience goes here
+                    <ul class="mdc-list mdc-list--theme-dark">
+                        <template v-for="job in workData">
+                            <li class="mdc-list-item jobEntry">
+                                <span class="mdc-list-item__text">
+                                    <div class="header-container">
+                                        <h2><span id="name">{{ job.name }}</span></h2>
+                                        <h3><span id="time" class="mdc-list-item__end-detail">{{ job.time }}</span></h3>
+                                    </div>
+                                    
+                                    <h3>
+                                        <span id="company">{{ job.company }}</span> | <span id="location">{{ job.location }}</span>
+                                    </h3>
+                                    
+                                    <p id="desc" v-html="job.desc"></p>
+                                </span>
+                                
+                            </li>
+                            <li role="separator" class="mdc-list-divider"></li>
+                        </template>
+                        
+                        
+                    </ul>
+                    
                 </section>
             </card>
 
