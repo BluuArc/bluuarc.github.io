@@ -204,26 +204,26 @@
             display: none;
         }
 
-        .mdc-card#workExperience .mdc-list-item {
+        .mdc-card#workExperience .mdc-list-item, .mdc-card#coursework .mdc-list-item {
             height: auto;
             white-space: unset;
             padding-top: 0.5em;
         }
 
-        .jobEntry h2, .jobEntry h3 {
+        .jobEntry h2, .jobEntry h3, .courseEntry h2, .courseEntry h3 {
             margin: 0;
         }
 
-        .jobEntry .mdc-list-item__end-detail {
+        .jobEntry .mdc-list-item__end-detail, .courseEntry .mdc-list-item__end-detail {
             width: auto;
         }
 
-        .jobEntry .header-container {
+        .jobEntry .header-container, .courseEntry .header-container {
             width: 100%; 
             position: relative;
         }
 
-        .jobEntry .mdc-list-item__text {
+        .jobEntry .mdc-list-item__text, .courseEntry .mdc-list-item__text {
             width: 100%;
         }
 
@@ -250,6 +250,31 @@
             .header-container h2, .header-container h3 {
                 display: inline;
             }
+        }
+
+        .mdc-card#coursework .mdc-card__supporting-text {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .mdc-card#coursework .mdc-list {
+            padding: 0;
+            margin: 0;
+        }
+
+        .mdc-card#coursework .mdc-list-item {
+            padding: 16px;
+            border: 1px solid var(--mdc-theme-background-light);
+        }
+
+        @media (min-width: 768px) {
+            .courseEntry #lang-techs {
+                color: var(--mdc-theme-text-hint-on-dark);
+            }
+        }
+
+        .mdc-card#coursework .mdc-list-item:not(:first-child) {
+            border-top: none;
         }
     
     </style>
@@ -315,10 +340,7 @@
                             </li>
                             <li role="separator" class="mdc-list-divider"></li>
                         </template>
-                        
-                        
                     </ul>
-                    
                 </section>
             </card>
 
@@ -340,7 +362,22 @@
                     <h1 class="mdc-card__title mdc-card__title--large">Coursework</h1>
                 </section>
                 <section class="mdc-card__supporting-text">
-                    Coursework goes here
+                    <ul class="mdc-list mdc-list--theme-dark">
+                        <template v-for="course in courseData">
+                            <li class="mdc-list-item courseEntry">
+                                <span class="mdc-list-item__text">
+                                    <div class="header-container">
+                                        <h2 class="mdc-typography--headline"><span id="name">{{ course["Course Name"] }}</span></h2>
+                                        <h3 class="mdc-typography--title"><span id="time" class="mdc-list-item__end-detail">{{ course.Semester }}</span></h3>
+                                    </div>
+                                    <h3 class="mdc-typography--title">
+                                        <span id="lang-techs">{{ course["Languages/Technologies/Techniques"] }}</span>
+                                    </h3>
+                                </span>
+                            </li>
+                        </template>
+                        
+                    </ul>
                 </section>
             </card>
 

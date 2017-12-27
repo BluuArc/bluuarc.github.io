@@ -191,7 +191,7 @@ function JCCCApp(options = {}) {
     }
 
     function initializeData() {
-        return Promise.all([loadProjectData(),loadJobData()]);;
+        return Promise.all([loadProjectData(),loadJobData(), loadCourseData()]);
     }
 
     function loadJobData() {
@@ -204,6 +204,14 @@ function JCCCApp(options = {}) {
                 }
                 return d;
             });
+            return;
+        });
+    }
+
+    function loadCourseData(params) {
+        self.log("Loading course data");
+        return getData("courses.json").then(data => {
+            self.models.home.courseData = data;
             return;
         });
     }
