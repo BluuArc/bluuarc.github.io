@@ -171,21 +171,28 @@
 
         .mdc-layout-grid#languages .languageEntry {
             position: relative;
-            text-align: left;
             overflow: visible;
             white-space: nowrap;
+        }
+
+        .mdc-layout-grid#languages .languageText {
+            margin-left: 25px;
         }
 
         .mdc-layout-grid#languages .languageCircle {
             border-radius: 50%;
             border: white 1px solid;
             margin-top: 7.5px;
+            position: absolute;
+            left: 0;
         }
 
         .mdc-layout-grid#languages button.languageEntry {
             text-transform: none;
             color: var(--mdc-theme-text-primary-on-dark);
             padding: 0;
+            width: 100%;
+            position: relative;
         }
 
         .mdc-button--stroked.secondary-stroked-button {
@@ -273,6 +280,12 @@
             }
         }
 
+        @media (max-width: 767px) {
+            .courseEntry {
+                text-align: center;
+            }
+        }
+
         .mdc-card#coursework .mdc-list-item:not(:first-child) {
             border-top: none;
         }
@@ -312,7 +325,7 @@
                     <language-section :project="projectData"></language-section>
                 </section>
                 <section class="mdc-card__actions">
-                    <a class="mdc-button mdc-button--stroked secondary-stroked-button mdc-button--compact mdc-card__action" id="projectsBtn">See Projects</a>
+                    <a class="mdc-button secondary-stroked-button mdc-button--compact mdc-card__action" id="projectsBtn">See Projects</a>
                 </section>
             </card>
 
