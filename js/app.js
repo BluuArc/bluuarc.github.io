@@ -24,7 +24,9 @@ function JCCCApp(options = {}) {
                     }
                 }
             },
-            home: {},
+            home: {
+                closestCard: ""
+            },
             projects: {},
             contact: {}
         },

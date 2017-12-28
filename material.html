@@ -30,13 +30,20 @@
             color: var(--mdc-theme-secondary)
         }
 
+        :root {
+            --nav-header-height-desktop: 75px;
+            --nav-header-height-mobile-title: 56px;
+            --nav-header-height-mobile-tabs: 45px;
+            --nav-header-height-mobile-full: 101px; /* title + tabs */
+        }
+
         #nav-header {
             color: var(--mdc-theme-text-primary-on-primary);
         }
 
         @media (min-width: 768px){
             #nav-header {
-                height: 75px;
+                height: var(--nav-header-height-desktop);
             }
         }
 
@@ -50,23 +57,27 @@
         }
         
         #nav-header #mobile-header {
-            min-height: 45px;
-            height: 45px;
+            min-height: var(--nav-header-height-mobile-tabs);
+            height: var(--nav-header-height-mobile-tabs); /* add 56px to get toolbar height on mobile */
         }
 
         #nav-header #mobile-header .mdc-toolbar__title {
             margin: 0;
         }
 
+        section.pages {
+            position: relative;
+        }
+
         @media (max-width: 767px){
             section.pages {
-                height: calc(100% - 56px - 45px); /* subtract height of toolbar */
+                height: calc(100% - var(--nav-header-height-mobile-full)); /* subtract height of toolbar */
             }
         }
 
         @media (min-width: 768px){
             section.pages {
-                height: calc(100% - 75px); /* subtract height of toolbar */
+                height: calc(100% - var(--nav-header-height-desktop)); /* subtract height of toolbar */
             }
         }
 
@@ -114,6 +125,23 @@
         .page#home {
             margin-bottom: 15px;
             margin-top: 25px;
+        }
+
+        .page#home #titleBar, .page#home #titleBar .mdc-toolbar__row {
+            height: 50px;
+            min-height: 50px;
+        }
+
+        @media (max-width: 767px) {
+            .page#home #titleBar {
+                top: var(--nav-header-height-mobile-full);
+            }
+        }
+
+        @media (min-width: 768px){
+            .page#home #titleBar {
+                top: var(--nav-header-height-desktop);
+            }
         }
 
         .mdc-card#aboutMe #avatarImage {
@@ -299,11 +327,13 @@
     </section>
     <section class="pages">
         <div class="page active" id="home" role="tabpanel">
+            <floating-title-toolbar id="titleBar" :title="closestCard" v-on:changecard="setToolbarTitle"></floating-title-toolbar>
+
             <card id="aboutMe">
-                <section class="mdc-card__media xs-only" id="avatarImage"></section>
                 <section class="mdc-card__primary">
                     <h1 class="mdc-card__title mdc-card__title--large">About Me</h1>
                 </section>
+                <section class="mdc-card__media xs-only" id="avatarImage"></section>
                 <div class="mdc-card__horizontal-block">
                     <img class="mdc-card__media-item mdc-card__media-item--2x sm-plus" src="img/avatar.jpg">
                     <section class="mdc-card__supporting-text text-center mdc-typography--body1">
