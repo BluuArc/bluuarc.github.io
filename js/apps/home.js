@@ -119,7 +119,7 @@ function HomeApp(options = {}) {
                     if(index <= 0){
                         this.scrollTo(0);
                     }else{
-                        this.scrollTo(cardTitles[keys[index - 1]]);
+                        this.scrollTo(cardTitles[keys[index - 1]]+1);
                     }
                 },
                 scrollToNext: function () {
@@ -129,9 +129,9 @@ function HomeApp(options = {}) {
                     if (index < 0) {
                         this.scrollTo(cardTitles[keys[0]]);
                     }else if(index >= keys.length - 1){
-                        this.scrollTo(cardTitles[keys[keys.length - 1]]);
+                        this.scrollTo(cardTitles[keys[keys.length - 1]]+1);
                     }else {
-                        this.scrollTo(cardTitles[keys[index + 1]]);
+                        this.scrollTo(cardTitles[keys[index + 1]]+1);
                     }
                 },
                 scrollTo: function (position = 0) {
