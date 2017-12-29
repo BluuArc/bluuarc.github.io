@@ -77,7 +77,8 @@ function JCCCApp(options = {}) {
 
     function init() {
         const appDirectory = "js/apps";
-        let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`, `${appDirectory}/contact.js`];
+        let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`, 
+            `${appDirectory}/contact.js`, `${appDirectory}/projects.js`];
         initComponents();
         return appendScriptsIteratively(scripts) //append app scripts
             .then(initializeData).then(() => { //initialize apps
@@ -105,6 +106,15 @@ function JCCCApp(options = {}) {
                     appParams: {
                         el: "#contact.page",
                         data: self.models.contact
+                    }
+                });
+
+                self.apps.projectPage = new ProjectsApp({
+                    log: (...args) => self.log("[ProjectPage]", ...args),
+                    models: self.models.projects,
+                    appParams: {
+                        el: "#projects.page",
+                        data: self.models.projects
                     }
                 });
             }).then(() => {

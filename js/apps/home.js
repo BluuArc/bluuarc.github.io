@@ -138,6 +138,7 @@ function HomeApp(options = {}) {
                     $(this.page).animate({
                         scrollTop: +position
                     }, 250);
+                    self.log("Scrolling to",position);
                 }
             },
             mounted: function(){
