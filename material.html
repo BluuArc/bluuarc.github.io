@@ -327,6 +327,28 @@
         .mdc-card#coursework .mdc-list-item:not(:first-child) {
             border-top: none;
         }
+
+        .page#contact .mdc-grid-tile__primary-content {
+            left: 25%;
+            top: 15%;
+            max-width: 50%;
+            height: auto;
+        }
+
+        .page#contact .mdc-grid-list {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page#contact .mdc-grid-tile {
+            margin: auto;
+        }
+
+        @media (max-width: 991px) { .page#contact .mdc-grid-tile { margin-bottom: 15px; } }
+        
+        .page#contact .mdc-grid-tile:hover {
+            outline: 2px solid var(--mdc-theme-primary-light);
+        }
     
     </style>
 </head>
@@ -429,17 +451,32 @@
                                 </span>
                             </li>
                         </template>
-                        
                     </ul>
                 </section>
             </card>
-
         </div>
+
         <div class="page" id="projects" role="tabpanel">
             Item Two
         </div>
+
         <div class="page" id="contact" role="tabpanel">
-            Item Three
+            <div class="mdc-grid-list text-center">
+                <ul class="mdc-grid-list__tiles">
+                    <template v-for="entry in links">
+                        <li class="mdc-grid-tile">
+                            <a :href="entry.link" target="_blank">
+                                <div class="mdc-grid-tile__primary" :style="{ backgroundColor: entry.bgColor }">
+                                    <img class="mdc-grid-tile__primary-content" :src="entry.icon" />
+                                </div>
+                                <span class="mdc-grid-tile__secondary">
+                                    <span class="mdc-grid-tile__title">{{ entry.name }}</span>
+                                </span>
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+            </div>
         </div>
     </section>
     

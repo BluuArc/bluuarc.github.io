@@ -8,11 +8,11 @@ function PageController(options = {}) {
 
     init();
     function init() {
+        self.log = options.log;
         initComponents();
 
         self.models = options.models;
         self.views = options.views;
-        self.log = options.log;
         self.app = new Vue({
             el: options.appParams.el,
             data: options.appParams.data,

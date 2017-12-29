@@ -77,7 +77,7 @@ function JCCCApp(options = {}) {
 
     function init() {
         const appDirectory = "js/apps";
-        let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`];
+        let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`, `${appDirectory}/contact.js`];
         initComponents();
         return appendScriptsIteratively(scripts) //append app scripts
             .then(initializeData).then(() => { //initialize apps
@@ -96,6 +96,15 @@ function JCCCApp(options = {}) {
                     appParams: {
                         el: "#home.page",
                         data: self.models.home
+                    }
+                });
+
+                self.apps.contactPage = new ContactApp({
+                    log: (...args) => self.log("[ContactPage]", ...args),
+                    models: self.models.contact,
+                    appParams: {
+                        el: "#contact.page",
+                        data: self.models.contact
                     }
                 });
             }).then(() => {
@@ -192,8 +201,12 @@ function JCCCApp(options = {}) {
         });
     }
 
-    function initializeData() {
-        return Promise.all([loadProjectData(),loadJobData(), loadCourseData()]);
+    async function initializeData() {
+        await loadProjectData();
+        await loadJobData();
+        await loadCourseData();
+        await loadContactData();
+        return;
     }
 
     function loadJobData() {
@@ -210,7 +223,7 @@ function JCCCApp(options = {}) {
         });
     }
 
-    function loadCourseData(params) {
+    function loadCourseData() {
         self.log("Loading course data");
         return getData("courses.json").then(data => {
             self.models.home.courseData = data;
@@ -288,6 +301,39 @@ function JCCCApp(options = {}) {
             self.models.projects.projectData = projectData;
             return;
         });
+    }
+
+    function loadContactData() {
+        self.log("Loading contact data");
+
+        self.models.contact.links = [
+            {
+                name: "GitHub",
+                bgColor: "var(--mdc-theme-background-light)",
+                icon: "img/GitHub-Mark-Light-32px.png",
+                link: "https://github.com/BluuArc"
+            },
+            {
+                name: "LinkedIn",
+                bgColor: "var(--mdc-theme-background-light)",
+                icon: "img/in-white-34px-R.png",
+                link: "https://www.linkedin.com/in/joshuacastor"
+            },
+            {
+                name: "Email",
+                bgColor: "var(--mdc-theme-background-light)",
+                icon: "img/ic_email_white_48dp_2x.png",
+                link: "mailto:jcasto3@uic.edu"
+            },
+            {
+                name: "EVL",
+                bgColor: "var(--mdc-theme-background-light)",
+                icon: "img/evl.png",
+                link: "https://www.evl.uic.edu/entry.php?id=2302"
+            }
+        ];
+
+        return Promise.resolve();
     }
 
     return {
