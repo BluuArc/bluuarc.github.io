@@ -44,19 +44,25 @@ function HomeApp(options = {}) {
     }
 
     function initComponents() {
-        let cardTitles;
+        let cardTitles, startCard, endCard;
         self.components["floating-title-toolbar"] = {
             props: ['title'],
             data: function(){
                 return {
-                    page: $("section.pages").get(0),
+                    page: $("section.pages").get(0)
                 };
             },
             template: `
                 <header class="mdc-toolbar mdc-toolbar--fixed" id="titleBar" v-show="title.length > 0">
-                    <div class="mdc-toolbar__row">
+                    <div class="mdc-toolbar__row" :startCard="getStartCard()" :endCard="getEndCard()">
+                        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+                            <button class="mdc-button"><i class="material-icons mdc-button__icon" v-show="title != getStartCard()" @click="scrollToPrev">keyboard_arrow_up</i></button>
+                        </section>
                         <section class="mdc-toolbar__section">
                             <span class="mdc-toolbar__title">{{ title }}</span>
+                        </section>
+                        <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+                            <button class="mdc-button"><i class="material-icons mdc-button__icon" v-show="title != getEndCard()" @click="scrollToNext">keyboard_arrow_down</i></button>
                         </section>
                     </div>
                 </header>
@@ -85,10 +91,60 @@ function HomeApp(options = {}) {
                         let title = curCard.find(".mdc-card__primary .mdc-card__title").text();
                         cardTitles[title] = curCard.get(0).offsetTop;
                     });
+                },
+                getStartCard: function() {
+                    if (!cardTitles) return "a";
+                    if (startCard) return startCard;
+
+                    startCard = Object.keys(cardTitles)[0];
+                    return startCard;
+                },
+                getEndCard: function () {
+                    if (!cardTitles) return "a";
+                    if (endCard) return endCard;
+
+                    let titles = Object.keys(cardTitles);
+                    self.log("cardTitles", titles);
+                    endCard = titles[titles.length - 1];
+                    return endCard;
+                },
+                scrollToPrev: function () {
+                    if(this.title.length === 0){
+                        return;
+                    }
+
+                    let keys = Object.keys(cardTitles);
+
+                    let index = keys.findIndex(v => v === this.title);
+                    if(index <= 0){
+                        this.scrollTo(0);
+                    }else{
+                        this.scrollTo(cardTitles[keys[index - 1]]);
+                    }
+                },
+                scrollToNext: function () {
+                    let keys = Object.keys(cardTitles);
+
+                    let index = keys.findIndex(v => v === this.title);
+                    if (index < 0) {
+                        this.scrollTo(cardTitles[keys[0]]);
+                    }else if(index >= keys.length - 1){
+                        this.scrollTo(cardTitles[keys[keys.length - 1]]);
+                    }else {
+                        this.scrollTo(cardTitles[keys[index + 1]]);
+                    }
+                },
+                scrollTo: function (position = 0) {
+                    $(this.page).animate({
+                        scrollTop: +position
+                    }, 250);
                 }
             },
             mounted: function(){
                 this.setCardTitles();
+                $("#titleBar .mdc-button").each(function(){
+                    mdc.ripple.MDCRipple.attachTo(this);
+                });
             },
             created: function () {
                 window.addEventListener('scroll', this.handleScroll, true);
