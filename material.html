@@ -104,6 +104,10 @@
             text-align: right;
         }
 
+        .text-left {
+            text-align: left;
+        }
+
         section.pages {
             overflow: auto;
             background-color: var(--mdc-theme-background-dark);
@@ -350,6 +354,14 @@
         .page#contact .mdc-grid-tile:hover {
             outline: 2px solid var(--mdc-theme-primary-light);
         }
+
+        .page#projects .name-search, .name-search .mdc-text-field, .name-search input {
+            width: 100%;
+        }
+
+        .page#projects #searchCard .mdc-card__supporting-text {
+            padding: 15px;
+        }
     
     </style>
 </head>
@@ -459,7 +471,41 @@
 
         <div class="page" id="projects" role="tabpanel">
             
-            <card>
+            <card id="searchCard" class="mdc-theme--dark">
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">Search Options</h1>
+                </section>
+                <section class="mdc-card__supporting-text text-center mdc-typography--body1">
+                    <div class="mdc-layout-grid">
+                        <div class="mdc-layout-grid__inner">
+                            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 text-left">
+                                <h2>Name Filter</h2>
+                            </div>
+                            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+                                <name-search></name-search>
+                            </div>
+                            <div class="mdc-layout-grid__cell text-left">
+                                <radio-button value="contains" actualname="contains" groupname="nameMode"></radio-button>
+                            </div>
+                            <div class="mdc-layout-grid__cell text-left">
+                                <radio-button value="is-exactly" actualname="is exactly" groupname="nameMode"></radio-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdc-layout-grid">
+                        <div class="mdc-layout-grid__inner">
+                            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 text-left">
+                                <h2>Language Filter</h2>
+                            </div>
+                            <template v-for="language in projectData.overall.languages">
+                                <div class="mdc-layout-grid__cell text-left">
+                                    <language-checkbox :language="language.name"></language-checkbox>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    
+                </section>
             </card>
         </div>
 
