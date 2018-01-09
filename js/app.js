@@ -27,7 +27,9 @@ function JCCCApp(options = {}) {
             home: {
                 closestCard: ""
             },
-            projects: {},
+            projects: {
+                filters: {}
+            },
             contact: {}
         },
         views: {},
@@ -147,13 +149,18 @@ function JCCCApp(options = {}) {
             computed: {
                 languageData: function(){
                     // convert size data to percentages
+                    this.log("project languages for", this.project.name , this.project.languages);
                     let maxSize = this.project.languages.reduce((acc, current) => acc + current.size, 0);
-                    let cumulativeSize = 0.0;
-                    let languageData = this.project.languages.map((d) => {
-                        d.barSize = cumulativeSize + (d.size / maxSize);
-                        cumulativeSize = d.barSize;
-                        return d;
-                    });
+                    let cumulativeSize = 0.0; // used for illusion
+                    let languageData = this.project.languages
+                        .sort((a, b) => b.size - a.size)
+                        .map((d) => {
+                            d.actualSize = d.size / maxSize;
+                            d.barSize = cumulativeSize + d.actualSize;
+                            cumulativeSize = d.barSize;
+                            return d;
+                        });
+                    // this.log("language data for",project.name, languageData);
                     return languageData.reverse();
                 }
             },
@@ -162,10 +169,13 @@ function JCCCApp(options = {}) {
                     return `scaleX(${size})`;
                 },
                 toFixed: function(number){
-                    return (100 - number*100).toFixed(2);
+                    return (number*100).toFixed(2);
                 },
                 showProjectsWithLanguage: function(language){
                     self.log("TODO: Implement language filtering for", language.name);
+                },
+                log: function (...args) {
+                    self.log("[language-section]", ...args);
                 }
             },
             template: `
@@ -183,7 +193,7 @@ function JCCCApp(options = {}) {
                                 <button @click="showProjectsWithLanguage(lang)" class="mdc-button languageEntry text-center">
                                     <span class="mdc-button__icon languageCircle" :style="{ backgroundColor: lang.color }"></span>
                                     <span class="languageText">
-                                        {{ lang.name }} ({{ toFixed(lang.barSize) }}%)
+                                        {{ lang.name }} ({{ toFixed(lang.actualSize) }}%)
                                     </span>
                                 </button>
                             </div>
