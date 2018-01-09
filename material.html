@@ -189,7 +189,7 @@
             padding: 0;
         }
 
-        .mdc-card#projectStats .mdc-card__actions {
+        .mdc-card .mdc-card__actions {
             background-color: var(--mdc-theme-background-light);
         }
 
@@ -238,11 +238,7 @@
             position: relative;
         }
 
-        .mdc-button--stroked.secondary-stroked-button {
-            border-color: var(--mdc-theme-secondary);
-        }
-
-        .mdc-card#projectStats #projectsBtn {
+        .mdc-card .mdc-card__actions button, .mdc-card .mdc-card__actions a {
             color: var(--mdc-theme-secondary-light);
         }
 
@@ -362,6 +358,14 @@
         .page#projects #searchCard .mdc-card__supporting-text {
             padding: 15px;
         }
+
+        #searchCard .mdc-card__primary {
+            background: var(--mdc-theme-primary-light);
+        }
+
+        .projectEntry .mdc-card__primary {
+            background: var(--mdc-theme-primary-dark);
+        }
     
     </style>
 </head>
@@ -400,7 +404,7 @@
                     <language-section :project="projectData"></language-section>
                 </section>
                 <section class="mdc-card__actions">
-                    <a class="mdc-button secondary-stroked-button mdc-button--compact mdc-card__action" id="projectsBtn">See Projects</a>
+                    <a class="mdc-button mdc-button--compact mdc-card__action" id="projectsBtn">See Projects</a>
                 </section>
             </card>
 
@@ -481,14 +485,14 @@
                             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 text-left">
                                 <h2>Name Filter</h2>
                             </div>
+                            <!-- <div class="mdc-layout-grid__cell text-left">
+                                <radio-button value="contains" actualname="Contains" groupname="nameMode"></radio-button>
+                            </div>
+                            <div class="mdc-layout-grid__cell text-left">
+                                <radio-button value="is-exactly" actualname="Is exactly" groupname="nameMode"></radio-button>
+                            </div> -->
                             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-                                <name-search></name-search>
-                            </div>
-                            <div class="mdc-layout-grid__cell text-left">
-                                <radio-button value="contains" actualname="contains" groupname="nameMode"></radio-button>
-                            </div>
-                            <div class="mdc-layout-grid__cell text-left">
-                                <radio-button value="is-exactly" actualname="is exactly" groupname="nameMode"></radio-button>
+                                <name-search v-on:namechange="setNameFilter"></name-search>
                             </div>
                         </div>
                     </div>
@@ -499,14 +503,78 @@
                             </div>
                             <template v-for="language in projectData.overall.languages">
                                 <div class="mdc-layout-grid__cell text-left">
-                                    <language-checkbox :language="language.name"></language-checkbox>
+                                    <language-checkbox :language="language.name" v-on:addlanguage="addLanguageFilter" v-on:removelanguage="removeLanguageFilter"></language-checkbox>
                                 </div>
                             </template>
                         </div>
                     </div>
                     
                 </section>
+                <section class="mdc-card__actions">
+                    <button class="mdc-button mdc-button--compact mdc-card__action" id="searchBtn" @click="search">Search</button>
+                </section>
             </card>
+
+            <card class="projectEntry" v-for="(project,key) in projectData.projects">
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">{{ project.name }}</h1>
+                </section>
+                <section class="mdc-card__supporting-text text-center">
+                    <div class="mdc-layout-grid">
+                        <div class="mdc-layout-grid__inner">
+                            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 text-left" id="description">
+                                <h3>Description</h3>
+                                <span v-if="project.description">{{ project.description }}</span>
+                                <span v-else>No project description found</span>
+                            </div>
+                            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 text-left" id="project-info">
+                                <h3>Project Information</h3>
+                                <p><b>Owner: </b> {{ project.owner }}</p>
+                                <p><b>Created: </b>{{ getFormattedDate(project.createdAt) }}</p>
+                                <p><b>Last Commit: </b>{{ getFormattedDate(project.lastPushedAt) }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mdc-card__supporting-text">
+                    <language-section :project="project"></language-section>
+                </section>
+                <section class="mdc-card__actions">
+                    <a :href="project.repoURL" class="mdc-button mdc-button--compact mdc-card__action">Code Repository</a>
+                    <a v-if="project.homepageURL" :href="project.homepageURL" class="mdc-button mdc-button--compact mdc-card__action">Project Page</a>
+                </section>
+            </card>
+            <!-- <template v-for="(project,key) in projectData.projects">
+                <card class="projectEntry">
+                    <section class="mdc-card__primary">
+                        <h1 class="mdc-card__title mdc-card__title--large">{{ project.name }}</h1>
+                    </section>
+                    <section class="mdc-card__supporting-text text-center">
+                        <div class="mdc-layout-grid">
+                            <div class="mdc-layout-grid__inner">
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 text-left" id="description">
+                                    <h3>Description</h3>
+                                    <span v-if="project.description">{{ project.description }}</span>
+                                    <span v-else>No project description found</span>
+                                </div>
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 text-left" id="project-info">
+                                    <h3>Project Information</h3>
+                                    <p><b>Owner: </b> {{ project.owner }}</p>
+                                    <p><b>Created: </b>Date goes here</p>
+                                    <p><b>Last Commit: </b> Date goes here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        <language-section :project="project"></language-section>
+                    </section>
+                    <section class="mdc-card__actions">
+                        <a :href="project.repoURL" class="mdc-button mdc-button--compact mdc-card__action">Code Repository</a>
+                        <a v-if="project.homepageURL" :href="project.homepageURL" class="mdc-button mdc-button--compact mdc-card__action">Project Page</a>
+                    </section>
+                </card>
+            </template> -->
         </div>
 
         <div class="page" id="contact" role="tabpanel">
@@ -532,6 +600,7 @@
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     
     <script src="js/app.js"></script>
     

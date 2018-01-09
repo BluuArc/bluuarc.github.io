@@ -149,7 +149,7 @@ function JCCCApp(options = {}) {
             computed: {
                 languageData: function(){
                     // convert size data to percentages
-                    this.log("project languages for", this.project.name , this.project.languages);
+                    // this.log("project languages for", this.project.name , this.project.languages);
                     let maxSize = this.project.languages.reduce((acc, current) => acc + current.size, 0);
                     let cumulativeSize = 0.0; // used for illusion
                     let languageData = this.project.languages
@@ -160,7 +160,6 @@ function JCCCApp(options = {}) {
                             cumulativeSize = d.barSize;
                             return d;
                         });
-                    // this.log("language data for",project.name, languageData);
                     return languageData.reverse();
                 }
             },
@@ -172,7 +171,7 @@ function JCCCApp(options = {}) {
                     return (number*100).toFixed(2);
                 },
                 showProjectsWithLanguage: function(language){
-                    self.log("TODO: Implement language filtering for", language.name);
+                    this.log("TODO: Implement language filtering for", language.name);
                 },
                 log: function (...args) {
                     self.log("[language-section]", ...args);
