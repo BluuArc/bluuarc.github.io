@@ -475,7 +475,7 @@
 
         <div class="page" id="projects" role="tabpanel">
             
-            <card id="searchCard" class="mdc-theme--dark">
+            <!-- <card id="searchCard" class="mdc-theme--dark">
                 <section class="mdc-card__primary">
                     <h1 class="mdc-card__title mdc-card__title--large">Search Options</h1>
                 </section>
@@ -485,12 +485,12 @@
                             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 text-left">
                                 <h2>Name Filter</h2>
                             </div>
-                            <!-- <div class="mdc-layout-grid__cell text-left">
+                            <div class="mdc-layout-grid__cell text-left">
                                 <radio-button value="contains" actualname="Contains" groupname="nameMode"></radio-button>
                             </div>
                             <div class="mdc-layout-grid__cell text-left">
                                 <radio-button value="is-exactly" actualname="Is exactly" groupname="nameMode"></radio-button>
-                            </div> -->
+                            </div>
                             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
                                 <name-search v-on:namechange="setNameFilter"></name-search>
                             </div>
@@ -512,6 +512,18 @@
                 </section>
                 <section class="mdc-card__actions">
                     <button class="mdc-button mdc-button--compact mdc-card__action" id="searchBtn" @click="search">Search</button>
+                </section>
+            </card> -->
+
+            <card id="overview">
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">Profile Overview</h1>
+                </section>
+                <section class="mdc-card__supporting-text text-center">
+                    Below you can see the language distribution across the <b>{{ projectData.overall.count.total }} public projects</b> I've contributed to. I own {{ projectData.overall.count.mine }} of those projects.
+                </section>
+                <section class="mdc-card__supporting-text">
+                    <language-section :languages="projectData.overall.languages"></language-section>
                 </section>
             </card>
 
@@ -544,37 +556,7 @@
                     <a v-if="project.homepageURL" :href="project.homepageURL" class="mdc-button mdc-button--compact mdc-card__action">Project Page</a>
                 </section>
             </card>
-            <!-- <template v-for="(project,key) in projectData.projects">
-                <card class="projectEntry">
-                    <section class="mdc-card__primary">
-                        <h1 class="mdc-card__title mdc-card__title--large">{{ project.name }}</h1>
-                    </section>
-                    <section class="mdc-card__supporting-text text-center">
-                        <div class="mdc-layout-grid">
-                            <div class="mdc-layout-grid__inner">
-                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 text-left" id="description">
-                                    <h3>Description</h3>
-                                    <span v-if="project.description">{{ project.description }}</span>
-                                    <span v-else>No project description found</span>
-                                </div>
-                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 text-left" id="project-info">
-                                    <h3>Project Information</h3>
-                                    <p><b>Owner: </b> {{ project.owner }}</p>
-                                    <p><b>Created: </b>Date goes here</p>
-                                    <p><b>Last Commit: </b> Date goes here</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="mdc-card__supporting-text">
-                        <language-section :project="project"></language-section>
-                    </section>
-                    <section class="mdc-card__actions">
-                        <a :href="project.repoURL" class="mdc-button mdc-button--compact mdc-card__action">Code Repository</a>
-                        <a v-if="project.homepageURL" :href="project.homepageURL" class="mdc-button mdc-button--compact mdc-card__action">Project Page</a>
-                    </section>
-                </card>
-            </template> -->
+           
         </div>
 
         <div class="page" id="contact" role="tabpanel">

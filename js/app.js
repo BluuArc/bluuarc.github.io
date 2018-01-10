@@ -145,22 +145,32 @@ function JCCCApp(options = {}) {
         });
 
         let languageSection = Vue.component("language-section", {
-            props: ["project"],
+            props: ["project", "languages"],
             computed: {
                 languageData: function(){
                     // convert size data to percentages
-                    // this.log("project languages for", this.project.name , this.project.languages);
-                    let maxSize = this.project.languages.reduce((acc, current) => acc + current.size, 0);
-                    let cumulativeSize = 0.0; // used for illusion
-                    let languageData = this.project.languages
+                    let languages = (this.languages) ? this.languages.slice() : this.project.languages.slice();
+                    if(this.project)
+                        this.log("project languages for", this.project.name , this.project.languages);
+                    else{
+                        this.log("project languages for given array", this.languages);
+                    }
+                    let maxSize = languages.reduce((acc, current) => acc + current.size, 0);
+                    let cumulativeSize = 0.0; // used for "stacking" of bars
+                    let languageData = languages
                         .sort((a, b) => b.size - a.size)
-                        .map((d) => {
-                            d.actualSize = d.size / maxSize;
-                            d.barSize = cumulativeSize + d.actualSize;
-                            cumulativeSize = d.barSize;
-                            return d;
-                        });
-                    return languageData.reverse();
+                        .map(d => {
+                            let actualSize = d.size / maxSize;
+                            let barSize = cumulativeSize + actualSize;
+                            cumulativeSize += actualSize;
+                            return {
+                                actualSize,
+                                barSize,
+                                name: d.name,
+                                color: d.color
+                            }
+                        }).reverse();
+                    return languageData;
                 }
             },
             methods: {
