@@ -238,8 +238,12 @@
             position: relative;
         }
 
-        .mdc-card .mdc-card__actions button, .mdc-card .mdc-card__actions a {
-            color: var(--mdc-theme-secondary-light);
+        .mdc-card .mdc-card__actions .mdc-button {
+            color: var(--mdc-theme-secondary);
+        }
+
+        .mdc-card .mdc-card__actions .mdc-button.mdc-button--stroked {
+            border-color: var(--mdc-theme-secondary);
         }
 
         .mdc-card#workExperience .mdc-list {
@@ -355,7 +359,7 @@
             width: 100%;
         }
 
-        .page#projects #searchCard .mdc-card__supporting-text {
+        .page#projects .mdc-card__supporting-text {
             padding: 15px;
         }
 
@@ -370,7 +374,6 @@
         .mdc-card#overview img {
             height: 200px;
         }
-    
     </style>
 </head>
 
@@ -408,7 +411,7 @@
                     <language-section :project="projectData"></language-section>
                 </section>
                 <section class="mdc-card__actions">
-                    <a class="mdc-button mdc-button--compact mdc-card__action" id="projectsBtn">See Projects</a>
+                    <a class="mdc-button mdc-button--stroked mdc-button--compact mdc-card__action" id="projectsBtn">See Projects</a>
                 </section>
             </card>
 
@@ -515,7 +518,7 @@
                     
                 </section>
                 <section class="mdc-card__actions">
-                    <button class="mdc-button mdc-button--compact mdc-card__action" id="searchBtn" @click="search">Search</button>
+                    <button class="mdc-button mdc-button--stroked mdc-button--compact mdc-card__action" id="searchBtn" @click="search">Search</button>
                 </section>
             </card> -->
 
@@ -572,8 +575,8 @@
                     <language-section :project="project"></language-section>
                 </section>
                 <section class="mdc-card__actions">
-                    <a :href="project.repoURL" class="mdc-button mdc-button--compact mdc-card__action">Code Repository</a>
-                    <a v-if="project.homepageURL" :href="project.homepageURL" class="mdc-button mdc-button--compact mdc-card__action">Project Page</a>
+                    <a :href="project.repoURL" class="mdc-button mdc-button--stroked mdc-button--compact mdc-card__action">Code Repository</a>
+                    <a v-if="project.homepageURL" :href="project.homepageURL" class="mdc-button mdc-button--stroked mdc-button--compact mdc-card__action">Project Page</a>
                 </section>
             </card>
            
