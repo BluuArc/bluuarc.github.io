@@ -366,6 +366,10 @@
         .projectEntry .mdc-card__primary {
             background: var(--mdc-theme-primary-dark);
         }
+
+        .mdc-card#overview img {
+            height: 200px;
+        }
     
     </style>
 </head>
@@ -397,7 +401,7 @@
                 <section class="mdc-card__primary">
                     <h1 class="mdc-card__title mdc-card__title--large">Project Statistics</h1>
                 </section>
-                <section class="mdc-card__supporting-text text-center" v-if="projectData">
+                <section class="mdc-card__supporting-text text-center">
                     Below you can see the language distribution across the <b>{{ projectData.count.total }} public projects</b> I've contributed to. I own {{ projectData.count.mine }} of those projects.
                 </section>
                 <section class="mdc-card__supporting-text">
@@ -519,7 +523,23 @@
                 <section class="mdc-card__primary">
                     <h1 class="mdc-card__title mdc-card__title--large">Profile Overview</h1>
                 </section>
-                <section class="mdc-card__supporting-text text-center">
+                <div class="mdc-layout-grid" v-if="projectData.user">
+                    <div class="mdc-layout-grid__inner">
+                        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 text-center">
+                            <img class="mdc-card__media-item" :src="projectData.user.avatar_url">
+                        </div>
+                        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+                            <section class="mdc-card__supporting-text text-center">
+                                <h3>{{ projectData.user.name }} ({{projectData.user.login }})</h3>
+                                <p>GitHub user since <b>{{ getFormattedDate(projectData.user.created_at) }}</b></p>
+                                <p>Contributed to at least <b>{{ projectData.overall.count.total }} projects</b>, owning {{ projectData.overall.count.mine }} of them.</p>
+                                <p>{{ projectData.user.followers }} follower(s) and following {{ projectData.user.following }} user(s)</p>
+                                <p>User information last updated {{ getFormattedDate(projectData.user.updated_at) }}</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <section class="mdc-card__supporting-text text-center" v-else>
                     Below you can see the language distribution across the <b>{{ projectData.overall.count.total }} public projects</b> I've contributed to. I own {{ projectData.overall.count.mine }} of those projects.
                 </section>
                 <section class="mdc-card__supporting-text">

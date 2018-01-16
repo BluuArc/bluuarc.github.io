@@ -223,7 +223,8 @@ function JCCCApp(options = {}) {
     function getData(url) {
         return new Promise((fulfill, reject) => {
             try {
-                $.get(url, data => fulfill(data));
+                $.get(url, data => fulfill(data))
+                    .fail(err => reject(err));
             } catch (err) {
                 reject(err);
             }
@@ -329,6 +330,16 @@ function JCCCApp(options = {}) {
             self.models.home.projectData = projectData.overall;
             self.models.projects.projectData = projectData;
             return;
+        }).then(() => { //attempt to get GH user data
+            return getData("https://api.github.com/users/BluuArc")
+                .then((data) => {
+                    projectData.user = data;
+                }).catch((err) => {
+                    console.error(err);
+                    self.log("Deleting user field");
+                    delete projectData.user;
+                    return;
+                })
         });
     }
 
