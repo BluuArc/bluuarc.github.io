@@ -2,7 +2,7 @@
 
 var jcccApp = jcccApp || new JCCCApp();
 
-var debug = {};
+var debug = debug || {};
 
 function JCCCApp(options = {}) {
     let self = {
@@ -20,6 +20,11 @@ function JCCCApp(options = {}) {
                     },
                     'Contact': {
                         el: '.page#contact',
+                        isActive: false
+                    },
+                    'Error': {
+                        el: '.page#error',
+                        isHidden: true,
                         isActive: false
                     }
                 }
@@ -79,8 +84,11 @@ function JCCCApp(options = {}) {
 
     function init() {
         const appDirectory = "js/apps";
-        let scripts = [`${appDirectory}/pageController.js`, `${appDirectory}/home.js`, 
-            `${appDirectory}/contact.js`, `${appDirectory}/projects.js`];
+        let scripts = [
+            `${appDirectory}/pageController.js`, `${appDirectory}/home.js`, 
+            `${appDirectory}/contact.js`, `${appDirectory}/projects.js`,
+            `${appDirectory}/errorPage.js`
+        ];
         initComponents();
         return appendScriptsIteratively(scripts) //append app scripts
             .then(initializeData).then(() => { //initialize apps
@@ -119,10 +127,19 @@ function JCCCApp(options = {}) {
                         data: self.models.projects
                     }
                 });
+
+                self.apps.errorPage = new ErrorPage({
+                    log: (...args) => self.log("[ErrorPage]", ...args),
+                    appParams: {
+                        el: "#error.page"
+                    }
+                });
             }).then(() => {
                 if (self.debugMode) {
                     debug.setPageTo = self.apps.pageController.setPageTo;
                 }
+
+                self.apps.pageController.onPageLoad();
             }).then(() => self.log("Finished full initialization"));
     }
 

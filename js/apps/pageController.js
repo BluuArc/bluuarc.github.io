@@ -1,4 +1,7 @@
 "use strict";
+
+var debug = debug || {};
+
 function PageController(options = {}) {
     let self = {
         models: null,
@@ -38,7 +41,7 @@ function PageController(options = {}) {
                         <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
                             <nav id="page-tab-bar" class="mdc-tab-bar" role="tablist">
                                 <a role="tab" v-for="(page,key) in pages" 
-                                    :class="{ 'mdc-tab':true, 'mdc-tab--active': page.isActive }"
+                                    :class="{ 'mdc-tab':true, 'mdc-tab--active': page.isActive, 'hidden': page.isHidden }"
                                     @click="setPageTo(key)"    
                                 >
                                     {{ key }}
@@ -56,7 +59,7 @@ function PageController(options = {}) {
                         <div class="mdc-toolbar__section mdc-toolbar__section--align-start">
                             <nav id="page-tab-bar-mobile" class="mdc-tab-bar" role="tablist">
                                 <a role="tab" v-for="(page,key) in pages" 
-                                    :class="{ 'mdc-tab':true, 'mdc-tab--active': page.isActive }"
+                                    :class="{ 'mdc-tab':true, 'mdc-tab--active': page.isActive, 'hidden': page.isHidden }"
                                     @click="setPageTo(key)"    
                                 >
                                     {{ key }}
@@ -75,9 +78,14 @@ function PageController(options = {}) {
             },
             mounted: function () {
                 self.log("Mounted navbar");
+                let tabBars = [];
                 $(this.$el).find(".mdc-tab-bar").each(function () {
-                    new mdc.tabs.MDCTabBar(this);
+                    let tabBar = new mdc.tabs.MDCTabBar(this);
+                    tabBars.push(tabBar);
                 });
+                self.tabBars = tabBars;
+
+                self.log("tabBars", self.tabBars);
             }
         };
     }
@@ -86,14 +94,25 @@ function PageController(options = {}) {
     function setPageTo(pageName, isExternal = false) {
         let pages = $(".pages");
         let delay = 100, fadePromises = [];
+        let activeIndex = -1;
         for(let p in self.models.pages){
             self.models.pages[p].isActive = p === pageName;
+
+            if(p === pageName && isExternal){
+                activeIndex = Object.keys(self.models.pages).indexOf(p);
+            }
             
             // toggle page sections based on isActive
             let pageSection = pages.find(self.models.pages[p].el);
             fadePromises.push(new Promise((fulfill,reject) => {
                 pageSection.fadeOut(delay, () => fulfill());
             }));
+        }
+
+        if(isExternal){
+            activeIndex = (activeIndex > -1) ? activeIndex : (Object.keys(self.models.pages).length-1); //default to error page on invalid tab
+            self.log("activeIndex", activeIndex);
+            self.tabBars.forEach(tabBar => tabBar.activeTabIndex = activeIndex);
         }
 
         return Promise.all(fadePromises)
@@ -108,7 +127,30 @@ function PageController(options = {}) {
             }).then(() => self.log("Set page to",pageName));
     }
 
+    function onPageLoad(evt){
+        let isExternal = location.origin.indexOf(location.host) === -1 || !evt;
+        if (window.location.search.indexOf("?") > -1) { //auto set page based on url
+            let parameters = window.location.search.slice(1).split("&"); // parameters split by &
+            let data = {};
+            for (let p of parameters) { // parse values from parameters
+                let [key, value, extra] = p.split('=').map(decodeURIComponent);
+                data[key] = value;
+            }
+            if (data.link) {
+                self.log("Changing page to", data.link, isExternal);
+                setPageTo(data.link, isExternal);
+            } else {
+                self.log("Going to home by default", data, isExternal);
+                setPageTo('Home', isExternal);
+            }
+        } else {
+            self.log("No parameters found. Going to home by default.", isExternal);
+            setPageTo('Home', isExternal);
+        }
+    }
+
     return {
-        setPageTo
+        setPageTo,
+        onPageLoad
     };
 }
