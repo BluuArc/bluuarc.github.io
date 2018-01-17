@@ -53,7 +53,7 @@ function PageController(options = {}) {
                     </div>
                     <div class="mdc-toolbar__row xs-only" id="mobile-header">
                         <div class="mdc-toolbar__section">
-                            <h2 class="mdc-toolbar__title"><a href="/">JCCC</a></h2>
+                            <h2 class="mdc-toolbar__title"><a href="/?link=Home">JCCC</a></h2>
                         </div>
                     </div>
                     <div class="mdc-toolbar__row xs-only">
