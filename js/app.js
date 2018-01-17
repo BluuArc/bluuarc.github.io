@@ -389,13 +389,13 @@ function JCCCApp(options = {}) {
             {
                 name: "GitHub",
                 bgColor: "var(--mdc-theme-background-light)",
-                icon: "img/GitHub-Mark-Light-32px.png",
+                icon: "img/GitHub-Mark-Light-120px-plus.png",
                 link: "https://github.com/BluuArc"
             },
             {
                 name: "LinkedIn",
                 bgColor: "var(--mdc-theme-background-light)",
-                icon: "img/in-white-34px-R.png",
+                icon: "img/In-White-128px-R.png",
                 link: "https://www.linkedin.com/in/joshuacastor"
             },
             {
