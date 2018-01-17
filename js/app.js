@@ -44,7 +44,7 @@ function JCCCApp(options = {}) {
             projects: null,
             contact: null   
         },
-        debugMode: true,
+        debugMode: location.host === "127.0.0.1",
         log: (...args) => {
             if(self.debugMode){
                 console.log(...args);
