@@ -37,7 +37,7 @@ function PageController(options = {}) {
                 <div class="mdc-toolbar">
                     <div class="mdc-toolbar__row sm-plus">
                         <div class="mdc-toolbar__section mdc-toolbar__section--shrink-to-fit mdc-toolbar__section--align-start">
-                            <h2 class="mdc-toolbar__title"><a href="/">JCCC</a></h2>
+                            <h2 class="mdc-toolbar__title"><a href="/?link=Home">JCCC</a></h2>
                         </div>
                         <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
                             <nav id="page-tab-bar" class="mdc-tab-bar" role="tablist">

@@ -91,50 +91,9 @@ function JCCCApp(options = {}) {
         ];
         initComponents();
         return appendScriptsIteratively(scripts) //append app scripts
-            .then(initializeData).then(() => { //initialize apps
-                self.apps.pageController = new PageController({
-                    log: (...args) => self.log("[PageController]", ...args),
-                    models: self.models.pageController,
-                    appParams: {
-                        el: "section#nav-app",
-                        data: self.models.pageController
-                    }
-                });
-
-                self.apps.homePage = new HomeApp({
-                    log: (...args) => self.log("[HomePage]", ...args),
-                    models: self.models.home,
-                    appParams: {
-                        el: "#home.page",
-                        data: self.models.home
-                    }
-                });
-
-                self.apps.contactPage = new ContactApp({
-                    log: (...args) => self.log("[ContactPage]", ...args),
-                    models: self.models.contact,
-                    appParams: {
-                        el: "#contact.page",
-                        data: self.models.contact
-                    }
-                });
-
-                self.apps.projectPage = new ProjectsApp({
-                    log: (...args) => self.log("[ProjectPage]", ...args),
-                    models: self.models.projects,
-                    appParams: {
-                        el: "#projects.page",
-                        data: self.models.projects
-                    }
-                });
-
-                self.apps.errorPage = new ErrorPage({
-                    log: (...args) => self.log("[ErrorPage]", ...args),
-                    appParams: {
-                        el: "#error.page"
-                    }
-                });
-            }).then(() => {
+            .then(initializeData)
+            .then(initializeApps)
+            .then(() => {
                 if (self.debugMode) {
                     debug.setPageTo = self.apps.pageController.setPageTo;
                 }
@@ -159,6 +118,51 @@ function JCCCApp(options = {}) {
 
                 self.apps.pageController.onPageLoad();
             }).then(() => self.log("Finished full initialization"));
+    }
+
+    function initializeApps(params) {
+        self.apps.pageController = new PageController({
+            log: (...args) => self.log("[PageController]", ...args),
+            models: self.models.pageController,
+            appParams: {
+                el: "section#nav-app",
+                data: self.models.pageController
+            }
+        });
+
+        self.apps.homePage = new HomeApp({
+            log: (...args) => self.log("[HomePage]", ...args),
+            models: self.models.home,
+            appParams: {
+                el: "#home.page",
+                data: self.models.home
+            }
+        });
+
+        self.apps.contactPage = new ContactApp({
+            log: (...args) => self.log("[ContactPage]", ...args),
+            models: self.models.contact,
+            appParams: {
+                el: "#contact.page",
+                data: self.models.contact
+            }
+        });
+
+        self.apps.projectPage = new ProjectsApp({
+            log: (...args) => self.log("[ProjectPage]", ...args),
+            models: self.models.projects,
+            appParams: {
+                el: "#projects.page",
+                data: self.models.projects
+            }
+        });
+
+        self.apps.errorPage = new ErrorPage({
+            log: (...args) => self.log("[ErrorPage]", ...args),
+            appParams: {
+                el: "#error.page"
+            }
+        });
     }
 
     // for global components
