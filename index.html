@@ -27,9 +27,117 @@
     <link rel="stylesheet" href="css/color-theme.css">
     <link rel="stylesheet" href="css/breakpoints.css">
     <link rel="stylesheet" href="css/index.css">
+    <style>
+    #loading-screen {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        
+        width: 100%;
+        height: 100%;
+        
+        background-color: var(--mdc-theme-primary);
+    }
+
+    #loading-screen .content {
+        margin: auto;
+        margin-top: 25%;
+        width: fit-content;
+        text-align: center;
+        color: var(--mdc-theme-text-primary-on-dark);
+    }
+
+    #error-loading-text {
+        display: none;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg)}
+        to { transform: rotate(359deg)}
+    }
+
+    .spinner {
+        background-color: inherit;
+    }
+
+    /* adapted from https://www.w3schools.com/howto/howto_css_loader.asp */
+    .outer {
+        border: 8px solid var(--mdc-theme-primary);
+        border-top: 8px solid var(--mdc-theme-secondary);
+        border-bottom: 8px solid var(--mdc-theme-secondary);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        margin: auto;
+        margin-left: calc(50% - 48px);
+        animation: rotate 2.5s linear infinite;
+    }
+
+    .spinner .inner {
+        border: inherit;
+        border-top: inherit;
+        border-bottom: inherit;
+        border-radius: inherit;
+        position: inherit;
+        animation: inherit;
+        
+        width: 34px;
+        height: 34px;
+    }
+
+    .spinner .inner .inner {
+        border: inherit;
+        border-top: inherit;
+        border-bottom: inherit;
+        border-radius: inherit;
+        position: inherit;
+        animation: inherit;
+        
+        width: 20px;
+        height: 20px;
+    }
+
+    .spinner .inner .inner .inner {
+        border: inherit;
+        border-top: inherit;
+        border-bottom: inherit;
+        border-radius: inherit;
+        position: inherit;
+        animation: inherit;
+        
+        width: 5px;
+        height: 5px;
+    }
+
+
+    </style>
 </head>
 
 <body class="mdc-typography">
+    <div id="loading-screen">
+        <div class="content">
+            <h1>Loading...</h1>
+            <div class="spinner-container">
+                <div class="ring"></div>
+                <div class="mask"></div>
+            </div>
+            
+            <div class="spinner outer">
+                <div class="inner">
+                    <div class="inner">
+                        <div class="inner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="error-loading-text">
+                If the page is taking too long to load, check your internet connection or disable your ad-blocker and reload.
+            </h2>
+        </div>
+        
+    </div>
     <section id="nav-app">
         <jccc-nav-header :pages="pages" v-on:pagechange="setPageTo" id="nav-header"></jccc-nav-header>
     </section>
@@ -264,6 +372,15 @@
             </card>
         </div>
     </section>
+
+    <script>
+        setTimeout(() => {
+
+            // show error after 10s
+            let error_text = document.getElementById('error-loading-text');
+            error_text.style.display = 'block';
+        }, 10000);
+    </script>
     
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
@@ -275,7 +392,10 @@
     <script>
         window.mdc.autoInit();
         $(document).ready(() => {
-            jcccApp.init();
+            jcccApp.init()
+                .then(() => {
+                    $("#loading-screen").fadeOut(250);
+                });
         });
     </script>
 
