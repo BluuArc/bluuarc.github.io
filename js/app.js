@@ -139,6 +139,24 @@ function JCCCApp(options = {}) {
                     debug.setPageTo = self.apps.pageController.setPageTo;
                 }
 
+                // setup handlers for tab switching outside of pageController tabBar
+                $('a[href^="/?"][href*="link="]').on('click', function (e) {
+                    e.preventDefault();
+                    self.log("Handling custom tab switch event",e);
+
+                    let link = $(this).attr("href");
+                    let parameters = link.slice(2).split("&");
+                    let data = {};
+                    for (let p of parameters) {
+                        let [key, value, extra] = p.split('=').map(decodeURIComponent);
+                        data[key] = value;
+                    }
+                    
+                    if (data.link) {
+                        self.apps.pageController.onPageLoad({customPage: data.link});
+                    }
+                });
+
                 self.apps.pageController.onPageLoad();
             }).then(() => self.log("Finished full initialization"));
     }

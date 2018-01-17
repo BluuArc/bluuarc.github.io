@@ -20,7 +20,8 @@ function PageController(options = {}) {
             el: options.appParams.el,
             data: options.appParams.data,
             created: function () {
-                self.log("initialized main app");
+                self.log("initialized page controller");
+                $(window).on("popstate", onPageLoad);
             },
             methods: {
                 setPageTo: setPageTo
@@ -91,14 +92,14 @@ function PageController(options = {}) {
     }
 
     // change view of page
-    function setPageTo(pageName, isExternal = false) {
+    function setPageTo(pageName, doNotPushState = false) {
         let pages = $(".pages");
         let delay = 100, fadePromises = [];
         let activeIndex = -1;
         for(let p in self.models.pages){
             self.models.pages[p].isActive = p === pageName;
 
-            if(p === pageName && isExternal){
+            if(p === pageName){
                 activeIndex = Object.keys(self.models.pages).indexOf(p);
             }
             
@@ -109,17 +110,27 @@ function PageController(options = {}) {
             }));
         }
 
-        if(isExternal){
-            activeIndex = (activeIndex > -1) ? activeIndex : (Object.keys(self.models.pages).length-1); //default to error page on invalid tab
-            self.log("activeIndex", activeIndex);
-            self.tabBars.forEach(tabBar => tabBar.activeTabIndex = activeIndex);
+        if(activeIndex === -1){
+            pageName = "Error";
+            activeIndex = Object.keys(self.models.pages).indexOf(pageName); //default to error page on invalid tab
         }
+
+        self.log("activeIndex", activeIndex);
+        self.tabBars.forEach(tabBar => tabBar.activeTabIndex = activeIndex);
+        
+        if(!doNotPushState){
+            window.history.pushState('pagechange', `JCCC - ${pageName}`, `/?link=${pageName}`); // from https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page
+        }
+
+        $('title').text(`JCCC - ${pageName}`);
 
         return Promise.all(fadePromises)
             .then(() => {
                 return new Promise((fulfill,reject) => {
                     if(self.models.pages[pageName]){
-                        pages.find(self.models.pages[pageName].el).fadeIn(delay,() => fulfill());
+                        pages.find(self.models.pages[pageName].el)
+                            .animate({ scrollTop: 0 }, 0)
+                            .fadeIn(delay, () => fulfill());
                     }else{
                         fulfill(); //don't do anything --> may change to showing error page?
                     }
@@ -128,8 +139,12 @@ function PageController(options = {}) {
     }
 
     function onPageLoad(evt){
-        let isExternal = location.origin.indexOf(location.host) === -1 || !evt;
-        if (window.location.search.indexOf("?") > -1) { //auto set page based on url
+        let doNotPushState = location.origin.indexOf(location.host) > -1 || evt;
+
+        if(evt && evt.customPage){
+            self.log("Local tab switch to", evt.customPage);
+            setPageTo(evt.customPage, false);
+        }else if (window.location.search.indexOf("?") > -1) { //auto set page based on url
             let parameters = window.location.search.slice(1).split("&"); // parameters split by &
             let data = {};
             for (let p of parameters) { // parse values from parameters
@@ -137,15 +152,15 @@ function PageController(options = {}) {
                 data[key] = value;
             }
             if (data.link) {
-                self.log("Changing page to", data.link, isExternal);
-                setPageTo(data.link, isExternal);
+                self.log("Changing page to", data.link, doNotPushState);
+                setPageTo(data.link, doNotPushState);
             } else {
-                self.log("Going to home by default", data, isExternal);
-                setPageTo('Home', isExternal);
+                self.log("Going to home by default", data, doNotPushState);
+                setPageTo('Home', doNotPushState);
             }
         } else {
-            self.log("No parameters found. Going to home by default.", isExternal);
-            setPageTo('Home', isExternal);
+            self.log("No parameters found. Going to home by default.", doNotPushState);
+            setPageTo('Home', doNotPushState);
         }
     }
 
