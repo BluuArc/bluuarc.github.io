@@ -6,6 +6,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80417877-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-80417877-1');
+    </script>
+
     <title>JCCC</title>
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
@@ -634,6 +648,36 @@
             jcccApp.init();
         });
     </script>
+
+    <noscript>
+        <div class="statcounter">
+            <a title="shopify site analytics" target="_blank" href="http://statcounter.com/shopify/">
+                <img class="statcounter" alt="shopify site analytics" src="//c.statcounter.com/11034084/0/3e7dba9f/1/">
+            </a>
+        </div>
+    </noscript>
+    <script id="statcounter-tracker">
+        //globals for statcounter tracker
+        var sc_project = sc_project || 11034084;
+        var sc_invisible = sc_invisible || 1;
+        var sc_security = sc_security || "3e7dba9f";
+        var scJsHost = scJsHost || (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
+
+        //pure javascript version of appending a script
+        //based off of https://howchoo.com/g/mmu0nguznjg/learn-the-slow-and-fast-way-to-append-elements-to-the-dom
+        function appendScript(url) {
+            return new Promise(function (fulfill, reject) {
+                let e = document.createElement('script');
+                e.src = url;
+                e.onload = () => { fulfill(); };
+                e.onerror = reject;
+                document.body.appendChild(e);
+            });
+        }
+
+        appendScript(`${scJsHost}statcounter.com/counter/counter.js`);
+    </script>
+
 
 </body>
 
