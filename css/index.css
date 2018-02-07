@@ -169,7 +169,6 @@ section.pages .page.active {
 .mdc-card#aboutMe .mdc-card__supporting-text {
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: -16px;
 }
 
 @media (max-width: 767px){
@@ -254,6 +253,10 @@ section.pages .page.active {
     white-space: unset;
     padding-top: 0.5em;
     color:var(--mdc-theme-text-primary-on-dark);
+}
+
+.mdc-list-item__text {
+    white-space: normal;
 }
 
 .jobEntry h2, .jobEntry h3, .courseEntry h2, .courseEntry h3 {
