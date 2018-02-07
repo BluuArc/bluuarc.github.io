@@ -187,6 +187,11 @@ section.pages .page.active {
     background-color: var(--mdc-theme-background-light);
 }
 
+.mdc-card .mdc-card__actions a {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .mdc-card__primary {
     padding: 5px;
     padding-left: 15px;
