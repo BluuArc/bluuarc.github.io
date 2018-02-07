@@ -196,6 +196,7 @@ section.pages .page.active {
     padding: 5px;
     padding-left: 15px;
     background: var(--mdc-theme-primary);
+    height: 43px;
 }
 
 .mdc-card .mdc-card__supporting-text {
