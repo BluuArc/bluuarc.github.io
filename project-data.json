@@ -31,7 +31,7 @@
     "languages": [
       {
         "name": "Arduino",
-        "color": "#bd79d1",
+        "color": null,
         "size": 13591
       },
       {
@@ -86,7 +86,7 @@
     "repoName": "bluuarc.github.io",
     "description": "Personal Website",
     "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2018-01-17T18:11:55Z",
+    "lastPushedAt": "2018-02-07T03:21:35Z",
     "createdAt": "2016-06-01T14:26:42Z",
     "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
     "owner": "BluuArc",
@@ -95,17 +95,17 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 163740
+        "size": 163741
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 57969
+        "size": 57970
       },
       {
         "name": "CSS",
         "color": "#563d7c",
-        "size": 17279
+        "size": 17543
       },
       {
         "name": "PHP",
@@ -517,7 +517,7 @@
     "name": "EnglewoodSocialServices",
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
-    "lastPushedAt": "2018-01-17T22:31:59Z",
+    "lastPushedAt": "2018-02-06T20:50:24Z",
     "createdAt": "2017-08-04T20:09:52Z",
     "repoURL": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
     "owner": "AndrewTBurks",
@@ -526,17 +526,17 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 707075
+        "size": 757063
       },
       {
         "name": "CSS",
         "color": "#563d7c",
-        "size": 42063
+        "size": 43720
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 41058
+        "size": 42159
       }
     ],
     "techUsed": []
