@@ -22,8 +22,13 @@ h2 a:hover {
     --nav-header-height-mobile-full: 101px; /* title + tabs */
 }
 
-#nav-header {
+#nav-header,
+#nav-header .mdc-tab {
     color: var(--mdc-theme-text-primary-on-primary);
+}
+
+#nav-header .mdc-tab-bar__indicator {
+    background-color: var(--mdc-theme-text-primary-on-primary);
 }
 
 @media (min-width: 768px){
@@ -35,6 +40,7 @@ h2 a:hover {
 #nav-header nav#page-tab-bar {
     margin: 0;
 }
+
 
 #nav-header nav#page-tab-bar-mobile {
     margin: 0 auto;
@@ -144,6 +150,10 @@ section.pages .page.active {
     }
 }
 
+.mdc-card .mdc-card__horizontal-block {
+    display: inline-flex;
+}
+
 .mdc-card#aboutMe #avatarImage {
     background-image: url("/img/avatar.jpg");
     background-size: cover;
@@ -152,8 +162,8 @@ section.pages .page.active {
 }
 
 .mdc-card#aboutMe img, .mdc-card#education img {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px;
+    height: 110px;
 }
 
 .mdc-card#aboutMe .mdc-card__supporting-text {
@@ -243,6 +253,7 @@ section.pages .page.active {
     height: auto;
     white-space: unset;
     padding-top: 0.5em;
+    color:var(--mdc-theme-text-primary-on-dark);
 }
 
 .jobEntry h2, .jobEntry h3, .courseEntry h2, .courseEntry h3 {
