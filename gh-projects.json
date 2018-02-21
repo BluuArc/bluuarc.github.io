@@ -4,8 +4,53 @@
       "name": "Joshua Castor",
       "login": "BluuArc",
       "contributedRepositories": {
-        "totalCount": 20,
+        "totalCount": 21,
         "nodes": [
+          {
+            "name": "bf-mt",
+            "homepageUrl": null,
+            "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+            "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+            "pushedAt": "2018-02-21T13:47:14Z",
+            "createdAt": "2018-02-12T04:57:53Z",
+            "url": "https://github.com/BluuArc/bf-mt",
+            "nameWithOwner": "BluuArc/bf-mt",
+            "repositoryTopics": {
+              "nodes": [
+                {
+                  "topic": {
+                    "name": "bravefrontier"
+                  },
+                  "url": "https://github.com/topics/bravefrontier"
+                }
+              ]
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Vue",
+                    "color": "#2c3e50"
+                  },
+                  "size": 46377
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 28857
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 678
+                }
+              ]
+            }
+          },
           {
             "name": "clapp",
             "homepageUrl": null,
@@ -118,7 +163,7 @@
             "homepageUrl": "https://bluuarc.github.io/",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2018-02-07T03:21:35Z",
+            "pushedAt": "2018-02-07T03:29:56Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -146,7 +191,7 @@
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 17543
+                  "size": 17642
                 },
                 {
                   "node": {
@@ -712,8 +757,52 @@
         ]
       },
       "repositories": {
-        "totalCount": 25,
+        "totalCount": 26,
         "nodes": [
+          {
+            "name": "bf-mt",
+            "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+            "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+            "pushedAt": "2018-02-21T13:47:14Z",
+            "createdAt": "2018-02-12T04:57:53Z",
+            "url": "https://github.com/BluuArc/bf-mt",
+            "nameWithOwner": "BluuArc/bf-mt",
+            "repositoryTopics": {
+              "nodes": [
+                {
+                  "topic": {
+                    "name": "bravefrontier"
+                  },
+                  "url": "https://github.com/topics/bravefrontier"
+                }
+              ]
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Vue",
+                    "color": "#2c3e50"
+                  },
+                  "size": 46377
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 28857
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 678
+                }
+              ]
+            }
+          },
           {
             "name": "CS362-Hovercraft",
             "description": "Arduino controlled Hovercrafts",
@@ -829,7 +918,7 @@
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2018-02-07T03:21:35Z",
+            "pushedAt": "2018-02-07T03:29:56Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -857,7 +946,7 @@
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 17543
+                  "size": 17642
                 },
                 {
                   "node": {
@@ -1184,7 +1273,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2018-02-06T20:50:24Z",
+            "pushedAt": "2018-02-20T20:47:18Z",
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
@@ -1198,21 +1287,21 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 757063
+                  "size": 774430
                 },
                 {
                   "node": {
                     "name": "CSS",
                     "color": "#563d7c"
                   },
-                  "size": 43720
+                  "size": 44300
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 42159
+                  "size": 43395
                 }
               ]
             }
