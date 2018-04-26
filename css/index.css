@@ -24,11 +24,11 @@ h2 a:hover {
 
 #nav-header,
 #nav-header .mdc-tab {
-    color: var(--mdc-theme-text-primary-on-primary);
+    color: var(--mdc-theme-text-primary-on-dark);
 }
 
 #nav-header .mdc-tab-bar__indicator {
-    background-color: var(--mdc-theme-text-primary-on-primary);
+    background-color: var(--mdc-theme-text-primary-on-dark);
 }
 
 @media (min-width: 768px){
@@ -102,7 +102,7 @@ section.pages .page {
 section.pages {
     overflow: auto;
     background-color: var(--mdc-theme-background-dark);
-    color: var(--mdc-theme-text-primary-on-primary);
+    color: var(--mdc-theme-text-primary-on-dark);
 }
 
 section.pages .page.active {
