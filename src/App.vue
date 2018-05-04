@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-navigation-drawer
       persistent
       :mini-variant="miniVariant"
@@ -84,8 +84,8 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js'
-    }
+    };
   },
   name: 'App'
-}
+};
 </script>
