@@ -12,8 +12,11 @@
       <v-toolbar-title
         id="toolbar-title"
         class="text-sm-center text-xs-center"
-        v-text="title"
-      />
+      >
+        <v-btn flat exact large @click.stop="goToRoute('/')">
+          {{ title }}
+        </v-btn>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-tabs
@@ -85,17 +88,25 @@ export default {
     ...mapState('display', ['type']),
     ...mapGetters('display', ['breakpointToDisplaySize'])
   },
+  watch: {
+    '$route' () {
+      this.updateActiveTab();
+    }
+  },
   mounted () {
     this.displayChangeHandler();
-    this.activeTab = this.tabItems
-      .map(t => t.link)
-      .indexOf(this.$route.path)
-      .toString();
+    this.updateActiveTab();
   },
   methods: {
     ...mapMutations('display', ['updateType']),
     goToRoute (link) {
       this.$router.push({ path: link });
+    },
+    updateActiveTab () {
+      this.activeTab = this.tabItems
+      .map(t => t.link)
+      .indexOf(this.$route.path)
+      .toString();
     },
     displayChangeHandler () {
       this.updateType(window.innerWidth);
