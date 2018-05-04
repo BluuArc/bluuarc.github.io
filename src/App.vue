@@ -50,7 +50,7 @@
       <router-view/>
     </v-content>
     <v-footer :fixed="false" app>
-      <span>&copy; 2018</span>
+      <span>&copy; {{ new Date().getUTCFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
