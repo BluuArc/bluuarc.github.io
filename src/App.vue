@@ -1,91 +1,124 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      persistent
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      v-model="drawer"
-      enable-resize-watcher
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile
-          value="true"
-          v-for="(item, i) in items"
-          :key="i"
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+  <v-app
+    dark
+    v-resize="displayChangeHandler"
+  >
     <v-toolbar
+      id="app-toolbar"
       app
       :clipped-left="clipped"
+      color="primary"
     >
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-toolbar-title
+        id="toolbar-title"
+        class="text-sm-center text-xs-center"
+        v-text="title"
+      />
       <v-spacer></v-spacer>
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>menu</v-icon>
-      </v-btn>
+      <v-toolbar-items>
+        <v-tabs
+          right
+          fixed-tabs
+          v-model="activeTab"
+          class="hidden-sm-and-down"
+          color="primary">
+          <v-tab
+            v-for="(tab, i) in tabItems"
+            :key="i"
+            @click.stop="goToRoute(tab.link)">
+            {{ tab.title }}
+          </v-tab>
+        </v-tabs>
+      </v-toolbar-items>
+      <v-tabs
+        v-if="showMobileToolbar"
+        v-model="activeTab"
+        fixed-tabs
+        centered
+        slot="extension"
+        class="hidden-md-and-up"
+        color="primary">
+        <v-tab
+          v-for="(tab, i) in tabItems"
+          :key="i"
+          @click.stop="goToRoute(tab.link)">
+          {{ tab.title }}
+        </v-tab>
+      </v-tabs>
     </v-toolbar>
     <v-content>
       <router-view/>
     </v-content>
-    <v-navigation-drawer
-      temporary
-      :right="right"
-      v-model="rightDrawer"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile @click="right = !right">
-          <v-list-tile-action>
-            <v-icon>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
+    <v-footer :fixed="false" app>
+      <span>&copy; 2018</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import { mapMutations, mapState, mapGetters } from 'vuex';
+
 export default {
   data () {
     return {
       clipped: false,
-      drawer: true,
-      fixed: false,
-      items: [{
-        icon: 'bubble_chart',
-        title: 'Inspire'
-      }],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      activeTab: null,
+      tabItems: [
+        {
+          title: 'Home',
+          link: '/'
+        },
+        {
+          title: 'Projects',
+          link: '/projects'
+        },
+        {
+          title: 'Contact',
+          link: '/contact'
+        }
+      ],
+      showMobileToolbar: false,
+      title: 'JCCC'
     };
+  },
+  computed: {
+    ...mapState('display', ['type']),
+    ...mapGetters('display', ['breakpointToDisplaySize'])
+  },
+  mounted () {
+    this.displayChangeHandler();
+    this.activeTab = this.tabItems
+      .map(t => t.link)
+      .indexOf(this.$route.path)
+      .toString();
+  },
+  methods: {
+    ...mapMutations('display', ['updateType']),
+    goToRoute (link) {
+      this.$router.push({ path: link });
+    },
+    displayChangeHandler () {
+      this.updateType(window.innerWidth);
+      this.checkIfShowMobileToolbar();
+    },
+    checkIfShowMobileToolbar () {
+      const smallBreakpointCutoff = this.breakpointToDisplaySize('sm');
+      this.showMobileToolbar = window.innerWidth <= smallBreakpointCutoff;
+    }
   },
   name: 'App'
 };
 </script>
+
+<style>
+html {
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 959px) {
+  #app-toolbar #toolbar-title {
+    margin: auto;
+    width: 100%;
+  }
+}
+</style>

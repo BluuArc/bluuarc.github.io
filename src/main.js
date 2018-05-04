@@ -3,12 +3,14 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import store from './store';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
+import colors from 'vuetify/es5/util/colors';
 
 Vue.use(Vuetify, { theme: {
-  primary: '#448aff',
-  secondary: '#f57f17',
+  primary: colors.indigo.darken1,
+  secondary: colors.deepOrange.darken1,
   accent: '#82B1FF',
   error: '#FF5252',
   info: '#2196F3',
@@ -22,6 +24,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });
