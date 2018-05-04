@@ -1,6 +1,6 @@
 <template>
   <v-toolbar
-    v-resize="displayChangeHandler"
+    v-resize="checkIfIsMobile"
     id="app-toolbar"
     app
     :clipped-left="clipped"
@@ -29,7 +29,7 @@
       </v-tabs>
     </v-toolbar-items>
     <v-tabs
-      v-if="showMobileToolbar"
+      v-if="isMobile"
       v-model="activeTab"
       fixed-tabs
       centered
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState, mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   data () {
@@ -68,12 +68,11 @@ export default {
           link: '/contact'
         }
       ],
-      showMobileToolbar: false,
+      isMobile: false,
       title: 'JCCC'
     };
   },
   computed: {
-    ...mapState('display', ['type']),
     ...mapGetters('display', ['breakpointToDisplaySize'])
   },
   watch: {
@@ -82,11 +81,10 @@ export default {
     }
   },
   mounted () {
-    this.displayChangeHandler();
+    this.checkIfIsMobile();
     this.updateActiveTab();
   },
   methods: {
-    ...mapMutations('display', ['updateType']),
     goToRoute (link) {
       this.$router.push({ path: link });
     },
@@ -96,13 +94,9 @@ export default {
       .indexOf(this.$route.path)
       .toString();
     },
-    displayChangeHandler () {
-      this.updateType(window.innerWidth);
-      this.checkIfShowMobileToolbar();
-    },
-    checkIfShowMobileToolbar () {
+    checkIfIsMobile () {
       const smallBreakpointCutoff = this.breakpointToDisplaySize('sm');
-      this.showMobileToolbar = window.innerWidth <= smallBreakpointCutoff;
+      this.isMobile = window.innerWidth <= smallBreakpointCutoff;
     }
   }
 };

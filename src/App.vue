@@ -1,6 +1,6 @@
 <template>
-  <v-app dark>
-    <app-toolbar></app-toolbar>
+  <v-app dark v-resize="displayChangeHandler">
+    <app-toolbar/>
     <v-content>
       <router-view/>
     </v-content>
@@ -11,11 +11,18 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 import AppToolbar from '@/components/AppToolbar';
 
 export default {
   components: {
     'app-toolbar': AppToolbar
+  },
+  methods: {
+    ...mapMutations('display', ['updateType']),
+    displayChangeHandler () {
+      this.updateType(window.innerWidth);
+    }
   },
   name: 'App'
 };
@@ -24,5 +31,9 @@ export default {
 <style>
 html {
   overflow-y: auto;
+}
+
+.card {
+  border-radius: 15px;
 }
 </style>
