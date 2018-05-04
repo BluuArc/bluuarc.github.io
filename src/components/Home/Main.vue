@@ -1,17 +1,17 @@
 <template>
   <v-container grid-list-lg id="home-page" v-resize="checkIfIsXsMobile">
-    <v-card-media
-      v-show="isXsMobile"
-      :src="require('../../assets/img/avatar.jpg')"
-      height="12rem"
-      id="avatar"/>
-    <v-card-title v-show="isXsMobile" primary-title style="display: inline-block">
-      <div v-html="aboutMeHtml"/>
-    </v-card-title>
-    <v-layout v-show="!isXsMobile" row wrap>
+    <v-layout row wrap>
       <v-flex xs12 sm12>
         <v-card>
-          <v-container fluid grid-list-lg>
+          <v-card-media
+            v-show="isXsMobile"
+            :src="require('../../assets/img/avatar.jpg')"
+            height="12rem"
+            id="avatar"/>
+          <v-card-title v-show="isXsMobile" primary-title style="display: inline-block">
+            <div v-html="aboutMeHtml"/>
+          </v-card-title>
+          <v-container fluid grid-list-lg v-show="!isXsMobile">
             <v-layout row>
               <v-flex xs3>
                 <v-card-media
