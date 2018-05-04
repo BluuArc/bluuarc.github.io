@@ -24,8 +24,11 @@ const displayStore = {
   },
   mutations: {
     updateType (state, newWidth) {
+      const oldType = state.type;
       state.type = displaySizeToBreakpoint(newWidth);
-      console.debug('updated display type to', state.type);
+      if (oldType !== state.type) {
+        console.debug('updated display type to', state.type);
+      }
     }
   },
   getters: {
