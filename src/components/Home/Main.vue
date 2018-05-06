@@ -109,11 +109,7 @@ export default {
     },
     courseHeaders () {
       return [
-        {
-          text: 'Course Name',
-          align: 'left',
-          value: 'CourseName'
-        },
+        { text: 'Course Name', value: 'CourseName' },
         { text: 'Semester', value: 'Semester' },
         { text: 'Languages/Technologies/Techniques', value: 'Languages/Technologies/Techniques' }
       ];
