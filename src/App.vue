@@ -5,7 +5,7 @@
       <router-view/>
     </v-content>
     <v-footer app>
-      <span>&copy; {{ new Date().getUTCFullYear() }}</span>
+      <span id="footer-text">&copy; {{ new Date().getUTCFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
@@ -35,5 +35,9 @@ html {
 
 .card {
   border-radius: 15px;
+}
+
+.footer #footer-text {
+  margin: auto;
 }
 </style>

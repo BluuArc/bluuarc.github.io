@@ -19,7 +19,8 @@
         fixed-tabs
         v-model="activeTab"
         class="hidden-sm-and-down"
-        color="primary">
+        color="primary"
+        slider-color="secondary">
         <v-tab
           v-for="(tab, i) in tabItems"
           :key="i"

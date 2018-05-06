@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import DisplayModule from '@/store/modules/displayBreakpoints';
 import JobData from './data/jobs';
+import CourseData from './data/courses';
 
 Vue.use(Vuex);
 
@@ -10,7 +11,8 @@ const store = new Vuex.Store({
     display: DisplayModule
   },
   state: {
-    jobs: JobData
+    jobs: JobData,
+    courses: CourseData
   }
 });
 

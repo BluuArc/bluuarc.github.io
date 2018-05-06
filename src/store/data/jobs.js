@@ -3,7 +3,7 @@ const jobs = [
     'name': 'Research Experience Undergraduate',
     'location': 'Chicago, IL',
     'company': 'University of Illinois at Chicago',
-    'time': 'May 2017 - Dec 2017',
+    'time': 'May 2017 - May 2018',
     'desc': [
       'Designed a web-based tool to submit as an entry to VAST Challenge 2017. Collaborated with a group of 4 to develop and deploy a web-based service for Englewood. Learned how to develop and deploy Unity applications for CAVE2.<br>',
       '<b>Relevant Projects</b>\n<ul>\n',
