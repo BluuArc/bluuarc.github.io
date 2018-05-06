@@ -27,15 +27,41 @@
           </v-container>
         </v-card>
       </v-flex>
+      <v-flex xs12 sm12>
+        <v-card id="work-card">
+          <v-card-title primary-title>
+            <h3 class="headline">Work Experience</h3>
+          </v-card-title>
+          <v-card-text>
+            <v-stepper vertical non-linear color="transparent">
+              <span v-for="(job, i) in jobs" :key="i">
+                <v-stepper-step
+                editable
+                :step="i + 1"
+                edit-icon="">
+                  {{ job.name }}
+                  <small>{{ job.time }}</small>
+                </v-stepper-step>
+                <v-stepper-content :step="i + 1">
+                  <h4 class="subheading">{{ job.company }} | {{ job.location }}</h4>
+                  <p class="body-2" v-html="job.desc.join('')"/>
+                </v-stepper-content>  
+              </span>
+            </v-stepper>
+          </v-card-text>
+        </v-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
   computed: {
+    ...mapGetters('display', ['breakpointToDisplaySize']),
+    ...mapState(['jobs']),
     aboutMeHtml () {
       return `
         <h3 class="headline">About Me</h3>
@@ -48,8 +74,7 @@ export default {
           <b>Interests:</b> web development, visual analytics, cybersecurity
         </p>
       `;
-    },
-    ...mapGetters('display', ['breakpointToDisplaySize'])
+    }
   },
   data () {
     return {
@@ -64,3 +89,19 @@ export default {
   }
 };
 </script>
+
+<style>
+#work-card li {
+  margin-left: 1em;
+}
+
+#work-card a {
+  /* deep-orange lighten-2 */
+  color: #FF8A65;
+}
+
+#work-card a:visited {
+  /* deep-orange darken-1 */
+  color: #F4511E;
+}
+</style>
