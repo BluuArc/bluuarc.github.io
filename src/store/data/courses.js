@@ -78,5 +78,20 @@ export default [
     'CourseName': 'Web and Multimedia Technology (IT202)',
     'Languages/Technologies/Techniques': 'JavaScript, jQuery, Google Maps, Google Charts, Bootstrap, Canvas, Service Workers',
     'Semester': 'Fall 2017'
+  },
+  {
+    'CourseName': 'Software Engineering II (CS442)',
+    'Languages/Technologies/Techniques': 'JavaScript, Node.js, Vue.js, MongoDB, Jest, TDD, XP, Agile, Scrum',
+    'Semester': 'Spring 2018'
+  },
+  {
+    'CourseName': 'Intro to Networking (CS450)',
+    'Languages/Technologies/Techniques': 'Python, HTTP, TCP, DNS',
+    'Semester': 'Spring 2018'
+  },
+  {
+    'CourseName': 'Database Systems',
+    'Languages/Technologies/Techniques': 'SQL',
+    'Semester': 'Spring 2018'
   }
 ];
