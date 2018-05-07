@@ -1,5 +1,5 @@
 <template>
-  <v-app dark v-resize="displayChangeHandler">
+  <v-app dark v-resize="displayChangeHandler" class="grey darken-4">
     <app-toolbar/>
     <v-content>
       <router-view/>
@@ -131,5 +131,14 @@ html {
 
 .footer #footer-text {
   margin: auto;
+}
+
+* {
+  --primary-background: #212121; /* grey darken-4 */
+  --secondary-background: #303030;
+}
+
+.card .card__text {
+  background-color: var(--secondary-background);
 }
 </style>

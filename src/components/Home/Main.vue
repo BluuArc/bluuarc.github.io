@@ -3,15 +3,18 @@
     <v-layout row wrap>
       <v-flex xs12>
         <v-card id="about-card">
+          <v-card-title primary-title>
+            <h3 class="headline">About Me</h3>
+          </v-card-title>
           <v-card-media
             v-show="isXsMobile"
             :src="require('../../assets/img/avatar.jpg')"
             height="12rem"
             id="avatar"/>
-          <v-card-title v-show="isXsMobile" primary-title style="display: inline-block">
-            <div v-html="aboutMeHtml"/>
-          </v-card-title>
-          <v-container fluid grid-list-lg v-show="!isXsMobile">
+          <v-card-text v-show="isXsMobile">
+            <span v-html="aboutMeHtml"/>
+          </v-card-text>
+          <v-container fluid grid-list-lg v-show="!isXsMobile" style="background-color: var(--secondary-background)">
             <v-layout row>
               <v-flex xs3>
                 <v-card-media
@@ -21,7 +24,7 @@
                   id="avatar"/>
               </v-flex>
               <v-flex xs9>
-                <div v-html="aboutMeHtml"/>
+                <v-card-text v-html="aboutMeHtml"/>
               </v-flex>
             </v-layout>
           </v-container>
@@ -54,7 +57,7 @@
             <h3 class="headline">Work Experience</h3>
           </v-card-title>
           <v-card-text>
-            <v-stepper vertical non-linear color="transparent">
+            <v-stepper vertical non-linear color="transparent" class="pb-0">
               <template v-for="(job, i) in jobs">
                 <v-stepper-step
                 editable
@@ -120,16 +123,15 @@ export default {
     ...mapState(['jobs', 'courses', 'projectData']),
     aboutMeHtml () {
       return `
-        <h3 class="headline">About Me</h3>
         <p class="body-2">
           I am Joshua Castor, and I enjoy programming stuff.
           My current focus is on frontend (and some backend) with JavaScript,
           but I'm open to learning other languages and technologies.
         </p>
         <p class="body-2">
-          <b>Education:</b> BS in Computer Science (Software Engineering Concentration) @ University of Illinois at Chicago, Fall 2015 - Fall 2018
+          <u>Education:</u> BS in Computer Science (Software Engineering Concentration) @ University of Illinois at Chicago, Fall 2015 - Fall 2018
           <br>
-          <b>Interests:</b> web development, visual analytics, cybersecurity
+          <u>Interests:</u> web development, visual analytics, cybersecurity
         </p>
       `;
     },
@@ -197,6 +199,10 @@ export default {
 </script>
 
 <style>
+#work-card .stepper {
+  box-shadow: none;
+}
+
 #work-card li {
   margin-left: 1em;
 }
@@ -209,5 +215,9 @@ export default {
 #work-card a:visited {
   /* deep-orange darken-1 */
   color: #F4511E;
+}
+
+#course-card .datatable.table, #course-card .datatable.table .datatable__actions {
+  background-color: var(--secondary-background);
 }
 </style>
