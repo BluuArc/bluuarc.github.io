@@ -14,7 +14,13 @@ const store = new Vuex.Store({
   state: {
     jobs: JobData,
     courses: CourseData,
-    contactLinks: ContactData
+    contactLinks: ContactData,
+    projectData: null
+  },
+  mutations: {
+    setProjectData (state, data) {
+      state.projectData = data;
+    }
   }
 });
 
