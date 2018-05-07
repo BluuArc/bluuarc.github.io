@@ -10,13 +10,13 @@
             </v-card-title>
             <v-container fluid grid-list-lg style="background-color: var(--secondary-background)">
               <v-layout row wrap v-if="userData">
-                <v-flex md3 sm12>
+                <v-flex md3 xs12>
                   <v-card-media
                     :src="userData.avatar_url"
                     height="200px"
                     contain/>
                 </v-flex>
-                <v-flex md9 sm12>
+                <v-flex md9 xs12>
                   <v-card-text class="text-xs-center">
                     <h3 class="headline">{{ userData.name }} ({{ userData.login }})</h3>
                     <p>
