@@ -8,6 +8,7 @@
         background-color="grey darken-3"
         :style="getBarStyle(index)"
         :language="language.name"
+        height="10"
       />
   </div>
 </template>
@@ -58,12 +59,15 @@ export default {
     },
     getBarStyle (index) {
       if (index === 0) {
-        return;
+        return {
+          'border-radius': '0.25rem'
+        };
       }
       return {
         position: 'absolute',
         margin: 0,
-        top: 0
+        top: 0,
+        'border-radius': '0.25rem'
       };
     }
   }
