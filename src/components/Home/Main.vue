@@ -27,6 +27,27 @@
           </v-container>
         </v-card>
       </v-flex>
+      <v-flex xs12 v-if="projectData">
+        <v-card id="project-statistics-card">
+          <v-card-title primary-title>
+            <h3 class="headline">Project Statistics</h3>
+          </v-card-title>
+          <v-card-text class="text-xs-center title">
+            <span>{{ projectData.overall.languages.length }} languages</span>
+            <span>across</span>
+            <span>{{ projectData.overall.count.total }}</span>
+            <span>Total Projects</span>
+            <span>({{ projectData.overall.count.mine }}</span>
+            <span>Owned)</span>
+          </v-card-text>
+          <v-card-text>
+            <language-section :languages="projectData.overall.languages"/>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn flat to="/projects">See Projects</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
       <v-flex xs12>
         <v-card id="work-card">
           <v-card-title primary-title>
@@ -88,11 +109,15 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex';
+import LanguageSection from '@/components/Projects/LanguageSection';
 
 export default {
+  components: {
+    'language-section': LanguageSection
+  },
   computed: {
     ...mapGetters('display', ['breakpointToDisplaySize']),
-    ...mapState(['jobs', 'courses']),
+    ...mapState(['jobs', 'courses', 'projectData']),
     aboutMeHtml () {
       return `
         <h3 class="headline">About Me</h3>

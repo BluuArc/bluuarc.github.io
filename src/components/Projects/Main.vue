@@ -6,6 +6,13 @@
         <section v-else>
           <v-card id="profile-overview-card">
             <v-container fluid grid-list-lg>
+              <v-layout row wrap>
+                <v-flex xs12>
+                  <v-card-title>
+                    <h3 class="headline">Profile Overview</h3>
+                  </v-card-title>
+                </v-flex>
+              </v-layout>
               <v-layout row wrap v-if="userData">
                 <v-flex md3 sm12>
                   <v-card-media
