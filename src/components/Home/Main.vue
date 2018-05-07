@@ -34,19 +34,20 @@
           </v-card-title>
           <v-card-text>
             <v-stepper vertical non-linear color="transparent">
-              <span v-for="(job, i) in jobs" :key="i">
+              <template v-for="(job, i) in jobs">
                 <v-stepper-step
                 editable
+                :key="`${i}_step`"
                 :step="i + 1"
                 edit-icon="">
                   {{ job.name }}
                   <small>{{ job.time }}</small>
                 </v-stepper-step>
-                <v-stepper-content :step="i + 1">
+                <v-stepper-content :key="`${i}_content`" :step="i + 1">
                   <h4 class="subheading">{{ job.company }} | {{ job.location }}</h4>
                   <p class="body-2" v-html="job.desc.join('')"/>
                 </v-stepper-content>  
-              </span>
+              </template>
             </v-stepper>
           </v-card-text>
         </v-card>
