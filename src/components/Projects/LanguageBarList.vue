@@ -2,12 +2,17 @@
   <v-container grid-list-xs>
     <v-layout row wrap>
       <v-flex
-        xs4 md3
+        xs12 md3
         v-for="(language, index) in processedLanguages"
         :key="index">
-        <v-btn>
-          <v-icon>mdi-anchor</v-icon>
-          <span>{{ language.name }}</span>
+        <v-btn block flat>
+          <v-icon
+            small left
+            class="language-circle"
+            :data-language-color="language.color">
+            fas fa-circle
+          </v-icon>
+          <span>{{ language.name }} ({{ (language.actualSize * 100).toFixed(2) }}%)</span>
         </v-btn>
       </v-flex>
     </v-layout>
@@ -41,6 +46,29 @@ export default {
           };
         });
     }
+  },
+  mounted () {
+    this.convertHexColors();
+  },
+  methods: {
+    convertHexColors () {
+      const elems = this.$el.getElementsByClassName('language-circle');
+      for (let i = 0; i < elems.length; ++i) {
+        const elem = elems.item(i);
+        const color = elem.dataset.languageColor;
+        if (!color) {
+          continue;
+        }
+        elem.style.color = color;
+      }
+    }
   }
 };
 </script>
+
+<style>
+.language-circle {
+  border: 1.5px solid #EEE;
+  border-radius: 50%;
+}
+</style>
