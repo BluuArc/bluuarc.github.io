@@ -6,7 +6,7 @@
         <section v-else>
           <v-card id="profile-overview-card">
             <v-container fluid grid-list-lg>
-              <v-layout row wrap>
+              <v-layout row wrap v-if="userData">
                 <v-flex md3 sm12>
                   <v-card-media
                     :src="userData.avatar_url"
@@ -43,6 +43,13 @@
                   </v-card-text>
                 </v-flex>
               </v-layout>
+              <v-layout row wrap>
+                <v-flex xs12>
+                  <v-card-text>
+                    <language-section :languages="projectData.overall.languages"/>
+                  </v-card-text>
+                </v-flex>
+              </v-layout>
             </v-container>
           </v-card>
         </section>
@@ -54,8 +61,12 @@
 <script>
 import { mapState } from 'vuex';
 import moment from 'moment';
+import LanguageSection from '@/components/Projects/LanguageSection';
 
 export default {
+  components: {
+    'language-section': LanguageSection
+  },
   computed: {
     ...mapState(['projectData']),
     userData () {

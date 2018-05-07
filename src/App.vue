@@ -100,7 +100,7 @@ export default {
         const userData = await this.getGitHubUserData();
         projectData.user = userData;
       } catch (err) {
-        console.err(err);
+        console.error(err);
         delete projectData.user;
       }
       this.setProjectData(projectData);
