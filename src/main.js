@@ -12,6 +12,11 @@ Vue.use(Vuetify, { theme });
 
 Vue.config.productionTip = false;
 
+router.beforeEach((to, from, next) => {
+  document.title = `JCCC - ${to.name}`;
+  next();
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
