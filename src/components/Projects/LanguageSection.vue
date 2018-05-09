@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="languages.length > 0">
     <language-bar v-once :languages="languages"/>
     <langauge-list :languages="languages"/>
   </div>

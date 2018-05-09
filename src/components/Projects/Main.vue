@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-lg>
-    <v-layout>
+    <v-layout row>
       <v-flex xs12>
         <p v-if="!projectData">Loading project data...</p>
         <section v-else>
@@ -58,6 +58,14 @@
         </section>
       </v-flex>
     </v-layout>
+    <v-layout v-if="projectData" row wrap>
+      <v-flex
+        xs12
+        v-for="key in sortedProjectKeys"
+        :key="key">
+        <project-card :project="projectData.projects[key]"/>
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 
@@ -65,10 +73,12 @@
 import { mapState } from 'vuex';
 import moment from 'moment';
 import LanguageSection from '@/components/Projects/LanguageSection';
+import ProjectCard from '@/components/Projects/ProjectCard';
 
 export default {
   components: {
-    'language-section': LanguageSection
+    'language-section': LanguageSection,
+    'project-card': ProjectCard
   },
   computed: {
     ...mapState(['projectData']),
@@ -89,6 +99,13 @@ export default {
         return new Date().toDateString();
       }
       return new Date(this.userData.updated_at).toDateString();
+    },
+    sortedProjectKeys () {
+      if (!this.projectData) {
+        return [];
+      }
+
+      return Object.keys(this.projectData.projects);
     }
   },
   methods: {
