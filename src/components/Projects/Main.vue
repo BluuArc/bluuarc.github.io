@@ -21,27 +21,13 @@
                     <h3 class="headline">{{ userData.name }} ({{ userData.login }})</h3>
                     <p>
                       <span>GitHub user since</span>
-                      <v-tooltip top>
-                        <span slot="activator">
-                          <abbr :title="userCreationDate">
-                            <b>{{ getTimeFromNow(userData.created_at) }}</b>
-                          </abbr>
-                        </span>
-                        <span>{{ userCreationDate }}</span>
-                      </v-tooltip>
+                      <date-text :top="true" :date="userData.created_at"/>
                     </p>
                     <p>Contributed to at least <b>{{ projectData.overall.count.total }} projects</b>, owning {{ projectData.overall.count.mine }} of them.</p>
                     <p>{{ projectData.user.followers }} follower(s) and following {{ projectData.user.following }} user(s)</p>
                     <p>
                       <span>User information last updated</span>
-                      <v-tooltip top>
-                        <span slot="activator">
-                          <abbr :title="userUpdateTime">
-                            {{ getTimeFromNow(userData.updated_at) }}
-                          </abbr>
-                        </span>
-                        <span>{{ userUpdateTime }}</span>
-                      </v-tooltip>
+                      <date-text :top="true" :date="userData.updated_at"/>
                     </p>
                   </v-card-text>
                 </v-flex>
@@ -71,14 +57,15 @@
 
 <script>
 import { mapState } from 'vuex';
-import moment from 'moment';
 import LanguageSection from '@/components/Projects/LanguageSection';
 import ProjectCard from '@/components/Projects/ProjectCard';
+import DateText from '@/components/DateText';
 
 export default {
   components: {
     'language-section': LanguageSection,
-    'project-card': ProjectCard
+    'project-card': ProjectCard,
+    'date-text': DateText
   },
   computed: {
     ...mapState(['projectData']),
@@ -88,29 +75,12 @@ export default {
       }
       return this.projectData.user;
     },
-    userCreationDate () {
-      if (!this.userData) {
-        return new Date().toDateString();
-      }
-      return new Date(this.userData.created_at).toDateString();
-    },
-    userUpdateTime () {
-      if (!this.userData) {
-        return new Date().toDateString();
-      }
-      return new Date(this.userData.updated_at).toDateString();
-    },
     sortedProjectKeys () {
       if (!this.projectData) {
         return [];
       }
 
       return Object.keys(this.projectData.projects);
-    }
-  },
-  methods: {
-    getTimeFromNow (input) {
-      return moment(input).fromNow();
     }
   }
 };

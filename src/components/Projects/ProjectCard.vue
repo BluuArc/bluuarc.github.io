@@ -3,7 +3,7 @@
     <v-card-title primary-title>
       <h3 class="headline">{{ project.name }}</h3>
     </v-card-title>
-    <v-card-text>
+    <v-card-text class="pb-0">
       <v-container grid-list-sm>
         <v-layout row wrap>
           <v-flex sm12 md6>
@@ -17,6 +17,15 @@
           </v-flex>
           <v-flex sm12 md6>
             <p><b>Project Information</b></p>
+            <p><b>Owner:</b> {{ project.owner }}</p>
+            <p>
+              <b>Created:</b>
+              <date-text :top="true" :date="project.createdAt"/>
+            </p>
+            <p>
+              <b>Last Commit:</b>
+              <date-text :top="true" :date="project.lastPushedAt"/>
+            </p>
           </v-flex>
         </v-layout>
       </v-container>
@@ -31,6 +40,7 @@
 </template>
 
 <script>
+import DateText from '@/components/DateText';
 import LanguageSection from '@/components/Projects/LanguageSection';
 
 export default {
@@ -41,7 +51,8 @@ export default {
     }
   },
   components: {
-    'language-section': LanguageSection
+    'language-section': LanguageSection,
+    'date-text': DateText
   }
 };
 </script>
