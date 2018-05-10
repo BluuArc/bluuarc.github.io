@@ -5,7 +5,7 @@
         xs12 md3
         v-for="(language, index) in processedLanguages"
         :key="index">
-        <v-btn block flat>
+        <v-btn block flat class="language-btn">
           <v-icon
             small left
             class="language-circle"
@@ -70,5 +70,9 @@ export default {
 .language-circle {
   border: 1.5px solid #EEE;
   border-radius: 50%;
+}
+
+.language-btn {
+  pointer-events: none;
 }
 </style>
