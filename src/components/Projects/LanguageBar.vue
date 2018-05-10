@@ -3,9 +3,11 @@
       <v-progress-linear
         v-for="(language, index) in processedLanguages"
         :key="language.name"
-        :color="language.color"
         :value="language.barSize * 100"
         background-color="grey darken-3"
+        :color="language.color"
+        :data-language-color="language.color"
+        :data-language-name="language.name"
         :style="getBarStyle(index)"
         :language="language.name"
         height="10"
@@ -46,15 +48,18 @@ export default {
   },
   methods: {
     convertHexColors () {
-      const elems = this.$el.getElementsByClassName('progress-linear__bar__determinate');
+      const elems = this.$el.getElementsByClassName('progress-linear');
       for (let i = 0; i < elems.length; ++i) {
         const elem = elems.item(i);
-        const color = elem.classList.value.split(' ').filter(c => c.includes('#'))[0];
-        if (!color) {
+        const color = elem.dataset.languageColor;
+        const name = elem.dataset.languageName;
+        if (!color && name !== 'Arduino') {
+          console.debug('no color found for', name);
           continue;
         }
-        elem.style.backgroundColor = color;
-        elem.classList.remove(color);
+        const bar = elem.getElementsByClassName('progress-linear__bar__determinate')[0];
+        bar.style.backgroundColor = color || '#fff';
+        bar.classList.remove(color);
       }
     },
     getBarStyle (index) {
