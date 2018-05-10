@@ -39,9 +39,9 @@
             <span>{{ projectData.overall.languages.length }} languages</span>
             <span>across</span>
             <span>{{ projectData.overall.count.total }}</span>
-            <span>Total Projects</span>
+            <span>public projects</span>
             <span>({{ projectData.overall.count.mine }}</span>
-            <span>Owned)</span>
+            <span>owned)</span>
           </v-card-text>
           <v-card-text>
             <language-section :languages="projectData.overall.languages"/>

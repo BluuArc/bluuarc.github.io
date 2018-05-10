@@ -23,7 +23,7 @@
                       <span>GitHub user since</span>
                       <date-text :top="true" :date="userData.created_at"/>
                     </p>
-                    <p>Contributed to at least <b>{{ projectData.overall.count.total }} projects</b>, owning {{ projectData.overall.count.mine }} of them.</p>
+                    <p>Contributed to at least <b>{{ projectData.overall.count.total }} public projects</b>, owning {{ projectData.overall.count.mine }} of them.</p>
                     <p>{{ projectData.user.followers }} follower(s) and following {{ projectData.user.following }} user(s)</p>
                     <p>
                       <span>User information last updated</span>

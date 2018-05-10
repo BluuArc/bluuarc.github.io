@@ -1,6 +1,11 @@
 {
     "ignoredProjects": [
-        "BluuArc/hello-world","BluuArc/frontend-nanodegree-resume","BluuArc/DBReader","BluuArc/lab-test"
+        "BluuArc/hello-world",
+        "BluuArc/frontend-nanodegree-resume",
+        "BluuArc/DBReader",
+        "BluuArc/lab-test",
+        "acm-uic/ACM-BACKEND",
+        "BluuArc/FileIndexer"
     ],
     "additionalProjectInfo": {
         
