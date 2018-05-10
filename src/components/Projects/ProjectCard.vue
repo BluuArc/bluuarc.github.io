@@ -28,14 +28,38 @@
             </p>
           </v-flex>
         </v-layout>
+        <v-layout v-if="project.topics && project.topics.length > 0" row wrap>
+          <v-flex xs12 sm1 class="text-md-center">
+            <p><b>Topics:</b></p>
+          </v-flex>
+          <v-flex xs12 sm11>
+            <v-btn
+              round small
+              v-for="topic in project.topics"
+              :key="topic.name"
+              :href="topic.url"
+              target="_blank"
+              class="grey"
+              style="color: black; text-transform: lowercase">
+              {{ topic.name }}
+            </v-btn>
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-card-text>
     <v-card-text>
       <language-section :languages="project.languages"></language-section>
     </v-card-text>
-    <v-card-text>
-      {{ project }}
-    </v-card-text>
+    <v-card-actions>
+      <v-btn flat :href="project.repoURL" target="_blank">
+        <span>Code Repository</span>
+        <v-icon right>fab fa-github</v-icon>
+      </v-btn>
+      <v-btn flat v-if="project.homepageURL" :href="project.homepageURL" target="_blank">
+        <span>Project Page</span>
+        <v-icon right>fas fa-external-link-alt</v-icon>
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
