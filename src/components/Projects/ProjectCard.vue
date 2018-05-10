@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="project-card">
     <v-card-title primary-title>
       <h3 class="headline">{{ project.name }}</h3>
     </v-card-title>
@@ -80,3 +80,21 @@ export default {
   }
 };
 </script>
+
+<style>
+@media screen and (max-width: 599px) {
+  .project-card .card__actions {
+    display: grid;
+  }
+
+  .project-card .card__text {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+}
+
+.project-card .card__title {
+  word-break: break-all;
+}
+</style>
