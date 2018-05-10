@@ -207,12 +207,12 @@ export default {
   margin-left: 1em;
 }
 
-#work-card a {
+#work-card a:visited {
   /* deep-orange lighten-2 */
   color: #FF8A65;
 }
 
-#work-card a:visited {
+#work-card a {
   /* deep-orange darken-1 */
   color: #F4511E;
 }
