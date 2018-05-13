@@ -70,7 +70,7 @@ export default {
         }
       ],
       isMobile: false,
-      title: 'JCCC'
+      title: 'JC.ME'
     };
   },
   computed: {

@@ -18,7 +18,7 @@ Vue.use(VueRouterMultiView);
 Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {
-  document.title = `JCCC - ${to.name}`;
+  document.title = `JC.ME - ${to.name}`;
   next();
 });
 
