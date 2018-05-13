@@ -2,6 +2,35 @@
   <v-container grid-list-lg>
     <v-layout row wrap>
       <v-flex xs12>
+        <v-card id="tech-used">
+          <v-card-title>
+            <h3 class="headline">Technologies Used</h3>
+          </v-card-title>
+          <v-card-text>
+            <v-list>
+              <template v-for="(tech, i) in siteTechnologies">
+                <v-divider v-if="i !== 0" :key="`${i}_divider`"/>
+                <v-list-tile
+                  :key="i"
+                  :href="tech.link"
+                  target="_blank">
+                  <v-list-tile-avatar>
+                    <img :src="tech.icon"/>
+                  </v-list-tile-avatar>
+                  <v-list-tile-content>
+                    <v-list-title v-text="tech.name"/>
+                  </v-list-tile-content>
+                  <v-spacer/>
+                  <v-list-tile-avatar>
+                    <v-icon>fas fa-external-link-alt</v-icon>
+                  </v-list-tile-avatar>
+                </v-list-tile>
+              </template>
+            </v-list>
+          </v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex xs12>
         <v-card id="contact-links">
           <v-card-title>
             <h3 class="headline">Contact Information</h3>
@@ -41,7 +70,7 @@ import { mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapState(['contactLinks'])
+    ...mapState(['contactLinks', 'siteTechnologies'])
   },
   methods: {
     clickHandler () {

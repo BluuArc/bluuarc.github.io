@@ -4,6 +4,7 @@ import DisplayModule from '@/store/modules/displayBreakpoints';
 import JobData from './data/jobs';
 import CourseData from './data/courses';
 import ContactData from './data/contact';
+import SiteTechData from './data/site-technologies';
 
 Vue.use(Vuex);
 
@@ -15,7 +16,8 @@ const store = new Vuex.Store({
     jobs: JobData,
     courses: CourseData,
     contactLinks: ContactData,
-    projectData: null
+    projectData: null,
+    siteTechnologies: SiteTechData
   },
   mutations: {
     setProjectData (state, data) {
