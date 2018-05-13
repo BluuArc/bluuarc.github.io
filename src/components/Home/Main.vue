@@ -57,15 +57,35 @@
             <h3 class="headline">Work Experience</h3>
           </v-card-title>
           <v-card-text>
-            <v-stepper vertical non-linear color="transparent" class="pb-0">
+            <v-stepper vertical non-linear color="transparent" class="pb-0" v-model="currentJob">
               <template v-for="(job, i) in jobs">
                 <v-stepper-step
                 editable
                 :key="`${i}_step`"
                 :step="i + 1"
                 edit-icon="">
-                  {{ job.name }}
-                  <small>{{ job.time }}</small>
+                  <v-container grid-list-xs fluid>
+                    <v-layout row>
+                      <v-flex xs10>
+                        <p class="mb-0">{{ job.name }}</p>
+                        <p><small>{{ job.time }}</small></p>
+                      </v-flex>
+                      <v-flex xs2 class="text-xs-right">
+                        <v-btn
+                          v-show="currentJob === i + 1"
+                          @click="currentJob = 0"
+                          flat icon>
+                          <v-icon>keyboard_arrow_up</v-icon>
+                        </v-btn>
+                        <v-btn
+                          v-show="currentJob !== i + 1"
+                          @click="currentJob = i + 1"
+                          flat icon>
+                          <v-icon>keyboard_arrow_down</v-icon>
+                        </v-btn>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
                 </v-stepper-step>
                 <v-stepper-content :key="`${i}_content`" :step="i + 1">
                   <h4 class="subheading">{{ job.company }} | {{ job.location }}</h4>
@@ -183,7 +203,8 @@ export default {
   data () {
     return {
       isXsMobile: false,
-      courseSearch: ''
+      courseSearch: '',
+      currentJob: ''
     };
   },
   methods: {
@@ -215,6 +236,10 @@ export default {
 #work-card a {
   /* deep-orange darken-1 */
   color: #F4511E;
+}
+
+#work-card .stepper__label {
+  width: 100%;
 }
 
 #course-card .datatable.table, #course-card .datatable.table .datatable__actions {
