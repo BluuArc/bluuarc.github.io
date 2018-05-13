@@ -65,8 +65,8 @@ export default {
           link: '/projects'
         },
         {
-          title: 'Contact',
-          link: '/contact'
+          title: 'About',
+          link: '/about'
         }
       ],
       isMobile: false,
