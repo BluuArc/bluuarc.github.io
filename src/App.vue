@@ -2,7 +2,7 @@
   <v-app dark v-resize="displayChangeHandler" class="grey darken-4">
     <app-toolbar/>
     <v-content>
-      <router-view/>
+      <router-multi-view/>
     </v-content>
     <v-footer app>
       <span id="footer-text">&copy; {{ new Date().getUTCFullYear() }}</span>
