@@ -29,12 +29,12 @@
           </v-flex>
         </v-layout>
         <v-layout v-if="project.topics && project.topics.length > 0" row wrap class="pb-0">
-          <v-flex xs12 sm1 class="text-xs-center text-sm-left">
+          <v-flex sm2 md1 class="text-xs-center text-sm-left">
             <v-btn flat small id="topic-section-label">
               Topics:
             </v-btn>
           </v-flex>
-          <v-flex xs12 sm11 class="text-xs-center text-sm-left">
+          <v-flex sm10 md11 class="text-xs-center text-sm-left">
             <v-btn
               round small
               v-for="topic in project.topics"
