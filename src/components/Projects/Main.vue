@@ -49,20 +49,71 @@
         <v-divider/>
       </v-flex>
       <v-flex xs12>
-        <v-container grid-list-md>
-          <v-layout row>
-            <v-flex xs6>
-              <v-text-field
-                color="secondary"
-                v-model="searchQuery"
-                name="project-search"
-                label="Search Projects"/>
-            </v-flex>
-            <v-flex xs6 class="text-xs-center" style="margin: auto">
-              <h3 class="subheading">Showing {{ projectKeys.length }} projects</h3>
-            </v-flex>
-          </v-layout>
-        </v-container>
+        <v-card>
+          <v-card-text class="pa-0">
+            <v-container grid-list-md>
+              <v-layout row class="pl-2 pr-2">
+                <v-flex xs6>
+                  <v-text-field
+                    color="secondary"
+                    v-model="searchQuery"
+                    name="project-search"
+                    label="Search Projects"/>
+                </v-flex>
+                <v-flex xs6 class="text-xs-center" style="margin: auto">
+                  <h3 class="subheading">Showing {{ projectKeys.length }} projects</h3>
+                </v-flex>
+              </v-layout>
+              <v-layout row>
+                <v-flex xs12 class="pa-0">
+                  <v-expansion-panel>
+                    <v-expansion-panel-content>
+                      <div slot="header">
+                        <span>Filters</span>
+                      </div>
+                      <v-card>
+                        <v-card-text>
+                          filter options go here
+                        </v-card-text>
+                      </v-card>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                  <v-divider/>
+                  <v-expansion-panel>
+                    <v-expansion-panel-content style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                      <div slot="header">
+                        <span>Sort By:</span>
+                        <span>{{ sortMapping[sortOptions.type] }} ({{ sortOptions.isAscending ? 'Ascending': 'Descending' }} order)</span>
+                      </div>
+                      <v-card style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                        <v-card-text>
+                          <section>
+                            <h3 class="subheading">Sort Type</h3>
+                            <v-radio-group v-model="sortOptions.type" row>
+                              <v-radio
+                                v-for="(key, value) in sortMapping"
+                                :key="value"
+                                :value="value"
+                                :label="key"
+                              />
+                            </v-radio-group>
+                          </section>
+                          <section>
+                            <h3 class="subheading">Sort Order</h3>
+                            <v-radio-group v-model="sortOptions.isAscending" row>
+                              <v-radio :value="true" label="Ascending"/>
+                              <v-radio :value="false" label="Descending"/>
+                            </v-radio-group>
+                          </section>
+                        </v-card-text>
+                      </v-card>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-card-text>
+        </v-card>
       </v-flex>
       <v-flex
         xs12
@@ -94,29 +145,46 @@ export default {
         return;
       }
       return this.projectData.user;
+    },
+    sortMapping () {
+      return {
+        lastPushedAt: 'Last Commit Date',
+        createdAt: 'Creation Date',
+        name: 'Project Name',
+        owner: 'Project Owner'
+      };
     }
   },
   data () {
     return {
       searchQuery: '',
-      projectKeys: []
+      projectKeys: [],
+      sortOptions: {
+        type: 'lastPushedAt',
+        isAscending: false
+      }
     };
   },
   watch: {
     searchQuery (newValue) {
-      console.debug('query changed to', newValue);
       this.searchHandler(newValue);
     },
     projectData () {
-      this.projectKeys = this.searchProjects();
+      this.searchHandler();
+    },
+    'sortOptions.type' (newValue) {
+      this.projectKeys = this.sortKeys(this.sortOptions, this.projectKeys);
+    },
+    'sortOptions.isAscending' (newValue) {
+      this.projectKeys = this.sortKeys(this.sortOptions, this.projectKeys);
     }
   },
   mounted () {
-    this.projectKeys = this.searchProjects();
+    this.searchHandler();
   },
   methods: {
     searchHandler: debounce(function (query) {
-      this.projectKeys = this.searchProjects(query);
+      this.projectKeys = this.sortKeys(this.sortOptions, this.searchProjects(query));
     }, 150),
     searchProjects (query) {
       if (!this.projectData) {
@@ -141,6 +209,34 @@ export default {
           // console.debug(key, { description, name, owner, languages, techUsed, topics }, hasQuery);
           return hasQuery;
         }).map(([key, project]) => key);
+    },
+    sortKeys (options = {}, inputKeys = []) {
+      const dateFields = ['lastPushedAt', 'createdAt'];
+      const textFields = ['name', 'owner'];
+      // default to sort by last pushed at in descending order
+      const { type = 'lastPushedAt', isAscending = false } = options;
+
+      if (inputKeys.length < 1) {
+        return inputKeys;
+      }
+
+      const projectKeys = inputKeys.slice();
+      const projects = this.projectData.projects;
+      if (dateFields.includes(type)) {
+        return projectKeys.sort((keyA, keyB) => {
+          const difference = new Date(projects[keyA][type]) - new Date(projects[keyB][type]);
+          return isAscending ? difference : -difference;
+        });
+      } else if (textFields.includes(type)) {
+        return projectKeys.sort((keyA, keyB) => {
+          const [projectA, projectB] = [projects[keyA], projects[keyB]];
+          const difference = projectA[type] < projectB[type] ? -1 : 1;
+          return isAscending ? difference : -difference;
+        });
+      } else {
+        // use defaults
+        return this.sortKeys();
+      }
     }
   }
 };
