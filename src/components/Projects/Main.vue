@@ -45,9 +45,28 @@
       </v-flex>
     </v-layout>
     <v-layout v-if="projectData" row wrap>
+      <v-flex xs12>
+        <v-divider/>
+      </v-flex>
+      <v-flex xs12>
+        <v-container grid-list-md>
+          <v-layout row>
+            <v-flex xs6>
+              <v-text-field
+                color="secondary"
+                v-model="searchQuery"
+                name="project-search"
+                label="Search Projects"/>
+            </v-flex>
+            <v-flex xs6 class="text-xs-center" style="margin: auto">
+              <h3 class="subheading">Showing {{ projectKeys.length }} projects</h3>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-flex>
       <v-flex
         xs12
-        v-for="key in sortedProjectKeys"
+        v-for="key in projectKeys"
         :key="key">
         <project-card :project="projectData.projects[key]"/>
       </v-flex>
@@ -60,6 +79,7 @@ import { mapState } from 'vuex';
 import LanguageSection from '@/components/Projects/LanguageSection';
 import ProjectCard from '@/components/Projects/ProjectCard';
 import DateText from '@/components/DateText';
+import debounce from 'lodash/debounce';
 
 export default {
   components: {
@@ -74,13 +94,53 @@ export default {
         return;
       }
       return this.projectData.user;
+    }
+  },
+  data () {
+    return {
+      searchQuery: '',
+      projectKeys: []
+    };
+  },
+  watch: {
+    searchQuery (newValue) {
+      console.debug('query changed to', newValue);
+      this.searchHandler(newValue);
     },
-    sortedProjectKeys () {
+    projectData () {
+      this.projectKeys = this.searchProjects();
+    }
+  },
+  mounted () {
+    this.projectKeys = this.searchProjects();
+  },
+  methods: {
+    searchHandler: debounce(function (query) {
+      this.projectKeys = this.searchProjects(query);
+    }, 150),
+    searchProjects (query) {
       if (!this.projectData) {
         return [];
       }
 
-      return Object.keys(this.projectData.projects);
+      const projects = this.projectData.projects;
+
+      if (!query) {
+        return Object.keys(projects);
+      }
+
+      return Object.entries(projects)
+        .filter(([key, project]) => {
+          const { description = '', name = '', owner = '', languages = [], techUsed = [], topics = [] } = project;
+          const hasQuery = (description || '').toLowerCase().includes(query) ||
+            name.toLowerCase().includes(query) ||
+            owner.toLowerCase().includes(query) ||
+            JSON.stringify(languages).toLowerCase().includes(query) ||
+            JSON.stringify(techUsed).toLowerCase().includes(query) ||
+            JSON.stringify(topics).toLowerCase().includes(query);
+          // console.debug(key, { description, name, owner, languages, techUsed, topics }, hasQuery);
+          return hasQuery;
+        }).map(([key, project]) => key);
     }
   }
 };
