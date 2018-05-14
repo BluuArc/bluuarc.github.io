@@ -18,7 +18,7 @@
                     <img :src="tech.icon"/>
                   </v-list-tile-avatar>
                   <v-list-tile-content>
-                    <v-list-title v-text="tech.name"/>
+                    <v-list-tile-title v-text="tech.name"/>
                   </v-list-tile-content>
                   <v-spacer/>
                   <v-list-tile-avatar>
