@@ -61,7 +61,7 @@
                     label="Search Projects"/>
                 </v-flex>
                 <v-flex xs6 class="text-xs-center" style="margin: auto">
-                  <h3 class="subheading">Showing {{ projectKeys.length }} projects</h3>
+                  <h3 class="subheading">Showing {{ projectKeys.length }} {{ projectKeys.length === 1 ? 'project' : 'projects' }}</h3>
                 </v-flex>
               </v-layout>
               <v-layout row>
@@ -70,10 +70,26 @@
                     <v-expansion-panel-content>
                       <div slot="header">
                         <span>Filters</span>
+                        <v-chip small>{{ filters.languages.length }} {{ filters.languages.length === 1 ? 'Language' : 'Languages' }}</v-chip>
                       </div>
                       <v-card>
                         <v-card-text>
-                          filter options go here
+                          <section>
+                            <h3 class="subheading">Languages</h3>
+                            <v-container fluid>
+                              <v-layout row wrap>
+                                <v-flex
+                                  v-for="(language, i) in possibleLanguages"
+                                  :key="i"
+                                  xs12 md3>
+                                  <v-checkbox
+                                    v-model="filters.languages"
+                                    :label="language"
+                                    :value="language"/>
+                                </v-flex>
+                              </v-layout>
+                            </v-container>
+                          </section>
                         </v-card-text>
                       </v-card>
                     </v-expansion-panel-content>
@@ -153,6 +169,13 @@ export default {
         name: 'Project Name',
         owner: 'Project Owner'
       };
+    },
+    possibleLanguages () {
+      if (!this.projectData) {
+        return [];
+      }
+
+      return this.projectData.overall.languages.map(lang => lang.name).sort();
     }
   },
   data () {
@@ -162,6 +185,9 @@ export default {
       sortOptions: {
         type: 'lastPushedAt',
         isAscending: false
+      },
+      filters: {
+        languages: []
       }
     };
   },
@@ -177,38 +203,56 @@ export default {
     },
     'sortOptions.isAscending' (newValue) {
       this.projectKeys = this.sortKeys(this.sortOptions, this.projectKeys);
+    },
+    possibleLanguages (newValue) {
+      this.filters.languages = newValue;
+    },
+    'filters.languages' () {
+      this.searchHandler(this.searchQuery, this.filters);
     }
   },
   mounted () {
+    this.filters.languages = this.possibleLanguages;
     this.searchHandler();
   },
   methods: {
-    searchHandler: debounce(function (query) {
-      this.projectKeys = this.sortKeys(this.sortOptions, this.searchProjects(query));
+    searchHandler: debounce(function (query, filters) {
+      this.projectKeys = this.sortKeys(this.sortOptions, this.searchProjects(query, filters || this.filters));
     }, 150),
-    searchProjects (query) {
+    searchProjects (query, filters) {
       if (!this.projectData) {
         return [];
       }
 
       const projects = this.projectData.projects;
 
-      if (!query) {
-        return Object.keys(projects);
-      }
-
       return Object.entries(projects)
         .filter(([key, project]) => {
-          const { description = '', name = '', owner = '', languages = [], techUsed = [], topics = [] } = project;
-          const hasQuery = (description || '').toLowerCase().includes(query) ||
-            name.toLowerCase().includes(query) ||
-            owner.toLowerCase().includes(query) ||
-            JSON.stringify(languages).toLowerCase().includes(query) ||
-            JSON.stringify(techUsed).toLowerCase().includes(query) ||
-            JSON.stringify(topics).toLowerCase().includes(query);
-          // console.debug(key, { description, name, owner, languages, techUsed, topics }, hasQuery);
-          return hasQuery;
+          const hasQuery = this.projectFitsQuery(project, query);
+          const fitFilter = this.projectFitsFilter(project, filters);
+          return hasQuery && fitFilter;
         }).map(([key, project]) => key);
+    },
+    projectFitsQuery (project, query) {
+      const { description = '', name = '', owner = '', languages = [], techUsed = [], topics = [] } = project;
+      const hasQuery = (description || '').toLowerCase().includes(query) ||
+        name.toLowerCase().includes(query) ||
+        owner.toLowerCase().includes(query) ||
+        JSON.stringify(languages).toLowerCase().includes(query) ||
+        JSON.stringify(techUsed).toLowerCase().includes(query) ||
+        JSON.stringify(topics).toLowerCase().includes(query);
+      return hasQuery;
+    },
+    projectFitsFilter (project, filter) {
+      const { languages: filterLanguages } = filter;
+      const { languages: projectLanguages } = project;
+
+      const languageNames = projectLanguages.map(lang => lang.name);
+
+      const hasSomeLanguage = filterLanguages.some(lang => languageNames.includes(lang));
+      // console.debug(languageNames, filterLanguages, hasSomeLanguage);
+
+      return hasSomeLanguage;
     },
     sortKeys (options = {}, inputKeys = []) {
       const dateFields = ['lastPushedAt', 'createdAt'];
