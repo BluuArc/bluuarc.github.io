@@ -2,7 +2,9 @@
   <v-app dark v-resize="displayChangeHandler" class="grey darken-4">
     <app-toolbar/>
     <v-content>
-      <router-multi-view/>
+      <router-multi-view
+        name="slide-y-transition"
+        morph="transition-group"/>
     </v-content>
     <v-footer app>
       <span id="footer-text">&copy; {{ new Date().getUTCFullYear() }}</span>
