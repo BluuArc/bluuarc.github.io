@@ -5,6 +5,7 @@ import JobData from './data/jobs';
 import CourseData from './data/courses';
 import ContactData from './data/contact';
 import SiteTechData from './data/site-technologies';
+import OldSiteData from './data/old-sites';
 
 Vue.use(Vuex);
 
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
     courses: CourseData,
     contactLinks: ContactData,
     projectData: null,
-    siteTechnologies: SiteTechData
+    siteTechnologies: SiteTechData,
+    oldSites: OldSiteData
   },
   mutations: {
     setProjectData (state, data) {

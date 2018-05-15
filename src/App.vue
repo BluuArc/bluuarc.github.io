@@ -143,4 +143,14 @@ html {
 .card .card__text {
   background-color: var(--secondary-background);
 }
+
+.card p a:visited {
+  /* deep-orange lighten-2 */
+  color: #FF8A65;
+}
+
+.card p a {
+  /* deep-orange darken-1 */
+  color: #F4511E;
+}
 </style>
