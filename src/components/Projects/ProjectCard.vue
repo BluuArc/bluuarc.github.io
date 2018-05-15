@@ -15,7 +15,7 @@
               No description specified.
             </div>
           </v-flex>
-          <v-flex sm12 v-if="isMobile">
+          <v-flex xs12 v-if="isMobile">
             <v-divider/>
           </v-flex>
           <v-flex sm12 md6>
@@ -32,7 +32,7 @@
           </v-flex>
         </v-layout>
         <v-layout v-if="project.topics && project.topics.length > 0" row wrap class="pb-0">
-          <v-flex sm12 v-if="isMobile">
+          <v-flex xs12 v-if="isMobile">
             <v-divider/>
           </v-flex>
           <v-flex sm2 md1 class="text-xs-center text-sm-left">
@@ -53,7 +53,7 @@
           </v-flex>
         </v-layout>
         <v-layout row v-if="isMobile">
-          <v-flex sm12>
+          <v-flex xs12>
             <v-divider/>
           </v-flex>
         </v-layout>

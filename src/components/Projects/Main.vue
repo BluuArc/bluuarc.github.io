@@ -153,13 +153,15 @@
           </v-card-text>
         </v-card>
       </v-flex>
+    </v-layout>
+    <v-layout row wrap>
       <v-flex
         xs12 xl6
-        v-for="(project, key) in allProjects"
+        v-for="key in allSortedKeys"
         style="margin-top: auto; margin-bottom: auto;"
         v-show="projectKeys.includes(key)"
         :key="key">
-        <project-card :project="project"/>
+        <project-card :project="allProjects[key]"/>
       </v-flex>
     </v-layout>
   </v-container>
@@ -208,6 +210,9 @@ export default {
       }
 
       return this.projectData.projects;
+    },
+    allSortedKeys () {
+      return this.sortKeys(this.sortOptions, Object.keys(this.allProjects));
     }
   },
   data () {
@@ -229,12 +234,6 @@ export default {
     },
     projectData () {
       this.searchHandler();
-    },
-    'sortOptions.type' (newValue) {
-      this.projectKeys = this.sortKeys(this.sortOptions, this.projectKeys);
-    },
-    'sortOptions.isAscending' (newValue) {
-      this.projectKeys = this.sortKeys(this.sortOptions, this.projectKeys);
     },
     possibleLanguages (newValue) {
       this.filters.languages = newValue;
