@@ -61,6 +61,20 @@
           </v-card-text>
         </v-card>
       </v-flex>
+      <v-flex xs12>
+        <v-card>
+          <v-card-title>
+            <h3 class="headline">Site History</h3>
+          </v-card-title>
+          <v-card-text>
+            <v-container fluid grid-list-md>
+              <v-layout row wrap>
+                test
+              </v-layout>
+            </v-container>
+          </v-card-text>
+        </v-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
