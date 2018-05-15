@@ -15,6 +15,9 @@
               No description specified.
             </div>
           </v-flex>
+          <v-flex sm12 v-if="isMobile">
+            <v-divider/>
+          </v-flex>
           <v-flex sm12 md6>
             <p><b>Project Information</b></p>
             <p><b>Owner:</b> {{ project.owner }}</p>
@@ -29,6 +32,9 @@
           </v-flex>
         </v-layout>
         <v-layout v-if="project.topics && project.topics.length > 0" row wrap class="pb-0">
+          <v-flex sm12 v-if="isMobile">
+            <v-divider/>
+          </v-flex>
           <v-flex sm2 md1 class="text-xs-center text-sm-left">
             <v-btn flat small id="topic-section-label">
               Topics:
@@ -44,6 +50,11 @@
               class="grey darken-2 topic-chip">
               {{ topic.name }}
             </v-btn>
+          </v-flex>
+        </v-layout>
+        <v-layout row v-if="isMobile">
+          <v-flex sm12>
+            <v-divider/>
           </v-flex>
         </v-layout>
       </v-container>
@@ -66,6 +77,7 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex';
 import DateText from '@/components/DateText';
 import LanguageSection from '@/components/Projects/LanguageSection';
 
@@ -79,6 +91,29 @@ export default {
   components: {
     'language-section': LanguageSection,
     'date-text': DateText
+  },
+  computed: {
+    ...mapGetters('display', ['breakpointToDisplaySize']),
+    ...mapState('display', ['type'])
+  },
+  data () {
+    return {
+      isMobile: false
+    };
+  },
+  watch: {
+    type () {
+      this.checkIfIsMobile();
+    }
+  },
+  mounted () {
+    this.checkIfIsMobile();
+  },
+  methods: {
+    checkIfIsMobile () {
+      const smallBreakpointCutoff = this.breakpointToDisplaySize('sm');
+      this.isMobile = window.innerWidth <= smallBreakpointCutoff;
+    }
   }
 };
 </script>

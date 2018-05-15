@@ -155,10 +155,11 @@
       </v-flex>
       <v-flex
         xs12 xl6
-        v-for="key in projectKeys"
+        v-for="(project, key) in allProjects"
         style="margin-top: auto; margin-bottom: auto;"
+        v-show="projectKeys.includes(key)"
         :key="key">
-        <project-card :project="projectData.projects[key]"/>
+        <project-card :project="project"/>
       </v-flex>
     </v-layout>
   </v-container>
@@ -200,6 +201,13 @@ export default {
       }
 
       return this.projectData.overall.languages.map(lang => lang.name).sort();
+    },
+    allProjects () {
+      if (!this.projectData) {
+        return {};
+      }
+
+      return this.projectData.projects;
     }
   },
   data () {
@@ -248,8 +256,7 @@ export default {
         return [];
       }
 
-      const projects = this.projectData.projects;
-
+      const projects = this.allProjects;
       return Object.entries(projects)
         .filter(([key, project]) => {
           const hasQuery = this.projectFitsQuery(project, query);
@@ -289,7 +296,7 @@ export default {
       }
 
       const projectKeys = inputKeys.slice();
-      const projects = this.projectData.projects;
+      const projects = this.allProjects;
       if (dateFields.includes(type)) {
         return projectKeys.sort((keyA, keyB) => {
           const difference = new Date(projects[keyA][type]) - new Date(projects[keyB][type]);
