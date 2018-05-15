@@ -22,9 +22,9 @@ function printHeader(activeTab){
 
   //print links
   var list = [
-      "Projects", "http://bluuarc.github.io",
-      "About", "http://bluuarc.github.io/about.html",
-      "Contact", "http://bluuarc.github.io/contact.html"
+      "Projects", "./index_v001.html",
+      "About", "./about.html",
+      "Contact", "./contact.html"
   ]
 
   var i = 0;
