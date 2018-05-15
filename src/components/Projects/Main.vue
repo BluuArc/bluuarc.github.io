@@ -116,29 +116,33 @@
                   <v-expansion-panel>
                     <v-expansion-panel-content style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
                       <div slot="header">
-                        <span>Sort By:</span>
-                        <span>{{ sortMapping[sortOptions.type] }} ({{ sortOptions.isAscending ? 'Ascending': 'Descending' }} order)</span>
+                        <span>Sort Options</span>
+                        <v-chip small>{{ sortMapping[sortOptions.type] }}</v-chip>
+                        <v-chip small>{{ sortOptions.isAscending ? 'Ascending': 'Descending' }}</v-chip>
                       </div>
                       <v-card style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
                         <v-card-text>
-                          <section>
-                            <h3 class="subheading">Sort Type</h3>
-                            <v-radio-group v-model="sortOptions.type" row>
-                              <v-radio
-                                v-for="(key, value) in sortMapping"
-                                :key="value"
-                                :value="value"
-                                :label="key"
-                              />
-                            </v-radio-group>
-                          </section>
-                          <section>
-                            <h3 class="subheading">Sort Order</h3>
-                            <v-radio-group v-model="sortOptions.isAscending" row>
-                              <v-radio :value="true" label="Ascending"/>
-                              <v-radio :value="false" label="Descending"/>
-                            </v-radio-group>
-                          </section>
+                          <v-container fluid>
+                            <v-layout row wrap>
+                              <v-flex xs12 md6>
+                                <h3 class="subheading">Sort Type</h3>
+                                <v-radio-group v-model="sortOptions.type">
+                                  <v-radio
+                                    v-for="(key, value) in sortMapping"
+                                    :key="value"
+                                    :value="value"
+                                    :label="key"/>
+                                </v-radio-group>
+                              </v-flex>
+                              <v-flex xs12 md6>
+                                <h3 class="subheading">Sort Order</h3>
+                                <v-radio-group v-model="sortOptions.isAscending">
+                                  <v-radio :value="true" label="Ascending"/>
+                                  <v-radio :value="false" label="Descending"/>
+                                </v-radio-group>
+                              </v-flex>
+                            </v-layout>
+                          </v-container>
                         </v-card-text>
                       </v-card>
                     </v-expansion-panel-content>
@@ -150,8 +154,9 @@
         </v-card>
       </v-flex>
       <v-flex
-        xs12
+        xs12 xl6
         v-for="key in projectKeys"
+        style="margin-top: auto; margin-bottom: auto;"
         :key="key">
         <project-card :project="projectData.projects[key]"/>
       </v-flex>
