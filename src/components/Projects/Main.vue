@@ -82,15 +82,15 @@
                                   @click="filters.languages = possibleLanguages.slice()"
                                   class="ma-0"
                                   flat>
-                                  <v-icon small left>fas fa-check</v-icon>
-                                  <span>Select All</span>
+                                  <v-icon small :left="type !== 'xs'">fas fa-check</v-icon>
+                                  <span v-if="type !== 'xs'">Select All</span>
                                 </v-btn>
                                 <v-btn
                                   @click="filters.languages = []"
                                   class="ma-0"
                                   flat>
-                                  <v-icon small left>fas fa-times</v-icon>
-                                  <span>Deselect All</span>
+                                  <v-icon small :left="type !== 'xs'">fas fa-times</v-icon>
+                                  <span v-if="type !== 'xs'">Deselect All</span>
                                 </v-btn>
                               </div>
                             </h3>
@@ -99,7 +99,7 @@
                                 <v-flex
                                   v-for="(language, i) in possibleLanguages"
                                   :key="i"
-                                  xs12 md3>
+                                  xs12 sm6 md3>
                                   <v-checkbox
                                     v-model="filters.languages"
                                     :label="language"
@@ -174,6 +174,7 @@ export default {
   },
   computed: {
     ...mapState(['projectData']),
+    ...mapState('display', ['type']),
     userData () {
       if (!this.projectData) {
         return;
