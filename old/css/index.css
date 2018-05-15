@@ -155,7 +155,7 @@ section.pages .page.active {
 }
 
 .mdc-card#aboutMe #avatarImage {
-    background-image: url("/img/avatar.jpg");
+    background-image: url("../img/avatar.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 12.313rem;

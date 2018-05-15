@@ -74,7 +74,7 @@ function JCCC_App(){
             other: [
                 "https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.6/d3.min.js",
                 "https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js",
-                "/js/custom-components.js"
+                "js/custom-components.js"
             ]   
 
         };
@@ -229,8 +229,8 @@ function JCCC_App(){
                                 <hr class=".sm-only">
                                 <!--<span class="navbar-text text-muted">Updated {{ lastUpdated }}</span>-->
                                 <div id="contact-links" class="text-center">
-                                    <a href="https://github.com/BluuArc/" target="_blank" title="GitHub Profile" class="navicon"><img style="max-height: 32px" src="https://bluuarc.github.io/img/GitHub-Mark-Light-32px.png"></a>
-                                    <a href="https://www.linkedin.com/in/joshuacastor" target="_blank" title="LinkedIn Profile" class="navicon"><img style="max-height: 32px" src="https://bluuarc.github.io/img/In-White-34px-R.png"></a>
+                                    <a href="https://github.com/BluuArc/" target="_blank" title="GitHub Profile" class="navicon"><img style="max-height: 32px" src="img/GitHub-Mark-Light-32px.png"></a>
+                                    <a href="https://www.linkedin.com/in/joshuacastor" target="_blank" title="LinkedIn Profile" class="navicon"><img style="max-height: 32px" src="img/In-White-34px-R.png"></a>
                                     <a href="https://www.evl.uic.edu/entry.php?id=2302" target="_blank" title="Electronics Visualization Laboratory Profile" class="navbar-text navicon">EVL</a>
 
 
