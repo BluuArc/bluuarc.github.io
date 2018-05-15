@@ -18,7 +18,7 @@
         right
         fixed-tabs
         v-model="activeTab"
-        class="hidden-sm-and-down"
+        class="hidden-sm-and-down mt-1"
         color="primary"
         slider-color="secondary">
         <v-tab
@@ -36,7 +36,8 @@
       centered
       slot="extension"
       class="hidden-md-and-up"
-      color="primary">
+      color="primary"
+      slider-color="secondary">
       <v-tab
         v-for="(tab, i) in tabItems"
         :key="i"
