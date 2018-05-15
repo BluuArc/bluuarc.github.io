@@ -75,7 +75,25 @@
                       <v-card>
                         <v-card-text>
                           <section>
-                            <h3 class="subheading">Languages</h3>
+                            <h3 class="subheading">
+                              <span>Languages</span>
+                              <div class="multi-btn-group ml-1">
+                                <v-btn
+                                  @click="filters.languages = possibleLanguages.slice()"
+                                  class="ma-0"
+                                  flat>
+                                  <v-icon small left>fas fa-check</v-icon>
+                                  <span>Select All</span>
+                                </v-btn>
+                                <v-btn
+                                  @click="filters.languages = []"
+                                  class="ma-0"
+                                  flat>
+                                  <v-icon small left>fas fa-times</v-icon>
+                                  <span>Deselect All</span>
+                                </v-btn>
+                              </div>
+                            </h3>
                             <v-container fluid>
                               <v-layout row wrap>
                                 <v-flex
@@ -285,3 +303,18 @@ export default {
   }
 };
 </script>
+
+<style>
+.multi-btn-group {
+  border: 1px solid grey;
+  display: inline-flex;
+  width: auto;
+  min-height: 36px;
+  max-height: 36px;
+  border-radius: 5px;
+}
+
+.multi-btn-group .btn:not(:last-child) {
+  border-right: 1px solid hsla(0, 0%, 100%, 0.12);
+}
+</style>
