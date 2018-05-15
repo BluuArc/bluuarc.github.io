@@ -18,7 +18,7 @@
             <v-layout row>
               <v-flex xs3>
                 <v-card-media
-                  :src="require('../../assets/img/avatar.jpg')"
+                  :src="require('../../assets/img/avatar-w600.jpg')"
                   height="150px"
                   contain
                   id="avatar"/>
