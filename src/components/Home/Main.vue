@@ -8,7 +8,7 @@
           </v-card-title>
           <v-card-media
             v-show="isXsMobile"
-            :src="require('../../assets/img/avatar.jpg')"
+            :src="require('../../assets/img/avatar-w600.jpg')"
             height="12rem"
             id="avatar"/>
           <v-card-text v-show="isXsMobile">
