@@ -11,7 +11,7 @@ let ghql = new GithubGraphQLApi({
 
 function sendQuery(query, variables = null){
     return new Promise((fulfill,reject) => {
-        ghql.query(query, variables, (resp,err) => {
+        ghql.query(query, variables, (resp, err) => {
             if(err){
                 reject(err);
             }else{
@@ -139,11 +139,11 @@ function createProjectEntry(projectData, customData = {}) {
 
 sendQuery(repoQuery).then((result) => {
   console.log("Saving GH JSON object");
-  fs.writeFileSync('gh-projects.json',JSON.stringify(result,null,2),'utf8');
+  fs.writeFileSync('static/gh-projects.json',JSON.stringify(result,null,2),'utf8');
   return result.data;
 }).then((ghData) => {
   console.log("Creating project-data.json");
-  let customData = JSON.parse(fs.readFileSync("custom-project-data.json",'utf8'));
+  let customData = JSON.parse(fs.readFileSync('static/custom-project-data.json','utf8'));
   // data may include: images -> to go above/inside/below card?, technologies
   let extraProjectData = customData.additionalProjectInfo || {};
   let additionalProjects = customData.additionalProjects || {};
@@ -179,7 +179,7 @@ sendQuery(repoQuery).then((result) => {
     }
   }
 
-  fs.writeFileSync('project-data.json',JSON.stringify(finalProjectData,null,2),'utf8');
+  fs.writeFileSync('static/project-data.json',JSON.stringify(finalProjectData,null,2),'utf8');
 
   return;
 
