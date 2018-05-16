@@ -5,6 +5,13 @@
       <router-multi-view
         name="slide-y-transition"
         morph="transition-group"/>
+      <noscript>
+        <div class="statcounter">
+          <a title="shopify site analytics" target="_blank" href="http://statcounter.com/shopify/">
+            <img class="statcounter" alt="shopify site analytics" src="//c.statcounter.com/11034084/0/3e7dba9f/1/">
+          </a>
+        </div>
+      </noscript>
     </v-content>
     <v-footer app>
       <span id="footer-text">&copy; {{ new Date().getUTCFullYear() }}</span>
@@ -22,6 +29,8 @@ export default {
   },
   mounted () {
     this.loadProjectData();
+    this.loadGoogleAnalyticsTracker();
+    this.loadStatCounterTracker();
   },
   methods: {
     ...mapMutations('display', ['updateType']),
@@ -116,6 +125,32 @@ export default {
             throw Error(res.statusText);
           }
         });
+    },
+    appendScript (url) {
+      // pure javascript version of appending a script
+      // based off of https://howchoo.com/g/mmu0nguznjg/learn-the-slow-and-fast-way-to-append-elements-to-the-dom
+      return new Promise(function (resolve, reject) {
+        const e = document.createElement('script');
+        e.src = url;
+        e.onload = () => { resolve(); };
+        e.onerror = reject;
+        document.body.appendChild(e);
+      });
+    },
+    async loadGoogleAnalyticsTracker () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag () {
+        window.dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-80417877-1');
+      await this.appendScript('https://www.googletagmanager.com/gtag/js?id=UA-80417877-1');
+    },
+    async loadStatCounterTracker () {
+      window.sc_project = window.sc_project || 11034084;
+      window.sc_invisible = window.sc_invisible || 1;
+      window.sc_security = window.sc_security || '3e7dba9f';
+      await this.appendScript('https://secure.statcounter.com/counter/counter.js');
     }
   },
   name: 'App'
