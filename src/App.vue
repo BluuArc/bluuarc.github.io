@@ -109,7 +109,16 @@ export default {
         });
       try {
         const userData = await this.getGitHubUserData();
+        let lastActiveTime;
+        try {
+          lastActiveTime = await this.getLastActiveTime();
+        } catch (err) {
+          console.error(err);
+        }
         projectData.user = userData;
+        if (lastActiveTime) {
+          projectData.user.last_active = lastActiveTime;
+        }
       } catch (err) {
         console.error(err);
         delete projectData.user;
@@ -123,6 +132,24 @@ export default {
             return res.json();
           } else {
             throw Error(res.statusText);
+          }
+        });
+    },
+    getLastActiveTime () {
+      return fetch('https://api.github.com/users/BluuArc/events')
+        .then(res => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw Error(res.statusText);
+          }
+        }).then(jsonResponse => {
+          const myEvents = jsonResponse.filter(e => e.actor.login === 'BluuArc');
+          // console.debug(jsonResponse, myEvents);
+          if (myEvents.length === 0) {
+            throw Error('No event data found');
+          } else {
+            return myEvents[0].created_at;
           }
         });
     },

@@ -60,7 +60,7 @@
         </v-layout>
       </v-container>
     </v-card-text>
-    <v-card-text>
+    <v-card-text class="pt-1">
       <language-section :languages="project.languages"></language-section>
     </v-card-text>
     <v-card-actions>
