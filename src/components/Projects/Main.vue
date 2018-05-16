@@ -70,7 +70,16 @@
                     <v-expansion-panel-content>
                       <div slot="header">
                         <span>Filters</span>
+                        <v-divider class="hidden-sm-and-up mt-1 mb-1"/>
                         <v-chip small>{{ filters.languages.length }} {{ filters.languages.length === 1 ? 'Language' : 'Languages' }}</v-chip>
+                        <v-chip small>
+                          <span v-if="filters.projectPage === 'any'">
+                            With or Without Project Page
+                          </span>
+                          <span v-else style="text-transform: capitalize">
+                            {{ filters.projectPage }} Project Page
+                          </span>
+                        </v-chip>
                       </div>
                       <v-card>
                         <v-card-text>
@@ -99,14 +108,39 @@
                                 <v-flex
                                   v-for="(language, i) in possibleLanguages"
                                   :key="i"
+                                  class="pa-0"
                                   xs12 sm6 md3>
                                   <v-checkbox
                                     v-model="filters.languages"
                                     :label="language"
                                     :value="language"/>
                                 </v-flex>
+                                <v-flex xs12>
+                                  <v-divider/>
+                                </v-flex>
                               </v-layout>
                             </v-container>
+                          </section>
+                          <section>
+                            <h3 class="subheading">
+                              <span>Project Page</span>
+                            </h3>
+                            <h4 class="caption">A project page usually refers to a live running instance of that project.</h4>
+                            <v-radio-group v-model="filters.projectPage">
+                              <v-container fluid>
+                                <v-layout row wrap>
+                                  <v-flex xs12 md6 lg4>
+                                    <v-radio label="With or Without Project Page" value="any"/>
+                                  </v-flex>
+                                  <v-flex xs12 md6 lg4>
+                                    <v-radio label="Only With Project Page" value="with"/>
+                                  </v-flex>
+                                  <v-flex xs12 md6 lg4>
+                                    <v-radio label="Only Without Project Page" value="without"/>
+                                  </v-flex>
+                                </v-layout>
+                              </v-container>
+                            </v-radio-group>
                           </section>
                         </v-card-text>
                       </v-card>
@@ -117,6 +151,7 @@
                     <v-expansion-panel-content style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
                       <div slot="header">
                         <span>Sort Options</span>
+                        <v-divider class="hidden-sm-and-up mt-1 mb-1"/>
                         <v-chip small>{{ sortMapping[sortOptions.type] }}</v-chip>
                         <v-chip small>{{ sortOptions.isAscending ? 'Ascending': 'Descending' }}</v-chip>
                       </div>
@@ -224,7 +259,8 @@ export default {
         isAscending: false
       },
       filters: {
-        languages: []
+        languages: [],
+        projectPage: 'any'
       }
     };
   },
@@ -238,8 +274,11 @@ export default {
     possibleLanguages (newValue) {
       this.filters.languages = newValue;
     },
-    'filters.languages' () {
-      this.searchHandler(this.searchQuery, this.filters);
+    filters: {
+      deep: true,
+      handler () {
+        this.searchHandler(this.searchQuery, this.filters);
+      }
     }
   },
   mounted () {
@@ -274,15 +313,18 @@ export default {
       return hasQuery;
     },
     projectFitsFilter (project, filter) {
-      const { languages: filterLanguages } = filter;
-      const { languages: projectLanguages } = project;
+      const { languages: filterLanguages, projectPage: projectPageFilter } = filter;
+      const { languages: projectLanguages, homepageURL } = project;
 
       const languageNames = projectLanguages.map(lang => lang.name);
-
       const hasSomeLanguage = filterLanguages.some(lang => languageNames.includes(lang));
-      // console.debug(languageNames, filterLanguages, hasSomeLanguage);
 
-      return hasSomeLanguage;
+      const hasProject = !!homepageURL;
+      const fitsProjectPageFilter = (projectPageFilter === 'any') ||
+        (projectPageFilter === 'with' && hasProject) ||
+        (projectPageFilter === 'without' && !hasProject);
+
+      return hasSomeLanguage && fitsProjectPageFilter;
     },
     sortKeys (options = {}, inputKeys = []) {
       const dateFields = ['lastPushedAt', 'createdAt'];
