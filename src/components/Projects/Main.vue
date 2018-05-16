@@ -84,6 +84,7 @@
                             {{ filters.projectPage }} Project Page
                           </span>
                         </v-chip>
+                        <v-chip small>{{ filters.owners.length }} {{ filters.owners.length === 1 ? 'Owner' : 'Owners' }}</v-chip>
                       </div>
                       <v-card>
                         <v-card-text>
@@ -107,7 +108,7 @@
                                 </v-btn>
                               </div>
                             </h3>
-                            <v-container fluid>
+                            <v-container fluid class="pb-0">
                               <v-layout row wrap>
                                 <v-flex
                                   v-for="(language, i) in possibleLanguages"
@@ -119,19 +120,17 @@
                                     :label="language"
                                     :value="language"/>
                                 </v-flex>
-                                <v-flex xs12>
-                                  <v-divider/>
-                                </v-flex>
                               </v-layout>
                             </v-container>
                           </section>
+                          <v-divider class="mb-2"/>
                           <section>
                             <h3 class="subheading">
                               <span>Project Page</span>
                             </h3>
                             <h4 class="caption">A project page usually refers to a live running instance of that project.</h4>
                             <v-radio-group v-model="filters.projectPage">
-                              <v-container fluid>
+                              <v-container fluid class="pb-0">
                                 <v-layout row wrap>
                                   <v-flex xs12 md6 lg4>
                                     <v-radio label="With or Without Project Page" value="any"/>
@@ -145,6 +144,42 @@
                                 </v-layout>
                               </v-container>
                             </v-radio-group>
+                          </section>
+                          <v-divider class="mb-2"/>
+                          <section>
+                            <h3 class="subheading">
+                              <span>Owners</span>
+                              <div class="multi-btn-group ml-1">
+                                <v-btn
+                                  @click="filters.owners = allOwners.slice()"
+                                  class="ma-0"
+                                  flat>
+                                  <v-icon small :left="type !== 'xs'">fas fa-check</v-icon>
+                                  <span v-if="type !== 'xs'">Select All</span>
+                                </v-btn>
+                                <v-btn
+                                  @click="filters.owners = []"
+                                  class="ma-0"
+                                  flat>
+                                  <v-icon small :left="type !== 'xs'">fas fa-times</v-icon>
+                                  <span v-if="type !== 'xs'">Deselect All</span>
+                                </v-btn>
+                              </div>
+                            </h3>
+                            <v-container fluid class="pb-0">
+                              <v-layout row wrap>
+                                <v-flex
+                                  v-for="(owner, i) in allOwners"
+                                  :key="i"
+                                  class="pa-0"
+                                  xs12 sm6 md3>
+                                  <v-checkbox
+                                    v-model="filters.owners"
+                                    :label="owner"
+                                    :value="owner"/>
+                                </v-flex>
+                              </v-layout>
+                            </v-container>
                           </section>
                         </v-card-text>
                       </v-card>
@@ -194,14 +229,25 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex
-        xs12 xl6
-        v-for="key in allSortedKeys"
-        style="margin-top: auto; margin-bottom: auto;"
-        v-show="projectKeys.includes(key)"
-        :key="key">
-        <project-card :project="allProjects[key]"/>
-      </v-flex>
+        <v-flex
+          xs12 xl6
+          v-for="key in allSortedKeys"
+          style="margin-top: auto; margin-bottom: auto;"
+          v-show="projectKeys.includes(key)"
+          :key="key">
+            <v-fade-transition>
+              <project-card :project="allProjects[key]" v-show="projectKeys.includes(key)"/>
+            </v-fade-transition>
+        </v-flex>
+        <v-fade-transition>
+          <v-flex xs12 v-show="projectKeys.length === 0">
+            <v-card>
+              <v-card-text class="text-xs-center">
+                <h3 class="title">No projects found with current filters.</h3>
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </v-fade-transition>
     </v-layout>
   </v-container>
 </template>
@@ -252,6 +298,13 @@ export default {
     },
     allSortedKeys () {
       return this.sortKeys(this.sortOptions, Object.keys(this.allProjects));
+    },
+    allOwners () {
+      if (!this.projectData) {
+        return [];
+      }
+
+      return this.projectData.overall.ownership.slice().map(entry => entry.name).sort();
     }
   },
   data () {
@@ -264,7 +317,8 @@ export default {
       },
       filters: {
         languages: [],
-        projectPage: 'any'
+        projectPage: 'any',
+        owners: []
       }
     };
   },
@@ -278,6 +332,9 @@ export default {
     possibleLanguages (newValue) {
       this.filters.languages = newValue;
     },
+    allOwners (newValue) {
+      this.filters.owners = newValue;
+    },
     filters: {
       deep: true,
       handler () {
@@ -287,6 +344,7 @@ export default {
   },
   mounted () {
     this.filters.languages = this.possibleLanguages;
+    this.filters.owners = this.allOwners;
     this.searchHandler();
   },
   methods: {
@@ -317,18 +375,20 @@ export default {
       return hasQuery;
     },
     projectFitsFilter (project, filter) {
-      const { languages: filterLanguages, projectPage: projectPageFilter } = filter;
-      const { languages: projectLanguages, homepageURL } = project;
+      const { languages: languageFilter, projectPage: projectPageFilter, owners: ownerFilter } = filter;
+      const { languages: projectLanguages, homepageURL, owner } = project;
 
       const languageNames = projectLanguages.map(lang => lang.name);
-      const hasSomeLanguage = filterLanguages.some(lang => languageNames.includes(lang));
+      const hasSomeLanguage = languageFilter.some(lang => languageNames.includes(lang));
 
       const hasProject = !!homepageURL;
       const fitsProjectPageFilter = (projectPageFilter === 'any') ||
         (projectPageFilter === 'with' && hasProject) ||
         (projectPageFilter === 'without' && !hasProject);
 
-      return hasSomeLanguage && fitsProjectPageFilter;
+      const hasOwner = ownerFilter.includes(owner);
+
+      return hasSomeLanguage && fitsProjectPageFilter && hasOwner;
     },
     sortKeys (options = {}, inputKeys = []) {
       const dateFields = ['lastPushedAt', 'createdAt'];
