@@ -22,6 +22,13 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+router.afterEach(() => {
+  // scroll after exit transition ends
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 300);
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
