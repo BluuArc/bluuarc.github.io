@@ -47,6 +47,7 @@
               :key="topic.name"
               :href="topic.url"
               target="_blank"
+              rel="noopener"
               class="grey darken-2 topic-chip">
               {{ topic.name }}
             </v-btn>
@@ -63,12 +64,12 @@
       <language-section :languages="project.languages"></language-section>
     </v-card-text>
     <v-card-actions>
-      <v-btn flat :href="project.repoURL" target="_blank">
+      <v-btn flat :href="project.repoURL" target="_blank" rel="noopener">
         <span>Code Repository</span>
         <v-icon right>fab fa-github</v-icon>
       </v-btn>
       <v-divider class="hidden-sm-and-up"/>
-      <v-btn flat v-if="project.homepageURL" :href="project.homepageURL" target="_blank">
+      <v-btn flat v-if="project.homepageURL" :href="project.homepageURL" target="_blank" rel="noopener">
         <span>Project Page</span>
         <v-icon right>fas fa-external-link-alt</v-icon>
       </v-btn>

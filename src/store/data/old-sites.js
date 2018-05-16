@@ -10,7 +10,7 @@ export default [
     lastUpdated: new Date('Dec 12, 2017'),
     link: 'http://bluuarc.github.io/old/index_v002.html',
     name: 'The SPA Treatment (Attempt 1) - Bootstrap',
-    description: `<p>First attempt at a SPA style site. Used Bootstrap 4.0.0-beta with the <a href="https://bootswatch.com/darkly/" target="_blank">Darkly Bootstrap theme</a>.</p>
+    description: `<p>First attempt at a SPA style site. Used Bootstrap 4.0.0-beta with the <a href="https://bootswatch.com/darkly/" target="_blank" rel="noopener">Darkly Bootstrap theme</a>.</p>
       <p>All the routing was done with pure JS (i.e. no framework or libary used for routing).
       A lot of the core layout was defined here (3 main pages, GitHub style language bars, etc.).</p>
       <p>This was also my first attempt at using Vue, but I didn't quite understand how frameworks like Vue worked and ended up with multiple Vue instances on a single page in an attempt to separate data.
@@ -35,7 +35,7 @@ export default [
     name: 'The SPA Treatment (Attempt 3) - Getting the Correct Point of Vue',
     description: `<p>The current version of the site.
       It uses Vuetify for most of the components, as well as Webpack for bundling.</p>
-      <p>By this point, I've made a couple 'proper' Vue applications using the webpack boilerplate (<a href="https://github.com/BluuArc/bf-mt" target="_blank">bf-mt</a>, <a href="https://github.com/WynnD/coliberate-frontend" target="_blank">Coliberate</a>), so I feel pretty confident in the page and file structure of this version.
+      <p>By this point, I've made a couple 'proper' Vue applications using the webpack boilerplate (<a href="https://github.com/BluuArc/bf-mt" target="_blank" rel="noopener">bf-mt</a>, <a href="https://github.com/WynnD/coliberate-frontend" target="_blank" rel="noopener">Coliberate</a>), so I feel pretty confident in the page and file structure of this version.
       I try to limit the amount of libraries I import and try to stick to vanilla JS as much as possible (which means no using jQuery or d3 for DOM manipulation) with this version.
       I also try to limit the amount of color overall, making them more noticeable wherever I do put color.</p>
       <p>Some differences from Attempt 2 (at the time of writing) include lack of loading screen, multiple Vue instances, and the Home page scroll-navigator.

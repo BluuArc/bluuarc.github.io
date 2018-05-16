@@ -7,7 +7,7 @@
         morph="transition-group"/>
       <noscript>
         <div class="statcounter">
-          <a title="shopify site analytics" target="_blank" href="http://statcounter.com/shopify/">
+          <a title="shopify site analytics" target="_blank" rel="noopener" href="http://statcounter.com/shopify/">
             <img class="statcounter" alt="shopify site analytics" src="//c.statcounter.com/11034084/0/3e7dba9f/1/">
           </a>
         </div>

@@ -7,9 +7,9 @@ const jobs = [
     'desc': [
       'Designed a web-based tool to submit as an entry to VAST Challenge 2017. Collaborated with a group of 4 to develop and deploy a web-based service for Englewood. Learned how to develop and deploy Unity applications for CAVE2.<br>',
       '<b>Relevant Projects</b>\n<ul>\n',
-      '<li>VAST Challenge 2017: <a target="_blank" href="https://github.com/BluuArc/vast-challenge-2017">Repo</a> | <a target="_blank" href="https://bluuarc.github.io/vast-challenge-2017/challenge-2/">Demo</a></li>',
-      '<li>Bubbles TacTile Demo: <a target="_blank" href="https://github.com/BluuArc/bubbles-tactile-demo">Repo</a> | <a target="_blank" href="https://bluuarc.github.io/bubbles-tactile-demo/">Demo</a></li>',
-      '<li>Three.js Point Cloud Project: <a target="_blank" href="https://github.com/BluuArc/three.js-point-cloud-project">Repo</a> | <a target="_blank" href="https://bluuarc.github.io/three.js-point-cloud-project/">Demo</a></li>',
+      '<li>VAST Challenge 2017: <a target="_blank" rel="noopener" href="https://github.com/BluuArc/vast-challenge-2017">Repo</a> | <a target="_blank" rel="noopener" href="https://bluuarc.github.io/vast-challenge-2017/challenge-2/">Demo</a></li>',
+      '<li>Bubbles TacTile Demo: <a target="_blank" rel="noopener" href="https://github.com/BluuArc/bubbles-tactile-demo">Repo</a> | <a target="_blank" rel="noopener" href="https://bluuarc.github.io/bubbles-tactile-demo/">Demo</a></li>',
+      '<li>Three.js Point Cloud Project: <a target="_blank" rel="noopener" href="https://github.com/BluuArc/three.js-point-cloud-project">Repo</a> | <a target="_blank" rel="noopener" href="https://bluuarc.github.io/three.js-point-cloud-project/">Demo</a></li>',
       '</ul>'
     ]
   },

@@ -13,7 +13,8 @@
                 <v-list-tile
                   :key="i"
                   :href="tech.link"
-                  target="_blank">
+                  target="_blank"
+                  rel="noopener">
                   <v-list-tile-avatar>
                     <img :src="tech.icon"/>
                   </v-list-tile-avatar>
@@ -46,6 +47,7 @@
                     class="contact-link"
                     :href="item.link"
                     target="_blank"
+                    rel="noopener"
                     hover>
                     <v-card-title class="pb-1">
                       <!-- only for image padding along top -->
@@ -89,7 +91,7 @@
                           </v-card-title>
                           <v-card-text v-html="item.description"/>
                           <v-card-actions style="background-color: var(--secondary-background);">
-                            <v-btn outline block :href="item.link" target="_blank">Visit Site</v-btn>
+                            <v-btn outline block :href="item.link" target="_blank" rel="noopener">Visit Site</v-btn>
                           </v-card-actions>
                         </v-flex>
                         <v-flex xs12 sm6 class="hidden-xs-only">
@@ -124,7 +126,7 @@
                     </v-card-title>
                     <v-card-text style="background-color: var(--primary-background);" v-html="item.description"/>
                     <v-card-actions>
-                      <v-btn flat :href="item.link" target="_blank">Visit Site</v-btn>
+                      <v-btn flat :href="item.link" target="_blank" rel="noopener">Visit Site</v-btn>
                     </v-card-actions>
                   </v-card>
                 </v-flex>
