@@ -136,7 +136,7 @@ export default {
   word-break: break-all;
 }
 
-.topic-chip {
+.btn.topic-chip {
   text-transform: lowercase;
 }
 
