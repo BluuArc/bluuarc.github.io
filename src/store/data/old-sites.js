@@ -24,7 +24,7 @@ export default [
     description: `<p>This was a rewrite of the Bootstrap version using Material Components for Web (a.k.a. Material Design).</p>
       <p>I experimented quite a bit with this one. From the Bootstrap version came the basic layout and routing code. What was new was a little spinning animation on first loading the page.
       Most necessary scripts were loaded once the spinner was showing, resulting in a slightly faster first-load time.</p>
-      <p>There were separate Vue instances for the Home Page, Projects Page, Contact Page, Error Page, and for the Page Controller. (I had the right idea of separating those portions, but had the wrong implementation of using separate Vue instances instead of components.
+      <p>There were separate Vue instances for the Home Page, Projects Page, Contact Page, Error Page, and for the Page Controller. (I had the right idea of separating those portions, but had the wrong implementation of using separate Vue instances instead of components.)
       The Home Page had a nifty title bar that follows where the user scrolls for easier navigation.
       All the language listings in the project bars were buttons for an unfinished filter/search filter.
       The Contact Page changed from a simple list of links to a list of icons with titles.</p>`,
