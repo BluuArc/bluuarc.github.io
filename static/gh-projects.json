@@ -4,14 +4,97 @@
       "name": "Joshua Castor",
       "login": "BluuArc",
       "contributedRepositories": {
-        "totalCount": 18,
+        "totalCount": 17,
         "nodes": [
+          {
+            "name": "bf-mt",
+            "homepageUrl": "http://joshuacastor.me/bf-mt/",
+            "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+            "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+            "pushedAt": "2018-06-16T13:57:23Z",
+            "createdAt": "2018-02-12T04:57:53Z",
+            "url": "https://github.com/BluuArc/bf-mt",
+            "nameWithOwner": "BluuArc/bf-mt",
+            "repositoryTopics": {
+              "nodes": [
+                {
+                  "topic": {
+                    "name": "bravefrontier"
+                  },
+                  "url": "https://github.com/topics/bravefrontier"
+                }
+              ]
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Vue",
+                    "color": "#2c3e50"
+                  },
+                  "size": 387473
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 92936
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 1348
+                }
+              ]
+            }
+          },
+          {
+            "name": "simple-web-worker",
+            "homepageUrl": null,
+            "description": "An utility to simplify the use of web workers",
+            "shortDescriptionHTML": "An utility to simplify the use of web workers",
+            "pushedAt": "2018-06-15T01:58:42Z",
+            "createdAt": "2017-05-04T22:22:49Z",
+            "url": "https://github.com/israelss/simple-web-worker",
+            "nameWithOwner": "israelss/simple-web-worker",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 114242
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 54786
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 5057
+                }
+              ]
+            }
+          },
           {
             "name": "bluuarc.github.io",
             "homepageUrl": "https://bluuarc.github.io/",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2018-05-27T03:45:11Z",
+            "pushedAt": "2018-05-29T04:06:17Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -47,51 +130,6 @@
                     "color": "#4F5D95"
                   },
                   "size": 303
-                }
-              ]
-            }
-          },
-          {
-            "name": "bf-mt",
-            "homepageUrl": "http://joshuacastor.me/bf-mt/",
-            "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-            "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-            "pushedAt": "2018-05-29T04:03:49Z",
-            "createdAt": "2018-02-12T04:57:53Z",
-            "url": "https://github.com/BluuArc/bf-mt",
-            "nameWithOwner": "BluuArc/bf-mt",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "Vue",
-                    "color": "#2c3e50"
-                  },
-                  "size": 90239
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 43837
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 762
                 }
               ]
             }
@@ -273,44 +311,6 @@
             }
           },
           {
-            "name": "simple-web-worker",
-            "homepageUrl": null,
-            "description": "An utility to simplify the use of web workers",
-            "shortDescriptionHTML": "An utility to simplify the use of web workers",
-            "pushedAt": "2018-05-22T14:49:20Z",
-            "createdAt": "2017-05-04T22:22:49Z",
-            "url": "https://github.com/israelss/simple-web-worker",
-            "nameWithOwner": "israelss/simple-web-worker",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 114242
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 54786
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 5057
-                }
-              ]
-            }
-          },
-          {
             "name": "coliberate-backend",
             "homepageUrl": null,
             "description": null,
@@ -432,44 +432,6 @@
                     "color": "#563d7c"
                   },
                   "size": 1761
-                }
-              ]
-            }
-          },
-          {
-            "name": "three.js-point-cloud-project",
-            "homepageUrl": "https://bluuarc.github.io/three.js-point-cloud-project/",
-            "description": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
-            "shortDescriptionHTML": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
-            "pushedAt": "2017-06-09T03:43:19Z",
-            "createdAt": "2017-06-08T19:23:15Z",
-            "url": "https://github.com/BluuArc/three.js-point-cloud-project",
-            "nameWithOwner": "BluuArc/three.js-point-cloud-project",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 22037
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 8220
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 2996
                 }
               ]
             }
@@ -686,10 +648,54 @@
         "totalCount": 36,
         "nodes": [
           {
+            "name": "bf-mt",
+            "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+            "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+            "pushedAt": "2018-06-16T13:57:23Z",
+            "createdAt": "2018-02-12T04:57:53Z",
+            "url": "https://github.com/BluuArc/bf-mt",
+            "nameWithOwner": "BluuArc/bf-mt",
+            "repositoryTopics": {
+              "nodes": [
+                {
+                  "topic": {
+                    "name": "bravefrontier"
+                  },
+                  "url": "https://github.com/topics/bravefrontier"
+                }
+              ]
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Vue",
+                    "color": "#2c3e50"
+                  },
+                  "size": 387473
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 92936
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 1348
+                }
+              ]
+            }
+          },
+          {
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2018-05-27T03:45:11Z",
+            "pushedAt": "2018-05-29T04:06:17Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -762,50 +768,6 @@
                     "color": "#563d7c"
                   },
                   "size": 5057
-                }
-              ]
-            }
-          },
-          {
-            "name": "bf-mt",
-            "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-            "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-            "pushedAt": "2018-05-29T04:03:49Z",
-            "createdAt": "2018-02-12T04:57:53Z",
-            "url": "https://github.com/BluuArc/bf-mt",
-            "nameWithOwner": "BluuArc/bf-mt",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "Vue",
-                    "color": "#2c3e50"
-                  },
-                  "size": 90239
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 43837
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 762
                 }
               ]
             }
