@@ -1,38 +1,4 @@
 {
-  "BluuArc/bf-mt": {
-    "name": "bf-mt",
-    "repoName": "bf-mt",
-    "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-    "homepageURL": "http://joshuacastor.me/bf-mt/",
-    "lastPushedAt": "2018-06-16T13:57:23Z",
-    "createdAt": "2018-02-12T04:57:53Z",
-    "repoURL": "https://github.com/BluuArc/bf-mt",
-    "owner": "BluuArc",
-    "topics": [
-      {
-        "name": "bravefrontier",
-        "url": "https://github.com/topics/bravefrontier"
-      }
-    ],
-    "languages": [
-      {
-        "name": "Vue",
-        "color": "#2c3e50",
-        "size": 387473
-      },
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 92936
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 1348
-      }
-    ],
-    "techUsed": []
-  },
   "israelss/simple-web-worker": {
     "name": "simple-web-worker",
     "repoName": "simple-web-worker",
@@ -58,146 +24,6 @@
         "name": "CSS",
         "color": "#563d7c",
         "size": 5057
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/bluuarc.github.io": {
-    "name": "bluuarc.github.io",
-    "repoName": "bluuarc.github.io",
-    "description": "Personal Website",
-    "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2018-05-29T04:06:17Z",
-    "createdAt": "2016-06-01T14:26:42Z",
-    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 163637
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 61628
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 17635
-      },
-      {
-        "name": "PHP",
-        "color": "#4F5D95",
-        "size": 303
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/project-sparkle": {
-    "name": "project-sparkle",
-    "repoName": "project-sparkle",
-    "description": "JavaScript Port of the Automatic Sparking Simulator",
-    "homepageURL": "http://joshuacastor.me/project-sparkle/",
-    "lastPushedAt": "2018-05-21T16:18:07Z",
-    "createdAt": "2017-04-10T02:47:03Z",
-    "repoURL": "https://github.com/BluuArc/project-sparkle",
-    "owner": "BluuArc",
-    "topics": [
-      {
-        "name": "bravefrontier",
-        "url": "https://github.com/topics/bravefrontier"
-      }
-    ],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 61810
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 10125
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/BFFrameAnimator-js": {
-    "name": "BFFrameAnimator-js",
-    "repoName": "BFFrameAnimator-js",
-    "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier (JavaScript version)",
-    "homepageURL": "https://macabre-broomstick-39921.herokuapp.com/",
-    "lastPushedAt": "2018-05-21T15:14:29Z",
-    "createdAt": "2017-10-29T05:29:41Z",
-    "repoURL": "https://github.com/BluuArc/BFFrameAnimator-js",
-    "owner": "BluuArc",
-    "topics": [
-      {
-        "name": "bravefrontier",
-        "url": "https://github.com/topics/bravefrontier"
-      }
-    ],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 65428
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 29669
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/BluuBot-discord": {
-    "name": "BluuBot-discord",
-    "repoName": "BluuBot-discord",
-    "description": "A bot made using Discord.js. It's main use is to provide data for Brave Frontier from within a Discord chat.",
-    "homepageURL": "",
-    "lastPushedAt": "2017-08-06T16:14:18Z",
-    "createdAt": "2017-03-26T15:51:50Z",
-    "repoURL": "https://github.com/BluuArc/BluuBot-discord",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 490102
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/BFDBReader-node": {
-    "name": "BFDBReader-node",
-    "repoName": "BFDBReader-node",
-    "description": "A series of scripts used to parse the Brave Frontier datamine (by Deathmax) and host on a server",
-    "homepageURL": "",
-    "lastPushedAt": "2017-12-16T15:07:14Z",
-    "createdAt": "2017-03-17T14:06:52Z",
-    "repoURL": "https://github.com/BluuArc/BFDBReader-node",
-    "owner": "BluuArc",
-    "topics": [
-      {
-        "name": "bravefrontier",
-        "url": "https://github.com/topics/bravefrontier"
-      }
-    ],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 432217
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 5987
       }
     ],
     "techUsed": []
@@ -326,103 +152,6 @@
     ],
     "techUsed": []
   },
-  "BluuArc/bubbles-tactile-demo": {
-    "name": "bubbles-tactile-demo",
-    "repoName": "bubbles-tactile-demo",
-    "description": "Small demo for large touch screen displays. Initially built for TacTile",
-    "homepageURL": "https://bluuarc.github.io/bubbles-tactile-demo/",
-    "lastPushedAt": "2017-07-26T16:36:34Z",
-    "createdAt": "2017-07-19T21:06:57Z",
-    "repoURL": "https://github.com/BluuArc/bubbles-tactile-demo",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 21012
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 1675
-      },
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 1380
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/vast-challenge-2017": {
-    "name": "vast-challenge-2017",
-    "repoName": "vast-challenge-2017",
-    "description": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
-    "homepageURL": "https://bluuarc.github.io/vast-challenge-2017/challenge-2/",
-    "lastPushedAt": "2017-09-12T19:44:49Z",
-    "createdAt": "2017-05-25T13:43:24Z",
-    "repoURL": "https://github.com/BluuArc/vast-challenge-2017",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 145594
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 23051
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 6802
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/IT202": {
-    "name": "IT202",
-    "repoName": "IT202",
-    "description": "Repository for all of my IT202 Fall 2017 Projects",
-    "homepageURL": "https://bluuarc.github.io/IT202/",
-    "lastPushedAt": "2017-12-06T22:49:56Z",
-    "createdAt": "2017-09-08T17:36:54Z",
-    "repoURL": "https://github.com/BluuArc/IT202",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 236897
-      },
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 161770
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 62205
-      },
-      {
-        "name": "TypeScript",
-        "color": "#2b7489",
-        "size": 22906
-      },
-      {
-        "name": "PHP",
-        "color": "#4F5D95",
-        "size": 1241
-      }
-    ],
-    "techUsed": []
-  },
   "uic-evl/EnglewoodSocialServices": {
     "name": "EnglewoodSocialServices",
     "repoName": "EnglewoodSocialServices",
@@ -452,6 +181,150 @@
     ],
     "techUsed": []
   },
+  "BluuArc/art-151-fall-2018": {
+    "name": "art-151-fall-2018",
+    "repoName": "art-151-fall-2018",
+    "description": "Repository for all of my ART 151 Fall 2018 Projects",
+    "lastPushedAt": "2018-09-01T16:09:29Z",
+    "createdAt": "2018-08-30T02:37:03Z",
+    "repoURL": "https://github.com/BluuArc/art-151-fall-2018",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [],
+    "techUsed": []
+  },
+  "BluuArc/bf-mt": {
+    "name": "bf-mt",
+    "repoName": "bf-mt",
+    "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+    "lastPushedAt": "2018-09-04T23:25:22Z",
+    "createdAt": "2018-02-12T04:57:53Z",
+    "repoURL": "https://github.com/BluuArc/bf-mt",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "Vue",
+        "color": "#2c3e50",
+        "size": 440802
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 228809
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 1510
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/IT202": {
+    "name": "IT202",
+    "repoName": "IT202",
+    "description": "Repository for all of my IT202 Fall 2017 Projects",
+    "lastPushedAt": "2018-08-29T16:37:36Z",
+    "createdAt": "2017-09-08T17:36:54Z",
+    "repoURL": "https://github.com/BluuArc/IT202",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 236906
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 161770
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 62205
+      },
+      {
+        "name": "TypeScript",
+        "color": "#2b7489",
+        "size": 22906
+      },
+      {
+        "name": "PHP",
+        "color": "#4F5D95",
+        "size": 1241
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/project-sparkle": {
+    "name": "project-sparkle",
+    "repoName": "project-sparkle",
+    "description": "JavaScript Port of the Automatic Sparking Simulator",
+    "lastPushedAt": "2018-06-28T12:57:45Z",
+    "createdAt": "2017-04-10T02:47:03Z",
+    "repoURL": "https://github.com/BluuArc/project-sparkle",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 62260
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 10125
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/bluuarc.github.io": {
+    "name": "bluuarc.github.io",
+    "repoName": "bluuarc.github.io",
+    "description": "Personal Website",
+    "lastPushedAt": "2018-06-16T14:46:59Z",
+    "createdAt": "2016-06-01T14:26:42Z",
+    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 163637
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 61628
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 17635
+      },
+      {
+        "name": "PHP",
+        "color": "#4F5D95",
+        "size": 303
+      }
+    ],
+    "techUsed": []
+  },
   "BluuArc/simple-web-worker": {
     "name": "simple-web-worker",
     "repoName": "simple-web-worker",
@@ -476,6 +349,34 @@
         "name": "CSS",
         "color": "#563d7c",
         "size": 5057
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/BFFrameAnimator-js": {
+    "name": "BFFrameAnimator-js",
+    "repoName": "BFFrameAnimator-js",
+    "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier (JavaScript version)",
+    "lastPushedAt": "2018-05-21T15:14:29Z",
+    "createdAt": "2017-10-29T05:29:41Z",
+    "repoURL": "https://github.com/BluuArc/BFFrameAnimator-js",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 65428
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 29669
       }
     ],
     "techUsed": []
@@ -522,6 +423,52 @@
         "name": "JavaScript",
         "color": "#f1e05a",
         "size": 2747
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/BluuBot-discord": {
+    "name": "BluuBot-discord",
+    "repoName": "BluuBot-discord",
+    "description": "A bot made using Discord.js. It's main use is to provide data for Brave Frontier from within a Discord chat.",
+    "lastPushedAt": "2017-08-06T16:14:18Z",
+    "createdAt": "2017-03-26T15:51:50Z",
+    "repoURL": "https://github.com/BluuArc/BluuBot-discord",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 490102
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/BFDBReader-node": {
+    "name": "BFDBReader-node",
+    "repoName": "BFDBReader-node",
+    "description": "A series of scripts used to parse the Brave Frontier datamine (by Deathmax) and host on a server",
+    "lastPushedAt": "2017-12-16T15:07:14Z",
+    "createdAt": "2017-03-17T14:06:52Z",
+    "repoURL": "https://github.com/BluuArc/BFDBReader-node",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 432217
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 5987
       }
     ],
     "techUsed": []
@@ -639,6 +586,62 @@
         "name": "CSS",
         "color": "#563d7c",
         "size": 2996
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/bubbles-tactile-demo": {
+    "name": "bubbles-tactile-demo",
+    "repoName": "bubbles-tactile-demo",
+    "description": "Small demo for large touch screen displays. Initially built for TacTile",
+    "lastPushedAt": "2017-07-26T16:36:34Z",
+    "createdAt": "2017-07-19T21:06:57Z",
+    "repoURL": "https://github.com/BluuArc/bubbles-tactile-demo",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 21012
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 1675
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 1380
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/vast-challenge-2017": {
+    "name": "vast-challenge-2017",
+    "repoName": "vast-challenge-2017",
+    "description": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
+    "lastPushedAt": "2017-09-12T19:44:49Z",
+    "createdAt": "2017-05-25T13:43:24Z",
+    "repoURL": "https://github.com/BluuArc/vast-challenge-2017",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 145594
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 23051
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 6802
       }
     ],
     "techUsed": []

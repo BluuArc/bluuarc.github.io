@@ -3,54 +3,9 @@
     "user": {
       "name": "Joshua Castor",
       "login": "BluuArc",
-      "contributedRepositories": {
-        "totalCount": 17,
+      "repositoriesContributedTo": {
+        "totalCount": 7,
         "nodes": [
-          {
-            "name": "bf-mt",
-            "homepageUrl": "http://joshuacastor.me/bf-mt/",
-            "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-            "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-            "pushedAt": "2018-06-16T13:57:23Z",
-            "createdAt": "2018-02-12T04:57:53Z",
-            "url": "https://github.com/BluuArc/bf-mt",
-            "nameWithOwner": "BluuArc/bf-mt",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "Vue",
-                    "color": "#2c3e50"
-                  },
-                  "size": 387473
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 92936
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 1348
-                }
-              ]
-            }
-          },
           {
             "name": "simple-web-worker",
             "homepageUrl": null,
@@ -85,189 +40,6 @@
                     "color": "#563d7c"
                   },
                   "size": 5057
-                }
-              ]
-            }
-          },
-          {
-            "name": "bluuarc.github.io",
-            "homepageUrl": "https://bluuarc.github.io/",
-            "description": "Personal Website",
-            "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2018-05-29T04:06:17Z",
-            "createdAt": "2016-06-01T14:26:42Z",
-            "url": "https://github.com/BluuArc/bluuarc.github.io",
-            "nameWithOwner": "BluuArc/bluuarc.github.io",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 163637
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 61628
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 17635
-                },
-                {
-                  "node": {
-                    "name": "PHP",
-                    "color": "#4F5D95"
-                  },
-                  "size": 303
-                }
-              ]
-            }
-          },
-          {
-            "name": "project-sparkle",
-            "homepageUrl": "http://joshuacastor.me/project-sparkle/",
-            "description": "JavaScript Port of the Automatic Sparking Simulator",
-            "shortDescriptionHTML": "JavaScript Port of the Automatic Sparking Simulator",
-            "pushedAt": "2018-05-21T16:18:07Z",
-            "createdAt": "2017-04-10T02:47:03Z",
-            "url": "https://github.com/BluuArc/project-sparkle",
-            "nameWithOwner": "BluuArc/project-sparkle",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 61810
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 10125
-                }
-              ]
-            }
-          },
-          {
-            "name": "BFFrameAnimator-js",
-            "homepageUrl": "https://macabre-broomstick-39921.herokuapp.com/",
-            "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier (JavaScript version)",
-            "shortDescriptionHTML": "Program to create GIFs of unit sprites for the mobile game Brave Frontier (JavaScript version)",
-            "pushedAt": "2018-05-21T15:14:29Z",
-            "createdAt": "2017-10-29T05:29:41Z",
-            "url": "https://github.com/BluuArc/BFFrameAnimator-js",
-            "nameWithOwner": "BluuArc/BFFrameAnimator-js",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 65428
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 29669
-                }
-              ]
-            }
-          },
-          {
-            "name": "BluuBot-discord",
-            "homepageUrl": "",
-            "description": "A bot made using Discord.js. It's main use is to provide data for Brave Frontier from within a Discord chat.",
-            "shortDescriptionHTML": "A bot made using Discord.js. It's main use is to provide data for Brave Frontier from within a Discord chat.",
-            "pushedAt": "2017-08-06T16:14:18Z",
-            "createdAt": "2017-03-26T15:51:50Z",
-            "url": "https://github.com/BluuArc/BluuBot-discord",
-            "nameWithOwner": "BluuArc/BluuBot-discord",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 490102
-                }
-              ]
-            }
-          },
-          {
-            "name": "BFDBReader-node",
-            "homepageUrl": "",
-            "description": "A series of scripts used to parse the Brave Frontier datamine (by Deathmax) and host on a server",
-            "shortDescriptionHTML": "A series of scripts used to parse the Brave Frontier datamine (by Deathmax) and host on a server",
-            "pushedAt": "2017-12-16T15:07:14Z",
-            "createdAt": "2017-03-17T14:06:52Z",
-            "url": "https://github.com/BluuArc/BFDBReader-node",
-            "nameWithOwner": "BluuArc/BFDBReader-node",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 432217
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 5987
                 }
               ]
             }
@@ -437,134 +209,6 @@
             }
           },
           {
-            "name": "bubbles-tactile-demo",
-            "homepageUrl": "https://bluuarc.github.io/bubbles-tactile-demo/",
-            "description": "Small demo for large touch screen displays. Initially built for TacTile",
-            "shortDescriptionHTML": "Small demo for large touch screen displays. Initially built for TacTile",
-            "pushedAt": "2017-07-26T16:36:34Z",
-            "createdAt": "2017-07-19T21:06:57Z",
-            "url": "https://github.com/BluuArc/bubbles-tactile-demo",
-            "nameWithOwner": "BluuArc/bubbles-tactile-demo",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 21012
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 1675
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 1380
-                }
-              ]
-            }
-          },
-          {
-            "name": "vast-challenge-2017",
-            "homepageUrl": "https://bluuarc.github.io/vast-challenge-2017/challenge-2/",
-            "description": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
-            "shortDescriptionHTML": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
-            "pushedAt": "2017-09-12T19:44:49Z",
-            "createdAt": "2017-05-25T13:43:24Z",
-            "url": "https://github.com/BluuArc/vast-challenge-2017",
-            "nameWithOwner": "BluuArc/vast-challenge-2017",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 145594
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 23051
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 6802
-                }
-              ]
-            }
-          },
-          {
-            "name": "IT202",
-            "homepageUrl": "https://bluuarc.github.io/IT202/",
-            "description": "Repository for all of my IT202 Fall 2017 Projects",
-            "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-12-06T22:49:56Z",
-            "createdAt": "2017-09-08T17:36:54Z",
-            "url": "https://github.com/BluuArc/IT202",
-            "nameWithOwner": "BluuArc/IT202",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 236897
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 161770
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 62205
-                },
-                {
-                  "node": {
-                    "name": "TypeScript",
-                    "color": "#2b7489"
-                  },
-                  "size": 22906
-                },
-                {
-                  "node": {
-                    "name": "PHP",
-                    "color": "#4F5D95"
-                  },
-                  "size": 1241
-                }
-              ]
-            }
-          },
-          {
             "name": "ACM-BACKEND",
             "homepageUrl": null,
             "description": null,
@@ -578,30 +222,6 @@
             },
             "languages": {
               "edges": []
-            }
-          },
-          {
-            "name": "lab-test",
-            "homepageUrl": null,
-            "description": "Assignment for IT202",
-            "shortDescriptionHTML": "Assignment for IT202",
-            "pushedAt": "2017-09-06T21:41:38Z",
-            "createdAt": "2017-09-06T21:29:40Z",
-            "url": "https://github.com/BluuArc/lab-test",
-            "nameWithOwner": "BluuArc/lab-test",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 136
-                }
-              ]
             }
           },
           {
@@ -645,13 +265,28 @@
         ]
       },
       "repositories": {
-        "totalCount": 36,
+        "totalCount": 35,
         "nodes": [
+          {
+            "name": "art-151-fall-2018",
+            "description": "Repository for all of my ART 151 Fall 2018 Projects",
+            "shortDescriptionHTML": "Repository for all of my ART 151 Fall 2018 Projects",
+            "pushedAt": "2018-09-01T16:09:29Z",
+            "createdAt": "2018-08-30T02:37:03Z",
+            "url": "https://github.com/BluuArc/art-151-fall-2018",
+            "nameWithOwner": "BluuArc/art-151-fall-2018",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": []
+            }
+          },
           {
             "name": "bf-mt",
             "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
             "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-            "pushedAt": "2018-06-16T13:57:23Z",
+            "pushedAt": "2018-09-04T23:25:22Z",
             "createdAt": "2018-02-12T04:57:53Z",
             "url": "https://github.com/BluuArc/bf-mt",
             "nameWithOwner": "BluuArc/bf-mt",
@@ -672,21 +307,109 @@
                     "name": "Vue",
                     "color": "#2c3e50"
                   },
-                  "size": 387473
+                  "size": 440802
                 },
                 {
                   "node": {
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 92936
+                  "size": 228809
                 },
                 {
                   "node": {
                     "name": "HTML",
                     "color": "#e34c26"
                   },
-                  "size": 1348
+                  "size": 1510
+                }
+              ]
+            }
+          },
+          {
+            "name": "IT202",
+            "description": "Repository for all of my IT202 Fall 2017 Projects",
+            "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
+            "pushedAt": "2018-08-29T16:37:36Z",
+            "createdAt": "2017-09-08T17:36:54Z",
+            "url": "https://github.com/BluuArc/IT202",
+            "nameWithOwner": "BluuArc/IT202",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 236906
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 161770
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 62205
+                },
+                {
+                  "node": {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  },
+                  "size": 22906
+                },
+                {
+                  "node": {
+                    "name": "PHP",
+                    "color": "#4F5D95"
+                  },
+                  "size": 1241
+                }
+              ]
+            }
+          },
+          {
+            "name": "project-sparkle",
+            "description": "JavaScript Port of the Automatic Sparking Simulator",
+            "shortDescriptionHTML": "JavaScript Port of the Automatic Sparking Simulator",
+            "pushedAt": "2018-06-28T12:57:45Z",
+            "createdAt": "2017-04-10T02:47:03Z",
+            "url": "https://github.com/BluuArc/project-sparkle",
+            "nameWithOwner": "BluuArc/project-sparkle",
+            "repositoryTopics": {
+              "nodes": [
+                {
+                  "topic": {
+                    "name": "bravefrontier"
+                  },
+                  "url": "https://github.com/topics/bravefrontier"
+                }
+              ]
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 62260
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 10125
                 }
               ]
             }
@@ -695,7 +418,7 @@
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2018-05-29T04:06:17Z",
+            "pushedAt": "2018-06-16T14:46:59Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -768,43 +491,6 @@
                     "color": "#563d7c"
                   },
                   "size": 5057
-                }
-              ]
-            }
-          },
-          {
-            "name": "project-sparkle",
-            "description": "JavaScript Port of the Automatic Sparking Simulator",
-            "shortDescriptionHTML": "JavaScript Port of the Automatic Sparking Simulator",
-            "pushedAt": "2018-05-21T16:18:07Z",
-            "createdAt": "2017-04-10T02:47:03Z",
-            "url": "https://github.com/BluuArc/project-sparkle",
-            "nameWithOwner": "BluuArc/project-sparkle",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 61810
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 10125
                 }
               ]
             }
@@ -1356,57 +1042,6 @@
             }
           },
           {
-            "name": "IT202",
-            "description": "Repository for all of my IT202 Fall 2017 Projects",
-            "shortDescriptionHTML": "Repository for all of my IT202 Fall 2017 Projects",
-            "pushedAt": "2017-12-06T22:49:56Z",
-            "createdAt": "2017-09-08T17:36:54Z",
-            "url": "https://github.com/BluuArc/IT202",
-            "nameWithOwner": "BluuArc/IT202",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 236897
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 161770
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 62205
-                },
-                {
-                  "node": {
-                    "name": "TypeScript",
-                    "color": "#2b7489"
-                  },
-                  "size": 22906
-                },
-                {
-                  "node": {
-                    "name": "PHP",
-                    "color": "#4F5D95"
-                  },
-                  "size": 1241
-                }
-              ]
-            }
-          },
-          {
             "name": "ACM-BACKEND",
             "description": null,
             "shortDescriptionHTML": "",
@@ -1692,58 +1327,6 @@
             "createdAt": "2016-06-30T14:09:14Z",
             "url": "https://github.com/bitslab/firefox-api-blocking-extension-scripts",
             "nameWithOwner": "bitslab/firefox-api-blocking-extension-scripts",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": []
-            }
-          },
-          {
-            "name": "frontend-nanodegree-resume",
-            "description": null,
-            "shortDescriptionHTML": "",
-            "pushedAt": "2016-05-30T00:10:00Z",
-            "createdAt": "2016-06-01T17:33:14Z",
-            "url": "https://github.com/BluuArc/frontend-nanodegree-resume",
-            "nameWithOwner": "BluuArc/frontend-nanodegree-resume",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 270800
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 5042
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 2479
-                }
-              ]
-            }
-          },
-          {
-            "name": "hello-world",
-            "description": "Repository for sandbox code",
-            "shortDescriptionHTML": "Repository for sandbox code",
-            "pushedAt": "2016-05-07T15:56:33Z",
-            "createdAt": "2016-05-07T15:42:47Z",
-            "url": "https://github.com/BluuArc/hello-world",
-            "nameWithOwner": "BluuArc/hello-world",
             "repositoryTopics": {
               "nodes": []
             },
