@@ -15,7 +15,7 @@
     "express": "^4.15.3",
     "lodash": "^4.17.10",
     "moment": "^2.22.1",
-    "node-github-graphql": "^0.2.6",
+    "node-github-graphql": "^0.2.7",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "vue": "^2.5.2",
