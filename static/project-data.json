@@ -185,18 +185,75 @@
     "name": "art-151-fall-2018",
     "repoName": "art-151-fall-2018",
     "description": "Repository for all of my ART 151 Fall 2018 Projects",
-    "lastPushedAt": "2018-09-01T16:09:29Z",
+    "homepageURL": "https://joshuacastor.me/art-151-fall-2018/",
+    "lastPushedAt": "2018-09-05T14:21:03Z",
     "createdAt": "2018-08-30T02:37:03Z",
     "repoURL": "https://github.com/BluuArc/art-151-fall-2018",
     "owner": "BluuArc",
     "topics": [],
-    "languages": [],
+    "languages": [
+      {
+        "name": "Processing",
+        "color": "#0096D8",
+        "size": 13638
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 11833
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 2694
+      },
+      {
+        "name": "Batchfile",
+        "color": "#C1F12E",
+        "size": 128
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/bluuarc.github.io": {
+    "name": "bluuarc.github.io",
+    "repoName": "bluuarc.github.io",
+    "description": "Personal Website",
+    "homepageURL": "https://bluuarc.github.io/",
+    "lastPushedAt": "2018-09-05T12:35:19Z",
+    "createdAt": "2016-06-01T14:26:42Z",
+    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 163637
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 61628
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 17635
+      },
+      {
+        "name": "PHP",
+        "color": "#4F5D95",
+        "size": 303
+      }
+    ],
     "techUsed": []
   },
   "BluuArc/bf-mt": {
     "name": "bf-mt",
     "repoName": "bf-mt",
     "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
+    "homepageURL": "http://joshuacastor.me/bf-mt/",
     "lastPushedAt": "2018-09-04T23:25:22Z",
     "createdAt": "2018-02-12T04:57:53Z",
     "repoURL": "https://github.com/BluuArc/bf-mt",
@@ -230,6 +287,7 @@
     "name": "IT202",
     "repoName": "IT202",
     "description": "Repository for all of my IT202 Fall 2017 Projects",
+    "homepageURL": "https://bluuarc.github.io/IT202/",
     "lastPushedAt": "2018-08-29T16:37:36Z",
     "createdAt": "2017-09-08T17:36:54Z",
     "repoURL": "https://github.com/BluuArc/IT202",
@@ -268,6 +326,7 @@
     "name": "project-sparkle",
     "repoName": "project-sparkle",
     "description": "JavaScript Port of the Automatic Sparking Simulator",
+    "homepageURL": "http://joshuacastor.me/project-sparkle/",
     "lastPushedAt": "2018-06-28T12:57:45Z",
     "createdAt": "2017-04-10T02:47:03Z",
     "repoURL": "https://github.com/BluuArc/project-sparkle",
@@ -292,43 +351,11 @@
     ],
     "techUsed": []
   },
-  "BluuArc/bluuarc.github.io": {
-    "name": "bluuarc.github.io",
-    "repoName": "bluuarc.github.io",
-    "description": "Personal Website",
-    "lastPushedAt": "2018-06-16T14:46:59Z",
-    "createdAt": "2016-06-01T14:26:42Z",
-    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 163637
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 61628
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 17635
-      },
-      {
-        "name": "PHP",
-        "color": "#4F5D95",
-        "size": 303
-      }
-    ],
-    "techUsed": []
-  },
   "BluuArc/simple-web-worker": {
     "name": "simple-web-worker",
     "repoName": "simple-web-worker",
     "description": "An utility to simplify the use of web workers",
+    "homepageURL": null,
     "lastPushedAt": "2018-05-22T14:43:48Z",
     "createdAt": "2018-05-22T05:53:01Z",
     "repoURL": "https://github.com/BluuArc/simple-web-worker",
@@ -357,6 +384,7 @@
     "name": "BFFrameAnimator-js",
     "repoName": "BFFrameAnimator-js",
     "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier (JavaScript version)",
+    "homepageURL": "https://macabre-broomstick-39921.herokuapp.com/",
     "lastPushedAt": "2018-05-21T15:14:29Z",
     "createdAt": "2017-10-29T05:29:41Z",
     "repoURL": "https://github.com/BluuArc/BFFrameAnimator-js",
@@ -385,6 +413,7 @@
     "name": "MMSS-Web_Client",
     "repoName": "MMSS-Web_Client",
     "description": "Web client component for MMSS",
+    "homepageURL": "",
     "lastPushedAt": "2017-04-25T16:59:47Z",
     "createdAt": "2017-04-18T19:03:00Z",
     "repoURL": "https://github.com/BluuArc/MMSS-Web_Client",
@@ -413,6 +442,7 @@
     "name": "Intro-To-Promises-Node.js-Demo",
     "repoName": "Intro-To-Promises-Node.js-Demo",
     "description": "Repository to hold code related to a demo about promises",
+    "homepageURL": "",
     "lastPushedAt": "2017-04-26T03:29:16Z",
     "createdAt": "2017-04-25T02:53:37Z",
     "repoURL": "https://github.com/BluuArc/Intro-To-Promises-Node.js-Demo",
@@ -431,6 +461,7 @@
     "name": "BluuBot-discord",
     "repoName": "BluuBot-discord",
     "description": "A bot made using Discord.js. It's main use is to provide data for Brave Frontier from within a Discord chat.",
+    "homepageURL": "",
     "lastPushedAt": "2017-08-06T16:14:18Z",
     "createdAt": "2017-03-26T15:51:50Z",
     "repoURL": "https://github.com/BluuArc/BluuBot-discord",
@@ -449,6 +480,7 @@
     "name": "BFDBReader-node",
     "repoName": "BFDBReader-node",
     "description": "A series of scripts used to parse the Brave Frontier datamine (by Deathmax) and host on a server",
+    "homepageURL": "",
     "lastPushedAt": "2017-12-16T15:07:14Z",
     "createdAt": "2017-03-17T14:06:52Z",
     "repoURL": "https://github.com/BluuArc/BFDBReader-node",
@@ -477,6 +509,7 @@
     "name": "MMSS",
     "repoName": "MMSS",
     "description": "Multi-Module Security System",
+    "homepageURL": "https://Walden1995.github.io/MMSS/",
     "lastPushedAt": "2018-05-06T22:59:34Z",
     "createdAt": "2017-02-14T20:39:13Z",
     "repoURL": "https://github.com/Walden1995/MMSS",
@@ -510,6 +543,7 @@
     "name": "text-to-speech",
     "repoName": "text-to-speech",
     "description": "A basic Text-to-Speech app",
+    "homepageURL": "",
     "lastPushedAt": "2017-11-18T21:27:29Z",
     "createdAt": "2017-11-20T22:36:12Z",
     "repoURL": "https://github.com/BluuArc/text-to-speech",
@@ -533,6 +567,7 @@
     "name": "BFDBReader-js",
     "repoName": "BFDBReader-js",
     "description": "Web page to read data from a specific set of JSON files",
+    "homepageURL": "https://bluuarc.github.io/BFDBReader-js/",
     "lastPushedAt": "2017-03-23T22:27:06Z",
     "createdAt": "2017-01-03T19:19:14Z",
     "repoURL": "https://github.com/BluuArc/BFDBReader-js",
@@ -566,6 +601,7 @@
     "name": "three.js-point-cloud-project",
     "repoName": "three.js-point-cloud-project",
     "description": "An example project using three.js to create a point cloud and d3 to create a 2D visualization",
+    "homepageURL": "https://bluuarc.github.io/three.js-point-cloud-project/",
     "lastPushedAt": "2017-06-09T03:43:19Z",
     "createdAt": "2017-06-08T19:23:15Z",
     "repoURL": "https://github.com/BluuArc/three.js-point-cloud-project",
@@ -594,6 +630,7 @@
     "name": "bubbles-tactile-demo",
     "repoName": "bubbles-tactile-demo",
     "description": "Small demo for large touch screen displays. Initially built for TacTile",
+    "homepageURL": "https://bluuarc.github.io/bubbles-tactile-demo/",
     "lastPushedAt": "2017-07-26T16:36:34Z",
     "createdAt": "2017-07-19T21:06:57Z",
     "repoURL": "https://github.com/BluuArc/bubbles-tactile-demo",
@@ -622,6 +659,7 @@
     "name": "vast-challenge-2017",
     "repoName": "vast-challenge-2017",
     "description": "Code used for submission in VAST Challenge 2017. More info here: http://vacommunity.org/VAST+Challenge+2017",
+    "homepageURL": "https://bluuarc.github.io/vast-challenge-2017/challenge-2/",
     "lastPushedAt": "2017-09-12T19:44:49Z",
     "createdAt": "2017-05-25T13:43:24Z",
     "repoURL": "https://github.com/BluuArc/vast-challenge-2017",
@@ -650,6 +688,7 @@
     "name": "MMSS-Server",
     "repoName": "MMSS-Server",
     "description": "Server component for MMSS",
+    "homepageURL": null,
     "lastPushedAt": "2017-04-24T12:51:02Z",
     "createdAt": "2017-03-07T14:52:39Z",
     "repoURL": "https://github.com/BluuArc/MMSS-Server",
@@ -678,6 +717,7 @@
     "name": "BFFrameAnimator",
     "repoName": "BFFrameAnimator",
     "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier",
+    "homepageURL": null,
     "lastPushedAt": "2017-05-08T15:49:45Z",
     "createdAt": "2016-05-07T16:01:27Z",
     "repoURL": "https://github.com/BluuArc/BFFrameAnimator",
