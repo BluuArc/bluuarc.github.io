@@ -271,15 +271,90 @@
             "name": "art-151-fall-2018",
             "description": "Repository for all of my ART 151 Fall 2018 Projects",
             "shortDescriptionHTML": "Repository for all of my ART 151 Fall 2018 Projects",
-            "pushedAt": "2018-09-01T16:09:29Z",
+            "pushedAt": "2018-09-05T14:21:03Z",
             "createdAt": "2018-08-30T02:37:03Z",
             "url": "https://github.com/BluuArc/art-151-fall-2018",
             "nameWithOwner": "BluuArc/art-151-fall-2018",
+            "homepageUrl": "https://joshuacastor.me/art-151-fall-2018/",
             "repositoryTopics": {
               "nodes": []
             },
             "languages": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "name": "Processing",
+                    "color": "#0096D8"
+                  },
+                  "size": 13638
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 11833
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 2694
+                },
+                {
+                  "node": {
+                    "name": "Batchfile",
+                    "color": "#C1F12E"
+                  },
+                  "size": 128
+                }
+              ]
+            }
+          },
+          {
+            "name": "bluuarc.github.io",
+            "description": "Personal Website",
+            "shortDescriptionHTML": "Personal Website",
+            "pushedAt": "2018-09-05T12:35:19Z",
+            "createdAt": "2016-06-01T14:26:42Z",
+            "url": "https://github.com/BluuArc/bluuarc.github.io",
+            "nameWithOwner": "BluuArc/bluuarc.github.io",
+            "homepageUrl": "https://bluuarc.github.io/",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 163637
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 61628
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 17635
+                },
+                {
+                  "node": {
+                    "name": "PHP",
+                    "color": "#4F5D95"
+                  },
+                  "size": 303
+                }
+              ]
             }
           },
           {
@@ -290,6 +365,7 @@
             "createdAt": "2018-02-12T04:57:53Z",
             "url": "https://github.com/BluuArc/bf-mt",
             "nameWithOwner": "BluuArc/bf-mt",
+            "homepageUrl": "http://joshuacastor.me/bf-mt/",
             "repositoryTopics": {
               "nodes": [
                 {
@@ -334,6 +410,7 @@
             "createdAt": "2017-09-08T17:36:54Z",
             "url": "https://github.com/BluuArc/IT202",
             "nameWithOwner": "BluuArc/IT202",
+            "homepageUrl": "https://bluuarc.github.io/IT202/",
             "repositoryTopics": {
               "nodes": []
             },
@@ -385,6 +462,7 @@
             "createdAt": "2017-04-10T02:47:03Z",
             "url": "https://github.com/BluuArc/project-sparkle",
             "nameWithOwner": "BluuArc/project-sparkle",
+            "homepageUrl": "http://joshuacastor.me/project-sparkle/",
             "repositoryTopics": {
               "nodes": [
                 {
@@ -415,50 +493,6 @@
             }
           },
           {
-            "name": "bluuarc.github.io",
-            "description": "Personal Website",
-            "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2018-06-16T14:46:59Z",
-            "createdAt": "2016-06-01T14:26:42Z",
-            "url": "https://github.com/BluuArc/bluuarc.github.io",
-            "nameWithOwner": "BluuArc/bluuarc.github.io",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 163637
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 61628
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 17635
-                },
-                {
-                  "node": {
-                    "name": "PHP",
-                    "color": "#4F5D95"
-                  },
-                  "size": 303
-                }
-              ]
-            }
-          },
-          {
             "name": "simple-web-worker",
             "description": "An utility to simplify the use of web workers",
             "shortDescriptionHTML": "An utility to simplify the use of web workers",
@@ -466,6 +500,7 @@
             "createdAt": "2018-05-22T05:53:01Z",
             "url": "https://github.com/BluuArc/simple-web-worker",
             "nameWithOwner": "BluuArc/simple-web-worker",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -503,6 +538,7 @@
             "createdAt": "2017-10-29T05:29:41Z",
             "url": "https://github.com/BluuArc/BFFrameAnimator-js",
             "nameWithOwner": "BluuArc/BFFrameAnimator-js",
+            "homepageUrl": "https://macabre-broomstick-39921.herokuapp.com/",
             "repositoryTopics": {
               "nodes": [
                 {
@@ -540,6 +576,7 @@
             "createdAt": "2017-04-18T19:03:00Z",
             "url": "https://github.com/BluuArc/MMSS-Web_Client",
             "nameWithOwner": "BluuArc/MMSS-Web_Client",
+            "homepageUrl": "",
             "repositoryTopics": {
               "nodes": []
             },
@@ -577,6 +614,7 @@
             "createdAt": "2017-04-25T02:53:37Z",
             "url": "https://github.com/BluuArc/Intro-To-Promises-Node.js-Demo",
             "nameWithOwner": "BluuArc/Intro-To-Promises-Node.js-Demo",
+            "homepageUrl": "",
             "repositoryTopics": {
               "nodes": []
             },
@@ -600,6 +638,7 @@
             "createdAt": "2017-03-26T15:51:50Z",
             "url": "https://github.com/BluuArc/BluuBot-discord",
             "nameWithOwner": "BluuArc/BluuBot-discord",
+            "homepageUrl": "",
             "repositoryTopics": {
               "nodes": []
             },
@@ -623,6 +662,7 @@
             "createdAt": "2017-03-17T14:06:52Z",
             "url": "https://github.com/BluuArc/BFDBReader-node",
             "nameWithOwner": "BluuArc/BFDBReader-node",
+            "homepageUrl": "",
             "repositoryTopics": {
               "nodes": [
                 {
@@ -660,6 +700,7 @@
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
+            "homepageUrl": "https://andrewtburks.com/EnglewoodSocialServices/",
             "repositoryTopics": {
               "nodes": []
             },
@@ -697,6 +738,7 @@
             "createdAt": "2017-02-14T20:39:13Z",
             "url": "https://github.com/Walden1995/MMSS",
             "nameWithOwner": "Walden1995/MMSS",
+            "homepageUrl": "https://Walden1995.github.io/MMSS/",
             "repositoryTopics": {
               "nodes": []
             },
@@ -741,6 +783,7 @@
             "createdAt": "2018-02-09T05:50:23Z",
             "url": "https://github.com/WynnD/coliberate-backend",
             "nameWithOwner": "WynnD/coliberate-backend",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -771,6 +814,7 @@
             "createdAt": "2018-02-09T05:48:49Z",
             "url": "https://github.com/WynnD/coliberate-frontend",
             "nameWithOwner": "WynnD/coliberate-frontend",
+            "homepageUrl": "",
             "repositoryTopics": {
               "nodes": [
                 {
@@ -827,6 +871,7 @@
             "createdAt": "2017-10-10T16:40:24Z",
             "url": "https://github.com/Walden1995/CS362-Hovercraft",
             "nameWithOwner": "Walden1995/CS362-Hovercraft",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -864,6 +909,7 @@
             "createdAt": "2017-11-20T22:36:12Z",
             "url": "https://github.com/BluuArc/text-to-speech",
             "nameWithOwner": "BluuArc/text-to-speech",
+            "homepageUrl": "",
             "repositoryTopics": {
               "nodes": []
             },
@@ -894,6 +940,7 @@
             "createdAt": "2017-01-03T19:19:14Z",
             "url": "https://github.com/BluuArc/BFDBReader-js",
             "nameWithOwner": "BluuArc/BFDBReader-js",
+            "homepageUrl": "https://bluuarc.github.io/BFDBReader-js/",
             "repositoryTopics": {
               "nodes": [
                 {
@@ -938,6 +985,7 @@
             "createdAt": "2017-06-08T19:23:15Z",
             "url": "https://github.com/BluuArc/three.js-point-cloud-project",
             "nameWithOwner": "BluuArc/three.js-point-cloud-project",
+            "homepageUrl": "https://bluuarc.github.io/three.js-point-cloud-project/",
             "repositoryTopics": {
               "nodes": []
             },
@@ -975,6 +1023,7 @@
             "createdAt": "2017-07-19T21:06:57Z",
             "url": "https://github.com/BluuArc/bubbles-tactile-demo",
             "nameWithOwner": "BluuArc/bubbles-tactile-demo",
+            "homepageUrl": "https://bluuarc.github.io/bubbles-tactile-demo/",
             "repositoryTopics": {
               "nodes": []
             },
@@ -1012,6 +1061,7 @@
             "createdAt": "2017-05-25T13:43:24Z",
             "url": "https://github.com/BluuArc/vast-challenge-2017",
             "nameWithOwner": "BluuArc/vast-challenge-2017",
+            "homepageUrl": "https://bluuarc.github.io/vast-challenge-2017/challenge-2/",
             "repositoryTopics": {
               "nodes": []
             },
@@ -1049,6 +1099,7 @@
             "createdAt": "2017-10-31T16:12:01Z",
             "url": "https://github.com/acm-uic/ACM-BACKEND",
             "nameWithOwner": "acm-uic/ACM-BACKEND",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1064,6 +1115,7 @@
             "createdAt": "2017-09-06T21:29:40Z",
             "url": "https://github.com/BluuArc/lab-test",
             "nameWithOwner": "BluuArc/lab-test",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1087,6 +1139,7 @@
             "createdAt": "2017-05-08T02:02:36Z",
             "url": "https://github.com/uic-evl/EnglewoodSocialServices",
             "nameWithOwner": "uic-evl/EnglewoodSocialServices",
+            "homepageUrl": "https://uic-evl.github.io/EnglewoodSocialServices/",
             "repositoryTopics": {
               "nodes": []
             },
@@ -1124,6 +1177,7 @@
             "createdAt": "2017-03-07T14:52:39Z",
             "url": "https://github.com/BluuArc/MMSS-Server",
             "nameWithOwner": "BluuArc/MMSS-Server",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1161,6 +1215,7 @@
             "createdAt": "2017-04-11T14:00:22Z",
             "url": "https://github.com/uicsystems/lab-6-S17-BluuArc",
             "nameWithOwner": "uicsystems/lab-6-S17-BluuArc",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1176,6 +1231,7 @@
             "createdAt": "2017-03-28T13:58:41Z",
             "url": "https://github.com/uicsystems/lab-5S17-BluuArc",
             "nameWithOwner": "uicsystems/lab-5S17-BluuArc",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1191,6 +1247,7 @@
             "createdAt": "2016-05-07T16:01:27Z",
             "url": "https://github.com/BluuArc/BFFrameAnimator",
             "nameWithOwner": "BluuArc/BFFrameAnimator",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": [
                 {
@@ -1221,6 +1278,7 @@
             "createdAt": "2017-02-28T14:59:17Z",
             "url": "https://github.com/uicsystems/lab-4S17-BluuArc",
             "nameWithOwner": "uicsystems/lab-4S17-BluuArc",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1236,6 +1294,7 @@
             "createdAt": "2017-02-14T15:26:19Z",
             "url": "https://github.com/uicsystems/lab-3S17-BluuArc",
             "nameWithOwner": "uicsystems/lab-3S17-BluuArc",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1251,6 +1310,7 @@
             "createdAt": "2017-01-31T14:55:06Z",
             "url": "https://github.com/uicsystems/lab-2S17-BluuArc",
             "nameWithOwner": "uicsystems/lab-2S17-BluuArc",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1266,6 +1326,7 @@
             "createdAt": "2017-01-24T15:01:43Z",
             "url": "https://github.com/uicsystems/lab-1-S17-BluuArc",
             "nameWithOwner": "uicsystems/lab-1-S17-BluuArc",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1281,6 +1342,7 @@
             "createdAt": "2016-08-12T17:29:15Z",
             "url": "https://github.com/BluuArc/DBReader",
             "nameWithOwner": "BluuArc/DBReader",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1304,6 +1366,7 @@
             "createdAt": "2016-07-04T00:30:38Z",
             "url": "https://github.com/BluuArc/FileIndexer",
             "nameWithOwner": "BluuArc/FileIndexer",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },
@@ -1327,6 +1390,7 @@
             "createdAt": "2016-06-30T14:09:14Z",
             "url": "https://github.com/bitslab/firefox-api-blocking-extension-scripts",
             "nameWithOwner": "bitslab/firefox-api-blocking-extension-scripts",
+            "homepageUrl": null,
             "repositoryTopics": {
               "nodes": []
             },

@@ -48,6 +48,7 @@ query {
         createdAt
         url
         nameWithOwner
+        homepageUrl
         repositoryTopics (first: 50) {
           nodes {
             topic{ name }
@@ -75,6 +76,7 @@ query {
         createdAt
         url
         nameWithOwner
+        homepageUrl
         repositoryTopics (first: 50) {
           nodes {
             topic{ name }
