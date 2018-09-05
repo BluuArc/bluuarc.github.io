@@ -37,7 +37,7 @@ query {
   user(login:"BluuArc"){
     name
     login
-    contributedRepositories(first:100, orderBy:{field:UPDATED_AT,direction:DESC}) {
+    repositoriesContributedTo(first:100, orderBy:{field:UPDATED_AT,direction:DESC}) {
       totalCount
       nodes{
         name
@@ -150,13 +150,13 @@ sendQuery(repoQuery).then((result) => {
 
   let finalProjectData = {};
 
-  let ghProjects = ghData.user.contributedRepositories.nodes;
+  let ghProjects = ghData.user.repositoriesContributedTo.nodes;
   for(let p of ghProjects){
     if(!finalProjectData[p.nameWithOwner] && customData.ignoredProjects.indexOf(p.nameWithOwner) === -1){
-      console.log("Adding", p.nameWithOwner, "in contributedRepositories list");
+      console.log("Adding", p.nameWithOwner, "in repositoriesContributedTo list");
       finalProjectData[p.nameWithOwner] = createProjectEntry(p,extraProjectData[p.nameWithOwner]);
     }else{
-      console.log("Skipping",p.nameWithOwner,"in contributedRepositories list");
+      console.log("Skipping",p.nameWithOwner,"in repositoriesContributedTo list");
     }
   }
 
