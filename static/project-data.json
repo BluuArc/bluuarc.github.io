@@ -33,7 +33,7 @@
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
     "homepageURL": "https://andrewtburks.com/EnglewoodSocialServices/",
-    "lastPushedAt": "2018-05-09T14:56:43Z",
+    "lastPushedAt": "2018-09-07T21:22:20Z",
     "createdAt": "2017-08-04T20:09:52Z",
     "repoURL": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
     "owner": "AndrewTBurks",
@@ -181,21 +181,21 @@
     ],
     "techUsed": []
   },
-  "BluuArc/art-151-fall-2018": {
-    "name": "art-151-fall-2018",
-    "repoName": "art-151-fall-2018",
+  "BluuArc/castor-art-151-fall-2018": {
+    "name": "castor-art-151-fall-2018",
+    "repoName": "castor-art-151-fall-2018",
     "description": "Repository for all of my ART 151 Fall 2018 Projects",
-    "homepageURL": "https://joshuacastor.me/art-151-fall-2018/",
-    "lastPushedAt": "2018-09-05T14:21:03Z",
+    "homepageURL": "https://joshuacastor.me/castor-art-151-fall-2018/",
+    "lastPushedAt": "2018-09-10T13:16:29Z",
     "createdAt": "2018-08-30T02:37:03Z",
-    "repoURL": "https://github.com/BluuArc/art-151-fall-2018",
+    "repoURL": "https://github.com/BluuArc/castor-art-151-fall-2018",
     "owner": "BluuArc",
     "topics": [],
     "languages": [
       {
         "name": "Processing",
         "color": "#0096D8",
-        "size": 13638
+        "size": 16938
       },
       {
         "name": "JavaScript",
@@ -215,46 +215,12 @@
     ],
     "techUsed": []
   },
-  "BluuArc/bluuarc.github.io": {
-    "name": "bluuarc.github.io",
-    "repoName": "bluuarc.github.io",
-    "description": "Personal Website",
-    "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2018-09-05T12:35:19Z",
-    "createdAt": "2016-06-01T14:26:42Z",
-    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 163637
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 61628
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 17635
-      },
-      {
-        "name": "PHP",
-        "color": "#4F5D95",
-        "size": 303
-      }
-    ],
-    "techUsed": []
-  },
   "BluuArc/bf-mt": {
     "name": "bf-mt",
     "repoName": "bf-mt",
     "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
     "homepageURL": "http://joshuacastor.me/bf-mt/",
-    "lastPushedAt": "2018-09-04T23:25:22Z",
+    "lastPushedAt": "2018-09-10T02:05:52Z",
     "createdAt": "2018-02-12T04:57:53Z",
     "repoURL": "https://github.com/BluuArc/bf-mt",
     "owner": "BluuArc",
@@ -279,6 +245,40 @@
         "name": "HTML",
         "color": "#e34c26",
         "size": 1510
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/bluuarc.github.io": {
+    "name": "bluuarc.github.io",
+    "repoName": "bluuarc.github.io",
+    "description": "Personal Website",
+    "homepageURL": "https://bluuarc.github.io/",
+    "lastPushedAt": "2018-09-05T19:37:33Z",
+    "createdAt": "2016-06-01T14:26:42Z",
+    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 163637
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 61628
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 17635
+      },
+      {
+        "name": "PHP",
+        "color": "#4F5D95",
+        "size": 303
       }
     ],
     "techUsed": []
