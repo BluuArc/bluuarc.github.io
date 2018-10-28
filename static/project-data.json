@@ -28,12 +28,59 @@
     ],
     "techUsed": []
   },
+  "uic-evl/EnglewoodSocialServices": {
+    "name": "EnglewoodSocialServices",
+    "repoName": "EnglewoodSocialServices",
+    "description": "Visualizing Social Services in Englewood",
+    "homepageURL": "https://uic-evl.github.io/EnglewoodSocialServices/",
+    "lastPushedAt": "2018-10-24T20:02:13Z",
+    "createdAt": "2017-05-08T02:02:36Z",
+    "repoURL": "https://github.com/uic-evl/EnglewoodSocialServices",
+    "owner": "uic-evl",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 702515
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 42063
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 40273
+      },
+      {
+        "name": "Dockerfile",
+        "color": "#0db7ed",
+        "size": 190
+      }
+    ],
+    "techUsed": []
+  },
+  "lugatuic/lug.cs.uic.edu-2018": {
+    "name": "lug.cs.uic.edu-2018",
+    "repoName": "lug.cs.uic.edu-2018",
+    "description": null,
+    "homepageURL": "https://lug.cs.uic.edu/",
+    "lastPushedAt": "2018-10-27T02:44:53Z",
+    "createdAt": "2018-05-06T18:42:27Z",
+    "repoURL": "https://github.com/lugatuic/lug.cs.uic.edu-2018",
+    "owner": "lugatuic",
+    "topics": [],
+    "languages": [],
+    "techUsed": []
+  },
   "AndrewTBurks/EnglewoodSocialServices": {
     "name": "EnglewoodSocialServices",
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
     "homepageURL": "https://andrewtburks.com/EnglewoodSocialServices/",
-    "lastPushedAt": "2018-09-07T21:22:20Z",
+    "lastPushedAt": "2018-10-01T17:00:37Z",
     "createdAt": "2017-08-04T20:09:52Z",
     "repoURL": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
     "owner": "AndrewTBurks",
@@ -152,75 +199,12 @@
     ],
     "techUsed": []
   },
-  "uic-evl/EnglewoodSocialServices": {
-    "name": "EnglewoodSocialServices",
-    "repoName": "EnglewoodSocialServices",
-    "description": "Visualizing Social Services in Englewood",
-    "homepageURL": "https://uic-evl.github.io/EnglewoodSocialServices/",
-    "lastPushedAt": "2017-12-07T22:02:11Z",
-    "createdAt": "2017-05-08T02:02:36Z",
-    "repoURL": "https://github.com/uic-evl/EnglewoodSocialServices",
-    "owner": "uic-evl",
-    "topics": [],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 698167
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 42063
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 40127
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/castor-art-151-fall-2018": {
-    "name": "castor-art-151-fall-2018",
-    "repoName": "castor-art-151-fall-2018",
-    "description": "Repository for all of my ART 151 Fall 2018 Projects",
-    "homepageURL": "https://joshuacastor.me/castor-art-151-fall-2018/",
-    "lastPushedAt": "2018-09-10T13:16:29Z",
-    "createdAt": "2018-08-30T02:37:03Z",
-    "repoURL": "https://github.com/BluuArc/castor-art-151-fall-2018",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "Processing",
-        "color": "#0096D8",
-        "size": 16938
-      },
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 11833
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 2694
-      },
-      {
-        "name": "Batchfile",
-        "color": "#C1F12E",
-        "size": 128
-      }
-    ],
-    "techUsed": []
-  },
   "BluuArc/bf-mt": {
     "name": "bf-mt",
     "repoName": "bf-mt",
     "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
     "homepageURL": "http://joshuacastor.me/bf-mt/",
-    "lastPushedAt": "2018-09-10T02:05:52Z",
+    "lastPushedAt": "2018-10-28T15:27:29Z",
     "createdAt": "2018-02-12T04:57:53Z",
     "repoURL": "https://github.com/BluuArc/bf-mt",
     "owner": "BluuArc",
@@ -239,7 +223,7 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 228809
+        "size": 229239
       },
       {
         "name": "HTML",
@@ -249,12 +233,143 @@
     ],
     "techUsed": []
   },
+  "BluuArc/EnglewoodSocialServices": {
+    "name": "EnglewoodSocialServices",
+    "repoName": "EnglewoodSocialServices",
+    "description": "Visualizing Social Services in Englewood",
+    "homepageURL": "https://joshuacastor.me/EnglewoodSocialServices/analytics",
+    "lastPushedAt": "2018-10-24T21:26:28Z",
+    "createdAt": "2018-10-10T20:21:27Z",
+    "repoURL": "https://github.com/BluuArc/EnglewoodSocialServices",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 904740
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 56000
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 53462
+      },
+      {
+        "name": "Dockerfile",
+        "color": "#0db7ed",
+        "size": 190
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/castor-art-151-fall-2018": {
+    "name": "castor-art-151-fall-2018",
+    "repoName": "castor-art-151-fall-2018",
+    "description": "Repository for all of my ART 151 Fall 2018 Projects",
+    "homepageURL": "https://joshuacastor.me/castor-art-151-fall-2018/",
+    "lastPushedAt": "2018-10-23T03:48:28Z",
+    "createdAt": "2018-08-30T02:37:03Z",
+    "repoURL": "https://github.com/BluuArc/castor-art-151-fall-2018",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 76396
+      },
+      {
+        "name": "Processing",
+        "color": "#0096D8",
+        "size": 20177
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 11528
+      },
+      {
+        "name": "Batchfile",
+        "color": "#C1F12E",
+        "size": 128
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/LUG-Flask-Vue-Example": {
+    "name": "LUG-Flask-Vue-Example",
+    "repoName": "LUG-Flask-Vue-Example",
+    "description": "Example implementation of a web app using a Vue frontend and Flask backend",
+    "homepageURL": null,
+    "lastPushedAt": "2018-09-25T16:07:52Z",
+    "createdAt": "2018-09-19T12:59:19Z",
+    "repoURL": "https://github.com/BluuArc/LUG-Flask-Vue-Example",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "Vue",
+        "color": "#2c3e50",
+        "size": 7214
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 2320
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 902
+      },
+      {
+        "name": "Python",
+        "color": "#3572A5",
+        "size": 757
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/project-sparkle": {
+    "name": "project-sparkle",
+    "repoName": "project-sparkle",
+    "description": "JavaScript Port of the Automatic Sparking Simulator",
+    "homepageURL": "http://joshuacastor.me/project-sparkle/",
+    "lastPushedAt": "2018-09-16T21:01:40Z",
+    "createdAt": "2017-04-10T02:47:03Z",
+    "repoURL": "https://github.com/BluuArc/project-sparkle",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 64659
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 10664
+      }
+    ],
+    "techUsed": []
+  },
   "BluuArc/bluuarc.github.io": {
     "name": "bluuarc.github.io",
     "repoName": "bluuarc.github.io",
     "description": "Personal Website",
     "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2018-09-05T19:37:33Z",
+    "lastPushedAt": "2018-09-10T13:21:08Z",
     "createdAt": "2016-06-01T14:26:42Z",
     "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
     "owner": "BluuArc",
@@ -318,35 +433,6 @@
         "name": "PHP",
         "color": "#4F5D95",
         "size": 1241
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/project-sparkle": {
-    "name": "project-sparkle",
-    "repoName": "project-sparkle",
-    "description": "JavaScript Port of the Automatic Sparking Simulator",
-    "homepageURL": "http://joshuacastor.me/project-sparkle/",
-    "lastPushedAt": "2018-06-28T12:57:45Z",
-    "createdAt": "2017-04-10T02:47:03Z",
-    "repoURL": "https://github.com/BluuArc/project-sparkle",
-    "owner": "BluuArc",
-    "topics": [
-      {
-        "name": "bravefrontier",
-        "url": "https://github.com/topics/bravefrontier"
-      }
-    ],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 62260
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 10125
       }
     ],
     "techUsed": []

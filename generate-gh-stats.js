@@ -6,7 +6,7 @@ let rp = require('request-promise');
 let GithubGraphQLApi = require('node-github-graphql');
 let fs = require('fs');
 let ghql = new GithubGraphQLApi({
-    token: fs.readFileSync('token.txt', 'utf8')
+    token: fs.readFileSync('token.txt', 'utf8').replace(/\n/g, '').replace(/\r/g, ''),
 });
 
 function sendQuery(query, variables = null){
