@@ -4,7 +4,7 @@
       "name": "Joshua Castor",
       "login": "BluuArc",
       "repositoriesContributedTo": {
-        "totalCount": 7,
+        "totalCount": 8,
         "nodes": [
           {
             "name": "simple-web-worker",
@@ -46,10 +46,71 @@
           },
           {
             "name": "EnglewoodSocialServices",
+            "homepageUrl": "https://uic-evl.github.io/EnglewoodSocialServices/",
+            "description": "Visualizing Social Services in Englewood",
+            "shortDescriptionHTML": "Visualizing Social Services in Englewood",
+            "pushedAt": "2018-10-24T20:02:13Z",
+            "createdAt": "2017-05-08T02:02:36Z",
+            "url": "https://github.com/uic-evl/EnglewoodSocialServices",
+            "nameWithOwner": "uic-evl/EnglewoodSocialServices",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 702515
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 42063
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 40273
+                },
+                {
+                  "node": {
+                    "name": "Dockerfile",
+                    "color": "#0db7ed"
+                  },
+                  "size": 190
+                }
+              ]
+            }
+          },
+          {
+            "name": "lug.cs.uic.edu-2018",
+            "homepageUrl": "https://lug.cs.uic.edu/",
+            "description": null,
+            "shortDescriptionHTML": "",
+            "pushedAt": "2018-10-27T02:44:53Z",
+            "createdAt": "2018-05-06T18:42:27Z",
+            "url": "https://github.com/lugatuic/lug.cs.uic.edu-2018",
+            "nameWithOwner": "lugatuic/lug.cs.uic.edu-2018",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": []
+            }
+          },
+          {
+            "name": "EnglewoodSocialServices",
             "homepageUrl": "https://andrewtburks.com/EnglewoodSocialServices/",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2018-09-07T21:22:20Z",
+            "pushedAt": "2018-10-01T17:00:37Z",
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
@@ -223,100 +284,17 @@
             "languages": {
               "edges": []
             }
-          },
-          {
-            "name": "EnglewoodSocialServices",
-            "homepageUrl": "https://uic-evl.github.io/EnglewoodSocialServices/",
-            "description": "Visualizing Social Services in Englewood",
-            "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-12-07T22:02:11Z",
-            "createdAt": "2017-05-08T02:02:36Z",
-            "url": "https://github.com/uic-evl/EnglewoodSocialServices",
-            "nameWithOwner": "uic-evl/EnglewoodSocialServices",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 698167
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 42063
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 40127
-                }
-              ]
-            }
           }
         ]
       },
       "repositories": {
-        "totalCount": 35,
+        "totalCount": 38,
         "nodes": [
-          {
-            "name": "castor-art-151-fall-2018",
-            "description": "Repository for all of my ART 151 Fall 2018 Projects",
-            "shortDescriptionHTML": "Repository for all of my ART 151 Fall 2018 Projects",
-            "pushedAt": "2018-09-10T13:16:29Z",
-            "createdAt": "2018-08-30T02:37:03Z",
-            "url": "https://github.com/BluuArc/castor-art-151-fall-2018",
-            "nameWithOwner": "BluuArc/castor-art-151-fall-2018",
-            "homepageUrl": "https://joshuacastor.me/castor-art-151-fall-2018/",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "Processing",
-                    "color": "#0096D8"
-                  },
-                  "size": 16938
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 11833
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 2694
-                },
-                {
-                  "node": {
-                    "name": "Batchfile",
-                    "color": "#C1F12E"
-                  },
-                  "size": 128
-                }
-              ]
-            }
-          },
           {
             "name": "bf-mt",
             "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
             "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
-            "pushedAt": "2018-09-10T02:05:52Z",
+            "pushedAt": "2018-10-28T15:27:29Z",
             "createdAt": "2018-02-12T04:57:53Z",
             "url": "https://github.com/BluuArc/bf-mt",
             "nameWithOwner": "BluuArc/bf-mt",
@@ -345,7 +323,7 @@
                     "name": "JavaScript",
                     "color": "#f1e05a"
                   },
-                  "size": 228809
+                  "size": 229239
                 },
                 {
                   "node": {
@@ -358,10 +336,244 @@
             }
           },
           {
+            "name": "EnglewoodSocialServices",
+            "description": "Visualizing Social Services in Englewood",
+            "shortDescriptionHTML": "Visualizing Social Services in Englewood",
+            "pushedAt": "2018-10-24T21:26:28Z",
+            "createdAt": "2018-10-10T20:21:27Z",
+            "url": "https://github.com/BluuArc/EnglewoodSocialServices",
+            "nameWithOwner": "BluuArc/EnglewoodSocialServices",
+            "homepageUrl": "https://joshuacastor.me/EnglewoodSocialServices/analytics",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 904740
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 56000
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 53462
+                },
+                {
+                  "node": {
+                    "name": "Dockerfile",
+                    "color": "#0db7ed"
+                  },
+                  "size": 190
+                }
+              ]
+            }
+          },
+          {
+            "name": "EnglewoodSocialServices",
+            "description": "Visualizing Social Services in Englewood",
+            "shortDescriptionHTML": "Visualizing Social Services in Englewood",
+            "pushedAt": "2018-10-24T20:02:13Z",
+            "createdAt": "2017-05-08T02:02:36Z",
+            "url": "https://github.com/uic-evl/EnglewoodSocialServices",
+            "nameWithOwner": "uic-evl/EnglewoodSocialServices",
+            "homepageUrl": "https://uic-evl.github.io/EnglewoodSocialServices/",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 702515
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 42063
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 40273
+                },
+                {
+                  "node": {
+                    "name": "Dockerfile",
+                    "color": "#0db7ed"
+                  },
+                  "size": 190
+                }
+              ]
+            }
+          },
+          {
+            "name": "lug.cs.uic.edu-2018",
+            "description": null,
+            "shortDescriptionHTML": "",
+            "pushedAt": "2018-10-27T02:44:53Z",
+            "createdAt": "2018-05-06T18:42:27Z",
+            "url": "https://github.com/lugatuic/lug.cs.uic.edu-2018",
+            "nameWithOwner": "lugatuic/lug.cs.uic.edu-2018",
+            "homepageUrl": "https://lug.cs.uic.edu/",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": []
+            }
+          },
+          {
+            "name": "castor-art-151-fall-2018",
+            "description": "Repository for all of my ART 151 Fall 2018 Projects",
+            "shortDescriptionHTML": "Repository for all of my ART 151 Fall 2018 Projects",
+            "pushedAt": "2018-10-23T03:48:28Z",
+            "createdAt": "2018-08-30T02:37:03Z",
+            "url": "https://github.com/BluuArc/castor-art-151-fall-2018",
+            "nameWithOwner": "BluuArc/castor-art-151-fall-2018",
+            "homepageUrl": "https://joshuacastor.me/castor-art-151-fall-2018/",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 76396
+                },
+                {
+                  "node": {
+                    "name": "Processing",
+                    "color": "#0096D8"
+                  },
+                  "size": 20177
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 11528
+                },
+                {
+                  "node": {
+                    "name": "Batchfile",
+                    "color": "#C1F12E"
+                  },
+                  "size": 128
+                }
+              ]
+            }
+          },
+          {
+            "name": "LUG-Flask-Vue-Example",
+            "description": "Example implementation of a web app using a Vue frontend and Flask backend",
+            "shortDescriptionHTML": "Example implementation of a web app using a Vue frontend and Flask backend",
+            "pushedAt": "2018-09-25T16:07:52Z",
+            "createdAt": "2018-09-19T12:59:19Z",
+            "url": "https://github.com/BluuArc/LUG-Flask-Vue-Example",
+            "nameWithOwner": "BluuArc/LUG-Flask-Vue-Example",
+            "homepageUrl": null,
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Vue",
+                    "color": "#2c3e50"
+                  },
+                  "size": 7214
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 2320
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 902
+                },
+                {
+                  "node": {
+                    "name": "Python",
+                    "color": "#3572A5"
+                  },
+                  "size": 757
+                }
+              ]
+            }
+          },
+          {
+            "name": "project-sparkle",
+            "description": "JavaScript Port of the Automatic Sparking Simulator",
+            "shortDescriptionHTML": "JavaScript Port of the Automatic Sparking Simulator",
+            "pushedAt": "2018-09-16T21:01:40Z",
+            "createdAt": "2017-04-10T02:47:03Z",
+            "url": "https://github.com/BluuArc/project-sparkle",
+            "nameWithOwner": "BluuArc/project-sparkle",
+            "homepageUrl": "http://joshuacastor.me/project-sparkle/",
+            "repositoryTopics": {
+              "nodes": [
+                {
+                  "topic": {
+                    "name": "bravefrontier"
+                  },
+                  "url": "https://github.com/topics/bravefrontier"
+                }
+              ]
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 64659
+                },
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 10664
+                }
+              ]
+            }
+          },
+          {
             "name": "bluuarc.github.io",
             "description": "Personal Website",
             "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2018-09-05T19:37:33Z",
+            "pushedAt": "2018-09-10T13:21:08Z",
             "createdAt": "2016-06-01T14:26:42Z",
             "url": "https://github.com/BluuArc/bluuarc.github.io",
             "nameWithOwner": "BluuArc/bluuarc.github.io",
@@ -450,44 +662,6 @@
                     "color": "#4F5D95"
                   },
                   "size": 1241
-                }
-              ]
-            }
-          },
-          {
-            "name": "project-sparkle",
-            "description": "JavaScript Port of the Automatic Sparking Simulator",
-            "shortDescriptionHTML": "JavaScript Port of the Automatic Sparking Simulator",
-            "pushedAt": "2018-06-28T12:57:45Z",
-            "createdAt": "2017-04-10T02:47:03Z",
-            "url": "https://github.com/BluuArc/project-sparkle",
-            "nameWithOwner": "BluuArc/project-sparkle",
-            "homepageUrl": "http://joshuacastor.me/project-sparkle/",
-            "repositoryTopics": {
-              "nodes": [
-                {
-                  "topic": {
-                    "name": "bravefrontier"
-                  },
-                  "url": "https://github.com/topics/bravefrontier"
-                }
-              ]
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 62260
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 10125
                 }
               ]
             }
@@ -696,7 +870,7 @@
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2018-09-07T21:22:20Z",
+            "pushedAt": "2018-10-01T17:00:37Z",
             "createdAt": "2017-08-04T20:09:52Z",
             "url": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
             "nameWithOwner": "AndrewTBurks/EnglewoodSocialServices",
@@ -1127,44 +1301,6 @@
                     "color": "#e34c26"
                   },
                   "size": 136
-                }
-              ]
-            }
-          },
-          {
-            "name": "EnglewoodSocialServices",
-            "description": "Visualizing Social Services in Englewood",
-            "shortDescriptionHTML": "Visualizing Social Services in Englewood",
-            "pushedAt": "2017-12-07T22:02:11Z",
-            "createdAt": "2017-05-08T02:02:36Z",
-            "url": "https://github.com/uic-evl/EnglewoodSocialServices",
-            "nameWithOwner": "uic-evl/EnglewoodSocialServices",
-            "homepageUrl": "https://uic-evl.github.io/EnglewoodSocialServices/",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 698167
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 42063
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 40127
                 }
               ]
             }
