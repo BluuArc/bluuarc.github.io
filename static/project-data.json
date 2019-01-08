@@ -4,7 +4,7 @@
     "repoName": "simple-web-worker",
     "description": "An utility to simplify the use of web workers",
     "homepageURL": null,
-    "lastPushedAt": "2018-06-15T01:58:42Z",
+    "lastPushedAt": "2018-11-15T06:10:43Z",
     "createdAt": "2017-05-04T22:22:49Z",
     "repoURL": "https://github.com/israelss/simple-web-worker",
     "owner": "israelss",
@@ -28,12 +28,38 @@
     ],
     "techUsed": []
   },
+  "lugatuic/lug.cs.uic.edu-2018": {
+    "name": "lug.cs.uic.edu-2018",
+    "repoName": "lug.cs.uic.edu-2018",
+    "description": null,
+    "homepageURL": "https://lug.cs.uic.edu/",
+    "lastPushedAt": "2019-01-08T05:08:05Z",
+    "createdAt": "2018-05-06T18:42:27Z",
+    "repoURL": "https://github.com/lugatuic/lug.cs.uic.edu-2018",
+    "owner": "lugatuic",
+    "topics": [],
+    "languages": [],
+    "techUsed": []
+  },
+  "lugatuic/LUG_Dungeons_and_Dragons_Webbapp": {
+    "name": "LUG_Dungeons_and_Dragons_Webbapp",
+    "repoName": "LUG_Dungeons_and_Dragons_Webbapp",
+    "description": null,
+    "homepageURL": null,
+    "lastPushedAt": "2018-11-30T23:01:10Z",
+    "createdAt": "2018-11-09T23:47:33Z",
+    "repoURL": "https://github.com/lugatuic/LUG_Dungeons_and_Dragons_Webbapp",
+    "owner": "lugatuic",
+    "topics": [],
+    "languages": [],
+    "techUsed": []
+  },
   "uic-evl/EnglewoodSocialServices": {
     "name": "EnglewoodSocialServices",
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
     "homepageURL": "https://uic-evl.github.io/EnglewoodSocialServices/",
-    "lastPushedAt": "2018-10-24T20:02:13Z",
+    "lastPushedAt": "2018-10-31T20:10:22Z",
     "createdAt": "2017-05-08T02:02:36Z",
     "repoURL": "https://github.com/uic-evl/EnglewoodSocialServices",
     "owner": "uic-evl",
@@ -42,7 +68,7 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 702515
+        "size": 704733
       },
       {
         "name": "CSS",
@@ -60,19 +86,6 @@
         "size": 190
       }
     ],
-    "techUsed": []
-  },
-  "lugatuic/lug.cs.uic.edu-2018": {
-    "name": "lug.cs.uic.edu-2018",
-    "repoName": "lug.cs.uic.edu-2018",
-    "description": null,
-    "homepageURL": "https://lug.cs.uic.edu/",
-    "lastPushedAt": "2018-10-27T02:44:53Z",
-    "createdAt": "2018-05-06T18:42:27Z",
-    "repoURL": "https://github.com/lugatuic/lug.cs.uic.edu-2018",
-    "owner": "lugatuic",
-    "topics": [],
-    "languages": [],
     "techUsed": []
   },
   "AndrewTBurks/EnglewoodSocialServices": {
@@ -170,31 +183,31 @@
     ],
     "techUsed": []
   },
-  "Walden1995/CS362-Hovercraft": {
-    "name": "CS362-Hovercraft",
-    "repoName": "CS362-Hovercraft",
-    "description": "Arduino controlled Hovercrafts",
-    "homepageURL": null,
-    "lastPushedAt": "2018-04-30T00:33:47Z",
-    "createdAt": "2017-10-10T16:40:24Z",
-    "repoURL": "https://github.com/Walden1995/CS362-Hovercraft",
-    "owner": "Walden1995",
-    "topics": [],
+  "BluuArc/BFFrameAnimator-js": {
+    "name": "BFFrameAnimator-js",
+    "repoName": "BFFrameAnimator-js",
+    "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier (JavaScript version)",
+    "homepageURL": "https://macabre-broomstick-39921.herokuapp.com/",
+    "lastPushedAt": "2018-12-31T18:03:24Z",
+    "createdAt": "2017-10-29T05:29:41Z",
+    "repoURL": "https://github.com/BluuArc/BFFrameAnimator-js",
+    "owner": "BluuArc",
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
     "languages": [
       {
-        "name": "C++",
-        "color": "#f34b7d",
-        "size": 13591
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 98096
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 4847
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 1761
+        "size": 20635
       }
     ],
     "techUsed": []
@@ -204,7 +217,7 @@
     "repoName": "bf-mt",
     "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
     "homepageURL": "http://joshuacastor.me/bf-mt/",
-    "lastPushedAt": "2018-10-28T15:27:29Z",
+    "lastPushedAt": "2019-01-03T02:26:24Z",
     "createdAt": "2018-02-12T04:57:53Z",
     "repoURL": "https://github.com/BluuArc/bf-mt",
     "owner": "BluuArc",
@@ -218,17 +231,46 @@
       {
         "name": "Vue",
         "color": "#2c3e50",
-        "size": 440802
+        "size": 742984
       },
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 229239
+        "size": 429522
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 1510
+        "size": 1195
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/network-connection-visualizer": {
+    "name": "network-connection-visualizer",
+    "repoName": "network-connection-visualizer",
+    "description": null,
+    "homepageURL": null,
+    "lastPushedAt": "2018-12-05T03:37:38Z",
+    "createdAt": "2018-11-19T14:09:19Z",
+    "repoURL": "https://github.com/BluuArc/network-connection-visualizer",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 31475
+      },
+      {
+        "name": "Vue",
+        "color": "#2c3e50",
+        "size": 23231
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 797
       }
     ],
     "techUsed": []
@@ -238,7 +280,7 @@
     "repoName": "EnglewoodSocialServices",
     "description": "Visualizing Social Services in Englewood",
     "homepageURL": "https://joshuacastor.me/EnglewoodSocialServices/analytics",
-    "lastPushedAt": "2018-10-24T21:26:28Z",
+    "lastPushedAt": "2018-11-26T22:31:49Z",
     "createdAt": "2018-10-10T20:21:27Z",
     "repoURL": "https://github.com/BluuArc/EnglewoodSocialServices",
     "owner": "BluuArc",
@@ -247,17 +289,17 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 904740
+        "size": 916653
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 56000
+        "size": 56920
       },
       {
         "name": "CSS",
         "color": "#563d7c",
-        "size": 53462
+        "size": 54073
       },
       {
         "name": "Dockerfile",
@@ -267,12 +309,36 @@
     ],
     "techUsed": []
   },
+  "BluuArc/multi-folder-flask-example": {
+    "name": "multi-folder-flask-example",
+    "repoName": "multi-folder-flask-example",
+    "description": "This is an example of using multiple modules with a single server.py file for a Python Flask server.",
+    "homepageURL": "",
+    "lastPushedAt": "2018-11-13T13:56:44Z",
+    "createdAt": "2018-11-13T13:35:46Z",
+    "repoURL": "https://github.com/BluuArc/multi-folder-flask-example",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 4296
+      },
+      {
+        "name": "Python",
+        "color": "#3572A5",
+        "size": 1657
+      }
+    ],
+    "techUsed": []
+  },
   "BluuArc/castor-art-151-fall-2018": {
     "name": "castor-art-151-fall-2018",
     "repoName": "castor-art-151-fall-2018",
     "description": "Repository for all of my ART 151 Fall 2018 Projects",
     "homepageURL": "https://joshuacastor.me/castor-art-151-fall-2018/",
-    "lastPushedAt": "2018-10-23T03:48:28Z",
+    "lastPushedAt": "2018-11-12T15:00:57Z",
     "createdAt": "2018-08-30T02:37:03Z",
     "repoURL": "https://github.com/BluuArc/castor-art-151-fall-2018",
     "owner": "BluuArc",
@@ -281,22 +347,56 @@
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "size": 76396
+        "size": 497741
       },
       {
         "name": "Processing",
         "color": "#0096D8",
-        "size": 20177
+        "size": 23753
       },
       {
         "name": "HTML",
         "color": "#e34c26",
-        "size": 11528
+        "size": 15169
       },
       {
         "name": "Batchfile",
         "color": "#C1F12E",
         "size": 128
+      }
+    ],
+    "techUsed": []
+  },
+  "BluuArc/bluuarc.github.io": {
+    "name": "bluuarc.github.io",
+    "repoName": "bluuarc.github.io",
+    "description": "Personal Website",
+    "homepageURL": "https://bluuarc.github.io/",
+    "lastPushedAt": "2018-10-28T15:51:19Z",
+    "createdAt": "2016-06-01T14:26:42Z",
+    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 163637
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 61628
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 17635
+      },
+      {
+        "name": "PHP",
+        "color": "#4F5D95",
+        "size": 303
       }
     ],
     "techUsed": []
@@ -360,40 +460,6 @@
         "name": "HTML",
         "color": "#e34c26",
         "size": 10664
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/bluuarc.github.io": {
-    "name": "bluuarc.github.io",
-    "repoName": "bluuarc.github.io",
-    "description": "Personal Website",
-    "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2018-09-10T13:21:08Z",
-    "createdAt": "2016-06-01T14:26:42Z",
-    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 163637
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 61628
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 17635
-      },
-      {
-        "name": "PHP",
-        "color": "#4F5D95",
-        "size": 303
       }
     ],
     "techUsed": []
@@ -462,35 +528,6 @@
         "name": "CSS",
         "color": "#563d7c",
         "size": 5057
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/BFFrameAnimator-js": {
-    "name": "BFFrameAnimator-js",
-    "repoName": "BFFrameAnimator-js",
-    "description": "Program to create GIFs of unit sprites for the mobile game Brave Frontier (JavaScript version)",
-    "homepageURL": "https://macabre-broomstick-39921.herokuapp.com/",
-    "lastPushedAt": "2018-05-21T15:14:29Z",
-    "createdAt": "2017-10-29T05:29:41Z",
-    "repoURL": "https://github.com/BluuArc/BFFrameAnimator-js",
-    "owner": "BluuArc",
-    "topics": [
-      {
-        "name": "bravefrontier",
-        "url": "https://github.com/topics/bravefrontier"
-      }
-    ],
-    "languages": [
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 65428
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 29669
       }
     ],
     "techUsed": []
@@ -621,6 +658,35 @@
         "name": "Makefile",
         "color": "#427819",
         "size": 124
+      }
+    ],
+    "techUsed": []
+  },
+  "Walden1995/CS362-Hovercraft": {
+    "name": "CS362-Hovercraft",
+    "repoName": "CS362-Hovercraft",
+    "description": "Arduino controlled Hovercrafts",
+    "homepageURL": null,
+    "lastPushedAt": "2018-04-30T00:33:47Z",
+    "createdAt": "2017-10-10T16:40:24Z",
+    "repoURL": "https://github.com/Walden1995/CS362-Hovercraft",
+    "owner": "Walden1995",
+    "topics": [],
+    "languages": [
+      {
+        "name": "C++",
+        "color": "#f34b7d",
+        "size": 13591
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 4847
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 1761
       }
     ],
     "techUsed": []
