@@ -90,8 +90,28 @@ export default [
     'Semester': 'Spring 2018'
   },
   {
-    'CourseName': 'Database Systems',
-    'Languages/Technologies/Techniques': 'SQL',
+    'CourseName': 'Database Systems (CS480)',
+    'Languages/Technologies/Techniques': 'SQL, Java',
     'Semester': 'Spring 2018'
+  },
+  {
+    'CourseName': 'Intro to Creative Coding (ART151)',
+    'Languages/Technologies/Techniques': 'JavaScript, Processing, p5.js, Canvas',
+    'Semester': 'Fall 2018'
+  },
+  {
+    'CourseName': 'Object-Oriented Languages and Environments (CS474)',
+    'Languages/Technologies/Techniques': 'SmallTalk, C++, C, Java',
+    'Semester': 'Fall 2018'
+  },
+  {
+    'CourseName': 'Development of Mobile Applications (CS478)',
+    'Languages/Technologies/Techniques': 'Java, Android',
+    'Semester': 'Fall 2018'
+  },
+  {
+    'CourseName': 'Intro to Cybersecurity',
+    'Languages/Technologies/Techniques': 'Cryptography History, Privacy, Networks, Threat Models, CAPTCHA',
+    'Semester': 'Fall 2018'
   }
 ];
