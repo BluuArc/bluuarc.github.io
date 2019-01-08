@@ -1,9 +1,16 @@
 const jobs = [
   {
+    'name': 'Software Engineer Intern',
+    'location': 'Chicago, IL',
+    'company': 'Relativity',
+    'time': 'May 2018 - Aug 2018',
+    'desc': ['Contributed to development of test suite for and implementation of a REST API. Investigated usage of Webpack and Rollup in some internal tools. Collaborated with co-workers on front-end projects.']
+  },
+  {
     'name': 'Research Experience Undergraduate',
     'location': 'Chicago, IL',
     'company': 'University of Illinois at Chicago',
-    'time': 'May 2017 - May 2018',
+    'time': 'May 2017 - December 2018',
     'desc': [
       'Designed a web-based tool to submit as an entry to VAST Challenge 2017. Collaborated with a group of 4 to develop and deploy a web-based service for Englewood. Learned how to develop and deploy Unity applications for CAVE2.<br>',
       '<b>Relevant Projects</b>\n<ul>\n',
