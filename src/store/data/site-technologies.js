@@ -7,7 +7,7 @@ export default [
   {
     name: 'Vuetify',
     link: 'https://vuetifyjs.com/en/',
-    icon: 'https://vuetifyjs.com/static/vuetify-logo-300.png'
+    icon: 'https://cdn.vuetifyjs.com/images/logos/v-alt.svg'
   },
   {
     name: 'GitHub Pages',
