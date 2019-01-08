@@ -126,7 +126,7 @@
                     </v-card-title>
                     <v-card-text style="background-color: var(--primary-background);" v-html="item.description"/>
                     <v-card-actions>
-                      <v-btn flat :href="item.link" target="_blank" rel="noopener">Visit Site</v-btn>
+                      <v-btn flat :href="item.link" :disabled="!item.link" target="_blank" rel="noopener">Visit Site</v-btn>
                     </v-card-actions>
                   </v-card>
                 </v-flex>

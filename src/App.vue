@@ -171,13 +171,13 @@ export default {
       }
       gtag('js', new Date());
       gtag('config', 'UA-80417877-1');
-      await this.appendScript('https://www.googletagmanager.com/gtag/js?id=UA-80417877-1');
+      await this.appendScript('https://www.googletagmanager.com/gtag/js?id=UA-80417877-1').catch(console.error);
     },
     async loadStatCounterTracker () {
       window.sc_project = window.sc_project || 11034084;
       window.sc_invisible = window.sc_invisible || 1;
       window.sc_security = window.sc_security || '3e7dba9f';
-      await this.appendScript('https://secure.statcounter.com/counter/counter.js');
+      await this.appendScript('https://secure.statcounter.com/counter/counter.js').catch(console.error);
     }
   },
   name: 'App'

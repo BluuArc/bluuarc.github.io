@@ -41,5 +41,10 @@ export default [
       <p>Some differences from Attempt 2 (at the time of writing) include lack of loading screen, multiple Vue instances, and the Home page scroll-navigator.
       This version also features proper search, filter, and sort functionality, which wasn't fully implemented in Attempt 2.</p>`,
     image: require('../../assets/img/old_sites/v004.png')
+  },
+  {
+    lastUpdated: new Date('Dec 1, 2019'),
+    name: 'The SPA Treatment - Getting Better',
+    description: '<p>TBD using Vue 3.0 and Vuetify 2.0 (depending on release date).</p>'
   }
 ];
