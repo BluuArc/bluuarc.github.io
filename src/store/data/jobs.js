@@ -1,5 +1,12 @@
 const jobs = [
   {
+    'name': 'Software Engineer',
+    'location': 'Chicago, IL',
+    'company': 'Relativity',
+    'time': 'Jan 2019 - Present',
+    'desc': []
+  },
+  {
     'name': 'Software Engineer Intern',
     'location': 'Chicago, IL',
     'company': 'Relativity',
