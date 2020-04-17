@@ -16,7 +16,8 @@
         "BluuArc/bfmt-data-helper",
         "BluuArc/bfmt-data",
         "BluuArc/rfeh-build-examples",
-        "BluuArc/rfeh-helper"
+        "BluuArc/rfeh-helper",
+        "BluuArc/a-cyc-dashboard"
     ],
     "additionalProjectInfo": {
 

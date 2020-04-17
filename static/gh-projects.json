@@ -57,6 +57,51 @@
         "totalCount": 49,
         "nodes": [
           {
+            "name": "bluuarc.github.io",
+            "description": "Personal Website",
+            "shortDescriptionHTML": "Personal Website",
+            "pushedAt": "2020-04-17T04:00:25Z",
+            "createdAt": "2016-06-01T14:26:42Z",
+            "url": "https://github.com/BluuArc/bluuarc.github.io",
+            "nameWithOwner": "BluuArc/bluuarc.github.io",
+            "homepageUrl": "https://bluuarc.github.io/",
+            "repositoryTopics": {
+              "nodes": []
+            },
+            "languages": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  "size": 284296
+                },
+                {
+                  "node": {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  "size": 162831
+                },
+                {
+                  "node": {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  "size": 17635
+                },
+                {
+                  "node": {
+                    "name": "PHP",
+                    "color": "#4F5D95"
+                  },
+                  "size": 303
+                }
+              ]
+            }
+          },
+          {
             "name": "bf-mt",
             "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
             "shortDescriptionHTML": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
@@ -340,51 +385,6 @@
             }
           },
           {
-            "name": "bluuarc.github.io",
-            "description": "Personal Website",
-            "shortDescriptionHTML": "Personal Website",
-            "pushedAt": "2020-04-16T06:08:39Z",
-            "createdAt": "2016-06-01T14:26:42Z",
-            "url": "https://github.com/BluuArc/bluuarc.github.io",
-            "nameWithOwner": "BluuArc/bluuarc.github.io",
-            "homepageUrl": "https://bluuarc.github.io/",
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 283782
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 163637
-                },
-                {
-                  "node": {
-                    "name": "CSS",
-                    "color": "#563d7c"
-                  },
-                  "size": 17635
-                },
-                {
-                  "node": {
-                    "name": "PHP",
-                    "color": "#4F5D95"
-                  },
-                  "size": 303
-                }
-              ]
-            }
-          },
-          {
             "name": "EnglewoodSocialServices",
             "description": "Visualizing Social Services in Englewood",
             "shortDescriptionHTML": "Visualizing Social Services in Englewood",
@@ -425,44 +425,6 @@
                     "color": "#384d54"
                   },
                   "size": 190
-                }
-              ]
-            }
-          },
-          {
-            "name": "a-cyc-dashboard",
-            "description": "A dashboard for GiselleBot.",
-            "shortDescriptionHTML": "A dashboard for GiselleBot.",
-            "pushedAt": "2019-06-03T23:00:02Z",
-            "createdAt": "2019-01-22T03:48:07Z",
-            "url": "https://github.com/BluuArc/a-cyc-dashboard",
-            "nameWithOwner": "BluuArc/a-cyc-dashboard",
-            "homepageUrl": null,
-            "repositoryTopics": {
-              "nodes": []
-            },
-            "languages": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "Vue",
-                    "color": "#2c3e50"
-                  },
-                  "size": 33336
-                },
-                {
-                  "node": {
-                    "name": "JavaScript",
-                    "color": "#f1e05a"
-                  },
-                  "size": 19065
-                },
-                {
-                  "node": {
-                    "name": "HTML",
-                    "color": "#e34c26"
-                  },
-                  "size": 763
                 }
               ]
             }
