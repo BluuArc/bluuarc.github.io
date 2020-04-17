@@ -1,28 +1,25 @@
 "use strict";
 
-/* global require */
-
-let rp = require('request-promise');
-let GithubGraphQLApi = require('node-github-graphql');
-let fs = require('fs');
-let ghql = new GithubGraphQLApi({
+const GithubGraphQLApi = require('node-github-graphql');
+const fs = require('fs');
+const ghql = new GithubGraphQLApi({
     token: fs.readFileSync('token.txt', 'utf8').replace(/\n/g, '').replace(/\r/g, ''),
 });
 
-function sendQuery(query, variables = null){
-    return new Promise((fulfill,reject) => {
-        ghql.query(query, variables, (resp, err) => {
-            if(err){
-                reject(err);
-            }else{
-                fulfill(resp);
-            }
-        })
+function sendQuery (query, variables = null) {
+  return new Promise((fulfill, reject) => {
+    ghql.query(query, variables, (resp, err) => {
+      if (err) {
+        reject(err);
+      } else {
+        fulfill(resp);
+      }
     });
+  });
 }
 
 let rateLimitQuery = `
-query { 
+query {
   rateLimit{
     remaining
     limit
@@ -33,7 +30,7 @@ query {
 `;
 
 let repoQuery = `
-query { 
+query {
   user(login:"BluuArc"){
     name
     login
@@ -98,8 +95,8 @@ query {
 }
 `;
 
-function createProjectEntry(projectData, customData = {}) {
-  let project = {};
+function createProjectEntry (projectData, customData = {}) {
+  const project = {};
   project.name = customData.name || projectData.name;
   project.repoName = projectData.name;
   project.description = projectData.description;
@@ -111,25 +108,14 @@ function createProjectEntry(projectData, customData = {}) {
 
   project.topics = [];
   if (projectData.repositoryTopics.nodes.length > 0) {
-    for (let t of projectData.repositoryTopics.nodes) {
-      let topic = {
-        name: t.topic.name,
-        url: t.url
-      };
-      project.topics.push(topic);
-    }
+    project.topics = projectData.repositoryTopics.nodes
+      .map(({ topic, url }) => ({ name: topic.name, url }));
   }
 
   project.languages = [];
   if (projectData.languages.edges.length > 0) {
-    for (let lang of projectData.languages.edges) {
-      let languageEntry = {
-        name: lang.node.name,
-        color: lang.node.color,
-        size: lang.size
-      };
-      project.languages.push(languageEntry);
-    }
+    project.languages = projectData.languages.edges
+      .map(({ node, size }) => ({ name: node.name, color: node.color, size }));
   }
 
   // TODO: implement tech used from custom-project-data.json
@@ -140,51 +126,47 @@ function createProjectEntry(projectData, customData = {}) {
 }
 
 sendQuery(repoQuery).then((result) => {
-  console.log("Saving GH JSON object");
-  fs.writeFileSync('static/gh-projects.json',JSON.stringify(result,null,2),'utf8');
-  return result.data;
-}).then((ghData) => {
   console.log("Creating project-data.json");
-  let customData = JSON.parse(fs.readFileSync('static/custom-project-data.json','utf8'));
+  const ghData = result.data;
+  const customData = JSON.parse(fs.readFileSync("static/custom-project-data.json", "utf8"));
   // data may include: images -> to go above/inside/below card?, technologies
-  let extraProjectData = customData.additionalProjectInfo || {};
-  let additionalProjects = customData.additionalProjects || {};
+  const extraProjectData = customData.additionalProjectInfo || {};
+  const additionalProjects = customData.additionalProjects || {};
 
-  let finalProjectData = {};
+  const finalProjectData = {};
+  const processProject = (project, propertyName) => {
+    const { nameWithOwner: key } = project;
+    const projectIncluded = !customData.ignoredProjects.includes(key);
+    const projectNotAdded = !finalProjectData[key];
 
-  let ghProjects = ghData.user.repositoriesContributedTo.nodes;
-  for(let p of ghProjects){
-    if(!finalProjectData[p.nameWithOwner] && customData.ignoredProjects.indexOf(p.nameWithOwner) === -1){
-      console.log("Adding", p.nameWithOwner, "in repositoriesContributedTo list");
-      finalProjectData[p.nameWithOwner] = createProjectEntry(p,extraProjectData[p.nameWithOwner]);
-    }else{
-      console.log("Skipping",p.nameWithOwner,"in repositoriesContributedTo list");
-    }
-  }
-
-  ghProjects = ghData.user.repositories.nodes;
-  for (let p of ghProjects) {
-    if (!finalProjectData[p.nameWithOwner] && customData.ignoredProjects.indexOf(p.nameWithOwner) === -1) {
-      console.log("Adding", p.nameWithOwner, "in repositories list");
-      finalProjectData[p.nameWithOwner] = createProjectEntry(p, extraProjectData[p.nameWithOwner]);
+    if (projectIncluded && projectNotAdded) {
+      console.log(`Adding ${key} in ${propertyName} list`);
+      finalProjectData[key] = createProjectEntry(project, extraProjectData[key]);
     } else {
-      console.log("Skipping", p.nameWithOwner, "in repositories list");
+      console.log(`Skipping ${key} in ${propertyName} list`);
     }
-  }
+    return projectIncluded;
+  };
 
-  for(let p in additionalProjects){
-    if(!finalProjectData[p]){
-      console.log("Adding", p.nameWithOwner, "in additional project list");
-      finalProjectData[p] = p;
-    }else{
-      console.log("Skipping", p.nameWithOwner, "in additional project list");
+  ghData.user.repositoriesContributedTo.nodes = ghData.user.repositoriesContributedTo.nodes
+    .filter((project) => processProject(project, "repositoriesContributedTo"));
+
+  ghData.user.repositories.nodes = ghData.user.repositories.nodes
+    .filter((project) => processProject(project, "repositories"));
+
+  Object.entries(additionalProjects).forEach(([key, project]) => {
+    if (!finalProjectData[key]) {
+      console.log(`Adding ${key} in additional project list`);
+      finalProjectData[key] = project;
+    } else {
+      console.log(`Skipping ${key} in additional project list`);
     }
-  }
+  });
 
-  fs.writeFileSync('static/project-data.json',JSON.stringify(finalProjectData,null,2),'utf8');
+  fs.writeFileSync("static/project-data.json", JSON.stringify(finalProjectData, null, 2), "utf8");
 
-  return;
-
+  console.log("Saving GH JSON object");
+  fs.writeFileSync("static/gh-projects.json", JSON.stringify(result, null, 2), "utf8");
 }).then(() => {
   console.log("Done");
 }).catch(console.error);

@@ -12,10 +12,14 @@
         "uicsystems/lab-4S17-BluuArc",
         "uicsystems/lab-5S17-BluuArc",
         "uicsystems/lab-6-S17-BluuArc",
-        "bitslab/firefox-api-blocking-extension-scripts"
+        "bitslab/firefox-api-blocking-extension-scripts",
+        "BluuArc/bfmt-data-helper",
+        "BluuArc/bfmt-data",
+        "BluuArc/rfeh-build-examples",
+        "BluuArc/rfeh-helper"
     ],
     "additionalProjectInfo": {
-        
+
     },
     "additionalProjects": {
 
