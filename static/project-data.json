@@ -33,6 +33,40 @@
     ],
     "techUsed": []
   },
+  "BluuArc/bluuarc.github.io": {
+    "name": "bluuarc.github.io",
+    "repoName": "bluuarc.github.io",
+    "description": "Personal Website",
+    "homepageURL": "https://bluuarc.github.io/",
+    "lastPushedAt": "2020-04-17T04:00:25Z",
+    "createdAt": "2016-06-01T14:26:42Z",
+    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
+    "owner": "BluuArc",
+    "topics": [],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 284296
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "size": 162831
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 17635
+      },
+      {
+        "name": "PHP",
+        "color": "#4F5D95",
+        "size": 303
+      }
+    ],
+    "techUsed": []
+  },
   "BluuArc/bf-mt": {
     "name": "bf-mt",
     "repoName": "bf-mt",
@@ -216,40 +250,6 @@
     ],
     "techUsed": []
   },
-  "BluuArc/bluuarc.github.io": {
-    "name": "bluuarc.github.io",
-    "repoName": "bluuarc.github.io",
-    "description": "Personal Website",
-    "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2020-04-16T06:08:39Z",
-    "createdAt": "2016-06-01T14:26:42Z",
-    "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 283782
-      },
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 163637
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 17635
-      },
-      {
-        "name": "PHP",
-        "color": "#4F5D95",
-        "size": 303
-      }
-    ],
-    "techUsed": []
-  },
   "uic-evl/EnglewoodSocialServices": {
     "name": "EnglewoodSocialServices",
     "repoName": "EnglewoodSocialServices",
@@ -280,35 +280,6 @@
         "name": "Dockerfile",
         "color": "#384d54",
         "size": 190
-      }
-    ],
-    "techUsed": []
-  },
-  "BluuArc/a-cyc-dashboard": {
-    "name": "a-cyc-dashboard",
-    "repoName": "a-cyc-dashboard",
-    "description": "A dashboard for GiselleBot.",
-    "homepageURL": null,
-    "lastPushedAt": "2019-06-03T23:00:02Z",
-    "createdAt": "2019-01-22T03:48:07Z",
-    "repoURL": "https://github.com/BluuArc/a-cyc-dashboard",
-    "owner": "BluuArc",
-    "topics": [],
-    "languages": [
-      {
-        "name": "Vue",
-        "color": "#2c3e50",
-        "size": 33336
-      },
-      {
-        "name": "JavaScript",
-        "color": "#f1e05a",
-        "size": 19065
-      },
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 763
       }
     ],
     "techUsed": []
