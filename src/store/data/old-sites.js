@@ -1,15 +1,15 @@
 export default [
   {
     lastUpdated: new Date('Jan 5, 2017'),
-    link: 'http://bluuarc.github.io/old/index_v001.html',
-    name: 'My First Site',
+    link: 'http://bluuarc.github.io/old-sites/v1/',
+    name: 'My First Site [v1]',
     description: 'Very first version of the site. Utilized Boostrap 3.3.7 and jQuery 1.12.4 with traditional hardcoded pages for index, about, and contact.',
     image: require('../../assets/img/old_sites/v001.png')
   },
   {
     lastUpdated: new Date('Dec 12, 2017'),
-    link: 'http://bluuarc.github.io/old/index_v002.html',
-    name: 'The SPA Treatment (Attempt 1) - Bootstrap',
+    link: 'http://bluuarc.github.io/old-sites/v2/',
+    name: 'The SPA Treatment (Attempt 1) - Bootstrap [v2]',
     description: `<p>First attempt at a SPA style site. Used Bootstrap 4.0.0-beta with the <a href="https://bootswatch.com/darkly/" target="_blank" rel="noopener">Darkly Bootstrap theme</a>.</p>
       <p>All the routing was done with pure JS (i.e. no framework or libary used for routing).
       A lot of the core layout was defined here (3 main pages, GitHub style language bars, etc.).</p>
@@ -19,8 +19,8 @@ export default [
   },
   {
     lastUpdated: new Date('May 14, 2018'),
-    link: 'http://bluuarc.github.io/old/index_v003.html',
-    name: 'The SPA Treatment (Attempt 2) - Material Design',
+    link: 'http://bluuarc.github.io/old-sites/v3/',
+    name: 'The SPA Treatment (Attempt 2) - Material Design [v3]',
     description: `<p>This was a rewrite of the Bootstrap version using Material Components for Web (a.k.a. Material Design).</p>
       <p>I experimented quite a bit with this one. From the Bootstrap version came the basic layout and routing code. What was new was a little spinning animation on first loading the page.
       Most necessary scripts were loaded once the spinner was showing, resulting in a slightly faster first-load time.</p>
@@ -31,9 +31,10 @@ export default [
     image: require('../../assets/img/old_sites/v003.png')
   },
   {
+    lastUpdated: new Date('Dec 21, 2020'),
     link: 'http://bluuarc.github.io/',
-    name: 'The SPA Treatment (Attempt 3) - Getting the Correct Point of Vue',
-    description: `<p>The current version of the site.
+    name: 'The SPA Treatment (Attempt 3) - Getting the Correct Point of Vue [v4]',
+    description: `<p>The current version of the site as of Dec 21 2020.
       It uses Vuetify for most of the components, as well as Webpack for bundling.</p>
       <p>By this point, I've made a couple 'proper' Vue applications using the webpack boilerplate (<a href="https://github.com/BluuArc/bf-mt" target="_blank" rel="noopener">bf-mt</a>, <a href="https://github.com/WynnD/coliberate-frontend" target="_blank" rel="noopener">Coliberate</a>), so I feel pretty confident in the page and file structure of this version.
       I try to limit the amount of libraries I import and try to stick to vanilla JS as much as possible (which means no using jQuery or d3 for DOM manipulation) with this version.
@@ -44,7 +45,7 @@ export default [
   },
   {
     lastUpdated: new Date('Dec 1, 2019'),
-    name: 'The SPA Treatment - Getting Better',
-    description: '<p>TBD using Vue 3.0 and Vuetify 2.0 (depending on release date).</p>'
+    name: 'The SPA Treatment - Getting Better [v5]',
+    description: '<p>TBD using Vue 3.0.</p>'
   }
 ];
