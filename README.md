@@ -1,4 +1,4 @@
-# New Project
+# bluuarc.github.io
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
