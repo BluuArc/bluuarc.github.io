@@ -1,6 +1,6 @@
-import HomePage from './Home.svelte';
+import PostsPage from './PostsPage.svelte';
 
-const app = new HomePage({
+const app = new PostsPage({
 	target: document.body,
 });
 

@@ -13,11 +13,11 @@ module.exports = {
 		[
 			'./plugins/snowpack/legacy-bundler.js',
 			{
-				entrypoints: ['dist/pages/index.legacy.js'],
+				entrypoints: ['dist/index.legacy.js'],
 				outputPattern: {
 					// overwrite old files with no hashing, as hashing is taken care
 					// of in the snowpack-plugin-hash plugin
-					js: 'dist/pages/[name].js',
+					js: 'dist/[name].js',
 				},
 			}
 		],
