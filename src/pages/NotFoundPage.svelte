@@ -3,5 +3,5 @@
 </script>
 
 <AppShell>
-	Posts Page TBD.
+	Sorry that page cannot be found.
 </AppShell>
