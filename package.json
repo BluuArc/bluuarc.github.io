@@ -11,6 +11,7 @@
     "@snowpack/plugin-webpack": "^2.2.0",
     "babel-loader": "^8.2.2",
     "jsdom": "^16.4.0",
+    "node-sass": "^5.0.0",
     "snowpack": "^2.18.4",
     "snowpack-plugin-hash": "^0.7.1",
     "svelte": "^3.31.0",
