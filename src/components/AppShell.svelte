@@ -3,6 +3,7 @@
 	import { router } from '../states/router.js';
 	import { createLogger } from '../modules/logger';
 	import { onMount, onDestroy } from 'svelte';
+	import AppFooter from './AppFooter.svelte';
 
 	export let startingRoute = '';
 
@@ -37,11 +38,13 @@
 
 {#if !hasNavigated || startingRoute === $router.rootPath}
 	<slot><main>Default route content will appear here.</main></slot>
+	<AppFooter/>
 {:else}
 	{#await $router.componentPromise}
 		<main>Loading route</main>
 	{:then routeComponent}
 		<svelte:component this={routeComponent.default} />
+		<AppFooter/>
 	{:catch error}
 		<main>
 			An error occurred loading the route.
