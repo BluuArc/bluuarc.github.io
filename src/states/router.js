@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 import { createSingletonGetterAsync } from "../modules/singletonGetter";
-import { getAppContextFromWindow } from '../modules/appWindowContextManager.js';
+import { getAppContextFromWindow } from '../modules/appContextManager.js';
 
 const notFoundRouteInfo = {
 	path: '/not-found',
@@ -76,7 +76,7 @@ function createRouter(initialPath = '/') {
 	return {
 		subscribe,
 		setRouteFromLink: (link) => {
-			// TODO: info comparison?
+			// TODO: info comparison to only set if different?
 			const newRouteInfo = parseLinkForRouteInformation(link);
 			set(newRouteInfo);
 
