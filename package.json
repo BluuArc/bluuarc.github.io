@@ -11,6 +11,7 @@
     "@snowpack/plugin-webpack": "^2.2.0",
     "babel-loader": "^8.2.2",
     "jsdom": "^16.4.0",
+    "node-github-graphql": "^0.2.7",
     "node-sass": "^5.0.0",
     "snowpack": "^2.18.4",
     "snowpack-plugin-hash": "^0.7.1",

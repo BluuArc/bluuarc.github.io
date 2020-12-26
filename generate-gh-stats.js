@@ -28,17 +28,15 @@ query {
   }
 }
 `;
-
-let repoQuery = `
-query {
-  user(login:"BluuArc"){
+const repoQuery = `
+{
+  user(login: "BluuArc") {
     name
     login
-    repositoriesContributedTo(first:100, orderBy:{field:UPDATED_AT,direction:DESC}) {
+    repositories(first: 100, orderBy: {field: UPDATED_AT, direction: DESC}) {
       totalCount
-      nodes{
+      nodes {
         name
-        homepageUrl
         description
         shortDescriptionHTML
         pushedAt
@@ -46,14 +44,24 @@ query {
         url
         nameWithOwner
         homepageUrl
-        repositoryTopics (first: 50) {
+        repositoryTopics(first: 50) {
           nodes {
-            topic{ name }
+            topic {
+              name
+            }
             url
           }
         }
-        languages(first:50, orderBy:{field:SIZE, direction:DESC}) {
-          edges{
+        isPrivate
+        deployments {
+          totalCount
+        }
+        isEmpty
+        packages {
+          totalCount
+        }
+        languages(first: 50, orderBy: {field: SIZE, direction: DESC}) {
+          edges {
             node {
               name
               color
@@ -63,9 +71,9 @@ query {
         }
       }
     }
-    repositories(first:100, orderBy:{field:UPDATED_AT,direction:DESC}) {
+    repositoriesContributedTo(first: 100, orderBy: {field: UPDATED_AT, direction: DESC}) {
       totalCount
-      nodes{
+      nodes {
         name
         description
         shortDescriptionHTML
@@ -74,14 +82,24 @@ query {
         url
         nameWithOwner
         homepageUrl
-        repositoryTopics (first: 50) {
+        repositoryTopics(first: 50) {
           nodes {
-            topic{ name }
+            topic {
+              name
+            }
             url
           }
         }
-        languages(first:50, orderBy:{field:SIZE, direction:DESC}) {
-          edges{
+        isPrivate
+        deployments {
+          totalCount
+        }
+        isEmpty
+        packages {
+          totalCount
+        }
+        languages(first: 50, orderBy: {field: SIZE, direction: DESC}) {
+          edges {
             node {
               name
               color
@@ -92,8 +110,7 @@ query {
       }
     }
   }
-}
-`;
+}`;
 
 function createProjectEntry (projectData, customData = {}) {
   const project = {};
@@ -105,6 +122,8 @@ function createProjectEntry (projectData, customData = {}) {
   project.createdAt = projectData.createdAt;
   project.repoURL = projectData.url;
   project.owner = projectData.nameWithOwner.split("/")[0];
+  project.deployments = projectData.deployments.totalCount;
+  project.packages = projectData.packages.totalCount;
 
   project.topics = [];
   if (projectData.repositoryTopics.nodes.length > 0) {
@@ -128,7 +147,7 @@ function createProjectEntry (projectData, customData = {}) {
 sendQuery(repoQuery).then((result) => {
   console.log("Creating project-data.json");
   const ghData = result.data;
-  const customData = JSON.parse(fs.readFileSync("static/custom-project-data.json", "utf8"));
+  const customData = JSON.parse(fs.readFileSync("./custom-project-data.json", "utf8"));
   // data may include: images -> to go above/inside/below card?, technologies
   const extraProjectData = customData.additionalProjectInfo || {};
   const additionalProjects = customData.additionalProjects || {};
@@ -139,7 +158,7 @@ sendQuery(repoQuery).then((result) => {
     const projectIncluded = !customData.ignoredProjects.includes(key);
     const projectNotAdded = !finalProjectData[key];
 
-    if (projectIncluded && projectNotAdded) {
+    if (projectIncluded && projectNotAdded && !project.isPrivate && !project.isEmpty) {
       console.log(`Adding ${key} in ${propertyName} list`);
       finalProjectData[key] = createProjectEntry(project, extraProjectData[key]);
     } else {
@@ -163,10 +182,10 @@ sendQuery(repoQuery).then((result) => {
     }
   });
 
-  fs.writeFileSync("static/project-data.json", JSON.stringify(finalProjectData, null, 2), "utf8");
+  fs.writeFileSync("public/project-data.json", JSON.stringify(finalProjectData, null, 2), "utf8");
 
-  console.log("Saving GH JSON object");
-  fs.writeFileSync("static/gh-projects.json", JSON.stringify(result, null, 2), "utf8");
+  // console.log("Saving GH JSON object");
+  // fs.writeFileSync("static/gh-projects.json", JSON.stringify(result, null, 2), "utf8");
 }).then(() => {
   console.log("Done");
 }).catch(console.error);
