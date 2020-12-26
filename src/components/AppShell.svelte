@@ -1,6 +1,6 @@
 <script>
 	import AppHeader from './AppHeader.svelte';
-	import { router } from '../states/router.js';
+	import { router } from '../stores/router.js';
 	import { createLogger } from '../modules/logger';
 	import { onMount, onDestroy } from 'svelte';
 	import AppFooter from './AppFooter.svelte';

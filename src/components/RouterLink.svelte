@@ -1,5 +1,5 @@
 <script>
-	import { router } from '../states/router.js';
+	import { router } from '../stores/router.js';
 
 	export let to = '';
 
