@@ -1,4 +1,5 @@
-const fs = require('fs')
+const fs = require('fs');
+const path = require('path');
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
@@ -13,15 +14,25 @@ module.exports = {
 		[
 			'./plugins/snowpack/legacy-bundler.js',
 			{
-				entrypoints: ['dist/index.legacy.js'],
+				entrypoints: [
+					'dist/pages/index.legacy.js',
+					'dist/pages/not-found.legacy.js',
+					'dist/pages/posts.legacy.js',
+					'dist/pages/projects.legacy.js',
+				],
 				outputPattern: {
 					// overwrite old files with no hashing, as hashing is taken care
 					// of in the snowpack-plugin-hash plugin
-					js: 'dist/[name].js',
+					js: 'dist/pages/[name].js',
 				},
+				resolve: {
+					alias: {
+						'/': path.resolve(__dirname, 'build/'), // ensures chunks are correctly referenced
+					}
+				}
 			}
 		],
-		'./plugins/snowpack/modified-snowpack-plugin-hash.js',
+		// './plugins/snowpack/modified-snowpack-plugin-hash.js',
 		// '@snowpack/plugin-webpack',
 	],
 	install: [

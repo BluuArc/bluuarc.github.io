@@ -1,10 +1,14 @@
+<script>
+	import RouterLink from './RouterLink.svelte';
+</script>
+
 <header>
 	<h2>JC.ME</h2>
 	<nav>
 		<ul>
-			<li><a href=".">Home</a>
-			<li><a href="/projects">Projects</a>
-			<li><a href="/posts">Posts</a>
+			<li><RouterLink to="/">Home</RouterLink>
+			<li><RouterLink to="/projects">Projects</RouterLink>
+			<li><RouterLink to="/posts">Posts</RouterLink>
 		</ul>
 	</nav>
 </header>

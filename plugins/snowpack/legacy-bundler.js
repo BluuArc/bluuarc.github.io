@@ -3,9 +3,12 @@
 // TODO: refactor into a PR and/or fork once working?
 
 const webpack = require('webpack');
+const glob = require('glob');
 const path = require('path');
 const fs = require('fs');
 const WebpackManifestPlugin = require('webpack-manifest-plugin').WebpackManifestPlugin;
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
 const cwd = process.cwd();
 
 function getPresetEnvTargets({ browserslist }) {
@@ -18,22 +21,179 @@ function getPresetEnvTargets({ browserslist }) {
 	}
 }
 
-module.exports = function (snowpackConfig, args = {}) {
-	const jsEntries = {};
-	if (Array.isArray(args.entrypoints)) {
-		args.entrypoints.forEach((entrypoint) => {
-			// path should be relative to `build` directory
-			const parsedPath = path.parse(entrypoint);
-			const name = parsedPath.name;
-			if(!(name in jsEntries)) {
-				jsEntries[name] = entrypoint;
-			}
-		});
-	}
+const webModuleRelativeMapping = new Map();
+function convertWebModuleResolutionToNodeModuleResolutionForChunks ({ buildDirectory }) {
+	// Get all js files from the output folder
+	const pattern = buildDirectory + '/**/*.js';
+	const jsFiles = glob.sync(pattern);
 
-	if (Object.keys(jsEntries).length === 0) {
-		throw new Error('Missing or empty plugin args.entrypoints array');
+	jsFiles.forEach((jsFile) => {
+		const contents = fs.readFileSync(jsFile, 'utf8');
+
+		let relativePathToBuildDirectory = path.relative(jsFile, buildDirectory).replace(/\\/g, '/');
+		if (relativePathToBuildDirectory.endsWith('/..')) {
+			relativePathToBuildDirectory = relativePathToBuildDirectory.split('').reverse().join('').replace('/..', '').split('').reverse().join('');
+		} else if (relativePathToBuildDirectory === '..') {
+			relativePathToBuildDirectory = relativePathToBuildDirectory.replace('..', '.');
+		}
+		let nodeRelativeContents = contents;
+		while (nodeRelativeContents.includes('from"/chunk')) {
+			nodeRelativeContents = nodeRelativeContents.replace('from"/chunk', `from"${relativePathToBuildDirectory}/chunk`);
+		}
+
+		while (nodeRelativeContents.includes('import"/chunk')) {
+			nodeRelativeContents = nodeRelativeContents.replace('import"/chunk', `import"${relativePathToBuildDirectory}/chunk`);
+		}
+
+		while (nodeRelativeContents.includes('import("/')) {
+			nodeRelativeContents = nodeRelativeContents.replace('import("/', `import("${relativePathToBuildDirectory}/`);
+		}
+
+		if (nodeRelativeContents !== contents) {
+			console.log(`changing chunk path for ${path.parse(jsFile).base} using relative path[${relativePathToBuildDirectory}]`);
+			webModuleRelativeMapping.set(jsFile, contents);
+			fs.writeFileSync(jsFile, nodeRelativeContents, 'utf8');
+		}
+	});
+}
+
+function restoreChangedChunks() {
+	Array.from(webModuleRelativeMapping.entries()).forEach(([jsFile, contents]) => {
+		console.log(`restoring ${path.parse(jsFile).base}`);
+		fs.writeFileSync(jsFile, contents, 'utf8');
+	});
+}
+
+function parseHTMLFiles({ buildDirectory }) {
+	// Get all html files from the output folder
+	const pattern = buildDirectory + '/**/*.html';
+	const htmlFiles = glob.sync(pattern).map((htmlPath) => path.relative(buildDirectory, htmlPath));
+
+	const doms = {};
+	const jsEntries = {};
+	for (const htmlFile of htmlFiles) {
+		const dom = new JSDOM(fs.readFileSync(path.join(buildDirectory, htmlFile)));
+
+		//Find all local script, use it as the entrypoint
+		const scripts = Array.from(dom.window.document.querySelectorAll('script'))
+			.filter((el) => el.hasAttribute('nomodule'))
+			.filter((el) => !/^[a-zA-Z]+:\/\//.test(el.src));
+
+		for (const el of scripts) {
+			const src = el.src.trim();
+			const parsedPath = path.parse(src);
+			const name = parsedPath.name;
+			if (!(name in jsEntries)) {
+				jsEntries[name] = {
+					path: path.join(buildDirectory, src),
+					occurrences: [],
+				};
+			}
+			jsEntries[name].occurrences.push({ script: el, dom });
+		}
+
+		doms[htmlFile] = dom;
 	}
+	return { doms, jsEntries };
+}
+
+function getSplitChunksConfig({ numEntries }) {
+	const isCss = (module) => module.type === `css/mini-extract`;
+	/**
+	 * Implements a version of granular chunking, as described at https://web.dev/granular-chunking-nextjs/.
+	 */
+	return {
+		chunks: 'all',
+		maxInitialRequests: 25,
+		minSize: 20000,
+		cacheGroups: {
+			default: false,
+			vendors: false,
+			/**
+			 * NPM libraries larger than 100KB are pulled into their own chunk
+			 *
+			 * We use a smaller cutoff than the reference implementation (which does 150KB),
+			 * because our babel-loader config compresses whitespace with `compact: true`.
+			 */
+			lib: {
+				test(module) {
+					return (
+						!isCss(module) && module.size() > 100000 && /web_modules[/\\]/.test(module.identifier())
+					);
+				},
+				name(module) {
+					/**
+					 * Name the chunk based on the filename in /web_modules.
+					 *
+					 * E.g. /web_modules/moment.js -> lib-moment.HASH.js
+					 */
+					const ident = module.libIdent({ context: 'dir' });
+					const lastItem = ident
+						.split('/')
+						.reduceRight((item) => item)
+						.replace(/\.js$/, '');
+					return `lib-${lastItem}`;
+				},
+				priority: 30,
+				minChunks: 1,
+				reuseExistingChunk: true,
+			},
+			// modules used by all entrypoints end up in commons
+			commons: {
+				test(module) {
+					return !isCss(module);
+				},
+				name: 'commons',
+				// don't create a commons chunk until there are 2+ entries
+				minChunks: Math.max(2, numEntries),
+				priority: 20,
+			},
+			// modules used by multiple chunks can be pulled into shared chunks
+			shared: {
+				test(module) {
+					return !isCss(module);
+				},
+				name(module, chunks) {
+					const hash = crypto
+						.createHash(`sha1`)
+						.update(chunks.reduce((acc, chunk) => acc + chunk.name, ``))
+						.digest(`hex`);
+
+					return hash;
+				},
+				priority: 10,
+				minChunks: 2,
+				reuseExistingChunk: true,
+			},
+			// Bundle all css & lazy css into one stylesheet to make sure lazy components do not break
+			styles: {
+				test(module) {
+					return isCss(module);
+				},
+				name: `styles`,
+				priority: 40,
+				enforce: true,
+			},
+		},
+	};
+}
+
+module.exports = function (snowpackConfig, args = {}) {
+	// const jsEntries = {};
+	// if (Array.isArray(args.entrypoints)) {
+	// 	args.entrypoints.forEach((entrypoint) => {
+	// 		// path should be relative to `build` directory
+	// 		const parsedPath = path.parse(entrypoint);
+	// 		const name = parsedPath.name;
+	// 		if(!(name in jsEntries)) {
+	// 			jsEntries[name] = entrypoint;
+	// 		}
+	// 	});
+	// }
+
+	// if (Object.keys(jsEntries).length === 0) {
+	// 	throw new Error('Missing or empty plugin args.entrypoints array');
+	// }
 
 	args.outputPattern = args.outputPattern || {};
 	const jsOutputPattern = args.outputPattern.js || 'js/[name].[contenthash].js';
@@ -51,7 +211,7 @@ module.exports = function (snowpackConfig, args = {}) {
 				: undefined;
 
 	return {
-		name: 'legacy-bundle',
+		name: 'legacy-bundler',
 		async optimize({ buildDirectory }) {
 			const buildOptions = snowpackConfig.buildOptions || {};
 			let baseUrl = buildOptions.baseUrl || '/';
@@ -67,6 +227,11 @@ module.exports = function (snowpackConfig, args = {}) {
 				extendConfig = args.extendConfig;
 			} else if (typeof args.extendConfig === 'object') {
 				extendConfig = (cfg) => ({ ...cfg, ...args.extendConfig });
+			}
+
+			const { doms, jsEntries } = parseHTMLFiles({ buildDirectory });
+			if (Object.keys(jsEntries).length === 0) {
+				throw new Error("Can't bundle without script tag in html");
 			}
 
 			//Compile files using webpack
@@ -136,7 +301,7 @@ module.exports = function (snowpackConfig, args = {}) {
 				// 		name: `webpack-runtime`,
 				// 	},
 				// 	splitChunks: getSplitChunksConfig({ numEntries: Object.keys(jsEntries).length }),
-				// 	minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+				// 	// minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
 				// },
 			};
 
@@ -146,8 +311,11 @@ module.exports = function (snowpackConfig, args = {}) {
 			}
 
 			const entry = {};
+			// for (name in jsEntries) {
+			// 	entry[name] = path.join(buildDirectory, jsEntries[name]);
+			// }
 			for (name in jsEntries) {
-				entry[name] = path.join(buildDirectory, jsEntries[name]);
+				entry[name] = jsEntries[name].path;
 			}
 			const extendedConfig = extendConfig({
 				...webpackConfig,
@@ -161,6 +329,7 @@ module.exports = function (snowpackConfig, args = {}) {
 			});
 			const compiler = webpack(extendedConfig);
 
+			convertWebModuleResolutionToNodeModuleResolutionForChunks({ buildDirectory });
 			const stats = await new Promise((resolve, reject) => {
 				compiler.run((err, stats) => {
 					if (err) {
@@ -170,7 +339,8 @@ module.exports = function (snowpackConfig, args = {}) {
 					const info = stats.toJson(extendedConfig.stats);
 					if (stats.hasErrors()) {
 						console.error('Webpack errors:\n' + info.errors.join('\n-----\n'));
-						reject(Error(`Webpack failed with ${info.errors} error(s).`));
+						reject(Error(`Webpack failed with ${info.errors.length} error(s). See legacy-bundler-errors.json for more info.`));
+						fs.writeFileSync(path.join(buildDirectory, 'legacy-bundler-errors.json'), JSON.stringify(info.errors, null, 2), 'utf8');
 						return;
 					}
 					if (stats.hasWarnings()) {
@@ -183,6 +353,7 @@ module.exports = function (snowpackConfig, args = {}) {
 					resolve(stats);
 				});
 			});
+			restoreChangedChunks();
 
 			if (extendedConfig.stats !== 'none') {
 				console.log(

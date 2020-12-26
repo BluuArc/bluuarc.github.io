@@ -1,7 +1,8 @@
 <script>
 	import AppShell from '../components/AppShell.svelte';
+	import NotFoundPageContent from './NotFoundPageContent.svelte';
 </script>
 
 <AppShell>
-	Sorry that page cannot be found.
+	<NotFoundPageContent/>
 </AppShell>

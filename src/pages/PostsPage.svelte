@@ -1,7 +1,8 @@
 <script>
 	import AppShell from '../components/AppShell.svelte';
+	import PostsPageContent from './PostsPageContent.svelte';
 </script>
 
-<AppShell>
-	Posts Page TBD.
+<AppShell startingRoute='/posts'>
+	<PostsPageContent/>
 </AppShell>

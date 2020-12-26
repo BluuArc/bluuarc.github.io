@@ -1,4 +1,4 @@
-import HomePage from './Home.svelte';
+import HomePage from './HomePage.svelte';
 
 const app = new HomePage({
 	target: document.body,

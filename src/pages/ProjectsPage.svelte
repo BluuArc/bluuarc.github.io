@@ -1,7 +1,8 @@
 <script>
 	import AppShell from '../components/AppShell.svelte';
+	import ProjectsPageContent from './ProjectsPageContent.svelte';
 </script>
 
-<AppShell>
-	Projects Page TBD.
+<AppShell startingRoute='/projects'>
+	<ProjectsPageContent/>
 </AppShell>
