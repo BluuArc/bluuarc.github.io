@@ -1,14 +1,16 @@
 <script>
 	import AppHeader from './AppHeader.svelte';
 	import { router } from '../states/router.js';
+	import { createLogger } from '../modules/logger';
 	import { onMount, onDestroy } from 'svelte';
 
 	export let startingRoute = '';
 
 	let hasNavigated = false;
+	const logger = createLogger('AppShell');
 	const unsubscribe = router.subscribe((state) => {
 		if (state.rootPath !== startingRoute) {
-			console.log('flipping hasNavigated');
+			logger.log('flipping hasNavigated');
 			hasNavigated = true;
 		}
 	});

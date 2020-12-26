@@ -1,6 +1,9 @@
 import { writable } from 'svelte/store';
-import { createSingletonGetterAsync } from "../modules/singletonGetter";
-import { getAppContextFromWindow } from '../modules/appContextManager.js';
+import { createSingletonGetterAsync } from '../modules/singletonGetter';
+import { getAppContextFromWindow } from '../modules/appContextManager';
+import { createLogger } from '../modules/logger';
+
+const logger = createLogger('router');
 
 const notFoundRouteInfo = {
 	path: '/not-found',
@@ -91,11 +94,11 @@ function createRouter(initialPath = '/') {
 			const windowContext = getAppContextFromWindow();
 			if (windowContext.popstateFunction) {
 				window.removeEventListener('popstate', windowContext.popstateFunction);
-				console.log('removing old popstate');
+				logger.log('removing old popstate');
 			}
 			windowContext.popstateFunction = popstateFunction;
 
-			console.log('registering popstate');
+			logger.log('registering popstate');
 			window.addEventListener('popstate', popstateFunction);
 		},
 		destroy: () => {
