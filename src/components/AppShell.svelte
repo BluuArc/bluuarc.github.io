@@ -34,18 +34,18 @@
 
 
 <AppHeader/>
-<main>
-	{#if !hasNavigated || startingRoute === $router.rootPath}
-		<slot>Default route content will appear here.</slot>
-	{:else}
-		{#await $router.componentPromise}
-			Loading route
-		{:then routeComponent}
-			<svelte:component this={routeComponent.default} />
-		{:catch error}
-			An error occurred loading the component.
 
+{#if !hasNavigated || startingRoute === $router.rootPath}
+	<slot><main>Default route content will appear here.</main></slot>
+{:else}
+	{#await $router.componentPromise}
+		<main>Loading route</main>
+	{:then routeComponent}
+		<svelte:component this={routeComponent.default} />
+	{:catch error}
+		<main>
+			An error occurred loading the route.
 			<p>{error.message}</p>
-		{/await}
-	{/if}
-</main>
+		</main>
+	{/await}
+{/if}
