@@ -1,46 +1,25 @@
 {
-  "BluuArc/bfmt-data": {
-    "name": "bfmt-data",
-    "repoName": "bfmt-data",
-    "description": "Holds extracted data for the mobile game Brave Frontier (Global version). Main usage is for the Brave Frontier Multi-Tool (BFMT), but can be used elsewhere.",
-    "homepageURL": "https://joshuacastor.me/bfmt-data/",
-    "lastPushedAt": "2020-12-25T01:23:29Z",
-    "createdAt": "2020-04-12T22:38:29Z",
-    "repoURL": "https://github.com/BluuArc/bfmt-data",
-    "owner": "BluuArc",
-    "deployments": 57,
-    "packages": 0,
-    "topics": [
-      {
-        "name": "bravefrontier",
-        "url": "https://github.com/topics/bravefrontier"
-      }
-    ],
-    "languages": [
-      {
-        "name": "HTML",
-        "color": "#e34c26",
-        "size": 685
-      },
-      {
-        "name": "CSS",
-        "color": "#563d7c",
-        "size": 636
-      }
-    ],
-    "techUsed": []
-  },
   "BluuArc/bf-mt": {
     "name": "bf-mt",
     "repoName": "bf-mt",
     "description": "Brave Frontier Multi-Tool is a web application designed to be a companion app for the mobile game Brave Frontier",
     "homepageURL": "http://joshuacastor.me/bf-mt/",
-    "lastPushedAt": "2020-12-23T15:55:57Z",
+    "lastPushedAt": "2020-12-26T22:51:34Z",
     "createdAt": "2018-02-12T04:57:53Z",
     "repoURL": "https://github.com/BluuArc/bf-mt",
     "owner": "BluuArc",
-    "deployments": 173,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 174,
+      "nodes": [
+        {
+          "updatedAt": "2020-12-26T22:50:02Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [
       {
         "name": "bravefrontier",
@@ -66,6 +45,47 @@
     ],
     "techUsed": []
   },
+  "BluuArc/bfmt-data": {
+    "name": "bfmt-data",
+    "repoName": "bfmt-data",
+    "description": "Holds extracted data for the mobile game Brave Frontier (Global version). Main usage is for the Brave Frontier Multi-Tool (BFMT), but can be used elsewhere.",
+    "homepageURL": "https://joshuacastor.me/bfmt-data/",
+    "lastPushedAt": "2020-12-25T01:23:29Z",
+    "createdAt": "2020-04-12T22:38:29Z",
+    "repoURL": "https://github.com/BluuArc/bfmt-data",
+    "owner": "BluuArc",
+    "deployments": {
+      "totalCount": 57,
+      "nodes": [
+        {
+          "updatedAt": "2020-12-25T01:24:16Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "topics": [
+      {
+        "name": "bravefrontier",
+        "url": "https://github.com/topics/bravefrontier"
+      }
+    ],
+    "languages": [
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "size": 685
+      },
+      {
+        "name": "CSS",
+        "color": "#563d7c",
+        "size": 636
+      }
+    ],
+    "techUsed": []
+  },
   "BluuArc/old-sites": {
     "name": "old-sites",
     "repoName": "old-sites",
@@ -75,8 +95,18 @@
     "createdAt": "2020-12-21T18:12:54Z",
     "repoURL": "https://github.com/BluuArc/old-sites",
     "owner": "BluuArc",
-    "deployments": 4,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 4,
+      "nodes": [
+        {
+          "updatedAt": "2020-12-22T02:07:32Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -102,12 +132,22 @@
     "repoName": "bluuarc.github.io",
     "description": "Personal Website",
     "homepageURL": "https://bluuarc.github.io/",
-    "lastPushedAt": "2020-12-26T01:30:59Z",
+    "lastPushedAt": "2020-12-26T19:29:53Z",
     "createdAt": "2016-06-01T14:26:42Z",
     "repoURL": "https://github.com/BluuArc/bluuarc.github.io",
     "owner": "BluuArc",
-    "deployments": 96,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 96,
+      "nodes": [
+        {
+          "updatedAt": "2020-12-21T19:04:30Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -127,8 +167,14 @@
     "createdAt": "2018-05-22T05:53:01Z",
     "repoURL": "https://github.com/BluuArc/simple-web-worker",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -158,8 +204,14 @@
     "createdAt": "2018-05-06T18:42:27Z",
     "repoURL": "https://github.com/lugatuic/lug.cs.uic.edu-2018",
     "owner": "lugatuic",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [
       {
         "name": "hacktoberfest2020",
@@ -203,8 +255,18 @@
     "createdAt": "2017-05-25T13:43:24Z",
     "repoURL": "https://github.com/BluuArc/vast-challenge-2017",
     "owner": "BluuArc",
-    "deployments": 15,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 15,
+      "nodes": [
+        {
+          "updatedAt": "2017-09-12T19:44:56Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -234,8 +296,18 @@
     "createdAt": "2017-05-08T02:02:36Z",
     "repoURL": "https://github.com/uic-evl/EnglewoodSocialServices",
     "owner": "uic-evl",
-    "deployments": 292,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 292,
+      "nodes": [
+        {
+          "updatedAt": "2020-09-05T03:09:56Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -270,8 +342,18 @@
     "createdAt": "2019-08-23T22:29:48Z",
     "repoURL": "https://github.com/BluuArc/bfwiki-page-generator",
     "owner": "BluuArc",
-    "deployments": 16,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 16,
+      "nodes": [
+        {
+          "updatedAt": "2020-07-18T13:56:19Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -306,8 +388,18 @@
     "createdAt": "2017-10-29T05:29:41Z",
     "repoURL": "https://github.com/BluuArc/BFFrameAnimator-js",
     "owner": "BluuArc",
-    "deployments": 15,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 15,
+      "nodes": [
+        {
+          "updatedAt": "2020-04-18T01:25:03Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [
       {
         "name": "bravefrontier",
@@ -337,8 +429,18 @@
     "createdAt": "2017-01-03T19:19:14Z",
     "repoURL": "https://github.com/BluuArc/BFDBReader-js",
     "owner": "BluuArc",
-    "deployments": 42,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 42,
+      "nodes": [
+        {
+          "updatedAt": "2017-03-23T22:27:11Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [
       {
         "name": "bravefrontier",
@@ -373,8 +475,14 @@
     "createdAt": "2018-11-19T14:09:19Z",
     "repoURL": "https://github.com/BluuArc/network-connection-visualizer",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -404,8 +512,26 @@
     "createdAt": "2019-06-25T03:57:27Z",
     "repoURL": "https://github.com/BluuArc/bfmt-utilities",
     "owner": "BluuArc",
-    "deployments": 26,
-    "packages": 1,
+    "deployments": {
+      "totalCount": 26,
+      "nodes": [
+        {
+          "updatedAt": "2020-06-28T17:44:31Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 1,
+      "nodes": [
+        {
+          "name": "bfmt-utilities",
+          "packageType": "NPM",
+          "latestVersion": {
+            "version": "0.7.0"
+          }
+        }
+      ]
+    },
     "topics": [],
     "languages": [
       {
@@ -430,8 +556,14 @@
     "createdAt": "2018-11-13T13:35:46Z",
     "repoURL": "https://github.com/BluuArc/multi-folder-flask-example",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -456,8 +588,18 @@
     "createdAt": "2019-10-11T22:57:52Z",
     "repoURL": "https://github.com/BluuArc/basic-website-demo-oct-2019",
     "owner": "BluuArc",
-    "deployments": 2,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 2,
+      "nodes": [
+        {
+          "updatedAt": "2019-10-11T23:09:33Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -477,8 +619,18 @@
     "createdAt": "2019-10-04T21:56:10Z",
     "repoURL": "https://github.com/BluuArc/basic-website-demo",
     "owner": "BluuArc",
-    "deployments": 3,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 3,
+      "nodes": [
+        {
+          "updatedAt": "2019-10-11T03:45:04Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -498,8 +650,18 @@
     "createdAt": "2018-08-30T02:37:03Z",
     "repoURL": "https://github.com/BluuArc/castor-art-151-fall-2018",
     "owner": "BluuArc",
-    "deployments": 55,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 55,
+      "nodes": [
+        {
+          "updatedAt": "2018-11-12T15:01:12Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -534,8 +696,18 @@
     "createdAt": "2017-04-10T02:47:03Z",
     "repoURL": "https://github.com/BluuArc/project-sparkle",
     "owner": "BluuArc",
-    "deployments": 14,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 14,
+      "nodes": [
+        {
+          "updatedAt": "2019-01-12T07:09:39Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [
       {
         "name": "bravefrontier",
@@ -565,8 +737,18 @@
     "createdAt": "2018-10-10T20:21:27Z",
     "repoURL": "https://github.com/BluuArc/EnglewoodSocialServices",
     "owner": "BluuArc",
-    "deployments": 10,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 10,
+      "nodes": [
+        {
+          "updatedAt": "2018-11-26T22:32:02Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -601,8 +783,14 @@
     "createdAt": "2018-09-19T12:59:19Z",
     "repoURL": "https://github.com/BluuArc/LUG-Flask-Vue-Example",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -637,8 +825,18 @@
     "createdAt": "2017-09-08T17:36:54Z",
     "repoURL": "https://github.com/BluuArc/IT202",
     "owner": "BluuArc",
-    "deployments": 117,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 117,
+      "nodes": [
+        {
+          "updatedAt": "2018-08-29T16:37:47Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -678,8 +876,14 @@
     "createdAt": "2017-04-18T19:03:00Z",
     "repoURL": "https://github.com/BluuArc/MMSS-Web_Client",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -709,8 +913,14 @@
     "createdAt": "2017-04-25T02:53:37Z",
     "repoURL": "https://github.com/BluuArc/Intro-To-Promises-Node.js-Demo",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -730,8 +940,14 @@
     "createdAt": "2017-03-26T15:51:50Z",
     "repoURL": "https://github.com/BluuArc/BluuBot-discord",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -751,8 +967,14 @@
     "createdAt": "2017-03-17T14:06:52Z",
     "repoURL": "https://github.com/BluuArc/BFDBReader-node",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [
       {
         "name": "bravefrontier",
@@ -782,8 +1004,18 @@
     "createdAt": "2017-08-04T20:09:52Z",
     "repoURL": "https://github.com/AndrewTBurks/EnglewoodSocialServices",
     "owner": "AndrewTBurks",
-    "deployments": 145,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 145,
+      "nodes": [
+        {
+          "updatedAt": "2018-05-09T14:56:56Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -813,8 +1045,18 @@
     "createdAt": "2017-02-14T20:39:13Z",
     "repoURL": "https://github.com/Walden1995/MMSS",
     "owner": "Walden1995",
-    "deployments": 9,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 9,
+      "nodes": [
+        {
+          "updatedAt": "2018-05-06T22:59:47Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -849,8 +1091,14 @@
     "createdAt": "2018-02-09T05:50:23Z",
     "repoURL": "https://github.com/WynnD/coliberate-backend",
     "owner": "WynnD",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -875,8 +1123,14 @@
     "createdAt": "2018-02-09T05:48:49Z",
     "repoURL": "https://github.com/WynnD/coliberate-frontend",
     "owner": "WynnD",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [
       {
         "name": "better",
@@ -919,8 +1173,18 @@
     "createdAt": "2017-10-10T16:40:24Z",
     "repoURL": "https://github.com/Walden1995/CS362-Hovercraft",
     "owner": "Walden1995",
-    "deployments": 25,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 25,
+      "nodes": [
+        {
+          "updatedAt": "2018-04-30T00:33:55Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -950,8 +1214,18 @@
     "createdAt": "2017-11-20T22:36:12Z",
     "repoURL": "https://github.com/BluuArc/text-to-speech",
     "owner": "BluuArc",
-    "deployments": 1,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 1,
+      "nodes": [
+        {
+          "updatedAt": "2017-11-20T22:37:03Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -976,8 +1250,18 @@
     "createdAt": "2017-06-08T19:23:15Z",
     "repoURL": "https://github.com/BluuArc/three.js-point-cloud-project",
     "owner": "BluuArc",
-    "deployments": 4,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 4,
+      "nodes": [
+        {
+          "updatedAt": "2017-06-09T03:43:28Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -1007,8 +1291,18 @@
     "createdAt": "2017-07-19T21:06:57Z",
     "repoURL": "https://github.com/BluuArc/bubbles-tactile-demo",
     "owner": "BluuArc",
-    "deployments": 7,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 7,
+      "nodes": [
+        {
+          "updatedAt": "2017-07-26T16:36:41Z"
+        }
+      ]
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -1038,8 +1332,14 @@
     "createdAt": "2017-03-07T14:52:39Z",
     "repoURL": "https://github.com/BluuArc/MMSS-Server",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [],
     "languages": [
       {
@@ -1069,8 +1369,14 @@
     "createdAt": "2016-05-07T16:01:27Z",
     "repoURL": "https://github.com/BluuArc/BFFrameAnimator",
     "owner": "BluuArc",
-    "deployments": 0,
-    "packages": 0,
+    "deployments": {
+      "totalCount": 0,
+      "nodes": []
+    },
+    "packages": {
+      "totalCount": 0,
+      "nodes": []
+    },
     "topics": [
       {
         "name": "bravefrontier",

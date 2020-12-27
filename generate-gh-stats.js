@@ -38,7 +38,6 @@ const repoQuery = `
       nodes {
         name
         description
-        shortDescriptionHTML
         pushedAt
         createdAt
         url
@@ -53,12 +52,22 @@ const repoQuery = `
           }
         }
         isPrivate
-        deployments {
-          totalCount
-        }
         isEmpty
-        packages {
+        packages(last: 1) {
           totalCount
+          nodes {
+            name
+            packageType
+            latestVersion {
+              version
+            }
+          }
+        }
+        deployments(orderBy: {field: CREATED_AT, direction: ASC}, last: 1) {
+          totalCount
+          nodes {
+            updatedAt
+          }
         }
         languages(first: 50, orderBy: {field: SIZE, direction: DESC}) {
           edges {
@@ -76,7 +85,6 @@ const repoQuery = `
       nodes {
         name
         description
-        shortDescriptionHTML
         pushedAt
         createdAt
         url
@@ -91,12 +99,22 @@ const repoQuery = `
           }
         }
         isPrivate
-        deployments {
-          totalCount
-        }
         isEmpty
-        packages {
+        packages(last: 1) {
           totalCount
+          nodes {
+            name
+            packageType
+            latestVersion {
+              version
+            }
+          }
+        }
+        deployments(orderBy: {field: CREATED_AT, direction: ASC}, last: 1) {
+          totalCount
+          nodes {
+            updatedAt
+          }
         }
         languages(first: 50, orderBy: {field: SIZE, direction: DESC}) {
           edges {
@@ -110,7 +128,9 @@ const repoQuery = `
       }
     }
   }
-}`;
+}
+
+`;
 
 function createProjectEntry (projectData, customData = {}) {
   const project = {};
@@ -122,8 +142,8 @@ function createProjectEntry (projectData, customData = {}) {
   project.createdAt = projectData.createdAt;
   project.repoURL = projectData.url;
   project.owner = projectData.nameWithOwner.split("/")[0];
-  project.deployments = projectData.deployments.totalCount;
-  project.packages = projectData.packages.totalCount;
+  project.deployments = projectData.deployments;
+  project.packages = projectData.packages;
 
   project.topics = [];
   if (projectData.repositoryTopics.nodes.length > 0) {
