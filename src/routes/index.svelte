@@ -1,6 +1,7 @@
 <script lang="ts">
 	import OverallProjectStatisticsSection from '$lib/components/home/OverallProjectStatisticsSection.svelte';
-import LinkableSection from '$lib/components/LinkableSection.svelte';
+	import LinkableSection from '$lib/components/LinkableSection.svelte';
+import ProjectList from '$lib/components/projects/ProjectList.svelte';
 	import { getProjectDataAsync } from '$lib/stores/projectData';
 
 	const projectDataPromise = getProjectDataAsync()
@@ -37,14 +38,7 @@ import LinkableSection from '$lib/components/LinkableSection.svelte';
 		{#await projectDataPromise}
 			Loading project data...
 		{:then projects}
-			<ul>
-				{#each projects as project}
-					<li>
-						<!-- <ProjectEntrySection {project} /> -->
-						{project.name}
-					</li>
-				{/each}
-			</ul>
+			<ProjectList {projects}/>
 			<nav>
 				<a href="projects">See more projects</a>
 			</nav>

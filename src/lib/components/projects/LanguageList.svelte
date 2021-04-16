@@ -16,6 +16,7 @@
 	}
 </script>
 
+{#if processedLanguages.length > 0}
 <ul>
 	{#each processedLanguages as language}
 		<li>
@@ -23,3 +24,6 @@
 		</li>
 	{/each}
 </ul>
+{:else}
+<span>No language data specified.</span>
+{/if}

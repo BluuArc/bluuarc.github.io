@@ -7,7 +7,7 @@ export interface ILanguageEntry {
 	size: number;
 }
 
-interface IProjectDataJson {
+export interface IProjectEntry {
 	name: string;
 	repoName: string;
 	description: string;
@@ -44,9 +44,9 @@ function _getProjectDataAsync () {
 	const logger = getLogger('projectData');
 	return fetch('./project-data.json')
 		.then((r) => r.ok ? r.json() : Promise.reject(r.statusText))
-		.then((originalProjectData: { [key: string]: IProjectDataJson }) => {
+		.then((originalProjectData: { [key: string]: IProjectEntry }) => {
 			logger.debug({ originalProjectData });
-			const projects: { [key: string]: IProjectDataJson } = {}; // keyed by "owner/project-name"
+			const projects: { [key: string]: IProjectEntry } = {}; // keyed by "owner/project-name"
 			const languageData: { [lang: string]: ILanguageEntry } = {};
 			const ownershipData: { [name: string]: number } = {};
 			const overall = {

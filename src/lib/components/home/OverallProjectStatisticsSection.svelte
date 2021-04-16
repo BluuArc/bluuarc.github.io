@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { getProjectDataAsync } from '$lib/stores/projectData';
-import DynamicLeveledHeader from '../DynamicLeveledHeader.svelte';
 	import LinkableSection from '../LinkableSection.svelte';
-import LanguagesList from '../Projects/LanguagesList.svelte';
+	import LanguageList from '../projects/LanguageList.svelte';
 
 	const overallProjectStatisticsPromise = getProjectDataAsync()
 		.then((data) => {
@@ -20,7 +19,7 @@ import LanguagesList from '../Projects/LanguagesList.svelte';
 	{:then overallStatistics}
 		<p>{overallStatistics.overallMessage}</p>
 		<section>
-			<LanguagesList languages={overallStatistics.languages} />
+			<LanguageList languages={overallStatistics.languages} />
 		</section>
 	{:catch error}
 		<p>An error occurred loading the project statistics.</p>
