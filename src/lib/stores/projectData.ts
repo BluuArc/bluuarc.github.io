@@ -1,7 +1,7 @@
 import { getLogger } from "$lib/utilities/getLogger";
 import { createSingletonGetterAsync } from "$lib/utilities/singletonGetters";
 
-interface ILanguageEntry {
+export interface ILanguageEntry {
 	name: string;
 	color: string;
 	size: number;

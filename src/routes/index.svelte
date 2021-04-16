@@ -1,5 +1,6 @@
 <script lang="ts">
-	import LinkableSection from '$lib/components/LinkableSection.svelte';
+	import OverallProjectStatisticsSection from '$lib/components/home/OverallProjectStatisticsSection.svelte';
+import LinkableSection from '$lib/components/LinkableSection.svelte';
 	import { getProjectDataAsync } from '$lib/stores/projectData';
 
 	const projectDataPromise = getProjectDataAsync()
@@ -8,7 +9,7 @@
 			return Object.values(data.projects)
 				.sort((a, b) => new Date(b.lastPushedAt).valueOf() - new Date(a.lastPushedAt).valueOf())
 				.slice(0, 5);
-		})
+		});
 </script>
 
 <svelte:head>
@@ -53,7 +54,5 @@
 		{/await}
 	</LinkableSection>
 
-	<LinkableSection title="Overall Project Statistics">
-		TODO
-	</LinkableSection>
+	<OverallProjectStatisticsSection/>
 </main>
