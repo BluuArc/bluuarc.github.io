@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { getLogger } from "../utilities/getLogger";
+	import { getLogger } from '$lib/utilities/getLogger';
 	const logger = getLogger('DynamicLeveledHeader');
 </script>
 

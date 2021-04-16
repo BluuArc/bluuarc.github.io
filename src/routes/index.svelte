@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LinkableSection from '$lib/LinkableSection.svelte';
+	import LinkableSection from '$lib/components/LinkableSection.svelte';
 </script>
 
 <svelte:head>

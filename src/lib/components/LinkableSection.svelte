@@ -1,6 +1,5 @@
 <script lang="ts">
-import DynamicLeveledHeader from "./DynamicLeveledHeader.svelte";
-
+	import DynamicLeveledHeader from './DynamicLeveledHeader.svelte';
 	export let title: string = 'Section Title';
 	export let headerLevel: number = 2;
 	let titleId: string = '';
