@@ -1,5 +1,14 @@
 <script lang="ts">
 	import LinkableSection from '$lib/components/LinkableSection.svelte';
+	import { getProjectDataAsync } from '$lib/stores/projectData';
+
+	const projectDataPromise = getProjectDataAsync()
+		.then((data) => {
+			// get first 5 projects
+			return Object.values(data.projects)
+				.sort((a, b) => new Date(b.lastPushedAt).valueOf() - new Date(a.lastPushedAt).valueOf())
+				.slice(0, 5);
+		})
 </script>
 
 <svelte:head>
@@ -24,24 +33,24 @@
 	</LinkableSection>
 
 	<LinkableSection title="Recent Projects">
-		TODO
-		<!-- {#await projectDataPromise}
+		{#await projectDataPromise}
 			Loading project data...
 		{:then projects}
 			<ul>
 				{#each projects as project}
 					<li>
-						<ProjectEntrySection {project} />
+						<!-- <ProjectEntrySection {project} /> -->
+						{project.name}
 					</li>
 				{/each}
 			</ul>
 			<nav>
-				<RouterLink to="/posts">See more projects</RouterLink>
+				<a href="projects">See more projects</a>
 			</nav>
 		{:catch error}
 			<p>An error occurred attempting to get project data.</p>
 			<p>{error.message}</p>
-		{/await} -->
+		{/await}
 	</LinkableSection>
 
 	<LinkableSection title="Overall Project Statistics">

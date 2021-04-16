@@ -3,6 +3,7 @@
 	const logger = getLogger('DynamicLeveledHeader');
 </script>
 
+<!-- svelte-ignore module-script-reactive-declaration -->
 <script lang="ts">
 	export let level: number = 2;
 	$: {
