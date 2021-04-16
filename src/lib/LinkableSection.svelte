@@ -1,14 +1,17 @@
 <script lang="ts">
+import DynamicLeveledHeader from "./DynamicLeveledHeader.svelte";
+
 	export let title: string = 'Section Title';
+	export let headerLevel: number = 2;
 	let titleId: string = '';
 	$: {
-		titleId = title.toLowerCase().replace(/ /g, '-');
+		titleId = `h${headerLevel}-${title.toLowerCase().replace(/ /g, '-')}`;
 	}
 </script>
 
 <article>
 	<header>
-		<h2 id={titleId}>{title}</h2>
+		<DynamicLeveledHeader level={headerLevel} id={titleId}>{title}</DynamicLeveledHeader>
 		<a href={`#${titleId}`} aria-label={`Go to ${title}`}>#</a>
 	</header>
 	<slot>Section content</slot>
