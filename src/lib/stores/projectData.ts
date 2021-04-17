@@ -1,5 +1,6 @@
 import { getLogger } from "$lib/utilities/getLogger";
-import { createSingletonGetterAsync } from "$lib/utilities/singletonGetters";
+import { createSingletonGetter } from "$lib/utilities/singletonGetters";
+import { getCurrentFetchMethod } from "./fetchMethod";
 
 export interface ILanguageEntry {
 	name: string;
@@ -42,7 +43,8 @@ export interface IProjectEntry {
 
 function _getProjectDataAsync () {
 	const logger = getLogger('projectData');
-	return fetch('./project-data.json')
+	const fetchMethod = getCurrentFetchMethod();
+	return fetchMethod('./project-data.json')
 		.then((r) => r.ok ? r.json() : Promise.reject(r.statusText))
 		.then((originalProjectData: { [key: string]: IProjectEntry }) => {
 			logger.debug({ originalProjectData });
@@ -103,7 +105,7 @@ function _getProjectDataAsync () {
 		});
 }
 
-const projectDataGetter = createSingletonGetterAsync(_getProjectDataAsync);
+const projectDataGetter = createSingletonGetter(_getProjectDataAsync);
 export function getProjectDataAsync () {
 	return projectDataGetter();
 }

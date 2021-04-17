@@ -1,7 +1,14 @@
+<script context="module" lang="ts">
+	import { defaultLoadMethodForMethodStore } from '$lib/stores/fetchMethod';
+	export function load(args) {
+		return defaultLoadMethodForMethodStore(args);
+	}
+</script>
+
 <script lang="ts">
 	import OverallProjectStatisticsSection from '$lib/components/home/OverallProjectStatisticsSection.svelte';
 	import LinkableSection from '$lib/components/LinkableSection.svelte';
-import ProjectList from '$lib/components/projects/ProjectList.svelte';
+	import ProjectList from '$lib/components/projects/ProjectList.svelte';
 	import { getProjectDataAsync } from '$lib/stores/projectData';
 
 	const projectDataPromise = getProjectDataAsync()
@@ -23,6 +30,8 @@ import ProjectList from '$lib/components/projects/ProjectList.svelte';
 	<LinkableSection title="About Me">
 		<p>I am Joshua Castor and I enjoy programming stuff. My current focus is front-end web development with JavaScript. Looking to learn more about writing performant, accessible, secure sites with good User Experience (UX).</p>
 	</LinkableSection>
+
+	<!-- TODO: spotlight/showcase excerpt section? -->
 
 	<LinkableSection title="Recent Posts">
 		<ul>

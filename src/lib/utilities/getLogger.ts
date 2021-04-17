@@ -7,6 +7,7 @@ const KEYED_LOGGING_FUNCTIONS = [
 	'log',
 	'error',
 	'warn',
+	'debug',
 ];
 const DEFAULT_STYLING = 'font-weight:bold;background:black;color:white;text-decoration:underline;';
 const CREATE_SUB_LOGGER_METHOD_NAME = 'createSubLogger';
