@@ -105,6 +105,10 @@ function _getProjectDataAsync () {
 		});
 }
 
+/**
+ * Use synchronous getter because the promise gets set sooner than if
+ * we were to use an async getter to store the resulting data directly.
+ **/
 const projectDataGetter = createSingletonGetter(_getProjectDataAsync);
 export function getProjectDataAsync () {
 	return projectDataGetter();

@@ -5,6 +5,61 @@
 	}
 </script>
 
+<script lang="ts">
+	import DynamicLeveledHeader from '$lib/components/DynamicLeveledHeader.svelte';
+import ProjectList from '$lib/components/projects/ProjectList.svelte';
+	import SearchSection from '$lib/components/projects/SearchSection.svelte';
+	import type { IProjectEntry } from '$lib/stores/projectData';
+	import { getProjectDataAsync } from '$lib/stores/projectData';
+	import { getLogger } from '$lib/utilities/getLogger';
+
+	let visibleProjects: IProjectEntry[] = [];
+	let isLoading = true;
+	const logger = getLogger('ProjectsPage');
+	const projectDataPromise = getProjectDataAsync()
+		.then((data) => {
+			visibleProjects = Object.values(data.projects);
+			isLoading = false;
+			const searchingMetadata = {
+				languages: data.overall.languages.map((entry) => entry.name),
+				authors: data.overall.ownership.map((entry) => entry.name),
+				allProjects: Object.values(data.projects),
+			};
+			return searchingMetadata;
+		}).catch((err) => {
+			logger.error(err);
+			isLoading = false;
+			return {
+				languages: [],
+				authors: [],
+				allProjects: [],
+			};
+		});
+</script>
+
+<svelte:head>
+	<title>Projects Page | joshuacastor.me</title>
+</svelte:head>
+
 <main>
-	Projects page TBD
+	<h1 class="sr-only">Projects Page</h1>
+
+	{#await projectDataPromise}
+		<section>
+			<p>Loading project data...</p>
+		</section>
+	{:then searchingMetadata}
+		<SearchSection
+			disabled={isLoading}
+			authors={searchingMetadata.authors}
+			languages={searchingMetadata.languages}
+			allProjects={searchingMetadata.allProjects}
+		/>
+		<ProjectList projects={visibleProjects}/>
+	{:catch error}
+		<section>
+			<p>An error occurred loading the project data.</p>
+			<p>{error.message}</p>
+		</section>
+	{/await}
 </main>
