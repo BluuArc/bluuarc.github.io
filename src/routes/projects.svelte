@@ -34,6 +34,14 @@
 				allProjects: [],
 			};
 		});
+
+	function handleFilterChange (event: { detail: { filteredProjects: IProjectEntry[] } }): void {
+		if (event && event.detail && Array.isArray(event.detail.filteredProjects)) {
+			visibleProjects = event.detail.filteredProjects.slice();
+		} else {
+			logger.warn('no filtered projects found in filterchange event', event);
+		}
+	}
 </script>
 
 <svelte:head>
@@ -53,6 +61,7 @@
 			authors={searchingMetadata.authors}
 			languages={searchingMetadata.languages}
 			allProjects={searchingMetadata.allProjects}
+			on:filterchange={handleFilterChange}
 		/>
 		<section>
 			<h2>Project List</h2>
