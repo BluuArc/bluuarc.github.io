@@ -5,11 +5,13 @@
 
 <script lang="ts">
 	import type { IProjectEntry } from '$lib/stores/projectData';
-	import type { IProjectFilterOptions } from '$lib/utilities/projectFilters'
-	import { getDeploymentExistenceFilterOptions, getFilteredProjectList, getPackageExistenceFilterOptions, getProjectPageExistenceFilterOptions, getSortDirectionOptions, getSortTypeOptions, SortType } from '$lib/utilities/projectFilters';
+	import type { IProjectFilterOptions } from '$lib/utilities/projectFilters';
+	import { urlSearchParamstoFilterOptions } from '$lib/utilities/projectFilters';
+	import { getDeploymentExistenceFilterOptions, getFilteredProjectList, getPackageExistenceFilterOptions, getProjectPageExistenceFilterOptions, getSortDirectionOptions, getSortTypeOptions, SortType, filterOptionsToUrlSearchParams } from '$lib/utilities/projectFilters';
 	import CheckboxGroup from '../inputs/CheckboxGroup.svelte';
 	import RadioGroup from '../inputs/RadioGroup.svelte';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
+	import { page } from '$app/stores';
 
 	export let disabled: boolean = false;
 	export let languages: string[] = [];
@@ -41,8 +43,8 @@
 		authorOptions = convertStringArrayToLabelValuePairArray(authors);
 	}
 
-	function getFilteredProjectsFromInput (): IProjectEntry[] {
-		const filterOptions: IProjectFilterOptions = {
+	function getFiltersFromInput (): IProjectFilterOptions {
+		return {
 			name: nameFilter,
 			languages: selectedLanguages,
 			authors: selectedAuthors,
@@ -52,17 +54,56 @@
 			sortType,
 			sortDirection,
 		};
-		logger.debug(filterOptions);
-		return getFilteredProjectList(allProjects, filterOptions);
+	}
+
+	function applyFilterstoInput (filters: IProjectFilterOptions): void {
+		nameFilter = filters.name;
+		selectedLanguages = filters.languages.map((lang) => languageOptions.find((opt) => opt.value === lang)).filter(v => v);
+		selectedAuthors = filters.authors.map((author) => authorOptions.find((opt) => opt.value === author)).filter(v => v);
+		projectPageExistenceFilter = filters.projectPageExistenceFilter;
+		packageExistenceFilter = filters.packageExistenceFilter;
+		deploymentExistenceFilter = filters.deploymentExistenceFilter;
+		sortType = filters.sortType;
+		sortDirection = filters.sortDirection;
 	}
 
 	function onFormSubmission () {
-		const filteredProjects = getFilteredProjectsFromInput();
+		const filters = getFiltersFromInput();
+		logger.debug(filters);
+		const filteredProjects = getFilteredProjectList(allProjects, getFiltersFromInput());
 		logger.debug({ filteredProjects });
-		dispatch('filterchange', { filteredProjects });
+		dispatch('filterchange', { filteredProjects, filters });
 	}
 
+	let pageQueryParams: URLSearchParams = null;
+	let hasMounted = false;
+	page.subscribe(({ query }) => {
+		pageQueryParams = query;
+		if (hasMounted) {
+			// run after mount for cases where the back button is pressed
+			applyFiltersFromUrlParams();
+		}
+	});
+
+	function applyFiltersFromUrlParams () {
+		if (pageQueryParams) {
+			const originalUrl = pageQueryParams.toString();
+			const urlFromCurrentFilters = filterOptionsToUrlSearchParams(getFiltersFromInput()).toString();
+			if (originalUrl !== urlFromCurrentFilters) {
+				const filters = urlSearchParamstoFilterOptions(pageQueryParams);
+				logger.debug('applying filters from params', { params: originalUrl, filters, urlFromCurrentFilters });
+				applyFilterstoInput(filters);
+				onFormSubmission(); // apply filters
+			}
+		}
+	}
+
+	onMount(() => {
+		applyFiltersFromUrlParams();
+		hasMounted = true;
+	});
 </script>
+
 <section>
 	<form on:submit|preventDefault={onFormSubmission}>
 		<h2>Search Projects</h2>

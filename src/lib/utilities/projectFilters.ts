@@ -141,3 +141,61 @@ export function getFilteredProjectList (projects: IProjectEntry[], filters: IPro
 		.filter((project) => filterPipeline.every((filterMatcher) => filterMatcher(project, filters)))
 		.sort(sortFunction);
 }
+
+export function getDefaultFilterOptions (): IProjectFilterOptions {
+	return {
+		name: '',
+		languages: [],
+		authors: [],
+		projectPageExistenceFilter: TernaryOption.TrueOrFalse,
+		packageExistenceFilter: TernaryOption.TrueOrFalse,
+		deploymentExistenceFilter: TernaryOption.TrueOrFalse,
+		sortType: SortType.LastCommitDate,
+		sortDirection: -1,
+	};
+}
+
+function arraysAreIdentical<T>(a: T[], b: T[], compareFunction = (valueA: T, valueB: T) => valueA === valueB): boolean {
+	let result = a.length === b.length;
+	if (result) {
+		result = a.every((valueA) => b.some((valueB) => compareFunction(valueA, valueB)));
+	}
+	return result;
+}
+
+export function filterOptionsToUrlSearchParams (filters: IProjectFilterOptions): URLSearchParams {
+	const params = new URLSearchParams();
+	const defaultFilters = getDefaultFilterOptions();
+	Object.keys(defaultFilters).forEach((filterKey) => {
+		const defaultValue = defaultFilters[filterKey];
+		const filterValue = filters[filterKey];
+		let differsFromDefault = false;
+		if (Array.isArray(defaultValue)) {
+			differsFromDefault = (Array.isArray(filterValue) && !arraysAreIdentical(defaultValue, filterValue));
+		} else {
+			// would need to update if complex objects are added to filter
+			differsFromDefault = defaultValue !== filterValue;
+		}
+		// only add params for params differing from the default for smaller URLs
+		if (differsFromDefault) {
+			params.set(filterKey, filterValue);
+		}
+	});
+	return params;
+}
+
+export function urlSearchParamstoFilterOptions (params: URLSearchParams): IProjectFilterOptions {
+	const filterResult = getDefaultFilterOptions();
+	params.forEach((value, key) => {
+		const defaultValue = filterResult[key];
+		if (Array.isArray(defaultValue)) {
+			// assumes array of strings
+			filterResult[key] = value.split(',');
+		} else if (typeof defaultValue === 'number') {
+			filterResult[key] = +value;
+		} else {
+			filterResult[key] = value;
+		}
+	});
+	return filterResult;
+}

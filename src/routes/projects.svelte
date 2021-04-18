@@ -11,6 +11,8 @@
 	import type { IProjectEntry } from '$lib/stores/projectData';
 	import { getProjectDataAsync } from '$lib/stores/projectData';
 	import { getLogger } from '$lib/utilities/getLogger';
+	import { filterOptionsToUrlSearchParams } from '$lib/utilities/projectFilters';
+	import type { IProjectFilterOptions } from '$lib/utilities/projectFilters';
 
 	let visibleProjects: IProjectEntry[] = [];
 	let isLoading = true;
@@ -35,11 +37,28 @@
 			};
 		});
 
-	function handleFilterChange (event: { detail: { filteredProjects: IProjectEntry[] } }): void {
+	function getParamsForCurrentUrl () {
+		return new URLSearchParams(location.href.slice(location.href.indexOf('?') + 1));
+	}
+
+	function handleFilterChange (event: { detail: { filteredProjects: IProjectEntry[], filters?: IProjectFilterOptions } }): void {
 		if (event && event.detail && Array.isArray(event.detail.filteredProjects)) {
 			visibleProjects = event.detail.filteredProjects.slice();
 		} else {
 			logger.warn('no filtered projects found in filterchange event', event);
+		}
+
+		if (event && event.detail && event.detail.filters) {
+			const urlParams = filterOptionsToUrlSearchParams(event.detail.filters);
+			const urlParamsString = urlParams.toString();
+			const currentUrlParamsString = getParamsForCurrentUrl().toString();
+			if (urlParamsString !== currentUrlParamsString) {
+				const url = `projects?${urlParamsString}`;
+				logger.debug('filter navigation url', { url, currentUrlParamsString });
+				history.pushState({ url }, document.title, url);
+			} else {
+				logger.debug('skipping push state due to params being identical', { urlParamsString, currentUrlParamsString });
+			}
 		}
 	}
 </script>
