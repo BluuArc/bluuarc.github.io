@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { IProjectEntry } from '$lib/stores/projectData';
-import CheckboxGroup from '../inputs/CheckboxGroup.svelte';
-import RadioGroup from '../inputs/RadioGroup.svelte';
+	import CheckboxGroup from '../inputs/CheckboxGroup.svelte';
+	import RadioGroup from '../inputs/RadioGroup.svelte';
 
 	export let disabled: boolean = false;
 	export let languages: string[] = [];

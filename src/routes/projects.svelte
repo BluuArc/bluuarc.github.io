@@ -6,8 +6,7 @@
 </script>
 
 <script lang="ts">
-	import DynamicLeveledHeader from '$lib/components/DynamicLeveledHeader.svelte';
-import ProjectList from '$lib/components/projects/ProjectList.svelte';
+	import ProjectList from '$lib/components/projects/ProjectList.svelte';
 	import SearchSection from '$lib/components/projects/SearchSection.svelte';
 	import type { IProjectEntry } from '$lib/stores/projectData';
 	import { getProjectDataAsync } from '$lib/stores/projectData';
@@ -55,7 +54,13 @@ import ProjectList from '$lib/components/projects/ProjectList.svelte';
 			languages={searchingMetadata.languages}
 			allProjects={searchingMetadata.allProjects}
 		/>
-		<ProjectList projects={visibleProjects}/>
+		<section>
+			<h2>Project List</h2>
+			<ProjectList
+				projects={visibleProjects}
+				projectHeaderLevel={3}
+			/>
+		</section>
 	{:catch error}
 		<section>
 			<p>An error occurred loading the project data.</p>

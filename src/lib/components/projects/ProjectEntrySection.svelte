@@ -1,8 +1,10 @@
 <script lang="ts">
 	import type { IProjectEntry } from '$lib/stores/projectData';
+	import DynamicLeveledHeader from '../DynamicLeveledHeader.svelte';
 	import LanguageList from './LanguageList.svelte';
 
 	export let project: IProjectEntry = null;
+	export let headerLevel: number = 2;
 	let deploymentInfo: { totalCount: number, lastDeployment?: Date },
 		packageInfo: { totalCount: number, latestPackage?: string },
 		createdAtDate: Date,
@@ -34,19 +36,20 @@
 <article>
 	{#if project}
 		<header>
-			<h2>{project.name}</h2>
+			<!-- TODO: convert to dynamic leveled headers -->
+			<DynamicLeveledHeader level={headerLevel}>{project.name}</DynamicLeveledHeader>
 			<p>
 				Created <time datetime={createdAtDate.toISOString()}>{createdAtDate.toLocaleDateString()}</time> by <a href={ownerLink}>{project.owner}</a>,
 				last committed to on <time datetime={lastPushedAtDate.toISOString()}>{lastPushedAtDate.toLocaleDateString()}</time>
 			</p>
 		</header>
 		<section>
-			<h3>Description</h3>
+			<DynamicLeveledHeader level={headerLevel + 1}>Description</DynamicLeveledHeader>
 			<p>{project.description || '(No description provided)'}</p>
 		</section>
 		{#if deploymentInfo.totalCount > 0 || packageInfo.totalCount > 0}
 			<section>
-				<h3>Release Statistics</h3>
+				<DynamicLeveledHeader level={headerLevel + 1}>Release Statistics</DynamicLeveledHeader>
 				<ul>
 					{#if deploymentInfo.totalCount > 0}
 					<li>
@@ -64,7 +67,7 @@
 		{/if}
 		{#if project.topics.length > 0}
 			<section>
-				<h3>Topics</h3>
+				<DynamicLeveledHeader level={headerLevel + 1}>Topics</DynamicLeveledHeader>
 				<ul>
 					{#each project.topics as topic}
 						<li><a href={topic.url}>{topic.name}</a></li>
@@ -74,12 +77,12 @@
 		{/if}
 		{#if project.languages.length > 0}
 			<section>
-				<h3>Languages</h3>
+				<DynamicLeveledHeader level={headerLevel + 1}>Languages</DynamicLeveledHeader>
 				<LanguageList languages={project.languages}/>
 			</section>
 		{/if}
 		<section>
-			<h3>Related External Links</h3>
+			<DynamicLeveledHeader level={headerLevel + 1}>Related External Links</DynamicLeveledHeader>
 			<nav>
 				<ul>
 					<li><a href={project.repoURL}>Go to Code Repository</a></li>
@@ -90,7 +93,7 @@
 			</nav>
 		</section>
 	{:else}
-		<h2>Empty Project Entry</h2>
+		<DynamicLeveledHeader level={headerLevel}>Empty Project Entry</DynamicLeveledHeader>
 		<p>No project data found.</p>
 	{/if}
 </article>
