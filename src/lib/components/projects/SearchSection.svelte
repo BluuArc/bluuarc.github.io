@@ -26,8 +26,8 @@
 	let nameFilter: string = '';
 	let languageOptions: { label: string, value: string }[] = [];
 	let authorOptions: { label: string, value: string }[] = [];
-	let selectedLanguages = [];
-	let selectedAuthors = [];
+	let selectedLanguages: string[] = [];
+	let selectedAuthors: string[] = [];
 	let projectPageExistenceFilter = 0;
 	let packageExistenceFilter = 0;
 	let deploymentExistenceFilter = 0;
@@ -58,8 +58,8 @@
 
 	function applyFilterstoInput (filters: IProjectFilterOptions): void {
 		nameFilter = filters.name;
-		selectedLanguages = filters.languages.map((lang) => languageOptions.find((opt) => opt.value === lang)).filter(v => v);
-		selectedAuthors = filters.authors.map((author) => authorOptions.find((opt) => opt.value === author)).filter(v => v);
+		selectedLanguages = filters.languages.filter((lang) => languageOptions.find((opt) => opt.value === lang));
+		selectedAuthors = filters.authors.filter((author) => authorOptions.find((opt) => opt.value === author));
 		projectPageExistenceFilter = filters.projectPageExistenceFilter;
 		packageExistenceFilter = filters.packageExistenceFilter;
 		deploymentExistenceFilter = filters.deploymentExistenceFilter;

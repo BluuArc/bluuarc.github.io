@@ -1,4 +1,5 @@
 import type { IProjectEntry } from '../stores/projectData';
+
 export enum TernaryOption {
 	TrueOrFalse = 0,
 	True = 1,
@@ -172,7 +173,7 @@ export function filterOptionsToUrlSearchParams (filters: IProjectFilterOptions):
 		let differsFromDefault = false;
 		if (Array.isArray(defaultValue)) {
 			differsFromDefault = (Array.isArray(filterValue) && !arraysAreIdentical(defaultValue, filterValue));
-		} else {
+		} else if (typeof filterValue !== 'object') {
 			// would need to update if complex objects are added to filter
 			differsFromDefault = defaultValue !== filterValue;
 		}
