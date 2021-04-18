@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { IProjectEntry } from '$lib/stores/projectData';
+	import { getRandomHtmlId } from '$lib/utilities/randomGenerators';
 	import DynamicLeveledHeader from '../DynamicLeveledHeader.svelte';
 	import LanguageList from './LanguageList.svelte';
 
@@ -10,6 +11,7 @@
 		createdAtDate: Date,
 		lastPushedAtDate: Date,
 		ownerLink: string;
+	let externalLinksId: string = '';
 	$: {
 		if (project) {
 			const { deployments, packages, createdAt, lastPushedAt } = project;
@@ -27,6 +29,7 @@
 			createdAtDate = new Date(createdAt);
 			lastPushedAtDate = new Date(lastPushedAt);
 			ownerLink = `https://github.com/${project.owner}/`;
+			externalLinksId = getRandomHtmlId();
 		} else {
 			deploymentInfo = packageInfo = { totalCount: 0 };
 		}
@@ -36,7 +39,6 @@
 <article>
 	{#if project}
 		<header>
-			<!-- TODO: convert to dynamic leveled headers -->
 			<DynamicLeveledHeader level={headerLevel}>{project.name}</DynamicLeveledHeader>
 			<p>
 				Created <time datetime={createdAtDate.toISOString()}>{createdAtDate.toLocaleDateString()}</time> by <a href={ownerLink}>{project.owner}</a>,
@@ -70,7 +72,7 @@
 				<DynamicLeveledHeader level={headerLevel + 1}>Topics</DynamicLeveledHeader>
 				<ul>
 					{#each project.topics as topic}
-						<li><a href={topic.url}>{topic.name}</a></li>
+						<li><a href={topic.url}><span class="sr-only">View other GitHub projects under the </span>{topic.name}<span class="sr-only"> topic</span></a></li>
 					{/each}
 				</ul>
 			</section>
@@ -82,12 +84,12 @@
 			</section>
 		{/if}
 		<section>
-			<DynamicLeveledHeader level={headerLevel + 1}>Related External Links</DynamicLeveledHeader>
-			<nav>
+			<nav aria-labelledby={externalLinksId}>
+				<DynamicLeveledHeader level={headerLevel + 1} id={externalLinksId}>Related External Links <span class="sr-only">for the "{project.name}" project by {project.owner}</span></DynamicLeveledHeader>
 				<ul>
-					<li><a href={project.repoURL}>Go to Code Repository</a></li>
+					<li><a href={project.repoURL}>Go to Code Repository <span class="sr-only">for the "{project.name}" project by {project.owner}</span></a></li>
 					{#if project.homepageURL}
-					<li><a href={project.homepageURL}>Visit Project Page</a></li>
+					<li><a href={project.homepageURL}>Visit Project Page <span class="sr-only">for the "{project.name}" project by {project.owner}</span></a></li>
 					{/if}
 				</ul>
 			</nav>

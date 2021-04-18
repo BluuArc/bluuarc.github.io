@@ -4,7 +4,8 @@
 
 <header>
 	<span class="header-1">JC.ME</span>
-	<nav>
+	<nav aria-labelledby="main-page-navigation-label">
+		<span class="sr-only" id="main-page-navigation-label">Site Navigation</span>
 		<ul>
 			<li><a href=".">Home</a>
 			<li><a href="projects">Projects</a>
