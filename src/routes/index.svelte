@@ -33,12 +33,12 @@
 
 	<!-- TODO: spotlight/showcase excerpt section? -->
 
-	<LinkableSection title="Recent Posts">
-		<ul>
-			<li><a href="posts?title=fake-post">A fake post link</a> - 1 day ago</li>
-			<li>TODO</li>
-		</ul>
-		<nav>
+	<LinkableSection title="Recent Posts" let:headerId={headerId}>
+		<nav aria-labelledby={headerId}>
+			<ul>
+				<li><a href="posts?title=fake-post">A fake post link</a> - 1 day ago</li>
+				<li>TODO</li>
+			</ul>
 			<a href="posts">See more posts</a>
 		</nav>
 	</LinkableSection>
@@ -48,7 +48,8 @@
 			Loading project data...
 		{:then projects}
 			<ProjectList {projects}/>
-			<nav>
+			<nav aria-labelledby="other-project-links-label">
+				<h3 class="sr-only" id="other-project-links-label">Other Project Links</h3>
 				<a href="projects">See more projects</a>
 			</nav>
 		{:catch error}

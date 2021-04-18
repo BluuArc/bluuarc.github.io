@@ -11,9 +11,9 @@
 <article>
 	<header>
 		<DynamicLeveledHeader level={headerLevel} id={titleId}>{title}</DynamicLeveledHeader>
-		<a href={`#${titleId}`} aria-label={`Go to ${title}`}>#</a>
+		<a href={`#${titleId}`} aria-label={`Go to the "${title}" section`}>#</a>
 	</header>
-	<slot>Section content</slot>
+	<slot headerId={titleId}>Section content</slot>
 </article>
 
 <style lang="scss">
