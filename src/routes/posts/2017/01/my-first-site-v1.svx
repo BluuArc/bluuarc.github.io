@@ -19,7 +19,7 @@
 <header>
 <h1>My First Site</h1>
 
-<p>Page was originally available on <time datetime="2017-01-05">January 5, 1017</time>. This post was updated as part of the site overhaul on <time datetime="2021-04-24">April 24, 2021</time>.</p>
+<p>Page was originally available on <time datetime="2017-01-05">January 5, 2017</time>. This post was updated as part of the site overhaul on <time datetime="2021-04-24">April 24, 2021</time>.</p>
 </header>
 
 <figure>
