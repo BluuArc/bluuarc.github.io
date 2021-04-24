@@ -1,0 +1,14 @@
+[
+  {
+    "title": "My First Site",
+    "author": "Joshua Castor",
+    "keywords": [
+      "site-iteration"
+    ],
+    "description": "Learn about my very first iteration of my website.",
+    "image": "/img/old_site/v001.PNG",
+    "datePublished": "2017-01-05T06:00:00.000Z",
+    "dateModified": "2021-04-24T05:00:00.000Z",
+    "url": "/posts/2017/01/my-first-site-v1"
+  }
+]

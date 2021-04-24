@@ -43,8 +43,8 @@ export interface IProjectEntry {
 
 function _getProjectDataAsync () {
 	const logger = getLogger('projectData');
-	const fetchMethod = getCurrentFetchMethod();
-	return fetchMethod('./project-data.json')
+	const fetchMethod = getCurrentFetchMethod() || self.fetch;
+	return fetchMethod('/project-data.json')
 		.then((r) => r.ok ? r.json() : Promise.reject(r.statusText))
 		.then((originalProjectData: { [key: string]: IProjectEntry }) => {
 			logger.debug({ originalProjectData });

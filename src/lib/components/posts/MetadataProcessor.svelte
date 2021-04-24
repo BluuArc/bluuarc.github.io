@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { SiteMetadata } from '$lib/types/SiteMetadata';
+	import type { ISiteMetadata } from '$lib/stores/postData';
 	import { beforeUpdate, onMount } from 'svelte';
 	const siteName = 'https://joshuacastor.me';
-	function getNormalizedSiteMetadata (metadata?: SiteMetadata): SiteMetadata {
+	function getNormalizedSiteMetadata (metadata?: ISiteMetadata): ISiteMetadata {
 		let imageUrl = metadata?.image || null;
 		if (imageUrl && !imageUrl.startsWith(siteName)) {
 			imageUrl = `${siteName}/${imageUrl.startsWith('/') ? imageUrl.slice(1) : imageUrl}`;
@@ -18,10 +18,12 @@
 		};
 	}
 
-	export let metadata: SiteMetadata = getNormalizedSiteMetadata();
-	let normalizedMetadata: SiteMetadata = getNormalizedSiteMetadata();
+	export let metadata: ISiteMetadata = getNormalizedSiteMetadata();
+	let normalizedMetadata: ISiteMetadata = getNormalizedSiteMetadata();
 	let ogUrl: string = '';
 	let structuredDataString: string = '';
+	// needed to avoid having the compiler not try to fetch the path at `url`
+	const canonicalMetadataString: string = `<link rel="canonical" href="url">`;
 	let hasMounted = false;
 	onMount(() => {
 		ogUrl = `https://joshuacastor.me${location.pathname}`;
@@ -76,7 +78,8 @@
 <svelte:head>
 	<title>{normalizedMetadata.title}</title>
 	<meta name="description" content={normalizedMetadata.description}>
-	<link rel="canonical" href="hrl">
+	<!-- <link rel="canonical" href="url"> -->
+	{@html canonicalMetadataString}
 	{#if normalizedMetadata.keywords}
 		<meta name="keywords" content={normalizedMetadata.keywords.join(', ')}>
 	{/if}

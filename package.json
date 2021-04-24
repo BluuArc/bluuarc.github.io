@@ -3,17 +3,21 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"build": "npm run build:project-stats && npm run build:post-metadata && npm run build:site",
+		"build:site": "svelte-kit build",
+		"build:project-stats": "node generate-gh-stats.cjs",
+		"build:post-metadata": "node generate-post-metadata.cjs",
 		"start": "svelte-kit start",
 		"lint": "eslint --ignore-path .gitignore ."
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.4",
-		"@sveltejs/kit": "next",
+		"@sveltejs/kit": "^1.0.0-next.71",
 		"@typescript-eslint/eslint-plugin": "^4.19.0",
 		"@typescript-eslint/parser": "^4.19.0",
 		"eslint": "^7.22.0",
 		"eslint-plugin-svelte3": "^3.1.0",
+		"glob": "^7.1.6",
 		"mdsvex": "^0.9.0",
 		"node-github-graphql": "^0.2.7",
 		"sass": "^1.0.0",
