@@ -59,10 +59,13 @@
 				datePublished: normalizedMetadata.datePublished.toISOString(),
 				dateModified: normalizedMetadata?.dateModified ? normalizedMetadata.dateModified.toISOString() : (void 0),
 			}, null, 2);
+			// Need to define these separately otherwise the compiler errors out
+			const tagOpen = '<';
+			const tagClose = '>';
 			structuredDataString = [
-				`${String.fromCharCode(60)}script type="application/ld+json"${String.fromCharCode(62)}`,
+				`${tagOpen}script type="application/ld+json"${tagClose}`,
 				jsonString,
-				`${String.fromCharCode(60)}/script${String.fromCharCode(62)}`,
+				`${tagOpen}/script${tagClose}`,
 			].join('\n');
 		} else {
 			structuredDataString = '';
