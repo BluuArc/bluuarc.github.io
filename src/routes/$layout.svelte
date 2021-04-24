@@ -7,13 +7,12 @@
 	<nav aria-labelledby="main-page-navigation-label">
 		<span class="sr-only" id="main-page-navigation-label">Site Navigation</span>
 		<ul>
-			<li><a href=".">Home</a>
-			<li><a href="projects">Projects</a>
-			<li><a href="posts">Posts</a>
+			<li><a href="/">Home</a>
+			<li><a href="/projects">Projects</a>
+			<li><a href="/posts">Posts</a>
 		</ul>
 	</nav>
 </header>
-<!-- TODO: move main here -->
 <slot />
 <footer>
 	<section>
