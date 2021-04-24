@@ -1,0 +1,41 @@
+<script context="module">
+	export const metadata = {
+		title: "My First Site",
+		author: "Joshua Castor",
+		keywords: ["site-iteration"],
+		description: "Learn about my very first iteration of my website.",
+		image: "/img/old_site/v001.PNG",
+		datePublished: new Date(2017, 0, 5),
+		dateModified: new Date(2021, 3, 24),
+	};
+</script>
+
+<script>
+	import MetadataProcessor from '$lib/components/posts/MetadataProcessor.svelte';
+</script>
+
+<MetadataProcessor {metadata} />
+
+<header>
+<h1>My First Site</h1>
+
+<p>Page was originally available on <time datetime="2017-01-05">January 5, 1017</time>. This post was updated as part of the site overhaul on <time datetime="2021-04-24">April 24, 2021</time>.</p>
+</header>
+
+<figure>
+	<img src="/img/old_sites/v001.PNG" alt="Screenshot of this website in 2017">
+</figure>
+
+My very first attempt at making a personal website. It was put together using Bootstrap 3.3.7 and jQuery 1.12.4 with traditional hardcoded files for the home page, the about page, and the contact page. [Version 1 of the website (External Link)](https://joshuacastor.me/old-sites/v1/) is still accessible today.
+
+<style>
+figure {
+	margin-left: 10vw;
+	margin-right: 10vw;
+	text-align: center;
+}
+
+figure > img {
+	width: 80vw;
+}
+</style>

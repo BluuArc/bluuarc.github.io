@@ -13,6 +13,7 @@
 		</ul>
 	</nav>
 </header>
+<!-- TODO: move main here -->
 <slot />
 <footer>
 	<section>
