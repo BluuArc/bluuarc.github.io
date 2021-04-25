@@ -5,8 +5,8 @@
 		keywords: ["site-iteration", "personal-site"],
 		description: "Learn about the second iteration of my website, using Vue (sort of) and Bootstrap.",
 		image: "/img/old_site/v002.PNG",
-		datePublished: new Date(2017, 11, 12),
-		dateModified: new Date(2021, 3, 25),
+		datePublished: new Date('2017-12-12T00:00:00-06:00'),
+		dateModified: new Date('2021-04-25T00:00:00-06:00'),
 	};
 </script>
 
@@ -21,7 +21,7 @@
 <LinkableHeader
 	title={metadata.title}
 	headerLevel={1}>
-	<p>Page was originally available <DateTime dateTime="2017-12-12" />. This post was updated as part of the site overhaul <DateTime dateTime="2021-04-25" />.</p>
+	<p>Page was originally available <DateTime dateTime={metadata.datePublished.toISOString()} />. This post was updated as part of the site overhaul <DateTime dateTime={metadata.dateModified.toISOString()} />.</p>
 </LinkableHeader>
 
 <figure>

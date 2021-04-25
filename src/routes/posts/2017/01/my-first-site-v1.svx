@@ -5,8 +5,8 @@
 		keywords: ["site-iteration", "personal-site"],
 		description: "Learn about my very first iteration of my website, using Bootstrap and jQuery.",
 		image: "/img/old_site/v001.PNG",
-		datePublished: new Date(2017, 0, 5),
-		dateModified: new Date(2021, 3, 24),
+		datePublished: new Date('2017-01-05T00:00:00-06:00'),
+		dateModified: new Date('2021-04-24T00:00:00-06:00'),
 	};
 </script>
 
@@ -21,7 +21,7 @@
 <LinkableHeader
 	title={metadata.title}
 	headerLevel={1}>
-	<p>Page was originally available <DateTime dateTime="2017-01-05" />. This post was updated as part of the site overhaul <DateTime dateTime="2021-04-24" />.</p>
+	<p>Page was originally available <DateTime dateTime={metadata.datePublished.toISOString()} />. This post was updated as part of the site overhaul <DateTime dateTime={metadata.dateModified.toISOString()} />.</p>
 </LinkableHeader>
 
 <figure>
