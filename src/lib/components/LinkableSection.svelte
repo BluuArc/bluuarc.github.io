@@ -1,33 +1,15 @@
 <script lang="ts">
-	import DynamicLeveledHeader from './DynamicLeveledHeader.svelte';
+	import LinkableHeader from './LinkableHeader.svelte';
 	export let title: string = 'Section Title';
 	export let headerLevel: number = 2;
 	let titleId: string = '';
-	$: {
-		titleId = `h${headerLevel}-${title.toLowerCase().replace(/ /g, '-')}`;
-	}
 </script>
 
 <article>
-	<header>
-		<DynamicLeveledHeader level={headerLevel} id={titleId}>{title}</DynamicLeveledHeader>
-		<a href={`#${titleId}`} aria-label={`Go to the "${title}" section`}>#</a>
-	</header>
+	<LinkableHeader
+		{headerLevel}
+		{title}
+		bind:titleId={titleId}
+	/>
 	<slot headerId={titleId}>Section content</slot>
 </article>
-
-<style lang="scss">
-	header {
-		display: flex;
-
-		a {
-			align-self: center;
-			margin-left: 1em;
-			color: transparent;
-		}
-
-		&:hover a, a:focus {
-			color: unset;
-		}
-	}
-</style>
