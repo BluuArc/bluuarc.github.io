@@ -1,7 +1,7 @@
 import { createSingletonGetter } from "$lib/utilities/singletonGetters";
 import { getCurrentFetchMethod } from "./fetchMethod";
 
-export interface ISiteMetadata {
+export interface IPostMetadata {
 	title: string;
 	description: string;
 	author: string;
@@ -15,7 +15,7 @@ export interface ISiteMetadata {
 function _getPostDataAsync () {
 	const fetchMethod = getCurrentFetchMethod() || self.fetch;
 	return fetchMethod('/post-metadata.json')
-		.then((r) => r.ok ? r.json() as ISiteMetadata[] : Promise.reject(r.statusText));
+		.then((r) => r.ok ? r.json() as IPostMetadata[] : Promise.reject(r.statusText));
 }
 
 const postDataGetter = createSingletonGetter(_getPostDataAsync);

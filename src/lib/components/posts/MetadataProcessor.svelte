@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { ISiteMetadata } from '$lib/stores/postData';
+	import type { IPostMetadata } from '$lib/stores/postData';
 	import { beforeUpdate, onMount } from 'svelte';
 	const siteName = 'https://joshuacastor.me';
-	function getNormalizedSiteMetadata (metadata?: ISiteMetadata): ISiteMetadata {
+	function getNormalizedSiteMetadata (metadata?: IPostMetadata): IPostMetadata {
 		let imageUrl = metadata?.image || null;
 		if (imageUrl && !imageUrl.startsWith(siteName)) {
 			imageUrl = `${siteName}/${imageUrl.startsWith('/') ? imageUrl.slice(1) : imageUrl}`;
@@ -18,8 +18,8 @@
 		};
 	}
 
-	export let metadata: ISiteMetadata = getNormalizedSiteMetadata();
-	let normalizedMetadata: ISiteMetadata = getNormalizedSiteMetadata();
+	export let metadata: IPostMetadata = getNormalizedSiteMetadata();
+	let normalizedMetadata: IPostMetadata = getNormalizedSiteMetadata();
 	let ogUrl: string = '';
 	let structuredDataString: string = '';
 	// needed to avoid having the compiler not try to fetch the path at `url`
