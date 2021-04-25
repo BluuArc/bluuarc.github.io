@@ -2,8 +2,8 @@
 	export const metadata = {
 		title: "My First Site",
 		author: "Joshua Castor",
-		keywords: ["site-iteration"],
-		description: "Learn about my very first iteration of my website.",
+		keywords: ["site-iteration", "personal-site"],
+		description: "Learn about my very first iteration of my website, using Bootstrap and jQuery.",
 		image: "/img/old_site/v001.PNG",
 		datePublished: new Date(2017, 0, 5),
 		dateModified: new Date(2021, 3, 24),
@@ -25,10 +25,10 @@
 </LinkableHeader>
 
 <figure>
-	<img src="/img/old_sites/v001.PNG" alt="Screenshot of this website in 2017">
+	<img src="/img/old_sites/v001.PNG" alt="Screenshot of this website in January 2017">
 </figure>
 
-My very first attempt at making a personal website. It was put together using Bootstrap 3.3.7 and jQuery 1.12.4 with traditional hardcoded files for the home page, the about page, and the contact page. [Version 1 of the website (External Link)](https://joshuacastor.me/old-sites/v1/) is still accessible today.
+My very first attempt at making a personal website. It was put together using Bootstrap 3.3.7 and jQuery 1.12.4 with traditional hardcoded files for the home page, the about page, and the contact page. [Version 1 of the website (External Link)](https://joshuacastor.me/old-sites/v1/) can still be accessed today as a way for me to see how far I've come.
 
 <style>
 figure {

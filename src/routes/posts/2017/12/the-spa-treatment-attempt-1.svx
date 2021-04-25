@@ -1,0 +1,49 @@
+<script context="module">
+	export const metadata = {
+		title: "The SPA Treatment (Attempt 1) - Bootstrap",
+		author: "Joshua Castor",
+		keywords: ["site-iteration", "personal-site"],
+		description: "Learn about the second iteration of my website, using Vue (sort of) and Bootstrap.",
+		image: "/img/old_site/v002.PNG",
+		datePublished: new Date(2017, 11, 12),
+		dateModified: new Date(2021, 3, 25),
+	};
+</script>
+
+<script>
+	import DateTime from '$lib/components/DateTime.svelte';
+	import LinkableHeader from '$lib/components/LinkableHeader.svelte';
+	import MetadataProcessor from '$lib/components/posts/MetadataProcessor.svelte';
+</script>
+
+<MetadataProcessor {metadata} />
+
+<LinkableHeader
+	title={metadata.title}
+	headerLevel={1}>
+	<p>Page was originally available <DateTime dateTime="2017-12-12" />. This post was updated as part of the site overhaul <DateTime dateTime="2021-04-25" />.</p>
+</LinkableHeader>
+
+<figure>
+	<img src="/img/old_sites/v002.PNG" alt="Screenshot of this website in December 2017">
+</figure>
+
+My second attempt at making a personal website and my first attempt at making a SPA style site. This iteration used Bootstrap 4.0.0-bat with [the Darkly Boostrap theme (External Link)](https://bootswatch.com/darkly/).
+
+All the routing was done with pure JS (i.e. no framework or library used for routing). A lot of the core layout you may still see today was defined here (three main pages, GitHub style language bars, etc.).
+
+This was also my first attempt at using Vue, but I didn't quite understand how frameworks like Vue worked and ended up with multiple Vue instances on a single page in an attempt to separate data. These instances included the main instance for the page, an instance for the coursework card, and an instance for the job entries card.
+
+The [website itself (External Link)](https://joshuacastor.me/old-sites/v2/), which is Version 2 of the website, can still be accessed today as a way for me to see how far I've come.
+
+<style>
+figure {
+	margin-left: 10vw;
+	margin-right: 10vw;
+	text-align: center;
+}
+
+figure > img {
+	width: 80vw;
+}
+</style>
