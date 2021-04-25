@@ -6,6 +6,7 @@
 </script>
 
 <script lang="ts">
+	import PostList from '$lib/components/posts/PostList.svelte';
 	import { getPostDataAsync } from '$lib/stores/postData';
 
 	const postDataPromise = getPostDataAsync();
@@ -21,12 +22,15 @@
 		<section>
 			<p>Loading post data...</p>
 		</section>
-	{:then postData}
-		<ul>
-			{#each postData as post}
-				<li><a href={post.url}>{JSON.stringify(post)}</a></li>
-			{/each}
-		</ul>
+	{:then posts}
+		<!-- TODO: filtering -->
+		<section>
+			<h2>Post List</h2>
+			<PostList
+				{posts}
+				postHeaderLevel={3}
+			/>
+		</section>
 	{:catch error}
 		<section>
 			<p>An error occurred loading the post data.</p>
