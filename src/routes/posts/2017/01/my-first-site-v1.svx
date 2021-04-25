@@ -11,6 +11,7 @@
 </script>
 
 <script>
+	import DateTime from '$lib/components/DateTime.svelte';
 	import LinkableHeader from '$lib/components/LinkableHeader.svelte';
 	import MetadataProcessor from '$lib/components/posts/MetadataProcessor.svelte';
 </script>
@@ -20,7 +21,7 @@
 <LinkableHeader
 	title={metadata.title}
 	headerLevel={1}>
-	<p>Page was originally available on <time datetime="2017-01-05">January 5, 2017</time>. This post was updated as part of the site overhaul on <time datetime="2021-04-24">April 24, 2021</time>.</p>
+	<p>Page was originally available <DateTime dateTime="2017-01-05" />. This post was updated as part of the site overhaul <DateTime dateTime="2021-04-24" />.</p>
 </LinkableHeader>
 
 <figure>
