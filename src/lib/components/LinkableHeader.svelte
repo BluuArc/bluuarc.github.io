@@ -11,7 +11,7 @@
 <header>
 	<div class="header-label">
 		<DynamicLeveledHeader level={headerLevel} id={titleId}>{title}</DynamicLeveledHeader>
-	<a href={`#${titleId}`} aria-label={`Go to the "${title}" section`}>#</a>
+		<a href={`#${titleId}`} aria-label={`Go to the "${title}" section`}>#</a>
 	</div>
 	<slot></slot>
 </header>
