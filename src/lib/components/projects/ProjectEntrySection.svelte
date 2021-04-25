@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { IProjectEntry } from '$lib/stores/projectData';
 	import { getRandomHtmlId } from '$lib/utilities/randomGenerators';
+	import DateTime from '../DateTime.svelte';
 	import DynamicLeveledHeader from '../DynamicLeveledHeader.svelte';
 	import LanguageList from './LanguageList.svelte';
 
@@ -41,8 +42,8 @@
 		<header>
 			<DynamicLeveledHeader level={headerLevel}>{project.name}</DynamicLeveledHeader>
 			<p>
-				Created <time datetime={createdAtDate.toISOString()}>{createdAtDate.toLocaleDateString()}</time> by <a href={ownerLink}>{project.owner}</a>,
-				last committed to on <time datetime={lastPushedAtDate.toISOString()}>{lastPushedAtDate.toLocaleDateString()}</time>
+				Created <DateTime dateTime={createdAtDate.toISOString()} /> by <a href={ownerLink}>{project.owner}</a>,
+				last committed to <DateTime dateTime={lastPushedAtDate.toISOString()} />
 			</p>
 		</header>
 		<section>
