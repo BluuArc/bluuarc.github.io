@@ -10,12 +10,20 @@
 	import LinkableSection from '$lib/components/LinkableSection.svelte';
 	import ProjectList from '$lib/components/projects/ProjectList.svelte';
 	import { getProjectDataAsync } from '$lib/stores/projectData';
+	import { getPostDataAsync } from '$lib/stores/postData';
+	import PostList from '$lib/components/posts/PostList.svelte';
 
 	const projectDataPromise = getProjectDataAsync()
 		.then((data) => {
 			// get first 5 projects
 			return Object.values(data.projects)
 				.sort((a, b) => new Date(b.lastPushedAt).valueOf() - new Date(a.lastPushedAt).valueOf())
+				.slice(0, 5);
+		});
+	const postDataPromise = getPostDataAsync()
+		.then((posts) => {
+			return posts.slice()
+				.sort((a, b) => new Date(b.dateModified || b.datePublished).valueOf() - new Date(a.dateModified || a.datePublished).valueOf())
 				.slice(0, 5);
 		});
 </script>
@@ -33,14 +41,16 @@
 
 	<!-- TODO: spotlight/showcase excerpt section? -->
 
-	<LinkableSection title="Recent Posts" let:headerId={headerId}>
-		<nav aria-labelledby={headerId}>
-			<ul>
-				<li><a href="posts?title=fake-post">A fake post link</a> - 1 day ago</li>
-				<li>TODO</li>
-			</ul>
-			<a href="posts">See more posts</a>
-		</nav>
+	<LinkableSection title="Recent Posts">
+		{#await postDataPromise}
+			Loading post data...
+		{:then posts}
+			<PostList {posts}/>
+			<nav aria-labelledby="other-post-links-label">
+				<h3 class="sr-only" id="other-posts-links-label">Other Post Links</h3>
+				<a href="/posts">View more posts.</a>
+			</nav>
+		{/await}
 	</LinkableSection>
 
 	<LinkableSection title="Recent Projects">
@@ -50,7 +60,7 @@
 			<ProjectList {projects}/>
 			<nav aria-labelledby="other-project-links-label">
 				<h3 class="sr-only" id="other-project-links-label">Other Project Links</h3>
-				<a href="projects">See more projects</a>
+				<a href="/projects">View more projects</a>
 			</nav>
 		{:catch error}
 			<p>An error occurred attempting to get project data.</p>
