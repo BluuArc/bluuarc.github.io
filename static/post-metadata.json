@@ -9,7 +9,7 @@
     "description": "Learn about my very first iteration of my website, using Bootstrap and jQuery.",
     "image": "/img/old_site/v001.PNG",
     "datePublished": "2017-01-05T06:00:00.000Z",
-    "dateModified": "2021-04-24T05:00:00.000Z",
+    "dateModified": "2021-04-24T06:00:00.000Z",
     "url": "/posts/2017/01/my-first-site-v1"
   },
   {
@@ -22,7 +22,7 @@
     "description": "Learn about the second iteration of my website, using Vue (sort of) and Bootstrap.",
     "image": "/img/old_site/v002.PNG",
     "datePublished": "2017-12-12T06:00:00.000Z",
-    "dateModified": "2021-04-25T05:00:00.000Z",
+    "dateModified": "2021-04-25T06:00:00.000Z",
     "url": "/posts/2017/12/the-spa-treatment-attempt-1"
   }
 ]
