@@ -1,0 +1,39 @@
+---
+const buildTime = `${(new Date()).toLocaleString()} (Central)`;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<slot name="page-title"></slot>
+  </head>
+	<body>
+		<header>
+			<span class="header-1">JC.ME</span>
+			<nav aria-labelledby="main-page-navigation-label">
+				<span class="sr-only" id="main-page-navigation-label">Site Navigation</span>
+				<ul>
+					<li><a href="/">Home</a>
+					<li><a href="/projects">Projects</a>
+					<li><a href="/posts">Posts</a>
+				</ul>
+			</nav>
+		</header>
+		<slot/>
+		<footer>
+			<section>
+				<h2>Contact Information</h2>
+				<address>
+					<ul>
+						<li><a href="mailto:joshua.castor@joshuacastor.me">Email</a></li>
+						<li><a href="https://github.com/BluuArc">GitHub</a></li>
+						<li><a href="https://www.linkedin.com/in/joshuacastor">LinkedIn</a></li>
+					</ul>
+				</address>
+			</section>
+			<p>This page was built at {buildTime}</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+---
+import '@src/styles/global.scss';
+import AppShell from '@src/layouts/AppShell.astro';
+import LinkableSection from '@src/components/molecules/LinkableSection.svelte';
+---
+
+<!-- Below is your "component template." It's just HTML, but with
+	 some magic sprinkled in to help you build great templates. -->
+
+<AppShell>
+    <title slot="page-title">Home Page | joshuacastor.me</title>
+		<main>
+      <h1 class="sr-only">Home Page</h1>
+      <LinkableSection title="About Me">
+        <p>I enjoy programming stuff. My current focus is learning to write performant and accessible sites with a good user experience.</p>
+      </LinkableSection>
+    </main>
+</AppShell>

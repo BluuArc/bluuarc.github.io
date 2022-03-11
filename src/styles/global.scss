@@ -1,0 +1,18 @@
+@use './typography';
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, .header-1 {
+  @include typography.header-1;
+}
+
+.sr-only {
+	position: absolute;
+	left: -200vw;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
