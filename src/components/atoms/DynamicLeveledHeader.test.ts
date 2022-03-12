@@ -1,12 +1,5 @@
-let mockWarn: jest.MockedFunction<typeof console.warn>;
-jest.mock('@src/utilities/getLogger', () => { // placed above to override import in component
-	mockWarn = jest.fn().mockName('mockWarn');
-
-	const mockGetLogger = () => ({ warn: mockWarn });
-	return { getLogger: mockGetLogger }
-});
-
-import { render, RenderResult } from '@testing-library/svelte';
+import * as mockLoggerContext from '@src/utilities/_test-utils/setupMockGetLoggerContext'; // placed above to override import in component
+import { getSvelteElementFromRenderResult, renderSvelteComponent } from '@src/utilities/_test-utils/svelte-test-utils';
 import DynamicLeveledHeader from './DynamicLeveledHeader.svelte';
 import SlotTest from './_SlotTest.svelte';
 
@@ -15,19 +8,12 @@ describe('DynamicLeveledHeader', () => {
 	const NON_NUMBER_HEADER_LEVEL = 'not-a-number-header-level';
 	const ARBITRARY_TITLE = 'arbitrary value for title attribute';
 
-	const getSvelteElementFromRenderResult = (result: RenderResult) => {
-		// default container is document.body, and there is a wrapper div around the Svelete element
-		return result.container.children[0].children[0];
-	};
-
 	beforeEach(() => {
-		if (mockWarn) {
-			mockWarn.mockClear();
-		}
+		mockLoggerContext.resetLoggerMocks();
 	});
 
 	test('renders h2 by default', () => {
-		const result = render(DynamicLeveledHeader);
+		const result = renderSvelteComponent(DynamicLeveledHeader);
 		const component = getSvelteElementFromRenderResult(result);
 		expect(component.tagName).toBe('H2');
 	});
@@ -36,7 +22,7 @@ describe('DynamicLeveledHeader', () => {
 		Array.from({ length: 6 }, (_, i) => i + 1).forEach((validHeaderLevel) => {
 			const expectedHeaderTag = `h${validHeaderLevel}`;
 			test(`renders [${expectedHeaderTag}] when given level [${validHeaderLevel}]`, () => {
-				const result = render(
+				const result = renderSvelteComponent(
 					DynamicLeveledHeader,
 					{ props: { level: validHeaderLevel } }
 				);
@@ -45,7 +31,7 @@ describe('DynamicLeveledHeader', () => {
 			});
 
 			test(`renders with no children by default when given level [${validHeaderLevel}]`, () => {
-				const result = render(
+				const result = renderSvelteComponent(
 					DynamicLeveledHeader,
 					{ props: { level: validHeaderLevel } }
 				);
@@ -54,7 +40,7 @@ describe('DynamicLeveledHeader', () => {
 			});
 
 			test(`renders slotted content under [${expectedHeaderTag}] when given level [${validHeaderLevel}]`, () => {
-				const result = render(
+				const result = renderSvelteComponent(
 					SlotTest,
 					{
 						props: {
@@ -70,7 +56,7 @@ describe('DynamicLeveledHeader', () => {
 			});
 
 			test(`passes down attributes to rendered [${expectedHeaderTag}] when given level [${validHeaderLevel}]`, () => {
-				const result = render(
+				const result = renderSvelteComponent(
 					DynamicLeveledHeader,
 					{
 							props: {
@@ -84,10 +70,70 @@ describe('DynamicLeveledHeader', () => {
 			});
 		});
 
+		describe('header level values above 6', () => {
+			const expectDivHeaderAttributes = (div: Element, expectedHeaderLevel: Number) => {
+				expect(div.tagName).toBe('DIV');
+				expect(div.getAttribute('role')).toBe('heading');
+				expect(div.getAttribute('aria-level')).toBe(`${expectedHeaderLevel}`);
+				expect(div.classList.contains(`header-${expectedHeaderLevel}`)).toBeTruthy();
+			};
+
+			[7, 10].forEach((largerHeaderLevel) => {
+				test(`renders div with aria-role="heading" and specified level when given level above 6 [${largerHeaderLevel}]`, () => {
+					const result = renderSvelteComponent(
+							DynamicLeveledHeader,
+							{ props: { level: largerHeaderLevel } }
+						);
+						const component = getSvelteElementFromRenderResult(result);
+						expectDivHeaderAttributes(component, largerHeaderLevel);
+				});
+
+				test(`renders with no children by default when given level above 6 [${largerHeaderLevel}]`, () => {
+					const result = renderSvelteComponent(
+						DynamicLeveledHeader,
+						{ props: { level: largerHeaderLevel } }
+					);
+					const component = getSvelteElementFromRenderResult(result);
+					expect(component.children.length).toBe(0);
+				});
+
+				test(`renders slotted content under div when given level above 6 [${largerHeaderLevel}]`, () => {
+					const result = renderSvelteComponent(
+						SlotTest,
+						{
+							props: {
+								componentUnderTest: DynamicLeveledHeader,
+								level: largerHeaderLevel
+							}
+						}
+					);
+					const component = getSvelteElementFromRenderResult(result);
+					expectDivHeaderAttributes(component, largerHeaderLevel);
+					expect(component.children.length).toBe(1); // the slot test component only has one element
+					expect(component.querySelector('[data-testid="slot"]')).not.toBeNull();
+				});
+
+				test(`passes down attributes to rendered div when given level [${largerHeaderLevel}]`, () => {
+					const result = renderSvelteComponent(
+						DynamicLeveledHeader,
+						{
+								props: {
+									level: largerHeaderLevel,
+									title: ARBITRARY_TITLE
+								}
+						}
+					);
+					const component = getSvelteElementFromRenderResult(result);
+					expect(component.getAttribute('title')).toEqual(ARBITRARY_TITLE);
+				});
+			});
+		});
+
+
 		describe('invalid header level values', () => {
-			[NON_NUMBER_HEADER_LEVEL, 0, 7].forEach((invalidHeaderLevel) => {
+			[NON_NUMBER_HEADER_LEVEL, 0].forEach((invalidHeaderLevel) => {
 				test(`renders div when given level [${invalidHeaderLevel}]`, () => {
-					const result = render(
+					const result = renderSvelteComponent(
 						DynamicLeveledHeader,
 						{ props: { level: invalidHeaderLevel } }
 					);
@@ -96,7 +142,7 @@ describe('DynamicLeveledHeader', () => {
 				});
 
 				test(`renders with no children by default when given level [${invalidHeaderLevel}]`, () => {
-					const result = render(
+					const result = renderSvelteComponent(
 						DynamicLeveledHeader,
 						{ props: { level: invalidHeaderLevel } }
 					);
@@ -105,7 +151,7 @@ describe('DynamicLeveledHeader', () => {
 				});
 	
 				test(`renders slotted content under div when given level [${invalidHeaderLevel}]`, () => {
-					const result = render(
+					const result = renderSvelteComponent(
 						SlotTest,
 						{
 							props: {
@@ -121,17 +167,17 @@ describe('DynamicLeveledHeader', () => {
 				});
 
 				test(`logs a warning when given level [${invalidHeaderLevel}]`, () => {
-					render(
+					renderSvelteComponent(
 						DynamicLeveledHeader,
 						{ props: { level: invalidHeaderLevel } }
 					);
 
-					const expectedMessage = `header level [${invalidHeaderLevel}] is not a number of is not between 1 and 6; rendering div instead`;
-					expect(mockWarn).toBeCalledWith(expectedMessage);
+					const expectedMessage = `header level [${invalidHeaderLevel}] is not a number; rendering div without header role`;
+					expect(mockLoggerContext.getMockLogger().warn).toBeCalledWith(expectedMessage);
 				});
 
 				test(`passes down attributes to rendered div when given level [${invalidHeaderLevel}]`, () => {
-					const result = render(
+					const result = renderSvelteComponent(
 						DynamicLeveledHeader,
 						{
 								props: {

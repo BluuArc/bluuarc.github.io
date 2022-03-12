@@ -5,9 +5,11 @@
 
 <script lang="ts">
 	export let level: number = 2;
+	let isValidNumber = true;
 	$: {
-		if (isNaN(level) || level < 1 || level > 6) {
-			logger.warn(`header level [${level}] is not a number of is not between 1 and 6; rendering div instead`);
+		isValidNumber = !(isNaN(level) || level < 1);
+		if (!isValidNumber) {
+			logger.warn(`header level [${level}] is not a number; rendering div without header role`);
 		}
 	}
 </script>
@@ -24,6 +26,8 @@
 <h5 {...$$restProps}><slot/></h5>
 {:else if level === 6}
 <h6 {...$$restProps}><slot/></h6>
+{:else if isValidNumber}
+<div role="heading" aria-level="{level}" class="header-{level}"  {...$$restProps}><slot/></div>
 {:else}
 <div {...$$restProps}><slot/></div>
 {/if}
