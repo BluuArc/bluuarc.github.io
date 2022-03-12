@@ -4,7 +4,8 @@
   "description": "Personal website",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest src",
+    "tdd": "npm run test -- --watch",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview"

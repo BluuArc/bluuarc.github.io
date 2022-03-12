@@ -1,5 +1,5 @@
 ---
-const buildTime = `${(new Date()).toLocaleString()} (Central)`;
+const buildTime = (new Date()).toString();
 ---
 
 <html lang="en">
@@ -33,7 +33,7 @@ const buildTime = `${(new Date()).toLocaleString()} (Central)`;
 					</ul>
 				</address>
 			</section>
-			<p>This page was built at {buildTime}</p>
+			<p>This page was built on {buildTime}</p>
 		</footer>
 	</body>
 </html>
