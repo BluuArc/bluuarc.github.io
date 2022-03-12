@@ -1,11 +1,11 @@
-interface ExtendedConsole extends Console {
+export interface IExtendedConsole extends Console {
 	/**
 	 * @description Create a logger under the exsiting logger context. Resulting key used in log labels is `${currentKey}.${subKey}`
 	 * @param subKey Unique identifier to use for sub logger. Typical usage is to key by context or component. Loggers are cached.
 	 * @param styling Styling to apply to the label for each log message. If not specified, styling is inherited from parent logger.
 	 * @returns Logger for given key + sub-key.
 	 */
-	createSubLogger: (subKey: string, styling?: string) => ExtendedConsole;
+	getSubLogger: (subKey: string, styling?: string) => IExtendedConsole;
 }
 
 const KEYED_LOGGING_FUNCTIONS = [
@@ -16,8 +16,11 @@ const KEYED_LOGGING_FUNCTIONS = [
 	'debug',
 ];
 const DEFAULT_STYLING = 'font-weight:bold;background:black;color:white;text-decoration:underline;';
-const CREATE_SUB_LOGGER_METHOD_NAME = 'createSubLogger';
-const proxyMapping = new Map<string, ExtendedConsole>();
+const GET_SUB_LOGGER_METHOD_NAME = 'getSubLogger';
+
+export const _context = {
+	proxyMapping: new Map<string, IExtendedConsole>()
+};
 
 /**
  * @description Get or create a console logger based on the given key.
@@ -26,13 +29,13 @@ const proxyMapping = new Map<string, ExtendedConsole>();
  * @param targetConsoleObject Object to use as the base for console logs. Default is the global `console` object
  * @returns Logger for given key.
  */
-export function getLogger(key: string, styling = DEFAULT_STYLING, targetConsoleObject = console): ExtendedConsole {
-	let logger = proxyMapping.get(key);
+export function getLogger(key: string, styling = DEFAULT_STYLING, targetConsoleObject = console): IExtendedConsole {
+	let logger = _context.proxyMapping.get(key);
 	if (!logger) {
-		logger = new Proxy(targetConsoleObject as ExtendedConsole, {
-			get (obj: ExtendedConsole, prop: string) {
+		logger = new Proxy(targetConsoleObject as IExtendedConsole, {
+			get (obj: IExtendedConsole, prop: string) {
 				let result;
-				if (prop === CREATE_SUB_LOGGER_METHOD_NAME) {
+				if (prop === GET_SUB_LOGGER_METHOD_NAME) {
 					result = (subKey: string, subStyling?: string) => getLogger(`${key}.${subKey}`, subStyling || styling, targetConsoleObject);
 				} else if (KEYED_LOGGING_FUNCTIONS.includes(prop)) {
 					const originalFunction: (...args: any[]) => undefined = obj[prop];
@@ -43,7 +46,7 @@ export function getLogger(key: string, styling = DEFAULT_STYLING, targetConsoleO
 				return result;
 			}
 		});
-		proxyMapping.set(key, logger);
+		_context.proxyMapping.set(key, logger);
 	}
 	return logger;
 }
