@@ -11,5 +11,5 @@
 		{title}
 		bind:titleId={titleId}
 	/>
-	<slot headerId={titleId}>Section content</slot>
+	<slot headerId={titleId}><p>Section content</p></slot>
 </article>

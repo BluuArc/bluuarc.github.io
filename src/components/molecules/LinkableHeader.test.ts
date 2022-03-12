@@ -39,7 +39,13 @@ describe('LinkableHeader', () => {
 		expect(invisibleText.classList.contains('sr-only')).toBeTruthy();
 
 		return anchor;
-	}
+	};
+
+	test('renders topmost element as <header> element', () => {
+		const result = renderSvelteComponent(LinkableHeader);
+		const component = getSvelteElementFromRenderResult(result);
+		expect(component.tagName).toBe('HEADER');
+	});
 
 	describe('using default values', () => {
 		test('renders with single default h2 that has title [Section Title] and ID [h2-section-title]', () => {
@@ -63,7 +69,7 @@ describe('LinkableHeader', () => {
 			const component = getSvelteElementFromRenderResult(result);
 			expect(component.children.length).toBe(1); // only one child for header content
 		});
-	
+
 		test('renders slotted content', () => {
 			const result = renderSvelteComponent(
 				SlotTest,
@@ -99,7 +105,7 @@ describe('LinkableHeader', () => {
 		const testTitleCase = testParams ? `title [${testParams.title}]` : `default title [${EXPECTED_DEFAULTS.HEADER_TITLE}]`;
 		const expectedTitle = testParams ? testParams.title : EXPECTED_DEFAULTS.HEADER_TITLE;
 		const expectedBaseId = testParams ? testParams.expectedBaseId : EXPECTED_DEFAULTS.BASE_ID;
-		
+
 		describe(`given ${testTitleCase}`, () => {
 			// basic testing for h1-h6, h7+, and div cases, extended testing on DynamicLeveledHeader
 			Array.from({ length: 6 }, (_, i) => i+1).forEach((headerLevel) => {
@@ -107,7 +113,7 @@ describe('LinkableHeader', () => {
 				test(`renders single [${expectedHeaderTag}] given level [${headerLevel}]`, () => {
 					const result = renderSvelteComponent(LinkableHeader, { props: { level: headerLevel, title: expectedTitle }});
 					const component = getSvelteElementFromRenderResult(result);
-	
+
 					const headerElement = getExpectedHeaderTitleElement(component, expectedHeaderTag);
 					expect(headerElement.id).toBe(`${expectedHeaderTag}-${expectedBaseId}`);
 					expect(headerElement.textContent).toEqual(expectedTitle);
@@ -116,7 +122,7 @@ describe('LinkableHeader', () => {
 				test(`renders single anchor link given level [${headerLevel}]`, () => {
 					const result = renderSvelteComponent(LinkableHeader, { props: { level: headerLevel, title: expectedTitle }});
 					const component = getSvelteElementFromRenderResult(result);
-		
+
 					const anchor = getExpectedAnchorElementForHeader(component);
 					expect(anchor.getAttribute('href')).toBe(`#${expectedHeaderTag}-${expectedBaseId}`);
 					expect(anchor.children[1].textContent).toBe(`Go to the "${expectedTitle}" section`);
@@ -137,7 +143,7 @@ describe('LinkableHeader', () => {
 			test('renders single anchor link with ${testTitleCase} given larger header level than 6 [7]', () => {
 				const result = renderSvelteComponent(LinkableHeader, { props: { level: 7, title: expectedTitle }});
 				const component = getSvelteElementFromRenderResult(result);
-	
+
 				const anchor = getExpectedAnchorElementForHeader(component);
 				expect(anchor.getAttribute('href')).toBe(`#h7-${expectedBaseId}`);
 				expect(anchor.children[1].textContent).toBe(`Go to the "${expectedTitle}" section`);
@@ -155,7 +161,7 @@ describe('LinkableHeader', () => {
 			test('renders single anchor link with ${testTitleCase} given invalid header level [not-a-number-level]', () => {
 				const result = renderSvelteComponent(LinkableHeader, { props: { level: 'not-a-number-level', title: expectedTitle }});
 				const component = getSvelteElementFromRenderResult(result);
-	
+
 				const anchor = getExpectedAnchorElementForHeader(component, );
 				expect(anchor.getAttribute('href')).toBe(`#hnot-a-number-level-${expectedBaseId}`);
 				expect(anchor.children[1].textContent).toBe(`Go to the "${expectedTitle}" section`);
