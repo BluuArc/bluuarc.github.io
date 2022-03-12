@@ -1,0 +1,24 @@
+---
+import AppShell from '@src/layouts/AppShell.astro';
+import glob from 'glob';
+
+// TODO: find better way to gather metadata
+const posts = glob.sync('./src/pages/posts/**/*.astro')
+	.map((originalPath) => {
+		const hrefPath = originalPath.slice('./src/pages'.length).slice(0, -('.astro').length);
+		return hrefPath;
+	});
+---
+
+<AppShell>
+	<title slot="page-title">Blog Posts | joshuacastor.me</title>
+	<main>
+		<h1 class="sr-only">Blog Posts</h1>
+
+		This is the posts page. TBD
+
+		<ul>
+			{posts.map(item => <li><a href={item}>{item}</a></li>)}
+		</ul>
+	</main>
+</AppShell>
