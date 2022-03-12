@@ -1,8 +1,8 @@
 <script lang="ts">
 	import DynamicLeveledHeader from '../atoms/DynamicLeveledHeader.svelte';
-	export let title: string = 'Section Title';
-	export let level: number = 2;
-	export let titleId: string = ''; // intended to be read, not set
+	export let title = 'Section Title';
+	export let level = 2;
+	export let titleId = ''; // intended to be read, not set
 	$: {
 		titleId = `h${level}-${title.toLowerCase().replace(/ /g, '-')}`;
 	}

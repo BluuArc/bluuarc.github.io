@@ -6,7 +6,7 @@ import SlotTest from '../atoms/_SlotTest.svelte';
 describe('LinkableHeader', () => {
 	const EXPECTED_DEFAULTS = {
 		HEADER_TITLE: 'Section Title',
-		BASE_ID: 'section-title'
+		BASE_ID: 'section-title',
 	};
 
 	/**
@@ -34,8 +34,8 @@ describe('LinkableHeader', () => {
 
 		const anchor = collection[0];
 		const [visibleHash, invisibleText] = Array.from(anchor.children);
-		expect(visibleHash.textContent).toBe('#')
-		expect(visibleHash.getAttribute('aria-hidden')).toBe('true')
+		expect(visibleHash.textContent).toBe('#');
+		expect(visibleHash.getAttribute('aria-hidden')).toBe('true');
 		expect(invisibleText.classList.contains('sr-only')).toBeTruthy();
 
 		return anchor;
@@ -76,8 +76,8 @@ describe('LinkableHeader', () => {
 				{
 					props: {
 						componentUnderTest: LinkableHeader,
-					}
-				}
+					},
+				},
 			);
 			const component = getSvelteElementFromRenderResult(result);
 
@@ -162,7 +162,7 @@ describe('LinkableHeader', () => {
 				const result = renderSvelteComponent(LinkableHeader, { props: { level: 'not-a-number-level', title: expectedTitle }});
 				const component = getSvelteElementFromRenderResult(result);
 
-				const anchor = getExpectedAnchorElementForHeader(component, );
+				const anchor = getExpectedAnchorElementForHeader(component );
 				expect(anchor.getAttribute('href')).toBe(`#hnot-a-number-level-${expectedBaseId}`);
 				expect(anchor.children[1].textContent).toBe(`Go to the "${expectedTitle}" section`);
 			});

@@ -24,7 +24,7 @@ describe('DynamicLeveledHeader', () => {
 			test(`renders [${expectedHeaderTag}] when given level [${validHeaderLevel}]`, () => {
 				const result = renderSvelteComponent(
 					DynamicLeveledHeader,
-					{ props: { level: validHeaderLevel } }
+					{ props: { level: validHeaderLevel } },
 				);
 				const component = getSvelteElementFromRenderResult(result);
 				expect(component.tagName).toBe(expectedHeaderTag.toUpperCase());
@@ -33,7 +33,7 @@ describe('DynamicLeveledHeader', () => {
 			test(`renders with no children by default when given level [${validHeaderLevel}]`, () => {
 				const result = renderSvelteComponent(
 					DynamicLeveledHeader,
-					{ props: { level: validHeaderLevel } }
+					{ props: { level: validHeaderLevel } },
 				);
 				const component = getSvelteElementFromRenderResult(result);
 				expect(component.children.length).toBe(0);
@@ -45,9 +45,9 @@ describe('DynamicLeveledHeader', () => {
 					{
 						props: {
 							componentUnderTest: DynamicLeveledHeader,
-							level: validHeaderLevel
-						}
-					}
+							level: validHeaderLevel,
+						},
+					},
 				);
 				const component = getSvelteElementFromRenderResult(result);
 				expect(component.tagName).toBe(expectedHeaderTag.toUpperCase());
@@ -59,11 +59,11 @@ describe('DynamicLeveledHeader', () => {
 				const result = renderSvelteComponent(
 					DynamicLeveledHeader,
 					{
-							props: {
-								level: validHeaderLevel,
-								title: ARBITRARY_TITLE
-							}
-					}
+						props: {
+							level: validHeaderLevel,
+							title: ARBITRARY_TITLE,
+						},
+					},
 				);
 				const component = getSvelteElementFromRenderResult(result);
 				expect(component.getAttribute('title')).toEqual(ARBITRARY_TITLE);
@@ -71,7 +71,7 @@ describe('DynamicLeveledHeader', () => {
 		});
 
 		describe('header level values above 6', () => {
-			const expectDivHeaderAttributes = (div: Element, expectedHeaderLevel: Number) => {
+			const expectDivHeaderAttributes = (div: Element, expectedHeaderLevel: number) => {
 				expect(div.tagName).toBe('DIV');
 				expect(div.getAttribute('role')).toBe('heading');
 				expect(div.getAttribute('aria-level')).toBe(`${expectedHeaderLevel}`);
@@ -81,17 +81,17 @@ describe('DynamicLeveledHeader', () => {
 			[7, 10].forEach((largerHeaderLevel) => {
 				test(`renders div with aria-role="heading" and specified level when given level above 6 [${largerHeaderLevel}]`, () => {
 					const result = renderSvelteComponent(
-							DynamicLeveledHeader,
-							{ props: { level: largerHeaderLevel } }
-						);
-						const component = getSvelteElementFromRenderResult(result);
-						expectDivHeaderAttributes(component, largerHeaderLevel);
+						DynamicLeveledHeader,
+						{ props: { level: largerHeaderLevel } },
+					);
+					const component = getSvelteElementFromRenderResult(result);
+					expectDivHeaderAttributes(component, largerHeaderLevel);
 				});
 
 				test(`renders with no children by default when given level above 6 [${largerHeaderLevel}]`, () => {
 					const result = renderSvelteComponent(
 						DynamicLeveledHeader,
-						{ props: { level: largerHeaderLevel } }
+						{ props: { level: largerHeaderLevel } },
 					);
 					const component = getSvelteElementFromRenderResult(result);
 					expect(component.children.length).toBe(0);
@@ -103,9 +103,9 @@ describe('DynamicLeveledHeader', () => {
 						{
 							props: {
 								componentUnderTest: DynamicLeveledHeader,
-								level: largerHeaderLevel
-							}
-						}
+								level: largerHeaderLevel,
+							},
+						},
 					);
 					const component = getSvelteElementFromRenderResult(result);
 					expectDivHeaderAttributes(component, largerHeaderLevel);
@@ -117,11 +117,11 @@ describe('DynamicLeveledHeader', () => {
 					const result = renderSvelteComponent(
 						DynamicLeveledHeader,
 						{
-								props: {
-									level: largerHeaderLevel,
-									title: ARBITRARY_TITLE
-								}
-						}
+							props: {
+								level: largerHeaderLevel,
+								title: ARBITRARY_TITLE,
+							},
+						},
 					);
 					const component = getSvelteElementFromRenderResult(result);
 					expect(component.getAttribute('title')).toEqual(ARBITRARY_TITLE);
@@ -135,7 +135,7 @@ describe('DynamicLeveledHeader', () => {
 				test(`renders div when given level [${invalidHeaderLevel}]`, () => {
 					const result = renderSvelteComponent(
 						DynamicLeveledHeader,
-						{ props: { level: invalidHeaderLevel } }
+						{ props: { level: invalidHeaderLevel } },
 					);
 					const component = getSvelteElementFromRenderResult(result);
 					expect(component.tagName).toBe('DIV');
@@ -144,21 +144,21 @@ describe('DynamicLeveledHeader', () => {
 				test(`renders with no children by default when given level [${invalidHeaderLevel}]`, () => {
 					const result = renderSvelteComponent(
 						DynamicLeveledHeader,
-						{ props: { level: invalidHeaderLevel } }
+						{ props: { level: invalidHeaderLevel } },
 					);
 					const component = getSvelteElementFromRenderResult(result);
 					expect(component.children.length).toBe(0);
 				});
-	
+
 				test(`renders slotted content under div when given level [${invalidHeaderLevel}]`, () => {
 					const result = renderSvelteComponent(
 						SlotTest,
 						{
 							props: {
 								componentUnderTest: DynamicLeveledHeader,
-								level: invalidHeaderLevel
-							}
-						}
+								level: invalidHeaderLevel,
+							},
+						},
 					);
 					const component = getSvelteElementFromRenderResult(result);
 					expect(component.tagName).toBe('DIV');
@@ -169,7 +169,7 @@ describe('DynamicLeveledHeader', () => {
 				test(`logs a warning when given level [${invalidHeaderLevel}]`, () => {
 					renderSvelteComponent(
 						DynamicLeveledHeader,
-						{ props: { level: invalidHeaderLevel } }
+						{ props: { level: invalidHeaderLevel } },
 					);
 
 					const expectedMessage = `header level [${invalidHeaderLevel}] is not a number; rendering div without header role`;
@@ -180,11 +180,11 @@ describe('DynamicLeveledHeader', () => {
 					const result = renderSvelteComponent(
 						DynamicLeveledHeader,
 						{
-								props: {
-									level: invalidHeaderLevel,
-									title: ARBITRARY_TITLE
-								}
-						}
+							props: {
+								level: invalidHeaderLevel,
+								title: ARBITRARY_TITLE,
+							},
+						},
 					);
 					const component = getSvelteElementFromRenderResult(result);
 					expect(component.getAttribute('title')).toEqual(ARBITRARY_TITLE);

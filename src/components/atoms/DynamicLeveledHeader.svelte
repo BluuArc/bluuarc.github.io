@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-	export let level: number = 2;
+	export let level = 2;
 	let isValidNumber = true;
 	$: {
 		isValidNumber = !(isNaN(level) || level < 1);

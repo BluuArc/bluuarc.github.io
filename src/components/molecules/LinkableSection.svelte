@@ -1,8 +1,8 @@
 <script lang="ts">
 	import LinkableHeader from './LinkableHeader.svelte';
-	export let title: string = 'Section Title';
-	export let headerLevel: number = 2;
-	let titleId: string = '';
+	export let title = 'Section Title';
+	export let headerLevel = 2;
+	let titleId = '';
 </script>
 
 <article>

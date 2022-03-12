@@ -16,17 +16,17 @@ describe('getLogger', () => {
 	const testOverriddenLoggerFunctionsWithKeyAndLoggerFactory = (expectedKey: string, loggerFactory: () => IExtendedConsole) => {
 		EXPECTED_OVERRIDDEN_LOGGING_FUNCTIONS.forEach((name) => {
 			describe(`overridden console function [${name}]`, () => {
-				test(`is present on returned logger object`, () => {
+				test('is present on returned logger object', () => {
 					const logger = loggerFactory();
 					expect(typeof logger[name]).toBe('function');
 					expect(logger[name]).not.toBe(mockConsole[name]);
 				});
-	
+
 				test(`is called with specified label "[${expectedKey}:${name}]", style [${ARBITRARY_STYLING_STRING}], and log message [${ARBITRARY_LOG_MESSAGE}]`, () => {
 					const logger = loggerFactory();
 					const overriddenLoggerFunction = logger[name] as typeof console.log;
 					overriddenLoggerFunction(ARBITRARY_LOG_MESSAGE);
-	
+
 					const expectedLabel = `%c[${expectedKey}:${name}]`;
 					expect(mockConsole[name]).toBeCalledWith(expectedLabel, ARBITRARY_STYLING_STRING, ARBITRARY_LOG_MESSAGE);
 				});
@@ -49,7 +49,7 @@ describe('getLogger', () => {
 
 	testOverriddenLoggerFunctionsWithKeyAndLoggerFactory(
 		ARBITRARY_LOGGER_KEY,
-		() => getLogger(ARBITRARY_LOGGER_KEY, ARBITRARY_STYLING_STRING, mockConsole as Console)
+		() => getLogger(ARBITRARY_LOGGER_KEY, ARBITRARY_STYLING_STRING, mockConsole as Console),
 	);
 
 	describe('getSubLogger', () => {
@@ -65,7 +65,7 @@ describe('getLogger', () => {
 			() => {
 				const logger = getLogger(ARBITRARY_LOGGER_KEY, ARBITRARY_STYLING_STRING, mockConsole as Console);
 				return logger.getSubLogger(ARBITRARY_SUB_LOGGER_KEY);
-			}
+			},
 		);
 
 		test('allows overridden styling on the sub logger', () => {
@@ -77,9 +77,9 @@ describe('getLogger', () => {
 			expect(mockConsole.log).toHaveBeenCalledWith(
 				expect.stringContaining(ARBITRARY_SUB_LOGGER_KEY),
 				anotherArbitraryStyleString,
-				ARBITRARY_LOG_MESSAGE
+				ARBITRARY_LOG_MESSAGE,
 			);
-		})
+		});
 	});
 
 	test('returns logger object that returns original property on console object if the property is not overridden', () => {

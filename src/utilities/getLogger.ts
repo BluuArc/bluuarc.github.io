@@ -19,7 +19,7 @@ const DEFAULT_STYLING = 'font-weight:bold;background:black;color:white;text-deco
 const GET_SUB_LOGGER_METHOD_NAME = 'getSubLogger';
 
 export const _context = {
-	proxyMapping: new Map<string, IExtendedConsole>()
+	proxyMapping: new Map<string, IExtendedConsole>(),
 };
 
 /**
@@ -38,13 +38,13 @@ export function getLogger(key: string, styling = DEFAULT_STYLING, targetConsoleO
 				if (prop === GET_SUB_LOGGER_METHOD_NAME) {
 					result = (subKey: string, subStyling?: string) => getLogger(`${key}.${subKey}`, subStyling || styling, targetConsoleObject);
 				} else if (KEYED_LOGGING_FUNCTIONS.includes(prop)) {
-					const originalFunction: (...args: any[]) => undefined = obj[prop];
+					const originalFunction: typeof console.log = obj[prop];
 					result = originalFunction.bind(targetConsoleObject, `%c[${key}:${prop}]`, styling);
 				} else {
 					result = obj[prop];
 				}
 				return result;
-			}
+			},
 		});
 		_context.proxyMapping.set(key, logger);
 	}

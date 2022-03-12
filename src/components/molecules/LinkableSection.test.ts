@@ -6,7 +6,7 @@ import SlotTest from './_LinkableSectionSlotTest.svelte';
 describe('LinkableSection', () => {
 	const EXPECTED_DEFAULTS = {
 		HEADER_TITLE: 'Section Title',
-		BASE_ID: 'section-title'
+		BASE_ID: 'section-title',
 	};
 
 	test('renders topmost element as <article> element', () => {
@@ -36,8 +36,8 @@ describe('LinkableSection', () => {
 			{
 				props: {
 					componentUnderTest: LinkableSection,
-				}
-			}
+				},
+			},
 		);
 		const component = getSvelteElementFromRenderResult(result);
 
@@ -73,9 +73,9 @@ describe('LinkableSection', () => {
 						props: {
 							componentUnderTest: LinkableSection,
 							headerLevel: 1,
-							title: expectedTitle
-						}
-					}
+							title: expectedTitle,
+						},
+					},
 				);
 				const component = getSvelteElementFromRenderResult(result);
 
