@@ -43,6 +43,10 @@ describe('getLogger', () => {
 		});
 	});
 
+	afterAll(() => {
+		_context.proxyMapping = new Map<string, IExtendedConsole>();
+	});
+
 	testOverriddenLoggerFunctionsWithKeyAndLoggerFactory(
 		ARBITRARY_LOGGER_KEY,
 		() => getLogger(ARBITRARY_LOGGER_KEY, ARBITRARY_STYLING_STRING, mockConsole as Console)
