@@ -1,7 +1,10 @@
 ---
 import AppShell from '@src/layouts/AppShell.astro';
+import MetadataProcessor from '@src/components/atoms/MetadataProcessor.svelte';
+const metadata = Astro.props.metadata; // passed in from post using PostShell layout
 ---
 
 <AppShell>
+	<MetadataProcessor metadata={metadata} client:idle />
 	<main><slot/></main>
 </AppShell>
