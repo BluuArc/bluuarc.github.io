@@ -17,11 +17,11 @@ export function getNormalizedPostMetadata (metadata?: Partial<IPostMetadata>): I
 		imageUrl = `${siteName}/${imageUrl.startsWith('/') ? imageUrl.slice(1) : imageUrl}`;
 	}
 	return {
-		pathName: metadata?.pathName || location.pathname,
+		pathName: metadata?.pathName || void 0,
 		title: `${metadata?.title || 'Default Page Name'} | Blog Post on joshuacastor.me`,
 		description: metadata?.description || 'Default Page Description',
 		author: metadata?.author || 'Joshua Castor',
-		keywords: Array.isArray(metadata?.keywords) && metadata.keywords.length > 0 ? metadata.keywords : null,
+		keywords: Array.isArray(metadata?.keywords) && metadata.keywords.length > 0 ? metadata.keywords : [],
 		image: imageUrl,
 		datePublished: metadata?.datePublished || new Date(),
 		dateModified: metadata?.dateModified || null,

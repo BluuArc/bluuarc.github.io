@@ -1,5 +1,7 @@
 ---
+import MetadataProcessor from '@src/components/functional/MetadataProcessor.astro';
 const buildTime = (new Date()).toString();
+const metadata = Astro.props.metadata;
 ---
 
 <html lang="en">
@@ -8,6 +10,7 @@ const buildTime = (new Date()).toString();
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<slot name="page-title"></slot>
+		<MetadataProcessor metadata={metadata}/>
 		<style lang="scss" global>
 			@use '../styles/global.scss';
 		</style>
@@ -38,5 +41,27 @@ const buildTime = (new Date()).toString();
 			</section>
 			<p>This page was built on {buildTime}</p>
 		</footer>
+
+		<script id="metatag-mover">
+			(() => {
+				/**
+				 * Any slotted elements in <head> or otherwise conditionally
+				 * rendered elements in <head> get appended to the body.
+				 * Run as in-line script to try to maintain expected usage
+				 * of these tags in <head> element. Should run before
+				 * window.onload is fired.
+				 */
+				function moveMetaElementsToHead () {
+					document.body.querySelectorAll('title, meta, link, script[type="application/ld+json"]')
+						.forEach((element) => {
+							document.head.appendChild(element);
+						});
+				}
+				moveMetaElementsToHead();
+
+				// No one needs to know we've shuffled some stuff around.
+				document.getElementById('metatag-mover').remove();
+			})();
+		</script>
 	</body>
 </html>

@@ -1,0 +1,26 @@
+---
+import RenderIfTrue from './RenderIfTrue.svelte';
+import { convertPostMetadataToBlogPostingSchema, getNormalizedPostMetadata, IPostMetadata } from '@src/utilities/post-utilities';
+
+const metadata = Astro.props.metadata;
+const normalizedMetadata = getNormalizedPostMetadata(metadata);
+const schemaJsonString = JSON.stringify(convertPostMetadataToBlogPostingSchema(normalizedMetadata), null, 2);
+const ogUrl = `https://joshuacastor.me${normalizedMetadata.pathName}`;
+---
+
+<RenderIfTrue ifCondition={!!metadata}>
+	<title>{normalizedMetadata.title}</title>
+	<meta name="description" content={normalizedMetadata.description}>
+	<link rel="canonical" href={ogUrl}>
+	<RenderIfTrue ifCondition={!!normalizedMetadata.keywords}>
+		<meta name="keywords" content={normalizedMetadata.keywords.join(', ')}>
+	</RenderIfTrue>
+	<meta name="twitter:card" content={normalizedMetadata.description}>
+	<meta property="og:url" content={ogUrl}>
+	<meta property="og:title" content={normalizedMetadata.title}>
+	<meta property="og:description" content={normalizedMetadata.description}>
+	<RenderIfTrue ifCondition={!!normalizedMetadata.image}>
+		<meta property="og:image" content={normalizedMetadata.image}>
+		<script type="application/ld+json" set:html={schemaJsonString}></script>
+	</RenderIfTrue>
+</RenderIfTrue>
