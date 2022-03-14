@@ -2,6 +2,7 @@
 import PostShell from '@src/layouts/PostShell.astro';
 import { Markdown } from 'astro/components';
 import LinkableHeader from '@src/components/molecules/LinkableHeader.svelte';
+import DateTime from '@src/components/atoms/DateTime.svelte';
 
 const metadata = {
 	pathName: Astro.request.canonicalURL.pathname,
@@ -20,7 +21,8 @@ const metadata = {
 		title="My First Site"
 		level={1}
 	>
-		<p>Page was original available at TODO:time. This post was updated as part of the site overhaul at TODO:time.</p>
+		Post was originally available at <DateTime includeTimeInTooltip={true} dateTime={metadata.datePublished} client:idle />.
+		This post was updated as part of the site overhaul at <DateTime dateTime={metadata.dateModified} client:load />.
 	</LinkableHeader>
 	<figure>
 		<img src="/img/old_sites/v001.png" alt="Screenshot of this website in January 2017">
