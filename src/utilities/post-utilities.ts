@@ -7,7 +7,6 @@ export interface IPostMetadata {
 	image?: string;
 	datePublished: Date;
 	dateModified?: Date;
-	url?: string;
 }
 
 export function getNormalizedPostMetadata (metadata?: Partial<IPostMetadata>): IPostMetadata {
@@ -21,7 +20,7 @@ export function getNormalizedPostMetadata (metadata?: Partial<IPostMetadata>): I
 		title: `${metadata?.title || 'Default Page Name'} | Blog Post on joshuacastor.me`,
 		description: metadata?.description || 'Default Page Description',
 		author: metadata?.author || 'Joshua Castor',
-		keywords: Array.isArray(metadata?.keywords) && metadata.keywords.length > 0 ? metadata.keywords : [],
+		keywords: Array.isArray(metadata?.keywords) && metadata.keywords.length > 0 ? metadata.keywords.slice() : [],
 		image: imageUrl,
 		datePublished: metadata?.datePublished || new Date(),
 		dateModified: metadata?.dateModified || null,
@@ -41,6 +40,6 @@ export function convertPostMetadataToBlogPostingSchema(metadata: IPostMetadata) 
 		},
 		description: metadata.description,
 		datePublished: metadata.datePublished.toISOString(),
-		dateModified: metadata?.dateModified ? metadata.dateModified.toISOString() : (void 0),
+		dateModified: metadata.dateModified ? metadata.dateModified.toISOString() : (void 0),
 	};
 }

@@ -35,7 +35,7 @@ describe('RenderIfTrue', () => {
 		test(`renders nothing by default when given ${testCase.scenario}`, () => {
 			let props;
 			if ('ifCondition' in testCase) {
-				props = { props: { ifCondition: testCase.ifCondition }}
+				props = { props: { ifCondition: testCase.ifCondition }};
 			}
 			const result = renderSvelteComponent(RenderIfTrue, props);
 			const container = getContainerOfSvelteElementFromRenderResult(result);
@@ -65,7 +65,7 @@ describe('RenderIfTrue', () => {
 	EXPECTED_FALSY_CASES.forEach((testCase) => {
 		test(`renders 'else' slot and not default slot when given ${testCase.scenario}`, () => {
 			const props = {
-				props: { componentUnderTest: RenderIfTrue, ifCondition: testCase.ifCondition }
+				props: { componentUnderTest: RenderIfTrue, ifCondition: testCase.ifCondition },
 			};
 			if (!('ifCondition' in testCase)) {
 				delete props.props.ifCondition;
