@@ -3,7 +3,6 @@ import { getSvelteElementFromRenderResult, renderSvelteComponent } from '@src/ut
 import DynamicLeveledHeader from './DynamicLeveledHeader.svelte';
 import SlotTest from './_SlotTest.svelte';
 
-
 describe('DynamicLeveledHeader', () => {
 	const NON_NUMBER_HEADER_LEVEL = 'not-a-number-header-level';
 	const ARBITRARY_TITLE = 'arbitrary value for title attribute';

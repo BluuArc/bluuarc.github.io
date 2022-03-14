@@ -8,4 +8,6 @@
 
 {#if !!ifCondition}
 <slot/>
+{:else}
+<slot name="else"/>
 {/if}
