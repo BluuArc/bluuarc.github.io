@@ -1,8 +1,11 @@
 <script lang="ts">
+	import { getRelativeTimeString } from '@src/utilities/getRelativeTimeString';
 	export let dateTime = (new Date()).toDateString();
 	export let includeTimeInTooltip = false;
+	export let _windowContext: Window|null = null;
 	let isoDateString: string;
 	let parsedDateString: string;
+	let relativeTimeString: string;
 	let ariaId: string;
 	let parsedDateStringWidthHelperElement: Element;
 	let parsedDateStringWrappingHelperElement: Element;
@@ -16,6 +19,7 @@
 	$: {
 		const parsedDate = new Date(dateTime);
 		parsedDateString = parsedDate.toDateString();
+		relativeTimeString = getRelativeTimeString(parsedDate);
 		if (includeTimeInTooltip) {
 			parsedDateString = `${parsedDateString} ${parsedDate.toTimeString()}`;
 		}
@@ -23,21 +27,35 @@
 		ariaId = `date-desc-${parsedDate.valueOf()}`;
 	}
 
+	function getTooltipBoundaries () {
+		const windowReference = _windowContext || window;
+		// tooltip should not get within 5% of the edges for visbility
+		const outerBoundsScale = 0.05;
+		const windowWidth = windowReference.innerWidth;
+		const windowHeight = windowReference.innerHeight;
+		return {
+			top: windowHeight * outerBoundsScale,
+			left: windowWidth * outerBoundsScale,
+			bottom: windowHeight * (1 - outerBoundsScale),
+			right: windowWidth * (1 - outerBoundsScale),
+		};
+	}
+
 	function doesFullTooltipFitInViewport() {
 		const boundingRect = parsedDateStringWidthHelperElement.getBoundingClientRect();
 
-		// ensure tooltip is within the innermost 90% of the viewport
+		// top offset needed since reference element is displayed in same location as time input
+		// when ideal position is above the time element
 		const topOffset = (boundingRect.height * 2);
 		const projectedToolTipTop = boundingRect.y - topOffset;
 		const projectedToolTipBottom = boundingRect.bottom - topOffset;
-		const tooltipMaxRight = window.innerWidth * 0.95;
-		const tooltipMaxBottom = window.innerHeight * 0.95;
+		const tooltipBounds = getTooltipBoundaries();
 
 		return {
-			atPositionHorizontal: boundingRect.x > 0 && boundingRect.right < tooltipMaxRight,
-			overallHorizontal: boundingRect.width <= tooltipMaxRight, // answers "can it fit without wrapping?""
-			extendedRightLength: Math.max(0, boundingRect.right - tooltipMaxRight),
-			vertical: projectedToolTipTop > 0 && projectedToolTipBottom < tooltipMaxBottom,
+			atPositionHorizontal: boundingRect.x >= tooltipBounds.left && boundingRect.right <= tooltipBounds.right,
+			overallHorizontal: boundingRect.width <= tooltipBounds.right, // answers "can it fit without wrapping?"
+			extendedRightLength: Math.max(0, boundingRect.right - tooltipBounds.right),
+			vertical: projectedToolTipTop > tooltipBounds.top && projectedToolTipBottom < tooltipBounds.bottom,
 		};
 	}
 
@@ -76,7 +94,8 @@
 				positionTooltipBelow = false;
 				if (enableTooltipWrapping) {
 					const boundingRect = parsedDateStringWrappingHelperElement.getBoundingClientRect();
-					verticalStyles = `top: unset; bottom: calc(${window.innerHeight * 0.95 - boundingRect.y}px + 1.5em);`;
+					const { bottom } = getTooltipBoundaries();
+					verticalStyles = `top: unset; bottom: calc(${bottom - boundingRect.y}px + 1.5em);`;
 				}
 			}
 
@@ -122,7 +141,7 @@
 		on:mouseenter={updateTooltipPositioning}
 		on:keyup={onKeyUp}
 	>
-		TODO: relative time {isoDateString}
+		{relativeTimeString}
 	</time>
 	<div
 		class="tooltip-wrapper"

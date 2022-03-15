@@ -3,8 +3,9 @@ import PostShell from '@src/layouts/PostShell.astro';
 import { Markdown } from 'astro/components';
 import LinkableHeader from '@src/components/molecules/LinkableHeader.svelte';
 import DateTime from '@src/components/atoms/DateTime.svelte';
+import type { IPostMetadata } from '@src/utilities/post-utilities';
 
-const metadata = {
+const metadata: IPostMetadata = {
 	pathName: Astro.request.canonicalURL.pathname,
 	title: 'My First Site',
 	author: 'Joshua Castor',
@@ -21,8 +22,8 @@ const metadata = {
 		title="My First Site"
 		level={1}
 	>
-		Post was originally available at <DateTime includeTimeInTooltip={true} dateTime={metadata.datePublished} client:idle />.
-		This post was updated as part of the site overhaul at <DateTime dateTime={metadata.dateModified} client:load />.
+		Post was originally available <DateTime dateTime={metadata.datePublished} client:idle />.
+		This post was updated as part of the site overhaul <DateTime dateTime={metadata.dateModified} client:load />.
 	</LinkableHeader>
 	<figure>
 		<img src="/img/old_sites/v001.png" alt="Screenshot of this website in January 2017">
