@@ -24,6 +24,7 @@ const TIME_VALUE_UNIT_TUPLES = [
 	{ minValue: TimeUnitInMilliseconds.Week, timeUnit: TimeUnit.Week },
 	{ minValue: TimeUnitInMilliseconds.Day, timeUnit: TimeUnit.Day },
 	{ minValue: TimeUnitInMilliseconds.Hour, timeUnit: TimeUnit.Hour },
+	{ minValue: TimeUnitInMilliseconds.Minute, timeUnit: TimeUnit.Minute },
 	{ minValue: TimeUnitInMilliseconds.Second, timeUnit: TimeUnit.Second },
 ];
 
