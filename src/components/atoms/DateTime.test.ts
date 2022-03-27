@@ -8,7 +8,7 @@ describe('DateTime', () => {
 	const expectedIsoDateString = ARBITRARY_TIME_INPUT.toISOString();
 
 	const getTimeElementFromComponent = (component: Element) => component.querySelector('time');
-	const getTooltipElementFromComponent = (component: Element) => component.querySelector('[role="tooltip"]')
+	const getTooltipElementFromComponent = (component: Element) => component.querySelector('[role="tooltip"]');
 
 	describe('by default', () => {
 		let component: Element;
@@ -27,7 +27,7 @@ describe('DateTime', () => {
 
 		test('renders with single tooltip containing the current time as a full string', () => {
 			const tooltipElements = Array.from(component.querySelectorAll('[role="tooltip"]'));
-			expect(tooltipElements.length).toEqual(1)
+			expect(tooltipElements.length).toEqual(1);
 
 			const currentDate = (new Date()).toDateString();
 			const tooltip = tooltipElements[0];

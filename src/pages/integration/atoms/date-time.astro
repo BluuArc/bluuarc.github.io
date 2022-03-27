@@ -1,0 +1,29 @@
+---
+import DateTime from '@src/components/atoms/DateTime.svelte';
+
+const arbitraryDate = new Date('Jan 23 1945 12:34:56');
+---
+
+<section class="test-section" date-test-scenario="keyboard-shortcuts" data-test-active="true">
+	<div class="component-wrapper display-center">
+		<DateTime dateTime={arbitraryDate} client:idle/>
+	</div>
+</section>
+
+<style lang="scss" global>
+	@use '../../../styles/global.scss';
+</style>
+
+<style>
+body {
+	margin: 0;
+}
+
+.display-center {
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-content: center;
+}
+</style>
