@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { getRelativeTimeString } from '@src/utilities/getRelativeTimeString';
-	export let dateTime = (new Date()).toDateString();
+	import { getRelativeTimeString } from '@src/utilities/relative-time-utils';
+	export let dateTime: Date = new Date();
 	export let includeTimeInTooltip = false;
 	export let _windowContext: Window|null = null;
 	let isoDateString: string;
@@ -202,7 +202,6 @@
 			top: 1.5em;
 		}
 	}
-
 
 	[aria-describedby]:hover + [role=tooltip],
 	[aria-describedby]:focus + [role=tooltip]:not(.hide-while-focused) {

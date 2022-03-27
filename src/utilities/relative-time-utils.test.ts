@@ -1,4 +1,4 @@
-import { getRelativeTimeString } from './getRelativeTimeString';
+import { getRelativeTimeString } from './relative-time-utils';
 
 describe('getRelativeTimeString', () => {
 	/**
