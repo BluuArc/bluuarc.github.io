@@ -1,5 +1,4 @@
 import { getSvelteElementFromRenderResult, renderSvelteComponent } from '@src/utilities/_test-utils/svelte-test-utils';
-import { act } from '@testing-library/svelte';
 import DateTime from './DateTime.svelte';
 
 describe('DateTime', () => {
@@ -81,39 +80,6 @@ describe('DateTime', () => {
 			const tooltipElement = getTooltipElementFromComponent(component);
 
 			expect(tooltipElement.textContent).toBe(`Actual time is ${arbitraryInputAsDateString} ${ARBITRARY_TIME_INPUT.toTimeString()}`);
-		});
-	});
-
-	// TODO: convert visibility and positioning behavior to integration tests due to dependency on browser focus and mouse hover
-	describe('tooltip visibility behavior', () => {
-		let timeElement: HTMLTimeElement;
-		let tooltipElement: Element;
-		beforeEach(() => {
-			const result = renderSvelteComponent(DateTime, { props: { dateTime: ARBITRARY_TIME_INPUT }});
-			const component = getSvelteElementFromRenderResult(result);
-			timeElement = getTimeElementFromComponent(component);
-			tooltipElement = getTooltipElementFromComponent(component);
-		});
-
-		const expectTimeInputVisibility = (isVisible = false) => {
-			const boundingRect = tooltipElement.getBoundingClientRect();
-			if (isVisible) {
-				expect(boundingRect.width).toBeGreaterThan(0);
-				expect(boundingRect.height).toBeGreaterThan(0);
-			} else {
-				expect(boundingRect).toEqual(expect.objectContaining({ width: 0, height: 0 }));
-			}
-		};
-
-		test('tooltip is hidden by default', () => {
-			expectTimeInputVisibility(false);
-		});
-
-		test.skip('tooltip is visible when the time input is focused', async () => {
-			expectTimeInputVisibility(false);
-			await act(() => { timeElement.focus(); });
-			await new Promise((resolve) => requestAnimationFrame(resolve));
-			expectTimeInputVisibility(true);
 		});
 	});
 });

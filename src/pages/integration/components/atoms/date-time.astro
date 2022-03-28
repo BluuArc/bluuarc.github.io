@@ -5,11 +5,9 @@ const arbitraryDate = new Date('Jan 23 1945 12:34:56');
 ---
 
 <button id="focus-reset">Button for focus reset</button>
-<section class="test-section" date-test-scenario="keyboard-shortcuts" data-test-active="true">
-	<div class="component-wrapper display-center">
-		<DateTime dateTime={arbitraryDate} client:load/>
-	</div>
-</section>
+<div class="component-wrapper display-center">
+	<DateTime dateTime={arbitraryDate} client:load/>
+</div>
 
 <style lang="scss" global>
 	@use '../../../../styles/global.scss';
