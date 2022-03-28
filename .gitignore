@@ -16,3 +16,4 @@ yarn-error.log*
 # Project Specific
 tracker-tests/js/_wget.exe
 token.txt
+cypress/videos

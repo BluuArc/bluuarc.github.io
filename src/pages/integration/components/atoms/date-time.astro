@@ -4,25 +4,31 @@ import DateTime from '@src/components/atoms/DateTime.svelte';
 const arbitraryDate = new Date('Jan 23 1945 12:34:56');
 ---
 
+<button id="focus-reset">Button for focus reset</button>
 <section class="test-section" date-test-scenario="keyboard-shortcuts" data-test-active="true">
 	<div class="component-wrapper display-center">
-		<DateTime dateTime={arbitraryDate} client:idle/>
+		<DateTime dateTime={arbitraryDate} client:load/>
 	</div>
 </section>
 
 <style lang="scss" global>
-	@use '../../../styles/global.scss';
+	@use '../../../../styles/global.scss';
 </style>
 
 <style>
 body {
 	margin: 0;
+	--button-height: 2rem;
+}
+
+#focus-reset {
+	height: var(--button-height);
 }
 
 .display-center {
 	display: grid;
 	width: 100vw;
-	height: 100vh;
+	height: calc(100vh - var(--button-height));
 	justify-content: center;
 	align-content: center;
 }
